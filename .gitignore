@@ -1,0 +1,10 @@
+﻿pycache/
+.py[cod]
+.egg-info/
+.venv/
+venv/
+.env
+.vscode/
+.idea/
+.DS_Store
+# data.json
