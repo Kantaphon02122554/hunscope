@@ -129,8 +129,15 @@ const chg=d=>d.unit==="pt"?`${sg(d.change)}${fmt(d.change)} จุด`:`${sg(d.p
 const lab={ขาขึ้น:"up",ขาลง:"down",เป็นกลาง:"flat"};
 const rec={strong_buy:"ซื้อแรง",buy:"ซื้อ",hold:"ถือ",underperform:"ต่ำกว่าตลาด",sell:"ขาย",strong_sell:"ขายแรง"};
 const big=n=>n>=1e12?fmt(n/1e12)+" ล้านล้าน":n>=1e9?fmt(n/1e9,1)+" พันล้าน":fmt(n/1e6,0)+" ล้าน";
-function ago(t){const m=(Date.now()-new Date(t))/6e4;if(!(m>=0))return"";if(m<60)return Math.max(1,Math.round(m))+" นาทีที่แล้ว";if(m<1440)return Math.round(m/60)+" ชม.ที[...]}
-
+function ago(t){
+  const d = new Date(t);
+  if (isNaN(d)) return "";
+  const m = Math.floor((Date.now() - d.getTime()) / 60000);
+  if (m < 0) return "";
+  if (m < 60) return Math.max(1, m) + " นาทีที่แล้ว";
+  if (m < 1440) return Math.round(m / 60) + " ชม.ที่แล้ว";
+  return Math.round(m / 1440) + " วันก่อน";
+}
 function spark(v){
   const w=120,h=36,min=Math.min(...v),max=Math.max(...v),r=max-min||1;
   const p=v.map((y,i)=>`${(i/(v.length-1)*w).toFixed(1)},${(h-2-(y-min)/r*(h-4)).toFixed(1)}`).join(" ");
