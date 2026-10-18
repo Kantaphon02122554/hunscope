@@ -163,8 +163,6 @@ function stockRow(d){
   <td class="${cls(d.change)}">${spark(d.series.slice(-30))}</td><td class="price">${fmt(d.price)}</td><td class="${cls(d.pct)}">${sg(d.pct)}${fmt(d.pct)}%</td>
   <td class="${rc}">${fmt(d.rsi,0)}</td><td><div class="bar" title="ตำแหน่งในช่วงราคา 52 สัปดาห์"><i style="left:${d.pos52??50}%"></i></div></td>
   <td class="${sc(d.news_score)}">${d.news_score==null?"–":(d.news_score>0?"+":"")+d.news_score}</td><td><span class="chip ${lab[d.label]||"flat"}">${esc(d.label||"–")}</span></td></tr>`;
-
-
 }
 const sc=n=>n>0?"up":n<0?"down":"flat";
 const sl=n=>n>0?"บวก":n<0?"ลบ":"กลาง";
@@ -178,19 +176,13 @@ function zoneWarn(d){
   if(d.news_score<0)w.push("ข่าวล่าสุดเอนไปทางลบ ควรอ่านข่าวก่อนตัดสินใจ");
   const ne=d.fund&&d.fund.next_earnings,dd=ne?(new Date(ne)-Date.now())/864e5:null;
   if(dd!=null&&dd<=14&&dd>=-1)w.push("ใกล้วันประกาศงบ ("+ne+") ราคามักผันผวนแรง โซนรับอาจใช้ไม่ได้");
-
-
   return w;
 }
-
 function zoneRow(d){
   const z=d.zones,n=z.list[0],s=ZS[z.status]||ZS.far;
   return `<tr data-sym="${esc(d.symbol)}" tabindex="0"><td><span style="font-weight:500">${esc(d.name)}</span><span class="sym">${esc(d.symbol)}</span></td><td class="price">${fmt(d.price)}</td>
   <td>${n?`${fmt(n.low)} – ${fmt(n.high)}`:"–"}</td><td>${n?(n.dist_pct<=0?"อยู่ในโซน":fmt(n.dist_pct,1)+"%"):"–"}</td><td>${n?esc(n.labels.join(" + ")):"ไม่พบแน�[...]
-
-
 }
-
 function zonesSection(stocks){
   const rows=stocks.filter(s=>s.zones).sort((a,b)=>{const A=(ZS[a.zones.status]||ZS.far)[2],B=(ZS[b.zones.status]||ZS.far)[2];return A-B||((a.zones.list[0]||{}).dist_pct??99)-((b.zones.list[0]||{}).di[...]
   return `<section id="zones"><h2>โซนรับทางเทคนิค</h2><p class="note">ระดับราคาด้านล่างที่เคยเป็นแนวรับ [...]
@@ -358,8 +350,7 @@ function detail(d){
   ${zoneBlock(d)}${fundBlock(d)}<h4>ผลตอบแทนและช่วงราคา</h4><div class="kv">${kv("1 เดือน",d.ret1m==null?"–":sg(d.ret1m)+fmt(d.ret1m)+"%",cls(d.ret1m)[...]
   <h4>มูลค่า</h4><div class="kv">${kv("P/E ย้อนหลัง",fmt(d.pe,1))}${kv("P/E คาดการณ์",fmt(d.fpe,1))}${kv("มูลค่าตลาด",d.mcap?big(d.mcap)[...]
   <h4>ข่าวล่าสุด</h4><div class="box">${newsList(d.news||[],false)}</div></div>`;
-}
-                                                                        
+}                                                                    
 fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(data=>{
   const all=data.groups.flatMap(g=>g.items),by=s=>all.find(i=>i.symbol===s)||{},stocks=(data.groups.find(g=>g.detail)||{items:[]}).items;
   const nq=by("^IXIC"),sox=by("^SOX"),vix=by("^VIX");
@@ -389,7 +380,6 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
 </script>
   <!-- Auto-refresh: poll data.json (no-cache) -->
 <div id="last-updated" style="color:#999; font-size:0.9rem; display:none;"></div>
-
 <script>
 (function(){
   const POLL_INTERVAL_MS = 60000; // ตรวจทุก 60 วินาที ปรับได้
@@ -406,8 +396,7 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
       el.textContent = 'ข้อมูลล่าสุด: ' + (isNaN(d) ? data.updated : d.toLocaleString());
       el.style.display = '';
       return true;
-    }
-    
+    } 
     return false;
   }
   function checkData(){
