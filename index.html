@@ -147,11 +147,23 @@ function spark(v){
 }
 
 function bigChart(d){
-  const v=d.series,w=600,h=200,min=Math.min(...v),max=Math.max(...v),r=max-min||1,y=n=>h-6-(n-min)/r*(h-12);
-  const p=v.map((n,i)=>`${(i/(v.length-1)*w).toFixed(1)},${y(n).toFixed(1)}`).join(" ");
-  const bands=zs=>(zs||[]).filter(z=>z.high>=min&&z.low<=max).map(z=>{const t=y(Math.min(z.high,max));const hgt=Math.max(2,y(Math.max(z.low,min))-t);const color=z.color||"#0ea5ff";const opacity=z.opac[...]
-  const ref=(val,c,t)=>val!=null&&val>=min&&val<=max?`<line x1="0" x2="${w}" y1="${y(val)}" y2="${y(val)}" stroke="${c}" stroke-dasharray="4 4" opacity=".7"/><text x="${w-4}" y="${y(val)-4}" fill="${c[...]
-  return `<svg class="big ${cls(v[v.length-1]-v[0])}" viewBox="0 0 ${w} ${h}" role="img" aria-label="กราฟราคา 90 วัน">${bands((d.zones||{}).list)}<polyline points="${p}" fil[...]
+  const v = d.series || [], w = 600, h = 200, min = Math.min(...v), max = Math.max(...v), r = max - min || 1;
+  const y = n => h - 6 - (n - min) / r * (h - 12);
+  const p = v.map((n,i) => `${(i/(v.length-1)*w).toFixed(1)},${y(n).toFixed(1)}`).join(" ");
+
+  const bands = zs => (zs||[]).filter(z => z.high >= min && z.low <= max).map(z => {
+    const t = y(Math.min(z.high, max));
+    const hgt = Math.max(2, y(Math.max(z.low, min)) - t);
+    const color = z.color || "#0ea5ff";
+    const opacity = (z.opac != null) ? z.opac : 0.18; // ใช้ค่า default 0.18 ถ้าไม่มี z.opac
+    return `<rect x="0" y="${t}" width="${w}" height="${hgt}" fill="${color}" opacity="${opacity}"/>`;
+  }).join("");
+
+  const ref = (val, c, label) => val != null && val >= min && val <= max
+    ? `<line x1="0" x2="${w}" y1="${y(val)}" y2="${y(val)}" stroke="${c}" stroke-dasharray="4 4" opacity=".7"/><text x="${w-4}" y="${y(val)-4}" fill="${c}" font-size="10" text-anchor="end">${label}</text>`
+    : "";
+
+  return `<svg class="big ${cls(v[v.length-1]-v[0])}" viewBox="0 0 ${w} ${h}" role="img" aria-label="กราฟราคา 90 วัน">${bands((d.zones||{}).list)}<polyline points="${p}" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>${ref(d.sma50,'#9bc7ff','SMA50')}${ref(d.sma200,'#2b6cb0','SMA200')}</svg>`;
 }
 
 function row(d){
