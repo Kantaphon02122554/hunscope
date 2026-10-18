@@ -145,7 +145,7 @@ function spark(v){
 }
 function bigChart(d){
   const v=d.series,w=600,h=200,min=Math.min(...v),max=Math.max(...v),r=max-min||1,y=n=>h-6-(n-min)/r*(h-12);
-  const p=v.map((n,i)=>`${(i/(v.length-1)*w).toFixed(1)},${y(n).toFixed(1)}`).join(" ");
+  const p=v.map((n,i)=>${(i/(v.length-1)*w).toFixed(1)},${y(n).toFixed(1)}).join(" ");
   const bands=zs=>(zs||[]).filter(z=>z.high>=min&&z.low<=max).map(z=>{const t=y(Math.min(z.high,max));return `<rect x="0" width="${w}" y="${t}" height="${Math.max(2,y(Math.max(z.low,min))-t)}" fill="#[...]`;
   const ref=(val,c,t)=>val!=null&&val>=min&&val<=max?`<line x1="0" x2="${w}" y1="${y(val)}" y2="${y(val)}" stroke="${c}" stroke-dasharray="4 4" opacity=".7"/><text x="${w-4}" y="${y(val)-4}" fill="${c[...];
   return `<svg class="big ${cls(v[v.length-1]-v[0])}" viewBox="0 0 ${w} ${h}" role="img" aria-label="กราฟราคา 90 วัน">${bands((d.zones||{}).list)}<polyline points="${p}" fill="no[...];
