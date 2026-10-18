@@ -161,7 +161,14 @@ function bigChart(d){
 }
 
 function row(d){
-  return `<div class="row ${cls(d.change)}"><div class="name" style="color:var(--ink)">${esc(d.name)}<span class="sym">${esc(d.symbol)}</span></div>${spark(d.series.slice(-30))}<div class="num"><d[...]`;
+  return `<div class="row ${cls(d.change)}">
+    <div class="name" style="color:var(--ink)">${esc(d.name)}<span class="sym">${esc(d.symbol)}</span></div>
+    ${spark(d.series.slice(-30))}
+    <div class="num">
+      <div class="price">${fmt(d.price)}</div>
+      <div class="chg">${chg(d)}</div>
+    </div>
+  </div>`;
 }
 
 function stockRow(d){
