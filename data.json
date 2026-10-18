@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-17T15:53:33.842030+00:00",
+ "updated": "2026-10-18T18:49:34.463965+00:00",
  "groups": [
   {
    "title": "ดัชนี",
@@ -1021,7 +1021,7 @@
         "surprise": 3.2
        }
       ],
-      "next_earnings": "2026-11-18",
+      "next_earnings": "2026-11-17",
       "kpi": {
        "rev_yoy": 105.9,
        "nm": 62.0,
@@ -1374,7 +1374,7 @@
         "surprise": 12.8
        }
       ],
-      "next_earnings": "2026-10-29",
+      "next_earnings": "2026-10-28",
       "kpi": {
        "rev_yoy": 17.7,
        "nm": 39.7,
@@ -1729,7 +1729,7 @@
         "surprise": 4.5
        }
       ],
-      "next_earnings": "2026-11-03",
+      "next_earnings": "2026-11-02",
       "kpi": {
        "rev_yoy": 16.4,
        "nm": 27.2,
@@ -2083,7 +2083,7 @@
         "surprise": 27.0
        }
       ],
-      "next_earnings": "2026-10-29",
+      "next_earnings": "2026-10-28",
       "kpi": {
        "rev_yoy": 24.2,
        "nm": 93.7,
@@ -2438,7 +2438,7 @@
         "surprise": -84.4
        }
       ],
-      "next_earnings": "2026-10-22",
+      "next_earnings": "2026-10-21",
       "kpi": {
        "rev_yoy": 28.0,
        "nm": 26.1,
@@ -2590,7 +2590,7 @@
       "atr": 11.8,
       "bars": 251
      },
-     "pe": 43.31,
+     "pe": 41.99,
      "fpe": 16.95,
      "mcap": 1569330823168,
      "target": 527.59,
@@ -2760,7 +2760,7 @@
         "surprise": 4.3
        }
       ],
-      "next_earnings": "2026-12-10",
+      "next_earnings": "2026-12-09",
       "kpi": {
        "rev_yoy": 85.5,
        "nm": 44.2,
@@ -2948,7 +2948,7 @@
      "pe": 134.89,
      "fpe": 33.56,
      "mcap": 863171182592,
-     "target": 636.21,
+     "target": 627.65,
      "rec": "strong_buy",
      "fund": {
       "currency": "USD",
@@ -3035,7 +3035,7 @@
        {
         "group": "analyst",
         "name": "ส่วนต่างถึงราคาเป้าหมายเฉลี่ย",
-        "value": "+20.3%",
+        "value": "+18.7%",
         "text": "เป้าหมายสูงกว่าราคาพอสมควร",
         "score": 1
        },
@@ -3110,12 +3110,12 @@
        },
        {
         "date": "2025-09-30",
-        "estimate": 1.17,
+        "estimate": 1.18,
         "actual": 1.2,
-        "surprise": 2.6
+        "surprise": 1.7
        }
       ],
-      "next_earnings": "2026-11-04",
+      "next_earnings": "2026-11-03",
       "kpi": {
        "rev_yoy": 50.1,
        "nm": 19.9,
@@ -3824,7 +3824,7 @@
         "surprise": 20.7
        }
       ],
-      "next_earnings": "2026-12-24",
+      "next_earnings": "2026-12-23",
       "kpi": {
        "rev_yoy": 345.7,
        "nm": 68.1,
@@ -4178,7 +4178,7 @@
         "surprise": 25.0
        }
       ],
-      "next_earnings": "2026-10-30",
+      "next_earnings": "2026-10-29",
       "kpi": {
        "rev_yoy": 20.0,
        "nm": 17.0,
@@ -4364,7 +4364,7 @@
       "rr": 2.6
      },
      "pe": 40.39,
-     "fpe": 26.18,
+     "fpe": 26.11,
      "mcap": 632670912512,
      "target": 2155.32,
      "rec": "strong_buy",
@@ -4432,7 +4432,7 @@
        {
         "group": "value",
         "name": "P/E คาดการณ์",
-        "value": "26.2",
+        "value": "26.1",
         "text": "พอเหมาะ",
         "score": 0
        },
@@ -4539,7 +4539,7 @@
        "nm": 31.3,
        "roe": 66.0,
        "de": 0.08900000000000001,
-       "fpe": 26.18,
+       "fpe": 26.11,
        "ps": 16.03
       }
      },
@@ -5122,7 +5122,7 @@
         "surprise": null
        }
       ],
-      "next_earnings": "2026-10-21",
+      "next_earnings": "2026-10-20",
       "kpi": {
        "rev_yoy": 92.0,
        "nm": -6.9,
@@ -5538,7 +5538,7 @@
      "pos52": 86.0,
      "ret1m": 4.81,
      "ret3m": 23.13,
-     "ret1y": 79.25,
+     "ret1y": 80.07,
      "signals": [
       {
        "name": "แนวโน้มระยะกลาง",
@@ -5600,7 +5600,7 @@
        }
       ],
       "atr": 3.96,
-      "bars": 251,
+      "bars": 250,
       "break": 98.54,
       "target": 126.1,
       "rr": 3.9
@@ -5609,9 +5609,9 @@
     {
      "symbol": "CL=F",
      "name": "น้ำมัน WTI",
-     "price": 101.41,
-     "change": 3.44,
-     "pct": 3.51,
+     "price": 99.02,
+     "change": 1.05,
+     "pct": 1.07,
      "unit": "%",
      "date": "2026-10-16",
      "series": [
@@ -5704,17 +5704,17 @@
       94.14,
       95.09,
       97.97,
-      101.41
+      99.02
      ],
-     "rsi": 66.4,
-     "sma50": 90.98,
-     "sma200": 84.19,
+     "rsi": 63.1,
+     "sma50": 90.93,
+     "sma200": 84.18,
      "high52": 112.95,
      "low52": 55.27,
-     "pos52": 80.0,
-     "ret1m": -0.49,
-     "ret3m": 21.84,
-     "ret1y": 76.24,
+     "pos52": 76.0,
+     "ret1m": -2.84,
+     "ret3m": 18.97,
+     "ret1y": 72.15,
      "signals": [
       {
        "name": "แนวโน้มระยะกลาง",
@@ -5733,7 +5733,7 @@
       },
       {
        "name": "RSI",
-       "text": "RSI 66 อยู่ในช่วงปกติ",
+       "text": "RSI 63 อยู่ในช่วงปกติ",
        "score": 0
       }
      ],
@@ -5743,8 +5743,8 @@
       "status": "far",
       "list": [
        {
-        "low": 82.6,
-        "high": 95.37,
+        "low": 82.62,
+        "high": 95.35,
         "labels": [
          "Fib 38.2%",
          "Fib 50%",
@@ -5755,21 +5755,21 @@
          "แนวรับเดิม"
         ],
         "strength": 7,
-        "dist_pct": 6.0
+        "dist_pct": 3.7
        },
        {
-        "low": 78.42,
-        "high": 80.82,
+        "low": 78.44,
+        "high": 80.8,
         "labels": [
          "แนวรับเดิม"
         ],
         "strength": 1,
-        "dist_pct": 20.3
+        "dist_pct": 18.4
        }
       ],
-      "atr": 4.01,
-      "bars": 251,
-      "break": 78.59,
+      "atr": 3.94,
+      "bars": 250,
+      "break": 78.68,
       "target": 110.93,
       "rr": 2.1
      }
@@ -6127,6 +6127,224 @@
  ],
  "news": [
   {
+   "title": "My wife says we can’t afford to retire. I vetoed her $8,000 trip to Italy. We’re in our 60s and have $4 million. Do I keep working?",
+   "url": "https://www.marketwatch.com/story/my-wife-says-we-cant-afford-to-retire-we-have-4-million-do-i-just-keep-working-f1b6b085?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "time": "2026-10-18T17:00:00Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "‘Some people did everything right’: I lost my home in the Great Recession. I rent in my 50s. Why is that judged as failure?",
+   "url": "https://www.marketwatch.com/story/i-earn-110-000-a-year-i-lost-my-home-in-the-great-recession-im-renting-in-my-50s-why-is-that-judged-as-failure-d1371d67?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "time": "2026-10-18T16:15:00Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "My sister moved in with our mother, 78, and says she deserves the $925,000 family home. Is she right?",
+   "url": "https://www.marketwatch.com/story/my-sister-moved-in-with-our-widowed-mother-78-and-says-she-deserves-the-family-home-is-she-right-7981835d?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "time": "2026-10-18T16:00:00Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "I’m 64 with two sons, but only one works in the family business. Is it ethical to leave him 70% of the company?",
+   "url": "https://www.marketwatch.com/story/im-64-years-old-with-two-sons-but-only-one-works-in-the-family-firm-should-i-leave-him-70-of-the-business-2fe6c382?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "time": "2026-10-18T15:15:00Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "I’m 63 and diagnosed with lymphoma. Should I take my Social Security next year?",
+   "url": "https://www.marketwatch.com/story/its-a-wait-and-see-situation-im-63-and-diagnosed-with-lymphoma-should-i-take-my-social-security-next-year-ea88b419?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "time": "2026-10-18T15:00:00Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "Why Dell Technologies Stock Took a Dive Last Week",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQTFNidkFnTVNPVll1dkI0bWJNanFFSTJSeERvNjJuSERiNmpldmFFS29sb2hkWThGa19GUGtxQ0lNTmFCR2k1dndFdHRlSFpaSUdlbXY4QzAzUHFyZDMxZVZLazhIakxEd0dUS2ltbVlPNklIX0pGQkdaVlI0LWRzT1dEMkJYMjItMmdLOFBNdzRMMUFVSmpKUDVJSjhTbWVoU2hLaENyeFFuQWxHTnpLN0oyNUxpS3k3ckZyeWQwRFg1NDNRcG83UG94UURLOVE?oc=5",
+   "source": "The Globe and Mail",
+   "time": "2026-10-18T14:29:03Z",
+   "category": "ธนาคารและนักวิเคราะห์",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "These surprising stocks could be some of the biggest drivers of S&P 500 earnings growth",
+   "url": "https://www.marketwatch.com/story/these-surprising-stocks-could-be-some-of-the-biggest-drivers-of-s-p-500-earnings-growth-ea073a07?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "time": "2026-10-18T14:00:00Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [
+    "ผลประกอบการ"
+   ],
+   "symbols": []
+  },
+  {
+   "title": "Stocks are heading for a high-stakes showdown, as strong earnings collide with rising borrowing costs",
+   "url": "https://www.marketwatch.com/story/stocks-are-heading-for-a-high-stakes-showdown-as-strong-earnings-collide-with-rising-borrowing-costs-6f8ea5b8?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "time": "2026-10-18T13:00:00Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 1,
+   "topics": [
+    "ผลประกอบการ"
+   ],
+   "symbols": []
+  },
+  {
+   "title": "Top Wall Street analysts are bullish on the growth potential of these 3 stocks",
+   "url": "https://www.cnbc.com/2026/10/18/top-analysts-are-bullish-on-the-growth-potential-of-these-3-stocks.html",
+   "source": "CNBC",
+   "time": "2026-10-18T12:34:51Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 1,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "Always on, always listening: New AI devices are pushing legal limits and could put users in jeopardy",
+   "url": "https://www.cnbc.com/2026/10/18/ai-wearables-privacy-wiretap-laws.html",
+   "source": "CNBC Tech",
+   "time": "2026-10-18T12:00:01Z",
+   "category": "เทคโนโลยี",
+   "sent": 0,
+   "topics": [
+    "AI"
+   ],
+   "symbols": []
+  },
+  {
+   "title": "There is a silent market rotation inside the S&P 500 that’s warning of more weakness ahead",
+   "url": "https://www.marketwatch.com/story/there-is-a-silent-market-rotation-inside-the-s-p-500-thats-warning-of-more-weakness-ahead-549e7650?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "time": "2026-10-18T12:00:00Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": -1,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "Bank Of America Flips Salesforce From Underperform To Buy After A 50% Rally",
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQQlpDTWQtb0puQUdrcHFqZWpnWlROR3NyT0FEekQyTEhRcVJEbHdvUUx3bmJiUmJUd19ScFRKMlBBbUdUWEJyNlJsT0haQ3dYelNMdlNhZEtlQWdxM253R2VGemd6WEM5N0lPa3V3SEtveDR1QkpGSmRwZjg5MU4ycHBYTFJqY0I0aWdVaDdKczlOYkpMNEkxQUFLd29Ob1BGb0FZbFhRVFluQXZlN0UtV0RFaUJURGphdVpDaVdhRWdtU1dp?oc=5",
+   "source": "Forbes",
+   "time": "2026-10-18T12:00:00Z",
+   "category": "ธนาคารและนักวิเคราะห์",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "Apple (NASDAQ: AAPL) stock forecast: Wall Street analysts split on AAPL’s upside",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPWDVRb2FrV3ZSYzNvc18taHNQZlZqV3pYRnV6SURCYk1RTFlhdVZRemt6RDRQM0RLWmxTc3hvQUI4ZGJkcFhrb3oxYTJza2EtenRqaWNLTG9nQzgxM1RHT1dLZUtyYzNDRUdsa3hISThMSGhBdS1sRkpEdHNBb25OUmd1ZzlsWmRWQkp5TnNTeTU1clJ2?oc=5",
+   "source": "Beinsure",
+   "time": "2026-10-18T10:30:14Z",
+   "category": "ธนาคารและนักวิเคราะห์",
+   "sent": 0,
+   "topics": [],
+   "symbols": [
+    "AAPL"
+   ]
+  },
+  {
+   "title": "What is the Budget and what could be in it?",
+   "url": "https://www.bbc.co.uk/news/articles/c6x2zrjl7kjno?at_medium=RSS&at_campaign=rss",
+   "source": "BBC Business",
+   "time": "2026-10-18T10:22:17Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "Turning the tides: Could hidden sea power energise our coastal towns?",
+   "url": "https://www.bbc.co.uk/news/articles/c8y56y6xg9n9o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC Business",
+   "time": "2026-10-18T08:12:24Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "'I took a chance on the whisky industry and I haven't looked back'",
+   "url": "https://www.bbc.co.uk/news/articles/c6y8ln9831v3o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC Business",
+   "time": "2026-10-18T08:12:17Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "Fidelis Insurance (NYSE:PLGO) Stock Gets Downgrade from Wall Street Zen",
+   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQY1BVeUtfMEo4SHJickMxUUJhWm9CTURXMWRjbmhmdUlrSXl4bTVkdF9sNUdVQWZYT0tkUXBtdDVESk12N3ZocnVfczlSdHhmX1laNlVFSFcybW13X1l4cFhBenZGLXVWSWk4OGJXcHdsRDRta183YkxNT2xBZmRWWXVvR0JzQzJDeVRPdnVSQ0xScDlpazNKMEJCak16cjVDeW5LcTJFREcxUEFNdGo1WDBFZ0VyNW1hSjVEUVV0dHcxN1IxZHJHOGp1OA?oc=5",
+   "source": "MarketBeat",
+   "time": "2026-10-18T05:24:09Z",
+   "category": "ธนาคารและนักวิเคราะห์",
+   "sent": -1,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "There's a crackdown on sports piracy - but is it already out of control?",
+   "url": "https://www.bbc.co.uk/news/articles/cmx2375zqwwwo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC Business",
+   "time": "2026-10-18T00:11:09Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "Barclays downgrade wipes out billions in Dell, HPE and Oracle shares",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQXhkVmluSVVIRUFMeTFTZ0FweUVCQkNLMHhDVUx6Mnd1RlB4NnhGLVJaZGs2OFZsODAyUG1WdGRCNno1Q1lzb190eXpHSWo0cU1zaHBwSDM3SFhaeVpGSnd4WjlVR3ZudjFONmx1cDNhUWY3OVppZEJTQThMQ2JDSXd2ZEhBeUN4cEVsUDZxRG1uUUhwU0pfTHZGWQ?oc=5",
+   "source": "Startup Fortune",
+   "time": "2026-10-17T22:51:44Z",
+   "category": "ธนาคารและนักวิเคราะห์",
+   "sent": -1,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "Does RBC Upgrade Change The Bull Case For Casey's Stock?",
+   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQZnVtM2o5a2VxcTMyVjFELXpqSjRrdHROOVhOd1NqTEh1emsyNjRrZWNCcGlVM0M4SlppcGNsTXR3VTJXSVVJRVB5U2huQU1LZ0dSbzQ2UDUzY2NUNjdEZVdfX1dxcjBSeWcyRVRBblRtd25CbHB6cWhGenRYV2RpOElrTHdDNm5JcjlUZjBLWW1KOF96MmpIaUNOdDBDcHE3OFJXYWhDd0drTVV0bERlbzUtMjlQMXFfR01hUThDYjM5cEZIbms5RTJaenQyR3VoZjU5VmhRNzJtVTdx0gHiAUFVX3lxTFAzaVVxWHNfbjlfUkV4TlVSTUM4bS03NHY1WDl0MnlEQTlWTkpJV3BhQ25kTTVoNWFLMVZIc3lPMXY0MWhoZFM2ODYwUUNqOXhnbkUzQWFPY1BCQ2FWLVhwNExld3pITEpiV0xwVEg4QjF4RDFpUkRlM3VQWVZaRTFCNkQ0dEtNejFvT0lzalo4SDc4NGRESUVwZU01Z1Utdnd1UXg5ZnVNODNINHFQd3RTZF9Oa1oySjlFc0Jra1RtNW1yZjFGTE1tQ1J5MFhUQ0hYQTZROXdfZm4weWZ3Rk4tQkE?oc=5",
+   "source": "Simply Wall Street",
+   "time": "2026-10-17T22:46:33Z",
+   "category": "ธนาคารและนักวิเคราะห์",
+   "sent": 1,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "This NVDA Partner’s Stock Jumps 7% — Why UBS Sees 38% Upside For Amkor Technology",
+   "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOeG9tYzlubHRWSmptakQ5WklDVWpvSlhvQXZ4ZW51V3FUVmE4NnBOSWtQWWtrOU9IR3dxeEt3MkNqcUNHM0tBMzUxTk9JUWdjUlBfQXR3dWVwZ3FEMEFJaVB6UDdneFJ2dVowdllqakxDM1ZhM0Vsd3FiNkRTdUJrS2RRNzZHSUhDRmcxRDl3bDRRQXJmbDdNeXZNejYzMzNiaEFxS0ZlbzBITWtHRDFIY01zNUpyVHVMaWlUX2ZtUUxwTWlKdnI2ZHc4T1B2ZUVFZUd1TERaSWg3TG5zc2h3Q1BVNGZsLWRlUTBEXw?oc=5",
+   "source": "Stocktwits",
+   "time": "2026-10-17T16:03:04Z",
+   "category": "ธนาคารและนักวิเคราะห์",
+   "sent": 1,
+   "topics": [],
+   "symbols": []
+  },
+  {
    "title": "AI stocks plunge. Inflation heats up. Where we're still finding opportunities",
    "url": "https://www.cnbc.com/investingclub/2026/10/17/ai-stocks-plunge-inflation-heats-up-where-were-still-finding-opportunities.html",
    "source": "CNBC Tech",
@@ -6160,41 +6378,11 @@
    "symbols": []
   },
   {
-   "title": "‘Some people did everything right’: I lost my home in the Great Recession. I rent in my 50s. Why is that judged as failure?",
-   "url": "https://www.marketwatch.com/story/i-earn-110-000-a-year-i-lost-my-home-in-the-great-recession-im-renting-in-my-50s-why-is-that-judged-as-failure-d1371d67?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "time": "2026-10-17T13:00:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "Meet the home buyers totally unfazed by 7% mortgage rates",
-   "url": "https://www.marketwatch.com/story/meet-the-home-buyers-totally-unfazed-by-7-mortgage-rates-7a9b1cc7?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "time": "2026-10-17T13:00:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "Influencers and biohackers swear by fasting. Here’s what the science says.",
-   "url": "https://www.marketwatch.com/story/influencers-and-biohackers-swear-by-fasting-heres-what-the-science-says-3318191f?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "time": "2026-10-17T12:31:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "Silver’s recent 50% drop from a record high hints that an economic slowdown looms",
-   "url": "https://www.marketwatch.com/story/silvers-recent-50-drop-from-a-record-high-hints-that-an-economic-slowdown-looms-e9fdfaf1?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "time": "2026-10-17T12:30:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
+   "title": "Leidos (LDOS) Stock Gets Fair Value Trim As Health Concerns Temper Analyst Views",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNTUpXSmZMaTlxd1RBamdoVmNpdEF3N0NZTTBsZVBWNnVqeXNVNXlaaUIxZHdKVlBiTk8xQTBSanFCR3BMdDlBQmhMbHpfaUEwSEdRR2sxR1cwOV9GNHZGNU9RSEhzU085VVA3OXBUMk5tOG1VV3hHMzBDX3FJQjM3aVA0dmVBM0l5ZFAxQm92cUVPcU16THJz?oc=5",
+   "source": "Yahoo Finance",
+   "time": "2026-10-17T13:11:52Z",
+   "category": "ธนาคารและนักวิเคราะห์",
    "sent": -1,
    "topics": [],
    "symbols": []
@@ -6213,31 +6401,6 @@
    "symbols": []
   },
   {
-   "title": "Microsoft, Shopify and 3 more AI stocks that are favorite Wall Street earnings plays",
-   "url": "https://www.marketwatch.com/story/microsoft-shopify-and-3-more-ai-stocks-that-are-favorite-wall-street-earnings-plays-0bb61e81?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "time": "2026-10-17T12:01:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [
-    "AI",
-    "ผลประกอบการ"
-   ],
-   "symbols": [
-    "MSFT"
-   ]
-  },
-  {
-   "title": "I’m 64 with two sons, but only one works in the family firm. Should I leave him 70% of the business?",
-   "url": "https://www.marketwatch.com/story/im-64-years-old-with-two-sons-but-only-one-works-in-the-family-firm-should-i-leave-him-70-of-the-business-2fe6c382?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "time": "2026-10-17T12:00:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
    "title": "UBS resets Microsoft stock price target for investors",
    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQMXZqRklUVThTTWlIcFdXRUR0NkhvTTNRMXNmSDVsZ3NQQUlibnE4NGZCTkl0cnp1RmVxMFlSYl90MmdfNlNrSW5pbGFFQktzN3MyYUVUdlBoMkc0QUdtSmFJX0lndDFaQTBmdi13eW5iZFhSR0ZKdlNTVmxhUWdwZUdUY1pzMTRLdW8xanM2Q2o4TGFKOHZFMTJGcTJ3bVBpMHl3?oc=5",
    "source": "TheStreet",
@@ -6248,82 +6411,6 @@
    "symbols": [
     "MSFT"
    ]
-  },
-  {
-   "title": "It was another great week for the average stock as market leadership shifts away from tech",
-   "url": "https://www.marketwatch.com/story/it-was-another-great-week-for-the-average-stock-as-market-leadership-shifts-away-from-tech-8e8516da?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "time": "2026-10-17T11:30:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "AI race may depend more on access to power, infrastructure than chip supply: Morgan Stanley",
-   "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQSnF2U1dvZ2I0VmdXNngwY2Z4aTZWZXA0al9FNmdIWFh1T1JSV1A4dWU3YVdGaFdsVlNueVJwblMtMllqY1JaaWFDVUt5VHNpNE1qNFlhc1FvRU4xNjJnX3ZnZ2RvR2c3N0lCd0pEZWN0ZUd6QjZ6NmJuaW9yMGRMblN1UDZSenFXcGpzMVRYUTlOazVwRGlZVWJSY2JPNkxuTHJodUtzSWJaNFlwUFFhcXlZeWRDRllYZXc0a1JzRmEwOFRzT2p5YmltTXpWV3JuTXNGd1MwVUtKNDJyX0ZubE1UNHhYQW15a0NGNHhqLVNoTmVwWWx4Tkxn0gH_AUFVX3lxTE9tRUFVdXpFeUlOd2tVRkZXX0pKOUgzZlpwODQ0Rno1a3VETVFZaGgyOUtaeFNRQ1FyM2UxSmRqcmJkV2l6SFZCODE1X2VKUlktbWVsRlhDVjRTc01HZkFkdy1Db1lXS2VueTNndlhDd3VyMmlxMGQ0OEhyaG14OXFJMnVaRFotd3JuZEdvRms0Z2VkbTFKc2RsRjRIQ1VqaDdOTDFYUEJxZHN1YXFWOHlRYkY1S2x6RUx4NnQ5aGYwR3dXamZjV3BLVXVWX3pYT2pqYkRSSEFNSFNGNXA1TnU5VndadXhJcFYtcGZqYUQzSGlBNzdCTlNWVHhUSHpTaw?oc=5",
-   "source": "The Economic Times",
-   "time": "2026-10-17T11:02:52Z",
-   "category": "ธนาคารและนักวิเคราะห์",
-   "sent": 0,
-   "topics": [
-    "AI",
-    "ชิป"
-   ],
-   "symbols": []
-  },
-  {
-   "title": "I’m 63 and diagnosed with lymphoma. Should I take my Social Security next year?",
-   "url": "https://www.marketwatch.com/story/its-a-wait-and-see-situation-im-63-and-diagnosed-with-lymphoma-should-i-take-my-social-security-next-year-ea88b419?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "time": "2026-10-17T11:00:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "Citi says Hong Kong's AI chip IPOs are shrugging off the US selloff",
-   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOTTQwNmk2WERPY1hWWWdrY285ZjJiX1h2bTVneVZsNFplWGVackJBWURNVlZPeTNOUkppWXRGaTZ6bnl2QkVlWTB0VDQ4OGxhY0lsdnh5WGJJekxDMXJZbDh0RWY5Q28za3k0Nm16OGNWdDBVeGhQYlluUkpwR3d5NHkxbjNwaE45cmVPUXpUN1o2S1ctY2pNb1ln?oc=5",
-   "source": "Startup Fortune",
-   "time": "2026-10-17T09:14:36Z",
-   "category": "ธนาคารและนักวิเคราะห์",
-   "sent": -1,
-   "topics": [
-    "AI",
-    "ชิป"
-   ],
-   "symbols": []
-  },
-  {
-   "title": "Morgan Stanley Picks Quantinuum As Its Top Quantum Stock",
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5wVnQxWkJzSzJWSEtndm03Yk9IXzRrOEVYNV94a0lWVjJJMHFJVG9Tb29hRVVlTE1OVFYyOHBpMEIyNE5GWVpXazNxVjg1TVIzcndZenBRVmg3TEJNNkVqMzFEUmozNlJ4dkszaFhQSDk2eHV4dEE?oc=5",
-   "source": "Quantum Zeitgeist",
-   "time": "2026-10-17T08:15:00Z",
-   "category": "ธนาคารและนักวิเคราะห์",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "OPAL Fuels (NASDAQ:OPAL) Stock Gets Downgrade from Wall Street Zen",
-   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQWEJlU0I3QVJTQ0JhaG5OYlBGX1lfbWJHVkVNTU9PWmpac2lBTHRNNkhUaV9vWjhXaU1QdTJjVjNjYWFHbkFOemh6aXY4SE5MX19SXzJHY2Rmb0tvaEx2Q0FUMDVwZklKNEoySGk2aWQzRVR5Y0k1bzg3Qjlrc1hLT2ZiSC1rcmFNNXpHSll3ekhVLVlCbDVBSHgtUmtVcW5sZEhzekZYc2N3X3dwcnBtZVMydjhSYUxzcjNPazhzV1BhTWV0?oc=5",
-   "source": "MarketBeat",
-   "time": "2026-10-17T08:13:37Z",
-   "category": "ธนาคารและนักวิเคราะห์",
-   "sent": -1,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "Vertiv (NYSE:VRT) Stock Gets Downgrade from Wall Street Zen",
-   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQajU2cVVqaGxJWUY1djdCMTNBeUFkZjY4LUZRdGRQMEFvNk9Eai1KaG42UnA0VkI3d2MySHNxbWZzM21TR0xfbFh1N3hMb2F3cjJzZ0hMSTBfMTg5Rkw4RGprTlhiVGVweVdyRHJLbUgxQndDQXA5SlRpSC1mSXNBVENtbUFXQ1FJSTVsNW5veE95T2FvQXFWTmE2cTRhWDZlejVpcmREVXBhT3Mwb0dGQ0FSVjMzT2taTUV3?oc=5",
-   "source": "MarketBeat",
-   "time": "2026-10-17T05:40:49Z",
-   "category": "ธนาคารและนักวิเคราะห์",
-   "sent": -1,
-   "topics": [],
-   "symbols": []
   },
   {
    "title": "Some companies give AI to everyone. This CEO is doing the opposite",
@@ -6338,14 +6425,24 @@
    "symbols": []
   },
   {
-   "title": "Morgan Stanley Warns Momentum In Chip Stocks Is Fading, Picks These Three Hyperscalers Instead",
-   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOU2VtSFhYQlY3RnZ0RUE4U3JINmd1bFVQVTdDMDdudUNYREc5aUk3SktiQWlJeFg1NjQ1ZURocGhUSkZkR0hPYjFrcmV3XzY3b1NxRzdhQWdYOEl4RTc1NHhtazBBZ3dYczdDeEdtQjB5YnBGNXR1eUNIVVg4Nzljc2JQdDJoS2o2bGlzcHMyZUNmUnZjbmlqcmRYbjdQNGNfS1BOMGZZLUMwTWNKb1A5NTJPLS1CSkZKdXZGa1JsX0VVdUxWcjIwQ3pWaw?oc=5",
-   "source": "Stocktwits",
-   "time": "2026-10-17T01:19:23Z",
-   "category": "ธนาคารและนักวิเคราะห์",
-   "sent": -1,
+   "title": "Third runway at Heathrow Airport would drive growth, Healey says",
+   "url": "https://www.bbc.co.uk/news/articles/cw0k07d2nj43o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC Business",
+   "time": "2026-10-17T03:57:16Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "Faisal Islam: Why China and AI are worrying global finance bosses",
+   "url": "https://www.bbc.co.uk/news/articles/cm4g189jvnxjo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC Business",
+   "time": "2026-10-17T01:59:48Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
    "topics": [
-    "ชิป"
+    "AI"
    ],
    "symbols": []
   },
@@ -6404,16 +6501,6 @@
    "symbols": []
   },
   {
-   "title": "Trade Desk Is Now Down 67% This Year: Is TTD Stock Dead Money or Due for a Bounce?",
-   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOUzBHUUJLejE1SGxtbmlGT3RpdE1aZHRXOFM5UTdYQWE1QnJKNFUzYUcwQnUtR1dPY1Z6NVR6azExeGNnMDhHZld4RUpyeGFCTUozMlNVbWw5Nm5LMUxiTkh1Z0ZZODJ6ejF5c3FUWXlvZjdNaFRWb1RFTW9EQk9BdUtOeGxBeGZxSWVrRXQ5U2g?oc=5",
-   "source": "Yahoo Finance",
-   "time": "2026-10-16T18:57:28Z",
-   "category": "ธนาคารและนักวิเคราะห์",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
    "title": "The Austin Powers steamroller: How to trade CoreWeave's slow moving crisis",
    "url": "https://www.cnbc.com/2026/10/16/playing-the-coreweave-disconnect.html",
    "source": "CNBC",
@@ -6421,38 +6508,6 @@
    "category": "ตลาดและเศรษฐกิจ",
    "sent": -1,
    "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "HPE Stock’s Worst Week Ever Exposes Wall Street’s Newest Fear",
-   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBnWExPUlBUcG9IRmcyY0g2Z1BuS3Vfd3RBaDlhMkk0LWVXSnNyRkZaQXNLYk9keldDdlYtcnpaWFZiWjRiOFU5a1dfTmwySTNiSEhLZ19SWHNZcFMxbV9scjU2T2tBV2M3Y3dIYkwzOElRQXFlUUV3?oc=5",
-   "source": "Barron's",
-   "time": "2026-10-16T17:55:00Z",
-   "category": "ธนาคารและนักวิเคราะห์",
-   "sent": -1,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "Twilio Slides as Valuation Concerns and Tech Weakness Pressure Shares",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPNXNSNHNfV2h2VUFLcFFub08tX1dCNkdDcjA3YVJDRVlRLXBoaEVSc2VNYWVCTWxWalNZNXFRVjA4c08tVXEwVzM3WWxhcjJnekxtLTFpeUxYcms4SEV3cHZHQ3M2ZDZrRFJFZkczRlk1ZnR4eVFqSHJ3cmp0VnVnV2ZibFV1eTlVSjZpRUZGZUVuQmx2VHRXYjBkc3lQTTRCZ2Z4ag?oc=5",
-   "source": "Quiver Quantitative",
-   "time": "2026-10-16T17:37:00Z",
-   "category": "ธนาคารและนักวิเคราะห์",
-   "sent": -1,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "OpenAI Saudi national bugging case shows threat to U.S. leadership in AI: DNI Clayton",
-   "url": "https://www.cnbc.com/2026/10/16/ai-espionage-openai-jay-clayton.html",
-   "source": "CNBC Tech",
-   "time": "2026-10-16T16:27:44Z",
-   "category": "เทคโนโลยี",
-   "sent": 0,
-   "topics": [
-    "AI"
-   ],
    "symbols": []
   },
   {
@@ -6465,26 +6520,6 @@
    "topics": [
     "เฟดและดอกเบี้ย"
    ],
-   "symbols": []
-  },
-  {
-   "title": "Is Analyst Upgrade Altering The Investment Case For Crocs Stock?",
-   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPMHdYYTJYTDRWd2JtLXpXc2VPb0hNdjhBc3NHa0RPdXU1cXdPbEZWbkpBN0dnby1iM0wwRU16dUlfbjd3czM1ejZGamFBYkV2aG5waXE0UUVzRGVoNE5tWkdsNmQtQl9FVE9rMkZtNjM2d3piMmZNbkRyamhESHcyOGcxLTdaQXRKbGNOUDVhYV9ZUTlFSC00eV9uSWQyaVk1akxhc1pDTmU?oc=5",
-   "source": "Yahoo Finance",
-   "time": "2026-10-16T16:16:51Z",
-   "category": "ธนาคารและนักวิเคราะห์",
-   "sent": 1,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "Analyst Downgrade Might Change The Case For Investing In Spotify Stock (SPOT)",
-   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQcjh3djZpVjM1QTlRcGhiX3ZYMTRURzFFYjJ5S29adm5MQU0xTmxveUd4TFBmdG9fVDNiSExpV2YyenV5WUk3cGtibWpENEJlOGZlNEhMSi1zZzBqR0lhSGI4d3owZUV6R3laSXZCUDJ0VUhxZEY3T3hkaXZONDlvakMzLWowQjhHaEsyeDM1ZUwtTlFkUFNYSnRwY2oyRlBnVXExcUhGQkhNYnpSSGVGMERodFVMNjdqSUdNaTh5ZjJqcDRtbm51NlhuVFjSAdIBQVVfeXFMT25MS2ZxZllTWEQ4OGJhN1REMU11MmJtSzFVekVFSTRtYldkd292M2dTNFctUEZfTjdCMjNHQXhRdkczbVBxeWNqMjNJRlpnTjFjUUZLN2c3TmlFTmlFdl9MU2hZdFRRaGFaaU1UQjc1SGxSd1RKQ01wZTg2eVNMNlNJTVBEWGZmS045bEhneEc3NlBNLUhkQWFqenJGbDVmQUNTNGFPWG9xYmNkdU1xTFJyT2pQTHJfeE5xRkx1b0NTeXBsdHMxay1zX055S09YMkJB?oc=5",
-   "source": "Simply Wall Street",
-   "time": "2026-10-16T15:34:08Z",
-   "category": "ธนาคารและนักวิเคราะห์",
-   "sent": -1,
-   "topics": [],
    "symbols": []
   },
   {
@@ -6510,14 +6545,34 @@
    "symbols": []
   },
   {
-   "title": "Watch: Did Tesla really just unveil a flying car?",
-   "url": "https://www.bbc.co.uk/news/videos/ckly4mj1g3n9o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC Business",
-   "time": "2026-10-16T12:32:31Z",
-   "category": "ตลาดและเศรษฐกิจ",
+   "title": "SK Hynix, SanDisk, and Micron Drop 3% Despite Goldman Sachs Calling China Chip Fears Overdone",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQQ1ZZZTY4bmhPSzZ1cjV0WllQWGZOVTRMN2t3emE5blRHUHNTekFGelpNZ2ZZU2lHUmRDTE4tYzZPeVZiVWxpTVVUaURYeE5XQWNyM2pQNlg2LTFGMkpnVmVNM19IcDR1VUdvQ0IzWnU1bFk4aFp0ZGYxVjFWR2hiTkxmUndGUzl1MEZmSm52TE5jTE9pNU1JZEYyMnJSaUIxTXJlb2RSUnZXMzZwM2NkcUNBSkJoQWhYaXcyNnpFcDhveTlVTGVIb25rR3h6WnM?oc=5",
+   "source": "24/7 Wall St.",
+   "time": "2026-10-16T13:30:00Z",
+   "category": "ธนาคารและนักวิเคราะห์",
+   "sent": -1,
+   "topics": [
+    "ชิป"
+   ],
+   "symbols": [
+    "MU"
+   ]
+  },
+  {
+   "title": "Here are Friday's biggest analyst calls: Nvidia, SpaceX, Tesla, Apple, Mobileye, EchoStar, Toll Brothers & more",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNendwYkhWM1RQWUI3TGpmRzlOZ2JyYS1lbi05ZGZoNzBjQWVwUTdkQURvR19RNjVONFp6MmhiaGlZUW1lamFXalVvTGpZOE9uN19ESDRLM2RqQ2VhZkhVMlB2d0VXRVVYTEhGYXdiVTZaMXlJa3Z3eG1KWF9rbEx6T2RuUHRqYUExRzNF?oc=5",
+   "source": "CNBC",
+   "time": "2026-10-16T12:22:29Z",
+   "category": "ธนาคารและนักวิเคราะห์",
    "sent": 0,
-   "topics": [],
-   "symbols": []
+   "topics": [
+    "ชิป"
+   ],
+   "symbols": [
+    "AAPL",
+    "NVDA",
+    "SPCX"
+   ]
   },
   {
    "title": "JPMorgan Active Growth ETF (JGRO) Buys $48.1 Million More Microsoft on Wednesday",
@@ -6542,14 +6597,14 @@
    "symbols": []
   },
   {
-   "title": "Ship attack reports near Hormuz reach record high as oil exports slow",
-   "url": "https://www.bbc.co.uk/news/articles/cmde8dpg8g0no?at_medium=RSS&at_campaign=rss",
-   "source": "BBC Business",
-   "time": "2026-10-16T05:00:17Z",
-   "category": "ตลาดและเศรษฐกิจ",
+   "title": "Watch Citi's Kaiser Isn't Ready to Step In on Chip Stocks",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPREtic3NqUUJva3pxYURORFhNM0FhbWdHMFpsYTR1eUpRSlVqNlFJbEh0a0U0Zkp2VHhzWUlMTGNiX2JSeHZFaDRNWnlUMDFnUkhMQWVDSkgzUER4alFuendhXzdheVRaTlRocFN3YUhYd1FHM3JMaTNrdllXakRLdzY0Z3gwZWV1cTBQLUgxcVZhSjNIZk5nYS01N0ZGSzZ4ckxBMFVXeUgyQQ?oc=5",
+   "source": "Bloomberg.com",
+   "time": "2026-10-16T00:00:00Z",
+   "category": "ธนาคารและนักวิเคราะห์",
    "sent": 0,
    "topics": [
-    "น้ำมัน"
+    "ชิป"
    ],
    "symbols": []
   },
@@ -6558,16 +6613,6 @@
    "url": "https://www.bbc.co.uk/news/articles/cr6240q1w136o?at_medium=RSS&at_campaign=rss",
    "source": "BBC Business",
    "time": "2026-10-15T23:18:21Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "I find it quite demoralising in store - why I do all my shopping online",
-   "url": "https://www.bbc.co.uk/news/articles/c36lk280kd1o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC Business",
-   "time": "2026-10-15T23:16:12Z",
    "category": "ตลาดและเศรษฐกิจ",
    "sent": 0,
    "topics": [],
@@ -6598,16 +6643,6 @@
    "symbols": []
   },
   {
-   "title": "'I paid thousands to a company for jobs that never came'",
-   "url": "https://www.bbc.co.uk/news/articles/c9j3dvezpdz0o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC Business",
-   "time": "2026-10-15T17:19:49Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
    "title": "Wholesale prices jumped 6.3% annually in September, biggest gain since 2022",
    "url": "https://www.cnbc.com/2026/10/15/september-producer-price-index-retail-sales-data.html",
    "source": "CNBC",
@@ -6631,16 +6666,6 @@
    "symbols": []
   },
   {
-   "title": "Nandy 'minded to intervene' in Sky's £1.6bn takeover of ITV entertainment arm",
-   "url": "https://www.bbc.co.uk/news/articles/cm79pe5yej7no?at_medium=RSS&at_campaign=rss",
-   "source": "BBC Business",
-   "time": "2026-10-15T14:55:21Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
    "title": "U.S. Treasury dismisses IMF debt warning and 'messy' forecasting",
    "url": "https://www.cnbc.com/2026/10/15/zervos-imf-us-debt-warning.html",
    "source": "CNBC",
@@ -6648,18 +6673,6 @@
    "category": "ตลาดและเศรษฐกิจ",
    "sent": -1,
    "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "JPMorgan doesn't expect AI stocks to rebound like July",
-   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4wUUdheDV0V3gxRTB2Q09sRTlON3V5RUVKRFRCTEVpT2RfakdFaDF0R1gzZ0NNa2d0Zk9yczZuZkxMd3dreV93M0paaU5yeXhMQXFWQTNwd1E4UHNjMXJSdF94a0Fma0k2Y3hFNUln?oc=5",
-   "source": "Quartz",
-   "time": "2026-10-15T11:46:11Z",
-   "category": "ธนาคารและนักวิเคราะห์",
-   "sent": 0,
-   "topics": [
-    "AI"
-   ],
    "symbols": []
   },
   {
@@ -6683,16 +6696,6 @@
    "symbols": []
   },
   {
-   "title": "How backlash against data centres could shape the US midterm elections",
-   "url": "https://www.bbc.co.uk/news/articles/c0rezqpnekro?at_medium=RSS&at_campaign=rss",
-   "source": "BBC Business",
-   "time": "2026-10-14T23:02:57Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
    "title": "Traders pile into 'bubble puts' on CoreWeave as neocloud stocks plunge",
    "url": "https://www.cnbc.com/2026/10/14/coreweave-put-options-ai-trade.html",
    "source": "CNBC",
@@ -6701,41 +6704,19 @@
    "sent": -1,
    "topics": [],
    "symbols": []
-  },
-  {
-   "title": "Don't let inflation bite — how to hedge with TIPS, commodities and infrastructure funds",
-   "url": "https://www.cnbc.com/2026/10/13/inflation-hedge-tips-commodities-infrastructure.html",
-   "source": "CNBC",
-   "time": "2026-10-14T15:20:04Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [
-    "เงินเฟ้อ"
-   ],
-   "symbols": []
-  },
-  {
-   "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
-   "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
-   "source": "Federal Reserve",
-   "time": "2026-10-13T18:00:00Z",
-   "category": "ธนาคารกลาง",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
   }
  ],
  "analysis": {
   "method": "keywords",
   "counts": {
-   "pos": 3,
-   "neu": 37,
-   "neg": 15
+   "pos": 6,
+   "neu": 35,
+   "neg": 12
   },
   "topics": [
    {
     "name": "AI",
-    "count": 9
+    "count": 6
    },
    {
     "name": "ชิป",
@@ -6746,21 +6727,24 @@
     "count": 4
    },
    {
-    "name": "เงินเฟ้อ",
-    "count": 3
-   },
-   {
-    "name": "น้ำมัน",
+    "name": "ผลประกอบการ",
     "count": 2
    },
    {
-    "name": "ผลประกอบการ",
+    "name": "เงินเฟ้อ",
+    "count": 2
+   },
+   {
+    "name": "น้ำมัน",
     "count": 1
    }
   ],
   "by_symbol": {
+   "NVDA": 0,
    "MSFT": 0,
-   "AAPL": 0
+   "AAPL": 0,
+   "MU": -1,
+   "SPCX": 0
   }
  },
  "macro": {
@@ -6772,15 +6756,6 @@
    "y10": {
     "level": 5.1,
     "chg1m_bp": 15.0
-   },
-   "fedfunds": {
-    "rate": 3.88,
-    "date": "2026-10-15"
-   },
-   "cpi": {
-    "yoy": 4.0,
-    "core_yoy": 2.8,
-    "month": "2026-09"
    }
   },
   "sens": [
@@ -6792,47 +6767,47 @@
     "b_y": -0.023,
     "t_y": -0.6,
     "r2": 0.017,
-    "n": 250
+    "n": 249
    },
    {
     "symbol": "MSFT",
     "name": "Microsoft",
-    "b_oil": -0.09,
+    "b_oil": -0.091,
     "t_oil": -2.1,
     "b_y": 0.038,
     "t_y": 1.1,
     "r2": 0.018,
-    "n": 250
+    "n": 249
    },
    {
     "symbol": "AAPL",
     "name": "Apple",
-    "b_oil": -0.073,
+    "b_oil": -0.074,
     "t_oil": -2.4,
-    "b_y": -0.028,
-    "t_y": -1.1,
+    "b_y": -0.026,
+    "t_y": -1.0,
     "r2": 0.043,
-    "n": 250
+    "n": 249
    },
    {
     "symbol": "GOOGL",
     "name": "Alphabet",
     "b_oil": -0.13,
     "t_oil": -3.3,
-    "b_y": -0.066,
+    "b_y": -0.065,
     "t_y": -2.0,
     "r2": 0.095,
-    "n": 250
+    "n": 249
    },
    {
     "symbol": "META",
     "name": "Meta",
     "b_oil": -0.122,
     "t_oil": -2.3,
-    "b_y": -0.073,
+    "b_y": -0.072,
     "t_y": -1.6,
     "r2": 0.053,
-    "n": 250
+    "n": 249
    },
    {
     "symbol": "AVGO",
@@ -6842,47 +6817,47 @@
     "b_y": -0.066,
     "t_y": -1.3,
     "r2": 0.019,
-    "n": 250
+    "n": 249
    },
    {
     "symbol": "AMD",
     "name": "AMD",
     "b_oil": -0.193,
     "t_oil": -2.2,
-    "b_y": -0.067,
+    "b_y": -0.066,
     "t_y": -0.9,
     "r2": 0.037,
-    "n": 250
+    "n": 249
    },
    {
     "symbol": "TSM",
     "name": "TSMC",
-    "b_oil": -0.17,
+    "b_oil": -0.171,
     "t_oil": -3.5,
-    "b_y": -0.028,
+    "b_y": -0.027,
     "t_y": -0.7,
     "r2": 0.069,
-    "n": 250
+    "n": 249
    },
    {
     "symbol": "MU",
     "name": "Micron",
     "b_oil": -0.222,
     "t_oil": -2.1,
-    "b_y": -0.002,
+    "b_y": -0.001,
     "t_y": -0.0,
     "r2": 0.022,
-    "n": 250
+    "n": 249
    },
    {
     "symbol": "AMZN",
     "name": "Amazon",
     "b_oil": -0.122,
     "t_oil": -2.8,
-    "b_y": -0.012,
+    "b_y": -0.011,
     "t_y": -0.3,
-    "r2": 0.042,
-    "n": 250
+    "r2": 0.041,
+    "n": 249
    },
    {
     "symbol": "ASML",
@@ -6892,17 +6867,17 @@
     "b_y": -0.06,
     "t_y": -1.2,
     "r2": 0.071,
-    "n": 250
+    "n": 249
    },
    {
     "symbol": "OKLO",
     "name": "Oklo",
     "b_oil": -0.172,
     "t_oil": -1.4,
-    "b_y": -0.205,
+    "b_y": -0.207,
     "t_y": -2.0,
     "r2": 0.042,
-    "n": 250
+    "n": 249
    },
    {
     "symbol": "SPCX",
@@ -6919,20 +6894,20 @@
     "name": "Telomir (TELO)",
     "b_oil": -0.008,
     "t_oil": -0.1,
-    "b_y": -0.059,
+    "b_y": -0.056,
     "t_y": -0.8,
-    "r2": 0.004,
-    "n": 250
+    "r2": 0.003,
+    "n": 249
    },
    {
     "symbol": "^IXIC",
     "name": "Nasdaq",
     "b_oil": -0.083,
     "t_oil": -3.7,
-    "b_y": -0.047,
+    "b_y": -0.046,
     "t_y": -2.4,
     "r2": 0.122,
-    "n": 250
+    "n": 249
    },
    {
     "symbol": "^SOX",
@@ -6942,7 +6917,7 @@
     "b_y": -0.054,
     "t_y": -1.1,
     "r2": 0.045,
-    "n": 250
+    "n": 249
    }
   ]
  },
