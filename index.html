@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
-<title>ตลาดหุ้นเทค</title>
+<title>Hunscope · ส่องตลาดหุ้นเทค</title>
+<meta name="description" content="ส่องตลาดหุ้นเทค ข่าว พื้นฐาน และสถานการณ์ในที่เดียว">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🔭%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
@@ -106,12 +108,25 @@ dialog::backdrop{background:rgba(0,0,0,.6)}
 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:12px}
 .two>div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
 .two h3{font-size:1rem;margin:0 0 6px}.two ul{margin:0;padding-left:1.1em}.two li{margin:5px 0;font-size:.92rem}
+.pfc{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.pfc label{display:block;font-size:.85rem;color:var(--mute)}
+.pfc input,.pfc select,.pfr input[type=number]{background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:6px 8px;font:inherit}
+.pfc input{width:130px}
+.pfc button{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:5px 14px;font:inherit;font-size:.88rem;cursor:pointer}
+.pfc button:hover{border-color:var(--accent)}
+.pfg{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:4px 18px;margin-top:14px}
+.pfr{display:grid;grid-template-columns:22px minmax(0,1fr) 84px;align-items:center;gap:8px;padding:4px 0}
+.pfr input[type=number]{width:84px;padding:4px 6px}
+.pfr label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pfo{margin-top:14px}.pfo svg{width:100%;height:auto;display:block}
+.pfo .leg{display:flex;flex-wrap:wrap;gap:14px;font-size:.85rem;margin:8px 0 2px}
+.pfo ul{margin:8px 0 0;padding-left:1.2em}.pfo li{margin:4px 0;font-size:.92rem}
 @media (max-width:560px){.row{grid-template-columns:minmax(0,1fr) 80px 96px}svg.sp{width:80px}nav a{display:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<nav><b>ตลาดหุ้นเทค</b><a href="#overview">ภาพรวม</a><a href="#stocks">หุ้นรายตัว</a><a href="#zones">โซนรับ</a><a href="#fundamentals">พื้นฐาน</a><a href="#macro">สถานการณ์</a><a href="#bubble">AI bubble</a><a href="#analysis">วิเคราะห์ข่าว</a><a href="#news">ตารางข่าว</a></nav>
+<nav><b>Hunscope</b><a href="#overview">ภาพรวม</a><a href="#stocks">หุ้นรายตัว</a><a href="#zones">โซนรับ</a><a href="#fundamentals">พื้นฐาน</a><a href="#macro">สถานการณ์</a><a href="#bubble">AI bubble</a><a href="#portfolio">พอร์ตจำลอง</a><a href="#analysis">วิเคราะห์ข่าว</a><a href="#news">ตารางข่าว</a></nav>
 <header class="hero"><div class="wrap">
   <h1 id="headline">กำลังโหลด…</h1>
   <p class="sub" id="meta"></p>
@@ -214,11 +229,15 @@ infl:{label:"เงินเฟ้อ (CPI)",scen:[
  {t:"CPI สูงกว่าคาด",c:"โดยเฉพาะ core CPI ที่ไม่รวมอาหารและพลังงาน (สมมติผลตอบแทน 10 ปีขึ้น ~10bp)",shock:{dy:10},m:"โอกาสที่เฟดจะลดดอกเบี้ยลดลง ผลตอบแทนพันธบัตรขึ้น หุ้นเทคและหุ้นเติบโตมักถูกกดดัน ตลาดมักให้น้ำหนัก core มากกว่า headline เพราะ headline ผันผวนตามราคาน้ำมัน",w:"core CPI รายเดือน, บริการและค่าเช่า, ถ้อยแถลงเฟดหลังตัวเลข"},
  {t:"CPI ต่ำกว่าคาด",c:"สมมติผลตอบแทน 10 ปีลง ~10bp",shock:{dy:-10},m:"ผลตอบแทนพันธบัตรลดลงและความหวังลดดอกเบี้ยเพิ่มขึ้น มักหนุนหุ้นเทค แต่ถ้ามาพร้อมตัวเลขเศรษฐกิจที่อ่อนลงมาก ตลาดอาจมองเป็นสัญญาณชะลอตัว",w:"ตลาดแรงงาน, ยอดค้าปลีก, ความคาดหวังเงินเฟ้อ"},
  {t:"ตรงตามคาด",c:"headline และ core ใกล้ค่าคาดการณ์",shock:{dy:0},m:"ปฏิกิริยามักเล็ก ถ้า headline สูงเพราะน้ำมันแต่ core ทรงตัว ตลาดมักมองว่าเป็นแรงกระแทกชั่วคราวมากกว่าเงินเฟ้อที่ลุกลาม",w:"แนวโน้ม core เทียบเดือนก่อน"}]},
+gold:{label:"ทองคำ",scen:[
+ {t:"ทองคำพุ่งแรง",c:"เช่น ราคาขึ้น 5% ขึ้นไปในเวลาไม่กี่สัปดาห์",m:"ความหมายขึ้นกับสาเหตุ ถ้าขึ้นเพราะผลตอบแทนที่แท้จริงลดลง เฟดผ่อนคลาย หรือดอลลาร์อ่อน มักเป็นบวกต่อหุ้นเทคด้วย แต่ถ้าขึ้นเพราะความกลัว เช่น ความตึงเครียดทางภูมิรัฐศาสตร์ ความกังวลเรื่องระบบการเงิน หรือเงินเฟ้อ ตลาดหุ้นมักถูกกดดัน โดยเฉพาะหุ้นเติบโตที่ราคาสูง",w:"ดัชนีดอลลาร์, ผลตอบแทนที่แท้จริงของพันธบัตร (TIPS), VIX, ข่าวธนาคารกลางซื้อทอง"},
+ {t:"ทองคำร่วงแรง",c:"เช่น ราคาลง 5% ขึ้นไปในเวลาไม่กี่สัปดาห์",m:"ถ้าร่วงเพราะดอลลาร์แข็งหรือผลตอบแทนที่แท้จริงขึ้น แรงเดียวกันนี้มักกดดันหุ้นเติบโตด้วย ถ้าร่วงเพราะความกลัวในตลาดลดลง (risk-on) หุ้นเทคมักได้ประโยชน์ และถ้าร่วงหลังพุ่งแรงมาก อาจเป็นเพียงการขายทำกำไร",w:"ทิศทางดอลลาร์, ผลตอบแทนพันธบัตร, สัญญาณว่านักลงทุนเปลี่ยนจากตลาดปลอดภัยไปตลาดเสี่ยง"},
+ {t:"ทรงตัวในกรอบ",c:"ราคาแกว่งไม่เกิน ±2%",m:"ผลต่อหุ้นเทคโดยตรงน้อย ทองคำมักใช้เป็นมาตรวัดความกังวลของตลาดควบคู่กับ VIX และดอลลาร์ เมื่อนิ่งแปลว่าตลาดยังไม่มีสัญญาณหวาดกลัวชัดเจน",w:"ถ้อยแถลงเฟดและตัวเลขเงินเฟ้อ ที่มักเป็นตัวจุดให้ทองขยับแรง"}]},
 trade:{label:"ภาษีและการส่งออกชิป",tags:["NVDA","AMD","AVGO","MU","TSM","ASML"],scen:[
  {t:"มาตรการภาษีหรือจำกัดส่งออกชิปเข้มขึ้น",c:"เช่น ข้อจำกัดการขายชิปให้จีน หรือภาษีนำเข้าสินค้าอิเล็กทรอนิกส์",m:"กลุ่มชิปและห่วงโซ่อุปทานมักถูกกดดันก่อน เพราะรายได้บางส่วนมาจากตลาดจีนและการผลิตกระจายอยู่หลายประเทศ ต้นทุนและความไม่แน่นอนของคำสั่งซื้อเพิ่มขึ้น ระดับผลกระทบต่างกันตามสัดส่วนรายได้ของแต่ละบริษัท",w:"รายละเอียดมาตรการ, ระยะเวลาบังคับใช้, คำชี้แจงจากบริษัท"},
  {t:"ข้อตกลงหรือการผ่อนคลายมาตรการ",c:"เช่น ลดภาษี หรือผ่อนปรนใบอนุญาตส่งออก",m:"ความไม่แน่นอนลดลง มักหนุนกลุ่มชิปและอุปกรณ์ที่เกี่ยวข้อง แต่ตลาดอาจรับรู้ล่วงหน้าไปแล้วถ้าข่าวรั่วก่อน",w:"ความชัดเจนของเงื่อนไข และมาตรการจะกลับมาเข้มได้หรือไม่"}]}
 };
-const MFAC=["oil","rates","infl","trade"];
+const MFAC=["oil","rates","infl","gold","trade"];
 const est=(s,sh)=>(s.b_oil||0)*(sh.oil||0)+(s.b_y||0)*(sh.dy||0);
 const rel=(s,sh)=>{const t=Math.max(0,sh.oil?Math.abs(s.t_oil||0):0,sh.dy?Math.abs(s.t_y||0):0);return t>=2?"ชัด":t>=1.5?"พอมี":"อ่อน"};
 function impact(sens,sh){
@@ -232,6 +251,7 @@ function macroNow(k,mc){
   if(k==="oil")return c.brent?`Brent ${fmt(c.brent.price)} ดอลลาร์ต่อบาร์เรล (${pcs(c.brent.chg1m)} ใน 1 เดือน)`:"ยังไม่มีข้อมูลราคาน้ำมัน";
   if(k==="rates"){const y=c.y10,f=c.fedfunds;return [y?`ผลตอบแทนพันธบัตร 10 ปี ${fmt(y.level)}% (${y.chg1m_bp>0?"+":""}${fmt(y.chg1m_bp,0)}bp ใน 1 เดือน)`:"",f?`ดอกเบี้ยนโยบายเฟด (effective) ${fmt(f.rate)}% ณ ${f.date}`:""].filter(Boolean).join(" • ")||"ยังไม่มีข้อมูลดอกเบี้ย"}
   if(k==="infl"){const p=c.cpi;return p?`CPI ล่าสุด (${p.month}) ${fmt(p.yoy,1)}% YoY${p.core_yoy!=null?` และ core ${fmt(p.core_yoy,1)}%`:""}`:"ยังไม่มีข้อมูล CPI (ดึงจาก FRED ไม่ได้)"}
+  if(k==="gold")return c.gold?`ทองคำ (ฟิวเจอร์ส) ${fmt(c.gold.price)} ดอลลาร์ต่อออนซ์ (${pcs(c.gold.chg1m)} ใน 1 เดือน)`:"ยังไม่มีข้อมูลราคาทองคำ";
   return "ไม่มีตัวเลขอัตโนมัติสำหรับหัวข้อนี้ ดูข่าวในตารางข่าวประกอบ";
 }
 function drawFactor(k,mc){
@@ -254,7 +274,7 @@ function macroSection(data){
   const c=mc.context||{},chip=(k,v)=>v?`<span><small>${k}</small> ${v}</span>`:"";
   const ctx=[chip("Brent",c.brent?fmt(c.brent.price)+" ("+pcs(c.brent.chg1m)+" ใน 1 เดือน)":""),chip("ผลตอบแทน 10 ปี",c.y10?fmt(c.y10.level)+"% ("+(c.y10.chg1m_bp>0?"+":"")+fmt(c.y10.chg1m_bp,0)+"bp ใน 1 เดือน)":""),chip("ดอกเบี้ยเฟด",c.fedfunds?fmt(c.fedfunds.rate)+"%":""),chip("CPI YoY",c.cpi?fmt(c.cpi.yoy,1)+"%"+(c.cpi.core_yoy!=null?" (core "+fmt(c.cpi.core_yoy,1)+"%)":""):"")].join("");
   const pre=[["น้ำมัน +10%","10,0"],["น้ำมัน −10%","-10,0"],["10Y +25bp","0,25"],["10Y −25bp","0,-25"],["น้ำมัน +10% และ 10Y +25bp","10,25"]];
-  return `<section id="macro"><h2>วิเคราะห์สถานการณ์</h2><p class="note">ถ้าข่าวเรื่องน้ำมัน ดอกเบี้ย เงินเฟ้อ หรือมาตรการการค้าออกมาแบบต่างๆ ตลาดและหุ้นที่ติดตามอาจได้รับผลอย่างไร ข้อความอธิบายเป็นหลักเศรษฐกิจทั่วไป ไม่ใช่การพยากรณ์ ผลลัพธ์จริงขึ้นกับสาเหตุของข่าวและสิ่งที่ตลาดคาดไว้ก่อนหน้า</p><div class="ctx">${ctx}</div><div class="tabs" id="macroTabs" role="tablist">${MFAC.map((k,i)=>`<button role="tab" aria-selected="${i===0}" data-f="${k}">${esc(PB[k].label)}</button>`).join("")}</div><div id="macroBody"></div>
+  return `<section id="macro"><h2>วิเคราะห์สถานการณ์</h2><p class="note">ถ้าข่าวเรื่องน้ำมัน ดอกเบี้ย เงินเฟ้อ หรือมาตรการการค้าออกมาแบบต่างๆ ตลาดและหุ้นที่ติดตามอาจได้รับผลอย่างไร ข้อความอธิบายเป็นหลักเศรษฐกิจทั่วไป ไม่ใช่การพยากรณ์ ผลลัพธ์จริงขึ้นกับสาเหตุของข่าวและสิ่งที่ตลาดคาดไว้ก่อนหน้า</p><div class="ctx">${ctx}${chip("ทองคำ",c.gold?fmt(c.gold.price)+" ("+pcs(c.gold.chg1m)+" ใน 1 เดือน)":"")}</div><div class="tabs" id="macroTabs" role="tablist">${MFAC.map((k,i)=>`<button role="tab" aria-selected="${i===0}" data-f="${k}">${esc(PB[k].label)}</button>`).join("")}</div><div id="macroBody"></div>
   <h3 style="margin:30px 0 4px;font-size:1.05rem">ลองสมมติสถานการณ์</h3><p class="note">คำนวณจากการถดถอยของผลตอบแทนรายวันย้อนหลัง 1 ปีกับการเปลี่ยนแปลงของ Brent และผลตอบแทนพันธบัตร 10 ปี (ใช้ 10 ปีเป็นตัวแทนทิศทางดอกเบี้ย ซึ่งไม่เท่ากับการตัดสินใจของเฟดโดยตรง) ตัวแบบอธิบายการขยับของหุ้นได้น้อย ดูได้จากค่า R² เพราะยังมีผลประกอบการและข่าว AI และความสัมพันธ์เปลี่ยนได้ตามช่วงเวลา ใช้เป็นภาพคร่าวๆ เท่านั้น</p>
   <div class="calc"><div><label for="mOil">น้ำมัน Brent เปลี่ยน (%)</label><input id="mOil" type="number" step="1" value="10"></div><div><label for="mY">ผลตอบแทน 10 ปี เปลี่ยน (bp)</label><input id="mY" type="number" step="5" value="0"></div>${pre.map(([t,v])=>`<button data-pre="${v}">${esc(t)}</button>`).join("")}</div>
   <div class="box scroll"><table class="mt"><thead><tr><th>หุ้น/ดัชนี</th><th>ประมาณการเปลี่ยนแปลง</th><th>ความน่าเชื่อถือของความสัมพันธ์</th></tr></thead><tbody id="mRes"></tbody></table></div></section>`;
@@ -297,6 +317,89 @@ function bubbleSection(data){
   <h3 style="margin:22px 0 0;font-size:1.05rem">ข้อโต้แย้งสองฝั่ง</h3><p class="note">เรื่องนี้นักวิเคราะห์เห็นต่างกันจริง ต่อไปนี้คือเหตุผลที่แต่ละฝั่งมักยกขึ้นมา</p>
   <div class="two"><div><h3 class="down">ฝั่งที่กังวลว่าเป็นฟองสบู่</h3><ul>${BB.con.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div><h3 class="up">ฝั่งที่เห็นว่ายังไม่ใช่ฟองสบู่</h3><ul>${BB.pro.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div></div>
   <h3 style="margin:22px 0 0;font-size:1.05rem">ถ้าเหตุการณ์ออกมาแบบต่างๆ</h3><div class="mc">${sc2}</div></section>`;
+}
+const PF_KEY="pf.v1";
+function pfLoad(){try{return JSON.parse(localStorage.getItem(PF_KEY))||{}}catch(e){return{}}}
+function pfSave(s){try{localStorage.setItem(PF_KEY,JSON.stringify(s))}catch(e){}}
+function portfolioSection(data){
+  if(!data.hist)return `<section id="portfolio"><h2>พอร์ตจำลอง</h2><div class="box msg">ยังไม่มีข้อมูลประวัติราคา ลองรัน fetch_data.py ใหม่</div></section>`;
+  return `<section id="portfolio"><h2>พอร์ตจำลอง</h2><p class="note">เลือกหุ้นและสัดส่วน ระบบจะย้อนดูว่าถ้าถือพอร์ตนี้ตลอดช่วงที่เลือก ผลตอบแทนต่อปี ความผันผวน และการลดลงสูงสุดเป็นเท่าไร พร้อมเทียบ Nasdaq และ S&P 500 นี่คือผลย้อนหลัง ไม่ใช่การคาดการณ์อนาคต ใช้ราคาปรับปันผลแล้ว ไม่รวมภาษี ค่าธรรมเนียม และค่าเงิน</p>
+  <div class="box an"><div class="pfc">
+   <div><label for="pfAmt">เงินลงทุนเริ่มต้น (USD)</label><input id="pfAmt" type="number" min="100" step="1000" value="10000"></div>
+   <div><label for="pfYrs">ช่วงย้อนหลัง</label><select id="pfYrs"><option value="1">1 ปี</option><option value="3">3 ปี</option><option value="5" selected>5 ปี</option></select></div>
+   <div><label for="pfReb">การปรับสมดุล</label><select id="pfReb"><option value="0">ไม่ปรับ (ซื้อแล้วถือ)</option><option value="1" selected>ปรับกลับสัดส่วนเดิมทุกปี</option></select></div>
+   <button id="pfEq">ถ่วงเท่ากัน</button><button id="pfClr">ล้างทั้งหมด</button></div>
+  <div class="pfg" id="pfList"></div><p class="note" id="pfTot" style="margin:12px 0 0"></p></div>
+  <div class="pfo" id="pfOut"></div></section>`;
+}
+function pfChart(lines){
+  const w=640,h=220,all=lines.flatMap(l=>l.v),min=Math.min(...all),max=Math.max(...all),r=max-min||1,n=lines[0].v.length;
+  const y=v=>(h-8-(v-min)/r*(h-16)).toFixed(1),x=i=>(i/(n-1)*w).toFixed(1);
+  return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="กราฟมูลค่าพอร์ตเทียบดัชนี">${lines.map(l=>`<polyline points="${l.v.map((v,i)=>x(i)+","+y(v)).join(" ")}" fill="none" stroke="${l.c}" stroke-width="${l.sw||1.6}"${l.d?' stroke-dasharray="5 4"':""} stroke-linejoin="round"/>`).join("")}</svg><div class="leg">${lines.map(l=>`<span style="color:${l.c}">${l.d?"╌╌":"──"} ${esc(l.n)}</span>`).join("")}</div>`;
+}
+function pfCalc(data,w,amt,yrs,reb){
+  const h=data.hist,D=h.dates,N=D.length,syms=Object.keys(w),notes=[];
+  const names=Object.fromEntries(data.groups.flatMap(g=>g.items.map(i=>[i.symbol,i.name])));
+  const first=s=>h.series[s].findIndex(v=>v!=null);
+  let i0=Math.max(0,N-1-yrs*52);
+  const lim=syms.map(s=>[s,first(s)]).sort((a,b)=>b[1]-a[1])[0];
+  if(lim[1]>i0){i0=lim[1];notes.push(`ข้อมูลของ ${esc(names[lim[0]]||lim[0])} เริ่มเมื่อ ${D[lim[1]]} จึงย่อช่วงย้อนหลังลงตามนั้น`)}
+  const weeks=N-1-i0;
+  if(weeks<8)return `<div class="box msg">ข้อมูลร่วมของหุ้นที่เลือกสั้นเกินไปที่จะคำนวณ (ต้องมีอย่างน้อย 8 สัปดาห์)</div>`;
+  const fill=s=>{let p=null;return h.series[s].slice(i0).map(v=>{if(v!=null)p=v;return p})};
+  const P=Object.fromEntries(syms.map(s=>[s,fill(s)])),n=weeks+1;
+  const tw=syms.reduce((a,s)=>a+w[s],0),W=Object.fromEntries(syms.map(s=>[s,w[s]/tw]));
+  const units={},set=(i,V)=>syms.forEach(s=>units[s]=V*W[s]/P[s][i]);
+  set(0,amt);const val=[];
+  for(let i=0;i<n;i++){const V=syms.reduce((a,s)=>a+units[s]*P[s][i],0);if(reb&&i>0&&i%52===0)set(i,V);val.push(V)}
+  const years=(new Date(D[N-1])-new Date(D[i0]))/(365.25*864e5);
+  const cagr=v=>(Math.pow(v[v.length-1]/v[0],1/years)-1)*100,tot=v=>(v[v.length-1]/v[0]-1)*100;
+  const vol=v=>{const r=[];for(let i=1;i<v.length;i++)r.push(v[i]/v[i-1]-1);const m=r.reduce((a,b)=>a+b,0)/r.length;return Math.sqrt(r.reduce((a,b)=>a+(b-m)**2,0)/(r.length-1))*Math.sqrt(52)*100};
+  const mdd=v=>{let pk=v[0],m=0;v.forEach(x=>{pk=Math.max(pk,x);m=Math.min(m,x/pk-1)});return m*100};
+  const bench=(sym,nm,c,d)=>{const a=h.series[sym];if(!a||a[i0]==null)return null;let p=a[i0];const v=a.slice(i0).map(x=>{if(x!=null)p=x;return amt*p/a[i0]});return {n:nm,v,c,d}};
+  const bs=[bench("^IXIC","Nasdaq","#8b97a8"),bench("^GSPC","S&P 500","#d9a441",1)].filter(Boolean);
+  const all=[{n:"พอร์ตจำลอง",v:val,c:"#58a6ff",sw:2.2},...bs];
+  const row=l=>`<tr><td>${esc(l.n)}</td><td class="${sc(cagr(l.v))}"><b>${pcs(cagr(l.v),1)}</b></td><td class="${sc(tot(l.v))}">${pcs(tot(l.v),1)}</td><td>${fmt(vol(l.v),1)}%</td><td class="down">${fmt(mdd(l.v),1)}%</td><td>${fmt(l.v[l.v.length-1],0)}</td></tr>`;
+  const warn=[...notes];
+  if(years<1)warn.push(`ช่วงข้อมูลสั้นกว่า 1 ปี (${fmt(years,2)} ปี) การแปลงเป็น % ต่อปีอาจให้ตัวเลขที่ไม่สมจริง ดูผลตอบแทนรวมประกอบ`);
+  const top=syms.slice().sort((a,b)=>W[b]-W[a])[0];
+  if(W[top]>0.4)warn.push(`${esc(names[top]||top)} มีสัดส่วน ${fmt(W[top]*100,0)}% พอร์ตพึ่งหุ้นตัวเดียวมาก`);
+  if(syms.length<5)warn.push("เลือกหุ้นน้อยกว่า 5 ตัว ความผันผวนมักสูงกว่าพอร์ตที่กระจายกว่านี้");
+  const chip=syms.filter(s=>PB.trade.tags.includes(s)).reduce((a,s)=>a+W[s],0);
+  if(chip>0.6)warn.push(`หุ้นกลุ่มชิปมีสัดส่วน ${fmt(chip*100,0)}% หุ้นกลุ่มเดียวกันมักขึ้นลงพร้อมกัน การกระจายจึงน้อยกว่าที่จำนวนตัวบอก`);
+  const stk=syms.map(s=>{const a=P[s],t=(a[n-1]/a[0]-1)*100,c=(Math.pow(a[n-1]/a[0],1/years)-1)*100;return `<tr><td>${esc(names[s]||s)}<span class="sym">${esc(s)}</span></td><td>${fmt(W[s]*100,1)}%</td><td class="${sc(c)}">${pcs(c,1)}</td><td class="${sc(t)}">${pcs(t,1)}</td></tr>`}).join("");
+  const diff=bs[0]?cagr(val)-cagr(bs[0].v):null;
+  return `<div class="stats" style="margin-bottom:14px"><div><small>ผลตอบแทนต่อปี (CAGR)</small><strong class="${sc(cagr(val))}">${pcs(cagr(val),1)}</strong></div><div><small>ผลตอบแทนรวม ${fmt(years,1)} ปี</small><strong class="${sc(tot(val))}">${pcs(tot(val),1)}</strong></div><div><small>มูลค่าสิ้นสุด (USD)</small><strong>${fmt(val[n-1],0)}</strong></div><div><small>ผันผวนต่อปี</small><strong>${fmt(vol(val),1)}%</strong></div><div><small>ลดลงสูงสุด (รายสัปดาห์)</small><strong class="down">${fmt(mdd(val),1)}%</strong></div>${diff==null?"":`<div><small>เทียบ Nasdaq ต่อปี</small><strong class="${sc(diff)}">${pcs(diff,1)}</strong></div>`}</div>
+  ${warn.length?`<div class="box an" style="margin-bottom:14px"><b class="warn">ข้อควรระวัง</b><ul>${warn.map(x=>`<li>${x}</li>`).join("")}</ul></div>`:""}
+  <div class="box an">${pfChart(all)}<p class="note" style="margin:6px 0 0">${D[i0]} ถึง ${D[N-1]} • เริ่มที่ ${fmt(amt,0)} USD ${reb?"ปรับสมดุลทุก 52 สัปดาห์":"ซื้อแล้วถือ"}</p></div>
+  <h3 style="margin:18px 0 6px;font-size:1.05rem">เทียบกับดัชนี</h3><div class="box scroll"><table class="bt"><thead><tr><th></th><th>ต่อปี</th><th>รวม</th><th>ผันผวนต่อปี</th><th>ลดลงสูงสุด</th><th>มูลค่าสิ้นสุด</th></tr></thead><tbody>${all.map(row).join("")}</tbody></table></div>
+  <h3 style="margin:18px 0 6px;font-size:1.05rem">รายตัวในพอร์ต</h3><div class="box scroll"><table class="bt"><thead><tr><th>หุ้น</th><th>สัดส่วนเริ่มต้น</th><th>ต่อปี</th><th>รวม</th></tr></thead><tbody>${stk}</tbody></table></div>
+  <p class="note" style="margin-top:12px">หุ้นในรายการนี้เป็นหุ้นที่เลือกไว้ในวันนี้ ซึ่งหลายตัวเป็นผู้ชนะของช่วงที่ผ่านมา ผลย้อนหลังจึงมักดูดีกว่าที่ผู้ลงทุนจริงจะได้ในอนาคต ใช้ข้อมูลรายสัปดาห์ การลดลงสูงสุดรายวันอาจลึกกว่าที่แสดง ผลในอดีตไม่รับประกันอนาคต และนี่ไม่ใช่คำแนะนำการลงทุน</p>`;
+}
+function bindPortfolio(data){
+  const h=data.hist,el=document.getElementById("pfList");
+  if(!h||!el)return;
+  const stocks=[...((data.groups.find(g=>g.detail)||{}).items||[]),...data.groups.flatMap(g=>g.items).filter(s=>s.symbol==="GLD")].filter(s=>h.series[s.symbol]);
+  const q=(a,s)=>document.querySelector(`[data-${a}="${s}"]`);
+  el.innerHTML=stocks.map(s=>`<div class="pfr"><input type="checkbox" id="pc_${esc(s.symbol)}" data-s="${esc(s.symbol)}"><label for="pc_${esc(s.symbol)}">${esc(s.name)}<span class="sym">${esc(s.symbol)}</span></label><input type="number" min="0" max="100" step="1" data-w="${esc(s.symbol)}" aria-label="สัดส่วน ${esc(s.name)} (%)" placeholder="%"></div>`).join("");
+  const st=pfLoad();
+  if(st.amt)pfAmt.value=st.amt;if(st.yrs)pfYrs.value=st.yrs;if(st.reb!=null)pfReb.value=st.reb;
+  Object.entries(st.sel||{}).forEach(([s,v])=>{if(stocks.some(x=>x.symbol===s)&&v>0){q("s",s).checked=true;q("w",s).value=v}});
+  const run=()=>{
+    const w={};
+    stocks.forEach(s=>{const v=parseFloat(q("w",s.symbol).value);if(q("s",s.symbol).checked&&v>0)w[s.symbol]=v});
+    const amt=Math.max(100,parseFloat(pfAmt.value)||10000);
+    pfSave({sel:w,amt:pfAmt.value,yrs:pfYrs.value,reb:pfReb.value});
+    const t=Object.values(w).reduce((a,b)=>a+b,0);
+    pfTot.textContent=t?`รวมสัดส่วน ${fmt(t,1)}%${Math.abs(t-100)>0.05?" (ระบบจะปรับให้รวมเป็น 100% ตามสัดส่วนที่ใส่)":""}`:"ยังไม่ได้เลือกหุ้น";
+    pfOut.innerHTML=t?pfCalc(data,w,amt,parseInt(pfYrs.value),pfReb.value==="1"):`<div class="box msg flat">เลือกหุ้นอย่างน้อย 1 ตัวและใส่สัดส่วน (%) เพื่อดูผลย้อนหลัง</div>`;
+  };
+  el.addEventListener("input",e=>{const t=e.target;if(t.dataset.w)q("s",t.dataset.w).checked=parseFloat(t.value)>0;run()});
+  el.addEventListener("change",e=>{const t=e.target;if(t.dataset.s){const i=q("w",t.dataset.s);if(t.checked&&!(parseFloat(i.value)>0))i.value=10;if(!t.checked)i.value="";run()}});
+  pfEq.onclick=()=>{const on=stocks.filter(s=>q("s",s.symbol).checked);if(!on.length){pfTot.textContent="เลือกหุ้นก่อน แล้วจึงกดถ่วงเท่ากัน";return}const v=Math.round(1000/on.length)/10;on.forEach(s=>q("w",s.symbol).value=v);run()};
+  pfClr.onclick=()=>{stocks.forEach(s=>{q("s",s.symbol).checked=false;q("w",s.symbol).value=""});run()};
+  [pfAmt,pfYrs,pfReb].forEach(x=>x.addEventListener("input",run));
+  run();
 }
 const CATS=["ทั้งหมด","ตลาดและเศรษฐกิจ","เทคโนโลยี","ธนาคารและนักวิเคราะห์","ธนาคารกลาง","หุ้นรายตัว"];
 const okUrl=n=>/^https?:\/\//.test(n.url);
@@ -346,7 +449,7 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
   const nq=by("^IXIC"),sox=by("^SOX"),vix=by("^VIX");
   const t=nq.pct>=.3?"ตลาดเทคปรับขึ้น":nq.pct<=-.3?"ตลาดเทคปรับลง":"ตลาดเทคทรงตัว";
   const c=sox.pct<=-1?" ชิปถูกขายหนัก":sox.pct>=1?" ชิปนำตลาด":"";
-  $h=document.getElementById("headline");$h.textContent=nq.pct==null?"ตลาดหุ้นเทค":t+c;
+  $h=document.getElementById("headline");$h.textContent=nq.pct==null?"Hunscope":t+c;
   const dates=all.map(i=>i.date).sort(),upd=new Date(data.updated).toLocaleString("th-TH",{timeZone:"Asia/Bangkok",dateStyle:"medium",timeStyle:"short"});
   document.getElementById("meta").textContent=`ราคาปิดล่าสุดของตลาดสหรัฐ ${dates[dates.length-1]||"-"} อัปเดตเมื่อ ${upd} (เวลาไทย)`;
   const above=stocks.filter(s=>s.sma50!=null&&s.price>s.sma50).length,bull=stocks.filter(s=>s.label==="ขาขึ้น").length;
@@ -355,9 +458,10 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
   document.getElementById("app").innerHTML=data.groups.map((g,i)=>g.detail?
     `<section id="stocks"><h2>${esc(g.title)}</h2><p class="note">กดที่แถวเพื่อดูตัวชี้วัด มูลค่า และข่าวรายตัว</p><div class="box scroll"><table><thead><tr><th>หุ้น</th><th>30 วัน</th><th>ราคา</th><th>วันนี้</th><th title="Relative Strength Index 14 วัน">RSI</th><th>ช่วง 52 สัปดาห์</th><th title="คะแนนความรู้สึกของข่าวรายตัว (บวก/ลบ)">ข่าว</th><th>สัญญาณ</th></tr></thead><tbody>${g.items.map(stockRow).join("")}</tbody></table></div></section>`:
     `<section${i===0?' id="overview"':""}><h2>${esc(g.title)}</h2><div class="box">${g.items.map(row).join("")}</div></section>`).join("")+
-    zonesSection(stocks)+fundSection(stocks)+macroSection(data)+bubbleSection(data)+analysisHTML(data)+newsSection(data);
+    zonesSection(stocks)+fundSection(stocks)+macroSection(data)+bubbleSection(data)+portfolioSection(data)+analysisHTML(data)+newsSection(data);
   bindNews(data.news||[]);
   bindMacro(data);
+  bindPortfolio(data);
   const open=el=>{const d=stocks.find(s=>s.symbol===el.closest("tr[data-sym]")?.dataset.sym);if(d){dlgBody.innerHTML=detail(d);dlg.showModal()}};
   document.querySelectorAll("tr[data-sym]").forEach(tr=>{tr.onclick=()=>open(tr);tr.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open(tr)}}});
   dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
