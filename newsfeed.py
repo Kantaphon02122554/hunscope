@@ -28,6 +28,7 @@ FEEDS = [
     ("ธนาคารกลาง", "Federal Reserve", "https://www.federalreserve.gov/feeds/press_all.xml"),
     ("ธนาคารและนักวิเคราะห์", None, gnews('("Goldman Sachs" OR JPMorgan OR "Morgan Stanley" OR "Bank of America" OR Citi OR UBS) (Nvidia OR Microsoft OR Apple OR chip OR "AI stocks") when:3d')),
     ("ธนาคารและนักวิเคราะห์", None, gnews("Wall Street analyst upgrade OR downgrade tech stock when:2d")),
+    ("ตลาดและเศรษฐกิจ", None, gnews("gold price outlook Fed dollar when:3d")),
 ]
 
 COMPANIES = [(r"\bNvidia\b", "NVDA"), (r"\bMicrosoft\b", "MSFT"), (r"\bApple\b", "AAPL"),
@@ -42,6 +43,7 @@ TOPICS = {
     "เงินเฟ้อ": r"inflation|\bCPI\b|\bPPI\b",
     "ภาษีและการค้า": r"tariff|trade war|export control|sanction",
     "ผลประกอบการ": r"earnings|revenue|profit|guidance",
+    "ทองคำ": r"\bgold\b|bullion",
 }
 POS = ["surge", "soar", "jump", "rall", "beat", "record", "gain", "rise", "climb", "upgrade", "raises", "bullish", "strong", "boost", "outperform", "optimis", "tops"]
 NEG = ["fall", "drop", "plunge", "slump", "miss", "cut", "downgrade", "warn", "bearish", "weak", "probe", "lawsuit", "ban", "tariff", "sell-off", "selloff", "fear", "risk", "concern", "decline", "slide", "tumble", "crash", "layoff", "slow"]
