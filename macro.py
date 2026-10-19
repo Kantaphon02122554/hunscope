@@ -39,6 +39,9 @@ def context(px):
     oil, y10 = px["BZ=F"], px["^TNX"]
     if len(oil) > 22:
         c["brent"] = {"price": r(oil.iloc[-1]), "chg1m": r((oil.iloc[-1] / oil.iloc[-22] - 1) * 100, 1)}
+    if "GC=F" in px and px["GC=F"].dropna().shape[0] > 22:
+        g = px["GC=F"].dropna()
+        c["gold"] = {"price": r(g.iloc[-1]), "chg1m": r((g.iloc[-1] / g.iloc[-22] - 1) * 100, 1)}
     if len(y10) > 22:
         c["y10"] = {"level": r(y10.iloc[-1]), "chg1m_bp": r((y10.iloc[-1] - y10.iloc[-22]) * 100, 0)}
     ff = fred("DFF")
@@ -54,7 +57,7 @@ def collect(names):
     """names = {สัญลักษณ์: ชื่อที่แสดง} ของหุ้น/ดัชนีที่จะวิเคราะห์"""
     syms = list(names)
     try:
-        df = yf.download(syms + ["BZ=F", "^TNX"], period="1y", interval="1d", progress=False, auto_adjust=True)
+        df = yf.download(syms + ["BZ=F", "^TNX", "GC=F"], period="1y", interval="1d", progress=False, auto_adjust=True)
         px = (df["Close"] if isinstance(df.columns, pd.MultiIndex) else df).dropna(axis=1, how="all").ffill().copy()
     except Exception as e:
         print("ข้ามการวิเคราะห์สถานการณ์:", e)
@@ -86,10 +89,10 @@ def review(m, news, key):
     """ให้ Claude สรุป 'สถานการณ์ตอนนี้' ของแต่ละปัจจัยจากข้อมูลและพาดหัวข่าวที่ให้เท่านั้น"""
     if not key or not m:
         return
-    topics = {"น้ำมัน", "เฟดและดอกเบี้ย", "เงินเฟ้อ", "ภาษีและการค้า"}
+    topics = {"น้ำมัน", "เฟดและดอกเบี้ย", "เงินเฟ้อ", "ภาษีและการค้า", "ทองคำ"}
     heads = [f'[{n["source"]}] {n["title"]}' for n in news if topics & set(n.get("topics", []))][:16]
     prompt = ("ต่อไปนี้คือข้อมูลมหภาคล่าสุด (JSON) และพาดหัวข่าวที่เกี่ยวข้อง (ภาษาอังกฤษ) ช่วยสรุปเป็นภาษาไทยว่าแต่ละปัจจัยตอนนี้เป็นอย่างไร "
-              'ตอบ JSON ล้วน ไม่มีข้อความอื่น รูปแบบ {"oil":{"now":"2 ประโยค","watch":["สิ่งที่ตลาดกำลังจับตา"]},"rates":{...},"inflation":{...},"trade":{...}} '
+              'ตอบ JSON ล้วน ไม่มีข้อความอื่น รูปแบบ {"oil":{"now":"2 ประโยค","watch":["สิ่งที่ตลาดกำลังจับตา"]},"rates":{...},"inflation":{...},"gold":{...},"trade":{...}} '
               "กติกา: ใช้เฉพาะข้อมูลและพาดหัวที่ให้มา ห้ามคาดการณ์ตัวเลขหรือวันที่ที่ไม่มีในข้อมูล ห้ามแนะนำซื้อขาย "
               "watch มี 2-3 ข้อ ถ้าข้อมูลของปัจจัยไหนไม่พอให้บอกตรงๆ\n\nข้อมูล: "
               + json.dumps(m["context"], ensure_ascii=False) + "\n\nพาดหัว:\n" + "\n".join(heads))
@@ -99,7 +102,7 @@ def review(m, news, key):
         print("Claude สรุปสถานการณ์ไม่สำเร็จ ข้ามส่วนนี้:", e)
         return
     ai = {}
-    for k in ("oil", "rates", "inflation", "trade"):
+    for k in ("oil", "rates", "inflation", "gold", "trade"):
         v = res.get(k)
         if isinstance(v, dict):
             ai[k] = {"now": str(v.get("now", ""))[:500], "watch": [str(x)[:200] for x in v.get("watch", [])[:3]]}
