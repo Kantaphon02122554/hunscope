@@ -13,6 +13,7 @@ import bubble
 import fund
 import macro
 import newsfeed
+import pfhist
 
 GROUPS = [
     ("ดัชนี", {"^IXIC": "Nasdaq", "^GSPC": "S&P 500", "^DJI": "Dow Jones", "^SOX": "เซมิคอนดักเตอร์ (SOX)"}, False),
@@ -21,6 +22,7 @@ GROUPS = [
                  "AMZN": "Amazon", "ASML": "ASML", "OKLO": "Oklo", "SPCX": "SpaceX", "TELO": "Telomir (TELO)"}, True),
     ("น้ำมัน ดอกเบี้ย ความผันผวน", {"BZ=F": "น้ำมัน Brent", "CL=F": "น้ำมัน WTI",
                                    "^TNX": "พันธบัตรสหรัฐ 10 ปี (%)", "^VIX": "VIX ดัชนีความกลัว"}, False),
+    ("ทองคำ", {"GC=F": "ทองคำ (ฟิวเจอร์ส USD/ออนซ์)", "GLD": "SPDR Gold Shares (GLD)"}, False),
 ]
 POINTS = {"^TNX", "^VIX"}  # แสดงการเปลี่ยนแปลงเป็นจุด
 
@@ -199,10 +201,11 @@ def main():
     macro.review(mc, merged, key)
     bb = bubble.collect({i["symbol"]: i for g in groups for i in g["items"]}, merged)
     bubble.review(bb, key)
+    ph = pfhist.collect([i["symbol"] for g in stocks for i in g["items"]] + ["^IXIC", "^GSPC", "GLD"])
     for g in stocks:
         for i in g["items"]:
             i["news_score"] = sum(n["sent"] for n in i.get("news", []))
-    out = {"updated": dt.datetime.now(dt.timezone.utc).isoformat(), "groups": groups, "news": merged, "analysis": analysis, "macro": mc, "bubble": bb}
+    out = {"updated": dt.datetime.now(dt.timezone.utc).isoformat(), "groups": groups, "news": merged, "analysis": analysis, "macro": mc, "bubble": bb, "hist": ph}
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
     print("เขียน data.json แล้ว")
