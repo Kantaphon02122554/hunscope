@@ -34,7 +34,12 @@ FEEDS = [
 COMPANIES = [(r"\bNvidia\b", "NVDA"), (r"\bMicrosoft\b", "MSFT"), (r"\bApple\b", "AAPL"),
              (r"\b(Alphabet|Google)\b", "GOOGL"), (r"\b(Meta|Facebook)\b", "META"), (r"\bBroadcom\b", "AVGO"),
              (r"\bAMD\b", "AMD"), (r"\b(TSMC|Taiwan Semiconductor)\b", "TSM"), (r"\bMicron\b", "MU"),
-             (r"\bAmazon\b", "AMZN"), (r"\bASML\b", "ASML"), (r"\bOklo\b", "OKLO"), (r"\bSpaceX\b", "SPCX"), (r"\bTelomir\b", "TELO")]
+             (r"\bAmazon\b", "AMZN"), (r"\bASML\b", "ASML"), (r"\bOklo\b", "OKLO"), (r"\bSpaceX\b", "SPCX"), (r"\bTelomir\b", "TELO"),
+             (r"\bTesla\b", "TSLA"), (r"\bNetflix\b", "NFLX"), (r"\bIntel\b", "INTC"), (r"\bQualcomm\b", "QCOM"),
+             (r"\bApplied Materials\b", "AMAT"), (r"\bLam Research\b", "LRCX"), (r"\bKLA\b", "KLAC"),
+             (r"\bSuper Micro\b", "SMCI"), (r"\bSan[Dd]isk\b", "SNDK"), (r"\bCoreWeave\b", "CRWV"), (r"\bNebius\b", "NBIS"),
+             (r"\bOracle\b", "ORCL"), (r"\bPalantir\b", "PLTR"), (r"\bSalesforce\b", "CRM"), (r"\bUber\b", "UBER"),
+             (r"\bRobinhood\b", "HOOD")]
 TOPICS = {
     "AI": r"\bAI\b|artificial intelligence|OpenAI|chatbot",
     "ชิป": r"\bchips?\b|semiconductor|Nvidia|TSMC|\bAMD\b|Micron|Broadcom|ASML",

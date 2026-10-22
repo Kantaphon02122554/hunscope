@@ -19,10 +19,15 @@ GROUPS = [
     ("ดัชนี", {"^IXIC": "Nasdaq", "^GSPC": "S&P 500", "^DJI": "Dow Jones", "^SOX": "เซมิคอนดักเตอร์ (SOX)"}, False),
     ("หุ้นเทค", {"NVDA": "Nvidia", "MSFT": "Microsoft", "AAPL": "Apple", "GOOGL": "Alphabet", "META": "Meta",
                  "AVGO": "Broadcom", "AMD": "AMD", "TSM": "TSMC", "MU": "Micron",
-                 "AMZN": "Amazon", "ASML": "ASML", "OKLO": "Oklo", "SPCX": "SpaceX", "TELO": "Telomir (TELO)"}, True),
+                 "AMZN": "Amazon", "ASML": "ASML", "OKLO": "Oklo", "SPCX": "SpaceX", "TELO": "Telomir (TELO)",
+                 "TSLA": "Tesla", "NFLX": "Netflix"}, True),
     ("น้ำมัน ดอกเบี้ย ความผันผวน", {"BZ=F": "น้ำมัน Brent", "CL=F": "น้ำมัน WTI",
                                    "^TNX": "พันธบัตรสหรัฐ 10 ปี (%)", "^VIX": "VIX ดัชนีความกลัว"}, False),
     ("ทองคำ", {"GC=F": "ทองคำ (ฟิวเจอร์ส USD/ออนซ์)", "GLD": "SPDR Gold Shares (GLD)"}, False),
+    # กลุ่มนี้ดึงข้อมูลเต็มเหมือนหุ้นในตาราง แต่ไม่แสดงในตาราง ค้นหาจากช่องค้นหาแล้วกดดูได้ (ค่าที่สามเป็น "search")
+    ("ค้นหาเพิ่มเติม", {"INTC": "Intel", "QCOM": "Qualcomm", "AMAT": "Applied Materials", "LRCX": "Lam Research", "KLAC": "KLA",
+                       "SMCI": "Super Micro Computer", "SNDK": "SanDisk", "CRWV": "CoreWeave", "NBIS": "Nebius",
+                       "ORCL": "Oracle", "PLTR": "Palantir", "CRM": "Salesforce", "UBER": "Uber", "HOOD": "Robinhood"}, "search"),
 ]
 POINTS = {"^TNX", "^VIX"}  # แสดงการเปลี่ยนแปลงเป็นจุด
 
@@ -179,7 +184,8 @@ def main():
             if d:
                 if detail:
                     d["news"] = newsfeed.prepare(d.get("news", []), "หุ้นรายตัว", [symbol])
-                    feed += d["news"][:3]
+                    if detail is True:  # ข่าวของหุ้นกลุ่มค้นหาอย่างเดียวไม่เข้าฟีดรวม
+                        feed += d["news"][:3]
                 items.append({"symbol": symbol, "name": name, **d})
         groups.append({"title": title, "detail": detail, "items": items})
     feed += newsfeed.prepare(news("^GSPC", 6) or news("SPY", 6), "ตลาดและเศรษฐกิจ")
@@ -192,17 +198,18 @@ def main():
         seen.update((n["url"], key))
         merged.append(n)
     merged = merged[:60]
-    stocks = [g for g in groups if g["detail"]]
+    allst = [g for g in groups if g["detail"]]            # ตาราง + กลุ่มค้นหา
+    stocks = [g for g in allst if g["detail"] is True]     # เฉพาะหุ้นในตาราง
     analysis = newsfeed.analyze(merged, [i["symbol"] for g in stocks for i in g["items"]])
     key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     fund.review([i for g in stocks for i in g["items"]], key)
-    names = {i["symbol"]: i["name"] for g in stocks for i in g["items"]}
+    names = {i["symbol"]: i["name"] for g in allst for i in g["items"]}
     mc = macro.collect({**names, "^IXIC": "Nasdaq", "^SOX": "เซมิคอนดักเตอร์ (SOX)"})
     macro.review(mc, merged, key)
     bb = bubble.collect({i["symbol"]: i for g in groups for i in g["items"]}, merged)
     bubble.review(bb, key)
     ph = pfhist.collect([i["symbol"] for g in stocks for i in g["items"]] + ["^IXIC", "^GSPC", "GLD"])
-    for g in stocks:
+    for g in allst:
         for i in g["items"]:
             i["news_score"] = sum(n["sent"] for n in i.get("news", []))
     out = {"updated": dt.datetime.now(dt.timezone.utc).isoformat(), "groups": groups, "news": merged, "analysis": analysis, "macro": mc, "bubble": bb, "hist": ph}

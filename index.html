@@ -271,7 +271,7 @@ gold:{label:"ทองคำ",scen:[
  {t:"ทองคำพุ่งแรง",c:"เช่น ราคาขึ้น 5% ขึ้นไปในเวลาไม่กี่สัปดาห์",m:"ความหมายขึ้นกับสาเหตุ ถ้าขึ้นเพราะผลตอบแทนที่แท้จริงลดลง เฟดผ่อนคลาย หรือดอลลาร์อ่อน มักเป็นบวกต่อหุ้นเทคด้วย แต่ถ้าขึ้นเพราะความกลัว เช่น ความตึงเครียดทางภูมิรัฐศาสตร์ ความกังวลเรื่องระบบการเงิน หรือเงินเฟ้อ ตลาดหุ้นมักถูกกดดัน โดยเฉพาะหุ้นเติบโตที่ราคาสูง",w:"ดัชนีดอลลาร์, ผลตอบแทนที่แท้จริงของพันธบัตร (TIPS), VIX, ข่าวธนาคารกลางซื้อทอง"},
  {t:"ทองคำร่วงแรง",c:"เช่น ราคาลง 5% ขึ้นไปในเวลาไม่กี่สัปดาห์",m:"ถ้าร่วงเพราะดอลลาร์แข็งหรือผลตอบแทนที่แท้จริงขึ้น แรงเดียวกันนี้มักกดดันหุ้นเติบโตด้วย ถ้าร่วงเพราะความกลัวในตลาดลดลง (risk-on) หุ้นเทคมักได้ประโยชน์ และถ้าร่วงหลังพุ่งแรงมาก อาจเป็นเพียงการขายทำกำไร",w:"ทิศทางดอลลาร์, ผลตอบแทนพันธบัตร, สัญญาณว่านักลงทุนเปลี่ยนจากตลาดปลอดภัยไปตลาดเสี่ยง"},
  {t:"ทรงตัวในกรอบ",c:"ราคาแกว่งไม่เกิน ±2%",m:"ผลต่อหุ้นเทคโดยตรงน้อย ทองคำมักใช้เป็นมาตรวัดความกังวลของตลาดควบคู่กับ VIX และดอลลาร์ เมื่อนิ่งแปลว่าตลาดยังไม่มีสัญญาณหวาดกลัวชัดเจน",w:"ถ้อยแถลงเฟดและตัวเลขเงินเฟ้อ ที่มักเป็นตัวจุดให้ทองขยับแรง"}]},
-trade:{label:"ภาษีและการส่งออกชิป",tags:["NVDA","AMD","AVGO","MU","TSM","ASML"],scen:[
+trade:{label:"ภาษีและการส่งออกชิป",tags:["NVDA","AMD","AVGO","MU","TSM","ASML","INTC","QCOM","AMAT","LRCX","KLAC"],scen:[
  {t:"มาตรการภาษีหรือจำกัดส่งออกชิปเข้มขึ้น",c:"เช่น ข้อจำกัดการขายชิปให้จีน หรือภาษีนำเข้าสินค้าอิเล็กทรอนิกส์",m:"กลุ่มชิปและห่วงโซ่อุปทานมักถูกกดดันก่อน เพราะรายได้บางส่วนมาจากตลาดจีนและการผลิตกระจายอยู่หลายประเทศ ต้นทุนและความไม่แน่นอนของคำสั่งซื้อเพิ่มขึ้น ระดับผลกระทบต่างกันตามสัดส่วนรายได้ของแต่ละบริษัท",w:"รายละเอียดมาตรการ, ระยะเวลาบังคับใช้, คำชี้แจงจากบริษัท"},
  {t:"ข้อตกลงหรือการผ่อนคลายมาตรการ",c:"เช่น ลดภาษี หรือผ่อนปรนใบอนุญาตส่งออก",m:"ความไม่แน่นอนลดลง มักหนุนกลุ่มชิปและอุปกรณ์ที่เกี่ยวข้อง แต่ตลาดอาจรับรู้ล่วงหน้าไปแล้วถ้าข่าวรั่วก่อน",w:"ความชัดเจนของเงื่อนไข และมาตรการจะกลับมาเข้มได้หรือไม่"}]}
 };
@@ -417,7 +417,7 @@ function pfCalc(data,w,amt,yrs,reb){
 function bindPortfolio(data){
   const h=data.hist,el=document.getElementById("pfList");
   if(!h||!el)return;
-  const stocks=[...((data.groups.find(g=>g.detail)||{}).items||[]),...data.groups.flatMap(g=>g.items).filter(s=>s.symbol==="GLD")].filter(s=>h.series[s.symbol]);
+  const stocks=[...((data.groups.find(g=>g.detail===true)||{}).items||[]),...data.groups.flatMap(g=>g.items).filter(s=>s.symbol==="GLD")].filter(s=>h.series[s.symbol]);
   const q=(a,s)=>document.querySelector(`[data-${a}="${s}"]`);
   el.innerHTML=stocks.map(s=>`<div class="pfr"><input type="checkbox" id="pc_${esc(s.symbol)}" data-s="${esc(s.symbol)}"><label for="pc_${esc(s.symbol)}">${esc(s.name)}<span class="sym">${esc(s.symbol)}</span></label><input type="number" min="0" max="100" step="1" data-w="${esc(s.symbol)}" aria-label="สัดส่วน ${esc(s.name)} (%)" placeholder="%"></div>`).join("");
   const st=pfLoad();
@@ -456,17 +456,18 @@ function stocksSection(g){
   const cs=new Set(PB.trade.tags),chips=g.items.filter(i=>cs.has(i.symbol)),others=g.items.filter(i=>!cs.has(i.symbol));
   const hdr=t=>`<tr class="gh"><td colspan="8">${t}</td></tr>`;
   const body=(chips.length?hdr("ชิปและเซมิคอนดักเตอร์")+chips.map(stockRow).join(""):"")+(others.length?hdr("บริษัทเทคและธีมอื่นๆ")+others.map(stockRow).join(""):"");
-  return `<section id="stocks"><h2>หุ้นรายตัว</h2><p class="note">กดที่แถวเพื่อดูตัวชี้วัด มูลค่า และข่าวรายตัว หรือพิมพ์ชื่อในช่องค้นหาด้านบน</p><div class="box scroll"><table><thead><tr><th>หุ้น</th><th>30 วัน</th><th>ราคา</th><th>วันนี้</th><th title="Relative Strength Index 14 วัน">RSI</th><th>ช่วง 52 สัปดาห์</th><th title="คะแนนความรู้สึกของข่าวรายตัว (บวก/ลบ)">ข่าว</th><th>สัญญาณ</th></tr></thead><tbody>${body}</tbody></table></div></section>`;
+  return `<section id="stocks"><h2>หุ้นรายตัว</h2><p class="note">กดที่แถวเพื่อดูตัวชี้วัด มูลค่า และข่าวรายตัว หรือพิมพ์ชื่อในช่องค้นหาด้านบน ซึ่งค้นหาหุ้นเพิ่มเติมที่ไม่แสดงในตารางได้ด้วย</p><div class="box scroll"><table><thead><tr><th>หุ้น</th><th>30 วัน</th><th>ราคา</th><th>วันนี้</th><th title="Relative Strength Index 14 วัน">RSI</th><th>ช่วง 52 สัปดาห์</th><th title="คะแนนความรู้สึกของข่าวรายตัว (บวก/ลบ)">ข่าว</th><th>สัญญาณ</th></tr></thead><tbody>${body}</tbody></table></div></section>`;
 }
 function bindSearch(stocks,openStock){
   const q=document.getElementById("q"),box=document.getElementById("qres");
   if(!q)return;
+  q.placeholder="ค้นหาหุ้น ("+stocks.length+" ตัว)";
   const hide=()=>{box.hidden=true;box.innerHTML=""};
   const pick=sym=>{openStock(sym);q.value="";hide()};
   q.addEventListener("input",()=>{
     const t=q.value.trim().toLowerCase();
     if(!t){hide();return}
-    const r=stocks.filter(s=>s.symbol.toLowerCase().includes(t)||s.name.toLowerCase().includes(t)).slice(0,6);
+    const r=stocks.filter(s=>s.symbol.toLowerCase().includes(t)||s.name.toLowerCase().includes(t)).slice(0,8);
     box.innerHTML=r.length?r.map(s=>`<button type="button" data-o="${esc(s.symbol)}"><span>${esc(s.name)} <span class="sym">${esc(s.symbol)}</span></span><span class="${cls(s.pct)}">${pcs(s.pct,2)}</span></button>`).join(""):`<div class="flat">ไม่พบหุ้นที่ค้นหา</div>`;
     box.hidden=false;
   });
@@ -518,7 +519,7 @@ function detail(d){
 }
 
 fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(data=>{
-  const all=data.groups.flatMap(g=>g.items),by=s=>all.find(i=>i.symbol===s)||{},stocks=(data.groups.find(g=>g.detail)||{items:[]}).items;
+  const all=data.groups.flatMap(g=>g.items),by=s=>all.find(i=>i.symbol===s)||{},stocks=(data.groups.find(g=>g.detail===true)||{items:[]}).items;
   const nq=by("^IXIC"),sox=by("^SOX"),vix=by("^VIX");
   const t=nq.pct>=.3?"ตลาดเทคปรับขึ้น":nq.pct<=-.3?"ตลาดเทคปรับลง":"ตลาดเทคทรงตัว";
   const c=sox.pct<=-1?" ชิปถูกขายหนัก":sox.pct>=1?" ชิปนำตลาด":"";
@@ -528,13 +529,14 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
   const above=stocks.filter(s=>s.sma50!=null&&s.price>s.sma50).length,bull=stocks.filter(s=>s.label==="ขาขึ้น").length;
   const nc=(data.analysis||{}).counts||{pos:0,neg:0};const SL={"Nasdaq":"#overview","เซมิคอนดักเตอร์":"#overview","VIX":"#overview","หุ้นเหนือ SMA50":"#stocks","สัญญาณขาขึ้น":"#stocks","ข่าวบวก / ลบ":"#analysis","ใกล้โซนรับ":"#zones"};const st=(k,v,c="")=>`<a class="pill" href="${SL[k]}"><small>${k}</small><strong class="${c}">${v}</strong></a>`;
   document.getElementById("stats").innerHTML=st("Nasdaq",nq.pct==null?"–":sg(nq.pct)+fmt(nq.pct)+"%",cls(nq.pct))+st("เซมิคอนดักเตอร์",sox.pct==null?"–":sg(sox.pct)+fmt(sox.pct)+"%",cls(sox.pct))+st("VIX",fmt(vix.price,1),vix.price>25?"down":vix.price<16?"up":"")+st("หุ้นเหนือ SMA50",`${above}/${stocks.length}`)+st("สัญญาณขาขึ้น",`${bull}/${stocks.length}`)+st("ข่าวบวก / ลบ",`${nc.pos} / ${nc.neg}`)+st("ใกล้โซนรับ",`${stocks.filter(s=>s.zones&&(s.zones.status==="in"||s.zones.status==="near")).length}/${stocks.length}`)+bubbleStat(data);
-  document.getElementById("app").innerHTML=overviewSection(data)+newsStrip(data)+stocksSection(data.groups.find(g=>g.detail))+zonesSection(stocks)+fundSection(stocks)+macroSection(data)+bubbleSection(data)+portfolioSection(data)+analysisHTML(data)+newsSection(data);
+  document.getElementById("app").innerHTML=overviewSection(data)+newsStrip(data)+stocksSection(data.groups.find(g=>g.detail===true))+zonesSection(stocks)+fundSection(stocks)+macroSection(data)+bubbleSection(data)+portfolioSection(data)+analysisHTML(data)+newsSection(data);
   bindNews(data.news||[]);
   bindMacro(data);
   bindPortfolio(data);
-  const openStock=sym=>{const d=stocks.find(s=>s.symbol===sym);if(d){dlgBody.innerHTML=detail(d);dlg.showModal()}};
+  const searchable=[...stocks,...data.groups.filter(g=>g.detail==="search").flatMap(g=>g.items)];
+  const openStock=sym=>{const d=searchable.find(s=>s.symbol===sym);if(d){dlgBody.innerHTML=detail(d);dlg.showModal()}};
   const open=el=>openStock(el.closest("tr[data-sym]")?.dataset.sym);
-  bindSearch(stocks,openStock);
+  bindSearch(searchable,openStock);
   document.querySelectorAll("tr[data-sym]").forEach(tr=>{tr.onclick=()=>open(tr);tr.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open(tr)}}});
   dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
 }).catch(()=>{
