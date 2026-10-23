@@ -7,6 +7,8 @@ import urllib.request
 import pandas as pd
 import yfinance as yf
 
+import secq
+
 
 def num(x, n=2):
     try:
@@ -38,7 +40,7 @@ def quarters(t):
     op = row(q, "Operating Income")
     val = lambda s, i: None if s is None or i >= len(s) else num(s.iloc[i], 4)
     out = []
-    for i, c in enumerate(list(q.columns)[:4]):
+    for i, c in enumerate(list(q.columns)[:8]):
         r0, r4 = val(rev, i), val(rev, i + 4)
         n0 = val(ni, i)
         pct = lambda a: round(a / r0 * 100, 1) if a is not None and r0 else None
@@ -50,7 +52,8 @@ def quarters(t):
             "nm": pct(n0), "gm": pct(val(gp, i)), "om": pct(val(op, i)),
             "eps": num(val(eps, i)),
         })
-    return out
+    out = [o for o in out if o["rev"] is not None or o["ni"] is not None]  # ตัดคอลัมน์ว่างที่ Yahoo สร้างรอไว้
+    return out[:4]
 
 
 def surprises(t):
@@ -85,7 +88,10 @@ def collect(symbol):
     except Exception:
         info = {}
     cur = info.get("financialCurrency") or info.get("currency") or ""
-    qs = quarters(t)
+    qs, qsrc = quarters(t), "Yahoo"
+    sec = secq.overlay(symbol, qs)  # ถ้า SEC มีไตรมาสใหม่กว่า ใช้ของ SEC
+    if sec:
+        qs, qsrc, cur = sec, "SEC", "USD"
     pc = lambda k: None if num(info.get(k)) is None else num(info.get(k)) * 100
     pos = lambda x: x if x is not None and x > 0 else None
     rev_yoy = qs[0]["rev_yoy"] if qs and qs[0]["rev_yoy"] is not None else pc("revenueGrowth")
@@ -132,7 +138,7 @@ def collect(symbol):
     qa, va = avg(("growth", "profit", "health")), avg(("value",))
     quality = "ข้อมูลไม่พอ" if qa is None else "คุณภาพดี" if qa >= 0.4 else "คุณภาพอ่อน" if qa <= -0.2 else "คุณภาพปานกลาง"
     valuation = "ข้อมูลไม่พอ" if va is None else "ราคาไม่แพง" if va >= 0.3 else "ราคาค่อนข้างแพง" if va <= -0.3 else "ราคาพอเหมาะ"
-    return {"currency": cur, "quality": quality, "valuation": valuation, "metrics": metrics, "quarters": qs,
+    return {"currency": cur, "quality": quality, "valuation": valuation, "metrics": metrics, "quarters": qs, "qsrc": qsrc,
             "surprises": surprises(t), "next_earnings": next_earnings(t),
             "kpi": {"rev_yoy": rev_yoy, "nm": nm, "roe": roe, "de": de, "fpe": fpe, "ps": ps}}
 
