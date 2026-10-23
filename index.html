@@ -46,7 +46,8 @@ section[id]{scroll-margin-top:84px}
 .ic .t{display:flex;justify-content:space-between;gap:6px;align-items:baseline;font-size:.82rem;color:var(--mute)}
 .ic .t b{color:var(--ink);font-weight:500;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ic .p{font-size:1.25rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;margin-top:4px}
-.ic .c{font-size:.9rem;font-variant-numeric:tabular-nums}
+.ic .c{display:flex;align-items:center;gap:8px;font-size:.9rem;font-variant-numeric:tabular-nums;margin-top:2px}
+.ic .c small{color:var(--mute);font-size:.78rem}
 .ic svg.sp{width:100%;height:40px;margin-top:6px}
 .ic svg.sp polyline{vector-effect:non-scaling-stroke}
 .strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:8px}
@@ -158,6 +159,25 @@ dialog::backdrop{background:rgba(0,0,0,.6)}
 .pfo{margin-top:14px}.pfo svg{width:100%;height:auto;display:block}
 .pfo .leg{display:flex;flex-wrap:wrap;gap:14px;font-size:.85rem;margin:8px 0 2px}
 .pfo ul{margin:8px 0 0;padding-left:1.2em}.pfo li{margin:4px 0;font-size:.92rem}
+.bd{display:inline-flex;align-items:center;gap:4px;padding:1px 8px;border-radius:999px;font-size:.82rem;font-weight:500;border:1px solid currentColor;background:color-mix(in srgb,currentColor 12%,transparent)}
+.ic .pr{font-size:.8rem;color:var(--mute);margin-top:6px}
+.ic .pr b{font-weight:500}
+.ic svg.sp{margin-top:2px}
+.ic svg.sp path{stroke:none}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg button{background:none;border:0;color:var(--mute);padding:6px 14px;font:inherit;font-size:.85rem;cursor:pointer;min-height:36px}
+.seg button[aria-pressed=true]{background:var(--hover);color:var(--ink)}
+.hdr{display:flex;align-items:center;gap:14px}
+.nav2{display:flex;gap:6px}
+.nav2 button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;font-size:1.1rem;line-height:1}
+.nav2 button:hover{border-color:var(--accent)}
+@media (hover:none){.nav2{display:none}}
+.qres button.on{background:var(--hover)}
+.sk{position:relative;overflow:hidden}
+.sk::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);transform:translateX(-100%);animation:sh 1.4s infinite}
+@keyframes sh{to{transform:translateX(100%)}}
+.ic.sk{min-height:132px}
+@media (prefers-reduced-motion:reduce){.sk::after{animation:none}}
 @media (max-width:820px){nav{flex-wrap:wrap;gap:8px 12px}.srch{flex:1 1 160px}.links{order:3;width:100%;margin-left:0;overflow-x:auto;gap:16px}section[id]{scroll-margin-top:112px}.hero .wrap{grid-template-columns:1fr}.idx{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.row{grid-template-columns:minmax(0,1fr) 80px 96px}svg.sp{width:80px}.nc{flex-basis:78%}.pill strong{font-size:1.1rem}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -168,9 +188,9 @@ dialog::backdrop{background:rgba(0,0,0,.6)}
 <header class="hero"><div class="wrap">
   <div><h1 id="headline">กำลังโหลด…</h1>
   <p class="sub" id="meta"></p></div>
-  <div class="pills" id="stats"></div>
+  <div class="pills" id="stats"><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div></div>
 </div></header>
-<main class="wrap" id="app"></main>
+<main class="wrap" id="app"><section><div class="idx"><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div></div></section></main>
 <div class="wrap"><footer>ตัวชี้วัดคำนวณจากราคาปิดรายวัน (RSI 14 วัน, MACD 12/26/9, เส้นเฉลี่ย 50 และ 200 วัน) คะแนนสัญญาณเป็นการนับแนวโน้มแบบง่าย ไม่ใช่คำแนะนำให้ซื้อหรือขาย ข้อมูลจาก Yahoo Finance อาจล่าช้าหรือผิดพลาดได้</footer></div>
 <dialog id="dlg"><div id="dlgBody"></div></dialog>
 <script>
@@ -441,15 +461,41 @@ function bindPortfolio(data){
 }
 const IDX=[["^IXIC","Nasdaq"],["^GSPC","S&P 500"],["^DJI","Dow Jones"],["^SOX","SOX ชิป"],["BZ=F","น้ำมัน Brent"],["^TNX","พันธบัตร 10 ปี"],["^VIX","VIX"],["GC=F","ทองคำ"]];
 const IU={"BZ=F":"USD","^TNX":"%","GC=F":"USD/oz"};
-function overviewSection(data){
+const TONE={"^VIX":-1,"^TNX":-1,"BZ=F":-1,"GC=F":0};
+const tone=(s,x)=>{const k=TONE[s]===undefined?1:TONE[s];return k===0?"flat":(x>=0?1:-1)*k>0?"up":"down"};
+function area(v){
+  const w=120,h=36,min=Math.min(...v),max=Math.max(...v),r=max-min||1;
+  const p=v.map((y,i)=>[(i/(v.length-1)*w).toFixed(1),(h-3-(y-min)/r*(h-6)).toFixed(1)]);
+  return `<svg class="sp" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><path d="M${p.map(q=>q.join(",")).join(" L")} L${w},${h} L0,${h} Z" fill="currentColor" fill-opacity=".12"/><polyline points="${p.map(q=>q.join(",")).join(" ")}" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
+}
+function idxCards(data,n){
   const all=Object.fromEntries(data.groups.flatMap(g=>g.items.map(i=>[i.symbol,i])));
-  const cards=IDX.filter(([s])=>all[s]).map(([s,n])=>{const d=all[s];return `<div class="ic ${cls(d.change)}"><div class="t"><b>${esc(n)}</b>${IU[s]?`<span>${IU[s]}</span>`:""}</div><div class="p">${fmt(d.price)}</div><div class="c">${chg(d)}</div>${spark(d.series.slice(-30)).replace("<svg ",'<svg preserveAspectRatio="none" ')}</div>`}).join("");
-  return `<section id="overview"><h2>ดัชนีและปัจจัยตลาด</h2><div class="idx">${cards}</div></section>`;
+  return IDX.filter(([s])=>all[s]).map(([s,nm])=>{
+    const d=all[s],v=d.series.slice(-n),per=(v[v.length-1]/v[0]-1)*100,t=tone(s,d.change),up=d.change>=0;
+    const amt=d.unit==="pt"?fmt(Math.abs(d.change))+" จุด":fmt(Math.abs(d.pct))+"%";
+    return `<div class="ic ${t}"><div class="t"><b>${esc(nm)}</b>${IU[s]?`<span>${IU[s]}</span>`:""}</div><div class="p">${fmt(d.price)}</div><div class="c"><span class="bd ${t}">${up?"▲":"▼"} ${amt}</span><small>วันนี้</small></div>${area(v)}<div class="pr">${n<40?"1 เดือน":"3 เดือน"} <b class="${tone(s,per)}">${pcs(per,1)}</b></div></div>`;
+  }).join("");
+}
+function overviewSection(data){
+  return `<section id="overview"><div class="hd"><h2>ดัชนีและปัจจัยตลาด</h2><div class="seg" role="group" aria-label="ช่วงของกราฟ"><button type="button" data-n="22" aria-pressed="true">1 เดือน</button><button type="button" data-n="63" aria-pressed="false">3 เดือน</button></div></div><div class="idx" id="idxGrid">${idxCards(data,22)}</div><p class="note" style="margin:10px 0 0">ลูกศรบอกทิศทางราคาจริง ส่วนสีของ VIX ผลตอบแทน 10 ปี และน้ำมันบอกผลต่อตลาดหุ้นโดยทั่วไป (ขึ้นเป็นสีแดง) ทองคำใช้สีกลาง</p></section>`;
+}
+function bindOverview(data){
+  const grid=document.getElementById("idxGrid");
+  if(!grid)return;
+  document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{
+    document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+    grid.innerHTML=idxCards(data,parseInt(b.dataset.n));
+  });
+}
+function bindStrip(){
+  const s=document.querySelector(".strip");
+  if(!s)return;
+  document.querySelectorAll(".nav2 button").forEach(b=>b.onclick=()=>s.scrollBy({left:parseInt(b.dataset.d)*280,behavior:window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}));
 }
 function newsStrip(data){
   const l=(data.news||[]).filter(okUrl).slice(0,10);
   if(!l.length)return"";
-  return `<section id="newsstrip"><div class="hd"><h2>ข่าวเด่น</h2><a href="#news">ดูตารางข่าวทั้งหมด →</a></div><div class="strip" tabindex="0" aria-label="ข่าวล่าสุด เลื่อนดูด้านข้าง">${l.map(n=>`<a class="nc" href="${esc(n.url)}" target="_blank" rel="noopener noreferrer"><small>${esc(n.source)} • ${ago(n.time)} <span class="chip ${sc(n.sent)}">${sl(n.sent)}</span></small><span class="tt">${esc(n.title_th||n.title)}</span>${n.reason?`<span class="why">${esc(n.reason)}</span>`:(n.symbols||[]).length?`<span class="why">${n.symbols.map(esc).join(" • ")}</span>`:""}</a>`).join("")}</div></section>`;
+  return `<section id="newsstrip"><div class="hd"><h2>ข่าวเด่น</h2><div class="hdr"><a href="#news">ดูตารางข่าวทั้งหมด →</a><div class="nav2"><button type="button" data-d="-1" aria-label="เลื่อนข่าวไปทางซ้าย">‹</button><button type="button" data-d="1" aria-label="เลื่อนข่าวไปทางขวา">›</button></div></div></div><div class="strip" tabindex="0" aria-label="ข่าวล่าสุด เลื่อนดูด้านข้าง">${l.map(n=>`<a class="nc" href="${esc(n.url)}" target="_blank" rel="noopener noreferrer"><small>${esc(n.source)} • ${ago(n.time)} <span class="chip ${sc(n.sent)}">${sl(n.sent)}</span></small><span class="tt">${esc(n.title_th||n.title)}</span>${n.reason?`<span class="why">${esc(n.reason)}</span>`:(n.symbols||[]).length?`<span class="why">${n.symbols.map(esc).join(" • ")}</span>`:""}</a>`).join("")}</div></section>`;
 }
 function stocksSection(g){
   if(!g)return"";
@@ -461,19 +507,33 @@ function stocksSection(g){
 function bindSearch(stocks,openStock){
   const q=document.getElementById("q"),box=document.getElementById("qres");
   if(!q)return;
-  q.placeholder="ค้นหาหุ้น ("+stocks.length+" ตัว)";
-  const hide=()=>{box.hidden=true;box.innerHTML=""};
+  q.placeholder="ค้นหาหุ้น ("+stocks.length+" ตัว)"+(window.matchMedia&&matchMedia("(hover:none)").matches?"":" · กด /");
+  let cur=-1;
+  const items=()=>[...box.querySelectorAll("[data-o]")];
+  const mark=()=>items().forEach((b,i)=>b.classList.toggle("on",i===cur));
+  const hide=()=>{box.hidden=true;box.innerHTML="";cur=-1};
   const pick=sym=>{openStock(sym);q.value="";hide()};
   q.addEventListener("input",()=>{
     const t=q.value.trim().toLowerCase();
+    cur=-1;
     if(!t){hide();return}
     const r=stocks.filter(s=>s.symbol.toLowerCase().includes(t)||s.name.toLowerCase().includes(t)).slice(0,8);
     box.innerHTML=r.length?r.map(s=>`<button type="button" data-o="${esc(s.symbol)}"><span>${esc(s.name)} <span class="sym">${esc(s.symbol)}</span></span><span class="${cls(s.pct)}">${pcs(s.pct,2)}</span></button>`).join(""):`<div class="flat">ไม่พบหุ้นที่ค้นหา</div>`;
     box.hidden=false;
   });
-  q.addEventListener("keydown",e=>{if(e.key==="Escape"){q.value="";hide()}if(e.key==="Enter"){const b=box.querySelector("[data-o]");if(b)pick(b.dataset.o)}});
+  q.addEventListener("keydown",e=>{
+    const l=items();
+    if(e.key==="ArrowDown"&&l.length){e.preventDefault();cur=(cur+1)%l.length;mark()}
+    else if(e.key==="ArrowUp"&&l.length){e.preventDefault();cur=(cur<=0?l.length:cur)-1;mark()}
+    else if(e.key==="Escape"){q.value="";hide();q.blur()}
+    else if(e.key==="Enter"){const b=l[cur>=0?cur:0];if(b)pick(b.dataset.o)}
+  });
   box.addEventListener("click",e=>{const b=e.target.closest("[data-o]");if(b)pick(b.dataset.o)});
   document.addEventListener("click",e=>{if(!e.target.closest(".srch"))hide()});
+  document.addEventListener("keydown",e=>{
+    const tag=(document.activeElement||{}).tagName||"";
+    if((e.key==="k"&&(e.ctrlKey||e.metaKey))||(e.key==="/"&&!/INPUT|TEXTAREA|SELECT/.test(tag))){e.preventDefault();q.focus();q.select()}
+  });
 }
 const CATS=["ทั้งหมด","ตลาดและเศรษฐกิจ","เทคโนโลยี","ธนาคารและนักวิเคราะห์","ธนาคารกลาง","หุ้นรายตัว"];
 const okUrl=n=>/^https?:\/\//.test(n.url);
@@ -532,6 +592,8 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
   document.getElementById("app").innerHTML=overviewSection(data)+newsStrip(data)+stocksSection(data.groups.find(g=>g.detail===true))+zonesSection(stocks)+fundSection(stocks)+macroSection(data)+bubbleSection(data)+portfolioSection(data)+analysisHTML(data)+newsSection(data);
   bindNews(data.news||[]);
   bindMacro(data);
+  bindOverview(data);
+  bindStrip();
   bindPortfolio(data);
   const searchable=[...stocks,...data.groups.filter(g=>g.detail==="search").flatMap(g=>g.items)];
   const openStock=sym=>{const d=searchable.find(s=>s.symbol===sym);if(d){dlgBody.innerHTML=detail(d);dlg.showModal()}};
@@ -541,6 +603,7 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
   dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
 }).catch(()=>{
   document.getElementById("headline").textContent="ยังไม่มีข้อมูล";
+  document.getElementById("stats").innerHTML="";
   document.getElementById("app").innerHTML=`<section><div class="box msg">ยังโหลด data.json ไม่ได้ รัน <code>python fetch_data.py</code> เพื่อสร้างไฟล์ แล้วเปิดหน้านี้ผ่านเซิร์ฟเวอร์ เช่น <code>python -m http.server</code> (เปิดไฟล์ตรงๆ เบราว์เซอร์จะบล็อกการอ่านไฟล์)</div></section>`;
 });
 // ---- รีเฟรชอัตโนมัติ: ตรวจ data.json ทุก 5 นาที ถ้ามีข้อมูลรอบใหม่จะโหลดหน้าใหม่ให้ (ลบบล็อกนี้ได้ถ้าไม่ต้องการ)
