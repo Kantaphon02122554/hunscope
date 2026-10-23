@@ -17,6 +17,7 @@ jobs:
       - run: python fetch_data.py
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}  # ไม่ใส่ก็ได้ ระบบจะนับคำสำคัญแทน
+          SEC_CONTACT: ${{ secrets.SEC_CONTACT }}  # อีเมลของคุณ ตามข้อกำหนดของ SEC ไม่ใส่ก็ได้ จะใช้งบจาก Yahoo
       - name: Commit data.json
         run: |
           git config user.name "github-actions"
