@@ -1,0 +1,33 @@
+name: update-quotes
+on:
+  schedule:
+    # ทุก 10 นาที ช่วงตลาดสหรัฐเปิด (UTC 13:00-21:59 วันจันทร์-ศุกร์ ครอบคลุมทั้งเวลาออมแสงและไม่ออมแสง)
+    # ใช้นาทีที่ไม่ใช่ต้นชั่วโมงเพื่อลดโอกาสถูกหน่วง GitHub รันตามเวลาแบบ "พยายามให้" อาจช้าหรือข้ามบางรอบได้
+    - cron: "7,17,27,37,47,57 13-21 * * 1-5"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: hunscope-data      # ใช้กลุ่มเดียวกับ update-data เพื่อไม่ให้สองงานเขียนไฟล์ชนกัน
+  cancel-in-progress: false
+jobs:
+  quotes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install yfinance
+      - run: python quotes.py
+      - name: Commit quotes.json
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add quotes.json
+          if ! git diff --cached --quiet; then
+            git commit -m "update quotes"
+            git pull --rebase
+            git push
+          fi
