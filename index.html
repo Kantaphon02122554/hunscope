@@ -271,7 +271,7 @@ function fundBlock(d){
   const ms=gl.map(g=>{const l=f.metrics.filter(m=>m.group===g);return l.length?`<li class="grp">${nm[g]}</li>`+l.map(m=>`<li><b class="${sc(m.score)}">${m.score>0?"+":m.score<0?"−":"•"}</b><span>${esc(m.name)} ${esc(m.value)}${m.text?": "+esc(m.text):""}</span></li>`).join(""):""}).join("");
   const qs=f.quarters||[],cur=esc(f.currency||""),src=f.qsrc==="SEC"?"SEC EDGAR":"Yahoo Finance";
   const stale=(f.surprises||[])[0]&&qs[0]&&f.surprises[0].date>qs[0].date;
-  const qt=qs.length?`<h4>รายงานไตรมาส <small class="flat">(พันล้าน ${cur} • ที่มา ${src})</small></h4>${stale?`<p class="note"><b class="warn">!</b> ผลประกอบการไตรมาสสิ้นสุด ${esc(f.surprises[0].date)} ประกาศแล้ว แต่ตารางงบยังไม่มีไตรมาสนี้ (${src} ปรับข้อมูลงบช้ากว่าวันประกาศ)</p>`:""}<div class="scroll"><table class="qt"><thead><tr><th>ไตรมาสสิ้นสุด</th><th>รายได้</th><th>YoY</th><th>กำไรสุทธิ</th><th>อัตรากำไรสุทธิ</th><th>EPS</th></tr></thead><tbody>${qs.map(q=>`<tr><td>${esc(q.date)}</td><td>${fmt(q.rev)}</td><td class="${sc(q.rev_yoy)}">${pcs(q.rev_yoy)}</td><td>${fmt(q.ni)}</td><td>${q.nm==null?"–":fmt(q.nm,1)+"%"}</td><td>${fmt(q.eps)}</td></tr>`).join("")}</tbody></table></div>`:"";
+  const qt=qs.length?`<h4>รายงานไตรมาส <small class="flat">(พันล้าน ${cur} • ที่มา ${src})</small></h4>${stale?`<p class="note"><b class="warn">!</b> ผลประกอบการงวด ${esc(f.surprises[0].date)} ประกาศแล้ว แต่ตารางงบยังไม่มีไตรมาสนี้ (${src} ปรับข้อมูลงบช้ากว่าวันประกาศ)</p>`:""}<div class="scroll"><table class="qt"><thead><tr><th title="วันสุดท้ายของงวดบัญชีไตรมาสนั้น">งวดงบ</th><th>รายได้</th><th>YoY</th><th>กำไรสุทธิ</th><th>อัตรากำไรสุทธิ</th><th>EPS</th></tr></thead><tbody>${qs.map(q=>`<tr><td>${esc(q.date)}</td><td>${fmt(q.rev)}</td><td class="${sc(q.rev_yoy)}">${pcs(q.rev_yoy)}</td><td>${fmt(q.ni)}</td><td>${q.nm==null?"–":fmt(q.nm,1)+"%"}</td><td>${fmt(q.eps)}</td></tr>`).join("")}</tbody></table></div>`:"";
   const sp=(f.surprises||[]).length?`<h4>ผลจริงเทียบประมาณการ EPS</h4><div class="chips">${f.surprises.map(s=>`<span class="${sc(s.surprise)}">${esc(s.date)} จริง ${fmt(s.actual)} / คาด ${fmt(s.estimate)} (${pcs(s.surprise)})</span>`).join("")}</div>`:"";
   return `<h4>พื้นฐานบริษัท: <span class="${qc(f.quality)}">${esc(f.quality)}</span> • <span class="${qc(f.valuation)}">${esc(f.valuation)}</span></h4>${ai}<ul class="sg">${ms}</ul><p class="note">เกณฑ์เป็นกฎทั่วไปที่ไม่ปรับตามอุตสาหกรรม ใช้เทียบหยาบๆ เท่านั้น</p>${qt}${sp}${f.next_earnings?`<p class="note">ประกาศงบครั้งถัดไปตามที่ Yahoo ระบุ: ${esc(f.next_earnings)}</p>`:""}`;
 }
@@ -536,6 +536,48 @@ function bindSearch(stocks,openStock){
     if((e.key==="k"&&(e.ctrlKey||e.metaKey))||(e.key==="/"&&!/INPUT|TEXTAREA|SELECT/.test(tag))){e.preventDefault();q.focus();q.select()}
   });
 }
+function applyQuotes(data,qj){
+  const base=new Date(data.updated).getTime();let n=0,mx=0;
+  data.groups.forEach(g=>g.items.forEach(i=>{
+    const q=qj.q[i.symbol];
+    if(!q||q.price==null)return;
+    const t=new Date(q.t).getTime();
+    if(!(t>base))return;
+    if(i.price!==q.price||i.change!==q.change){i.price=q.price;i.change=q.change;i.pct=q.pct;n++}
+    mx=Math.max(mx,t);
+  }));
+  if(mx)data.liveAt=mx;
+  return n>0;
+}
+function repaintCards(data){
+  const g=document.getElementById("idxGrid");
+  if(!g)return;
+  const b=document.querySelector('.seg button[aria-pressed="true"]');
+  g.innerHTML=idxCards(data,b?parseInt(b.dataset.n):22);
+}
+function repaintRows(data){
+  const m=Object.fromEntries(data.groups.flatMap(g=>g.items.map(i=>[i.symbol,i])));
+  document.querySelectorAll("#stocks tr[data-sym], #zones tr[data-sym]").forEach(tr=>{
+    const d=m[tr.dataset.sym];
+    if(!d)return;
+    const p=tr.querySelector("td.price");
+    if(p)p.textContent=fmt(d.price);
+    if(tr.closest("#stocks")){const c=tr.children;c[1].className=cls(d.change);c[3].className=cls(d.pct);c[3].textContent=sg(d.pct)+fmt(d.pct)+"%"}
+  });
+}
+function startQuotes(data,onApply){
+  let last="";
+  const pull=()=>{
+    if(document.hidden)return;
+    fetch("quotes.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():null).then(qj=>{
+      if(!qj||!qj.q||qj.updated===last)return;
+      last=qj.updated;
+      if(applyQuotes(data,qj))onApply(qj);
+    }).catch(()=>{});
+  };
+  pull();setInterval(pull,300000);
+  document.addEventListener("visibilitychange",()=>{if(!document.hidden)pull()});
+}
 const CATS=["ทั้งหมด","ตลาดและเศรษฐกิจ","เทคโนโลยี","ธนาคารและนักวิเคราะห์","ธนาคารกลาง","หุ้นรายตัว"];
 const okUrl=n=>/^https?:\/\//.test(n.url);
 function newsList(list,tags=true){
@@ -581,15 +623,18 @@ function detail(d){
 
 fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(data=>{
   const all=data.groups.flatMap(g=>g.items),by=s=>all.find(i=>i.symbol===s)||{},stocks=(data.groups.find(g=>g.detail===true)||{items:[]}).items;
+  const paintTop=()=>{
   const nq=by("^IXIC"),sox=by("^SOX"),vix=by("^VIX");
   const t=nq.pct>=.3?"ตลาดเทคปรับขึ้น":nq.pct<=-.3?"ตลาดเทคปรับลง":"ตลาดเทคทรงตัว";
   const c=sox.pct<=-1?" ชิปถูกขายหนัก":sox.pct>=1?" ชิปนำตลาด":"";
   $h=document.getElementById("headline");$h.textContent=nq.pct==null?"Hunscope":t+c;
   const dates=all.map(i=>i.date).sort(),upd=new Date(data.updated).toLocaleString("th-TH",{timeZone:"Asia/Bangkok",dateStyle:"medium",timeStyle:"short"});
-  document.getElementById("meta").textContent=`ราคาปิดล่าสุดของตลาดสหรัฐ ${dates[dates.length-1]||"-"} อัปเดตเมื่อ ${upd} (เวลาไทย)`;
+  document.getElementById("meta").textContent=data.liveAt?`ราคาระหว่างวัน ณ ${new Date(data.liveAt).toLocaleTimeString("th-TH",{timeZone:"Asia/Bangkok",hour:"2-digit",minute:"2-digit"})} น. (อาจล่าช้าราว 15 นาที) • ตัวชี้วัดและงบคำนวณจากข้อมูลปิดตลาด ${dates[dates.length-1]||"-"} (อัปเดต ${upd} เวลาไทย)`:`ราคาปิดล่าสุดของตลาดสหรัฐ ${dates[dates.length-1]||"-"} อัปเดตเมื่อ ${upd} (เวลาไทย)`;
   const above=stocks.filter(s=>s.sma50!=null&&s.price>s.sma50).length,bull=stocks.filter(s=>s.label==="ขาขึ้น").length;
   const nc=(data.analysis||{}).counts||{pos:0,neg:0};const SL={"Nasdaq":"#overview","เซมิคอนดักเตอร์":"#overview","VIX":"#overview","หุ้นเหนือ SMA50":"#stocks","สัญญาณขาขึ้น":"#stocks","ข่าวบวก / ลบ":"#analysis","ใกล้โซนรับ":"#zones"};const st=(k,v,c="")=>`<a class="pill" href="${SL[k]}"><small>${k}</small><strong class="${c}">${v}</strong></a>`;
   document.getElementById("stats").innerHTML=st("Nasdaq",nq.pct==null?"–":sg(nq.pct)+fmt(nq.pct)+"%",cls(nq.pct))+st("เซมิคอนดักเตอร์",sox.pct==null?"–":sg(sox.pct)+fmt(sox.pct)+"%",cls(sox.pct))+st("VIX",fmt(vix.price,1),vix.price>25?"down":vix.price<16?"up":"")+st("หุ้นเหนือ SMA50",`${above}/${stocks.length}`)+st("สัญญาณขาขึ้น",`${bull}/${stocks.length}`)+st("ข่าวบวก / ลบ",`${nc.pos} / ${nc.neg}`)+st("ใกล้โซนรับ",`${stocks.filter(s=>s.zones&&(s.zones.status==="in"||s.zones.status==="near")).length}/${stocks.length}`)+bubbleStat(data);
+  };
+  paintTop();
   document.getElementById("app").innerHTML=overviewSection(data)+newsStrip(data)+stocksSection(data.groups.find(g=>g.detail===true))+zonesSection(stocks)+fundSection(stocks)+macroSection(data)+bubbleSection(data)+portfolioSection(data)+analysisHTML(data)+newsSection(data);
   bindNews(data.news||[]);
   bindMacro(data);
@@ -602,6 +647,7 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
   bindSearch(searchable,openStock);
   document.querySelectorAll("tr[data-sym]").forEach(tr=>{tr.onclick=()=>open(tr);tr.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open(tr)}}});
   dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+  startQuotes(data,()=>{paintTop();repaintCards(data);repaintRows(data)});
 }).catch(()=>{
   document.getElementById("headline").textContent="ยังไม่มีข้อมูล";
   document.getElementById("stats").innerHTML="";
