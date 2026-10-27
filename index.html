@@ -9,20 +9,19 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🔭%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0d1117;--panel:#131a24;--hover:#18212e;--line:#222c3a;--ink:#e6edf3;--mute:#8b97a8;--up:#3fb68b;--down:#f0616d;--warn:#d9a441;--accent:#58a6ff}
+:root{--bg:#0d1117;--panel:#131a24;--hover:#18212e;--line:#222c3a;--ink:#e6edf3;--mute:#8b97a8;--up:#3fb68b;--down:#f0616d;--warn:#d9a441;--accent:#38bdf8;--mono:"JetBrains Mono","IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 "IBM Plex Sans Thai",system-ui,sans-serif}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-nav{position:sticky;top:0;z-index:5;display:flex;gap:20px;align-items:center;padding:10px max(16px,calc((100% - 1040px)/2));background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav .logo{font-weight:700;font-size:1.2rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+nav{position:sticky;top:0;z-index:5;display:flex;gap:20px;align-items:center;padding:10px max(16px,calc((100% - 1200px)/2));background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .links{display:flex;gap:18px;margin-left:auto;white-space:nowrap}
 nav .links a{text-decoration:none;color:var(--mute);font-size:.92rem;padding:8px 0}
 nav .links a:hover{color:var(--ink)}
-.srch{position:relative;flex:0 1 280px}
+.srch{position:relative;flex:0 1 220px}
 .srch input{width:100%;min-height:40px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font:inherit;font-size:.92rem}
 .srch input::placeholder{color:var(--mute)}
 .qres{position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.4)}
@@ -32,7 +31,7 @@ nav .links a:hover{color:var(--ink)}
 .qres button:hover,.qres button:focus-visible{background:var(--hover)}
 .qres .flat{padding:10px 14px;font-size:.9rem}
 section[id]{scroll-margin-top:84px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
 .hero{background:radial-gradient(900px 360px at 12% 0,rgba(88,166,255,.14),transparent 70%),linear-gradient(var(--bg),var(--bg));border-bottom:1px solid var(--line)}
 .hero .wrap{padding-top:56px;padding-bottom:40px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px 32px;align-items:center}
 .hero .sub{margin:0}
@@ -178,20 +177,185 @@ dialog::backdrop{background:rgba(0,0,0,.6)}
 @keyframes sh{to{transform:translateX(100%)}}
 .ic.sk{min-height:132px}
 @media (prefers-reduced-motion:reduce){.sk::after{animation:none}}
-@media (max-width:820px){nav{flex-wrap:wrap;gap:8px 12px}.srch{flex:1 1 160px}.links{order:3;width:100%;margin-left:0;overflow-x:auto;gap:16px}section[id]{scroll-margin-top:112px}.hero .wrap{grid-template-columns:1fr}.idx{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;padding:8px 0 22px;border-bottom:1px solid var(--line);margin-bottom:24px}
+.eyebrow{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.eyebrow b{color:var(--accent);font-weight:500}
+.eyebrow i{display:block;width:36px;height:1px;background:var(--line)}
+h2.big{font-size:clamp(1.7rem,3.6vw,2.3rem);line-height:1.25;margin:10px 0 8px;letter-spacing:-.01em}
+.sdesc{color:var(--mute);max-width:54em;margin:0}
+.shr{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.zch,.pill2{display:inline-block;font-family:var(--mono);font-size:.78rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--panel)}
+.zch.up{color:var(--up);border-color:rgba(63,182,139,.35);background:rgba(63,182,139,.1)}
+.zch.cool{color:var(--accent);border-color:rgba(56,189,248,.35);background:rgba(56,189,248,.1)}
+.zg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.zc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;cursor:pointer;transition:border-color .15s}
+.zc:hover,.zc:focus-visible{border-color:var(--accent)}
+.zc1{display:flex;align-items:center;gap:10px}
+.tk{font-family:var(--mono);font-size:.74rem;font-weight:700;padding:3px 8px;border-radius:6px;background:var(--hover);border:1px solid var(--line);color:var(--ink)}
+.zc1 b{font-weight:500}
+.zst{margin-left:auto;font-size:.76rem;padding:2px 10px;border-radius:999px}
+.zst.up{color:var(--up);background:rgba(63,182,139,.12)}
+.zst.cool{color:var(--accent);background:rgba(56,189,248,.12)}
+.zst.flat{color:var(--mute);background:var(--hover)}
+.zc2{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px}
+.zp{font-family:var(--mono);font-size:1.45rem;font-weight:500}
+.zd{font-family:var(--mono);font-size:.82rem;color:var(--mute)}
+.trk{position:relative;height:4px;background:var(--line);border-radius:2px;margin:18px 0 8px}
+.trk .zn{position:absolute;top:-3px;height:10px;border-radius:5px;background:rgba(56,189,248,.45);border:1px solid var(--accent)}
+.trk .px{position:absolute;top:-6px;width:2px;height:16px;background:var(--ink);transform:translateX(-1px)}
+.ends{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.74rem;color:var(--mute)}
+.zl{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--line);margin-top:16px;padding-top:14px;font-size:.9rem}
+.zl span{color:var(--mute)}
+.zl b{font-family:var(--mono);font-weight:500}
+.zr{color:var(--ink);font-size:.9rem;margin-top:4px}
+.zf{display:flex;justify-content:space-between;margin-top:12px;font-family:var(--mono);font-size:.76rem;color:var(--mute)}
+@media (max-width:820px){.zg{grid-template-columns:minmax(0,1fr)}}
+.lab{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px;align-items:start}
+.labl,.labr{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+.presets{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.presets button{background:none;border:1px solid var(--line);color:var(--mute);border-radius:999px;padding:6px 14px;font:inherit;font-size:.85rem;cursor:pointer;min-height:36px}
+.presets button:hover{border-color:var(--accent);color:var(--ink)}
+.presets button[aria-pressed=true]{border-color:var(--accent);color:var(--accent);background:rgba(56,189,248,.1)}
+.sl{margin-bottom:18px}
+.slh{display:flex;justify-content:space-between;align-items:baseline;font-size:.92rem}
+.slh b{font-family:var(--mono);font-size:1rem;font-weight:500}
+.sl input[type=range]{width:100%;accent-color:var(--accent);margin:10px 0 2px;height:28px}
+.sle{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.74rem;color:var(--mute)}
+.interp{border-top:1px solid var(--line);padding-top:16px;font-size:.9rem;display:grid;gap:8px}
+.interp b{font-weight:700}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:12px;margin-top:18px;overflow:hidden}
+.tiles>div{padding:14px 16px;border-left:1px solid var(--line)}
+.tiles>div:first-child{border-left:0}
+.tiles strong{display:block;font-family:var(--mono);font-size:1.3rem;font-weight:500}
+.tiles small{color:var(--mute);font-size:.78rem}
+.labh{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--mute);margin-bottom:10px}
+.rank{max-height:480px;overflow-y:auto;padding-right:6px}
+.rk{padding:9px 0;border-bottom:1px solid var(--line)}
+.rk:last-child{border-bottom:0}
+.rkt{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.95rem}
+.rkt b{font-weight:700}
+.rkb{position:relative;height:3px;background:var(--line);border-radius:2px;margin:6px 0 4px}
+.rkb i{position:absolute;top:0;height:3px;border-radius:2px;background:currentColor}
+.rkb::after{content:"";position:absolute;left:50%;top:-3px;width:1px;height:9px;background:var(--mute);opacity:.5}
+.rkn{font-size:.76rem;color:var(--mute);font-family:var(--mono)}
+@media (max-width:900px){.lab{grid-template-columns:minmax(0,1fr)}.tiles{grid-template-columns:minmax(0,1fr)}.tiles>div{border-left:0;border-top:1px solid var(--line)}.tiles>div:first-child{border-top:0}}
+.sub3{font-size:1.05rem;margin:32px 0 10px}
+.bw{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,2fr);gap:16px;align-items:start}
+.gc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 20px;text-align:center}
+.gg{width:100%;max-width:300px;height:auto}
+.gn{font-family:var(--mono);font-size:54px;font-weight:700;fill:var(--ink)}
+.gs{font-family:var(--mono);font-size:13px;fill:var(--mute)}
+.glab{display:inline-block;margin:8px 0 10px;padding:4px 16px;border-radius:999px;font-size:.88rem}
+.glab.up{color:var(--accent);background:rgba(56,189,248,.14)}
+.glab.warn{color:var(--warn);background:rgba(217,164,65,.14)}
+.glab.down{color:var(--down);background:rgba(240,97,109,.14)}
+.gcap{color:var(--mute);font-size:.86rem;margin:0 0 16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.bkh{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:var(--mute);text-align:left;margin-bottom:8px}
+.bks{display:flex;flex-wrap:wrap;gap:6px;text-align:left}
+.bk{font-family:var(--mono);font-size:.74rem;padding:3px 9px;border:1px solid var(--line);border-radius:999px;background:var(--bg)}
+.ig{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.ic2{background:var(--panel);padding:16px 18px}
+.ich{display:flex;justify-content:space-between;gap:8px;color:var(--mute);font-size:.88rem}
+.lvb{font-size:.74rem;padding:1px 9px;border-radius:6px;white-space:nowrap}
+.lvb.up{color:var(--up);background:rgba(63,182,139,.14)}
+.lvb.warn{color:var(--warn);background:rgba(217,164,65,.14)}
+.lvb.down{color:var(--down);background:rgba(240,97,109,.14)}
+.icv{font-family:var(--mono);font-size:1.5rem;font-weight:500;margin:6px 0 8px}
+.seg3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.seg3 i{height:3px;border-radius:2px;background:var(--line)}
+.seg3 i.up{background:var(--up)}
+.seg3 i.warn{background:var(--warn)}
+.seg3 i.down{background:var(--down)}
+.icr{font-size:.76rem;color:var(--mute);margin-top:8px}
+@media (max-width:900px){.bw{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.ig{grid-template-columns:minmax(0,1fr)}}
+.chipsel{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.cs{font-family:var(--mono);font-size:.78rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--mute);cursor:pointer;min-height:36px}
+.cs:hover{border-color:var(--accent)}
+.cs[aria-pressed=true]{color:var(--accent);border-color:var(--accent);background:rgba(56,189,248,.1)}
+.sim{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:16px;align-items:start}
+.simc,.siml{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+.simh{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:flex-start}
+.simh .l{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--mute)}
+.simh .big{font-family:var(--mono);font-size:2.6rem;font-weight:500;line-height:1.1}
+.simh .r{text-align:right;font-family:var(--mono);font-size:.88rem;line-height:1.7}
+.simc svg{width:100%;height:auto;display:block;margin-top:10px}
+.simc svg polyline{fill:none;stroke-linejoin:round;stroke-linecap:round}
+.simc svg .p1{stroke:var(--accent);stroke-width:2.2}
+.simc svg .p2{stroke:var(--mute);stroke-width:1.5}
+.simc svg .z0{stroke:var(--line);stroke-dasharray:3 4}
+.simc .leg{display:flex;justify-content:space-between;font-size:.82rem;color:var(--mute);margin-top:6px}
+.simc .leg span{display:inline-flex;align-items:center;gap:6px}
+.simc .leg i{display:inline-block;width:14px;height:2px;background:currentColor}
+.sl2 .row2{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.92rem}
+.sl2 .w{color:var(--mute);font-size:.76rem;margin-left:8px}
+.siml .hh{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--mute);margin-bottom:6px}
+details.adv{margin-top:28px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:4px 18px}
+details.adv summary{cursor:pointer;padding:14px 0;color:var(--mute);font-size:.92rem;min-height:44px}
+details.adv[open] summary{color:var(--ink)}
+@media (max-width:900px){.sim{grid-template-columns:minmax(0,1fr)}}
+.logo{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
+.logo svg{width:28px;height:28px;flex:none;color:var(--accent)}
+.logo .lt{display:flex;flex-direction:column;line-height:1.15}
+.logo b{font-family:var(--mono);font-size:1rem;letter-spacing:.2em;font-weight:700}
+.logo small{font-size:.62rem;letter-spacing:.2em;color:var(--mute)}
+@media (max-width:1100px){.logo small{display:none}}
+#wlView{display:none}
+body.wlmode #wlView{display:block}
+body.wlmode nav,body.wlmode header.hero,body.wlmode #app,body.wlmode #foot{display:none}
+.wlh{display:flex;align-items:center;gap:18px;padding:16px max(16px,calc((100% - 1200px)/2));border-bottom:1px solid var(--line)}
+.wlh a.back{color:var(--mute);text-decoration:none;font-size:.92rem}
+.wlh a.back:hover{color:var(--ink)}
+.live{margin-left:auto;display:inline-flex;gap:10px;align-items:center;font-family:var(--mono);font-size:.76rem;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
+.live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--up)}
+#wlView .shead{padding-top:36px}
+.wlg{display:grid;grid-template-columns:260px minmax(0,1fr);gap:20px;align-items:start}
+.wls{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.wls .t{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--mute);margin-bottom:12px}
+.wli{display:flex;align-items:center;gap:8px;border:1px solid transparent;border-radius:10px;padding:8px 10px;cursor:pointer;min-height:44px}
+.wli.on{border-color:var(--line);background:var(--hover)}
+.wli .dot{width:8px;height:8px;border-radius:50%;flex:none}
+.wli .nm{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wli .ct{font-family:var(--mono);font-size:.76rem;color:var(--mute)}
+.wli .ic3{background:none;border:0;color:var(--mute);cursor:pointer;padding:6px;font-size:.95rem}
+.wli .ic3:hover{color:var(--ink)}
+.wlnew{width:100%;margin-top:10px;background:none;border:1px dashed var(--line);border-radius:10px;padding:10px;color:var(--mute);font:inherit;cursor:pointer;min-height:44px}
+.wlnew:hover{border-color:var(--accent);color:var(--ink)}
+.wln{width:100%;margin-top:10px;background:var(--bg);color:var(--ink);border:1px solid var(--accent);border-radius:10px;padding:10px;font:inherit;min-height:44px}
+.wst{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:14px}
+.wst>div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.wst small{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--mute)}
+.wst strong{font-family:var(--mono);font-size:1.4rem;font-weight:500}
+.wla{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:14px}
+.wla input{width:100%;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:inherit;min-height:44px}
+.wla input:focus{border-color:var(--accent);outline:none}
+.wlt{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.wlt table{min-width:0;width:100%}
+.wlt th{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;font-weight:400}
+.wlt tr.r{cursor:pointer}
+.wlt tr.r:hover{background:var(--hover)}
+.wlt .x{background:none;border:0;color:var(--mute);cursor:pointer;font-size:1.05rem;padding:6px 10px;min-height:36px}
+.wlt .x:hover{color:var(--down)}
+.wle{padding:28px 18px;text-align:center;color:var(--mute)}
+@media (max-width:900px){.wlg{grid-template-columns:minmax(0,1fr)}.wst{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.wlt{overflow-x:auto}
+.wlh{flex-wrap:wrap;gap:10px 16px}
+@media (max-width:560px){.wlt th:nth-child(2),.wlt td:nth-child(2){display:none}.wlh a.back{white-space:nowrap}.wst strong{font-size:1.2rem}}
+@media (max-width:820px){nav{flex-wrap:wrap;gap:8px 12px}.srch{flex:1 1 160px}.links{order:3;width:100%;margin-left:0;overflow-x:auto;gap:16px}section[id]{scroll-margin-top:112px}.hero .wrap{grid-template-columns:minmax(0,1fr)}.idx{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.row{grid-template-columns:minmax(0,1fr) 80px 96px}svg.sp{width:80px}.nc{flex-basis:78%}.pill strong{font-size:1.1rem}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body id="top">
-<nav><a class="logo" href="#top">Hunscope</a><div class="srch"><input id="q" type="search" placeholder="ค้นหาหุ้น" aria-label="ค้นหาหุ้น" autocomplete="off"><div class="qres" id="qres" hidden></div></div><div class="links"><a href="#overview">ภาพรวม</a><a href="#zones">โซนรับ</a><a href="#fundamentals">พื้นฐาน</a><a href="#macro">สถานการณ์</a><a href="#bubble">AI bubble</a><a href="#portfolio">พอร์ตจำลอง</a><a href="#analysis">วิเคราะห์ข่าว</a><a href="#news">ตารางข่าว</a></div></nav>
+<nav><a class="logo" href="#top"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="16" r="9"/><circle cx="16" cy="16" r="2.2" fill="currentColor"/><path d="M16 3v6M16 23v6M3 16h6M23 16h6"/></svg><span class="lt"><b>HUNSCOPE</b><small>กล้องส่องตลาดเทค</small></span></a><div class="srch"><input id="q" type="search" placeholder="ค้นหาหุ้น" aria-label="ค้นหาหุ้น" autocomplete="off"><div class="qres" id="qres" hidden></div></div><div class="links"><a href="#overview">ภาพรวม</a><a href="#zones">โซนรับ</a><a href="#fundamentals">พื้นฐาน</a><a href="#macro">สถานการณ์</a><a href="#bubble">AI bubble</a><a href="#analysis">ข่าว</a><a href="#portfolio">พอร์ตจำลอง</a><a href="#/watchlists">รายการของฉัน</a></div></nav>
 <header class="hero"><div class="wrap">
   <div><h1 id="headline">กำลังโหลด…</h1>
   <p class="sub" id="meta"></p></div>
   <div class="pills" id="stats"><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div></div>
 </div></header>
 <main class="wrap" id="app"><section><div class="idx"><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div></div></section></main>
-<div class="wrap"><footer>ตัวชี้วัดคำนวณจากราคาปิดรายวัน (RSI 14 วัน, MACD 12/26/9, เส้นเฉลี่ย 50 และ 200 วัน) คะแนนสัญญาณเป็นการนับแนวโน้มแบบง่าย ไม่ใช่คำแนะนำให้ซื้อหรือขาย ข้อมูลจาก Yahoo Finance อาจล่าช้าหรือผิดพลาดได้</footer></div>
+<div class="wrap" id="foot"><footer>ตัวชี้วัดคำนวณจากราคาปิดรายวัน (RSI 14 วัน, MACD 12/26/9, เส้นเฉลี่ย 50 และ 200 วัน) คะแนนสัญญาณเป็นการนับแนวโน้มแบบง่าย ไม่ใช่คำแนะนำให้ซื้อหรือขาย ข้อมูลจาก Yahoo Finance อาจล่าช้าหรือผิดพลาดได้</footer></div>
+<div id="wlView"><div class="wlh"><a class="logo" href="#"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="16" r="9"/><circle cx="16" cy="16" r="2.2" fill="currentColor"/><path d="M16 3v6M16 23v6M3 16h6M23 16h6"/></svg><span class="lt"><b>HUNSCOPE</b><small>กล้องส่องตลาดเทค</small></span></a><a class="back" href="#">← กลับแดชบอร์ด</a><span class="live" id="wlLive">ข้อมูลสด</span></div><main class="wrap"><div class="shead"><div><div class="eyebrow"><b>WATCHLIST</b><i></i><span>แยกจากแดชบอร์ดหลัก</span></div><h2 class="big">รายการหุ้นที่เฝ้าดู</h2><p class="sdesc">สร้างได้หลายรายการเพื่อแยกกลุ่มหุ้นที่สนใจ เพิ่มหรือถอดหุ้นได้ตลอด ระบบบันทึกรายการไว้ในเครื่องนี้อัตโนมัติ และดึงราคาจากฟีดเดียวกับแดชบอร์ดหลัก กดที่หุ้นเพื่อเปิดรายละเอียด</p></div></div><div class="wlg"><aside class="wls" id="wlSide"></aside><div id="wlMainCol"></div></div></main></div>
 <dialog id="dlg"><div id="dlgBody"></div></dialog>
 <script>
 const fmt=(n,d=2)=>n==null?"–":Number(n).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
@@ -212,9 +376,9 @@ function spark(v){
 function bigChart(d){
   const v=d.series,w=600,h=200,min=Math.min(...v),max=Math.max(...v),r=max-min||1,y=n=>h-6-(n-min)/r*(h-12);
   const p=v.map((n,i)=>`${(i/(v.length-1)*w).toFixed(1)},${y(n).toFixed(1)}`).join(" ");
-  const bands=zs=>(zs||[]).filter(z=>z.high>=min&&z.low<=max).map(z=>{const t=y(Math.min(z.high,max));return `<rect x="0" width="${w}" y="${t}" height="${Math.max(2,y(Math.max(z.low,min))-t)}" fill="#58a6ff" opacity=".16"/>`}).join("");
+  const bands=zs=>(zs||[]).filter(z=>z.high>=min&&z.low<=max).map(z=>{const t=y(Math.min(z.high,max));return `<rect x="0" width="${w}" y="${t}" height="${Math.max(2,y(Math.max(z.low,min))-t)}" fill="#38bdf8" opacity=".16"/>`}).join("");
   const ref=(val,c,t)=>val!=null&&val>=min&&val<=max?`<line x1="0" x2="${w}" y1="${y(val)}" y2="${y(val)}" stroke="${c}" stroke-dasharray="4 4" opacity=".7"/><text x="${w-4}" y="${y(val)-4}" fill="${c}" font-size="11" text-anchor="end">${t}</text>`:"";
-  return `<svg class="big ${cls(v[v.length-1]-v[0])}" viewBox="0 0 ${w} ${h}" role="img" aria-label="กราฟราคา 90 วัน">${bands((d.zones||{}).list)}<polyline points="${p}" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>${ref(d.sma50,"#58a6ff","SMA50")}${ref(d.sma200,"#d9a441","SMA200")}</svg>`;
+  return `<svg class="big ${cls(v[v.length-1]-v[0])}" viewBox="0 0 ${w} ${h}" role="img" aria-label="กราฟราคา 90 วัน">${bands((d.zones||{}).list)}<polyline points="${p}" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>${ref(d.sma50,"#38bdf8","SMA50")}${ref(d.sma200,"#d9a441","SMA200")}</svg>`;
 }
 function row(d){
   return `<div class="row ${cls(d.change)}"><div class="name" style="color:var(--ink)">${esc(d.name)}<span class="sym">${esc(d.symbol)}</span></div>${spark(d.series.slice(-30))}<div class="num"><div class="price">${fmt(d.price)}</div><div class="chg">${chg(d)}</div></div></div>`;
@@ -245,9 +409,18 @@ function zoneRow(d){
   return `<tr data-sym="${esc(d.symbol)}" tabindex="0"><td><span style="font-weight:500">${esc(d.name)}</span><span class="sym">${esc(d.symbol)}</span></td><td class="price">${fmt(d.price)}</td>
   <td>${n?`${fmt(n.low)} – ${fmt(n.high)}`:"–"}</td><td>${n?(n.dist_pct<=0?"อยู่ในโซน":fmt(n.dist_pct,1)+"%"):"–"}</td><td>${n?esc(n.labels.join(" + ")):"ไม่พบแนวรับใกล้ราคา"}</td><td>${z.rr==null?"–":"1 : "+fmt(z.rr,1)}</td><td class="${s[1]}"><span class="chip">${s[0]}</span></td></tr>`;
 }
+const shead=(n,l,t,d,r="")=>`<div class="shead"><div><div class="eyebrow"><b>${n}</b><i></i><span>${l}</span></div><h2 class="big">${t}</h2><p class="sdesc">${d}</p></div>${r?`<div class="shr">${r}</div>`:""}</div>`;
+const ZC={in:"up",near:"cool",far:"flat",none:"flat"};
+function zoneCard(d){
+  const z=d.zones,n=z.list[0],s=ZS[z.status]||ZS.far,lo=d.low52,hi=d.high52;
+  const pos=v=>Math.max(0,Math.min(100,(v-lo)/(hi-lo)*100));
+  const bar=(lo!=null&&hi!=null&&hi>lo)?`<div class="trk">${n?`<i class="zn" style="left:${pos(n.low).toFixed(1)}%;width:${Math.max(1.5,pos(n.high)-pos(n.low)).toFixed(1)}%"></i>`:""}<i class="px" style="left:${pos(d.price).toFixed(1)}%"></i></div><div class="ends"><span>${fmt(lo)}</span><span>${fmt(hi)}</span></div>`:"";
+  return `<div class="zc" data-sym="${esc(d.symbol)}" tabindex="0" role="button" aria-label="ดูรายละเอียด ${esc(d.name)}"><div class="zc1"><span class="tk">${esc(d.symbol)}</span><b>${esc(d.name)}</b><span class="zst ${ZC[z.status]||"flat"}">${s[0]}</span></div><div class="zc2"><span class="zp">${fmt(d.price)}</span><span class="zd">${n?(n.dist_pct<=0?"อยู่ในโซน":"ห่าง "+fmt(n.dist_pct,1)+"%"):"ไม่พบโซนใกล้ราคา"}</span></div>${bar}<div class="zl"><span>โซนใกล้สุด</span><b>${n?fmt(n.low)+" – "+fmt(n.high):"–"}</b></div><div class="zr">${n?esc(n.labels.join(" + ")):"ไม่พบแนวรับใกล้ราคา"}</div><div class="zf"><span>R:R ${z.rr==null?"–":"1 : "+fmt(z.rr,1)}</span><span>ATR ${fmt(z.atr)}</span></div></div>`;
+}
 function zonesSection(stocks){
   const rows=stocks.filter(s=>s.zones).sort((a,b)=>{const A=(ZS[a.zones.status]||ZS.far)[2],B=(ZS[b.zones.status]||ZS.far)[2];return A-B||((a.zones.list[0]||{}).dist_pct??99)-((b.zones.list[0]||{}).dist_pct??99)});
-  return `<section id="zones"><h2>โซนรับทางเทคนิค</h2><p class="note">ระดับราคาด้านล่างที่เคยเป็นแนวรับ หรือที่เส้นเฉลี่ยกับ Fibonacci มาซ้อนกัน คำนวณจากราคาในอดีต ไม่ได้รับประกันว่าราคาจะยืนได้ และไม่ใช่คำแนะนำให้ซื้อ กดแถวเพื่อดูรายละเอียด</p><div class="box scroll"><table class="zt"><thead><tr><th>หุ้น</th><th>ราคา</th><th>โซนใกล้สุด</th><th>ห่างจากโซน</th><th>เหตุผล</th><th title="ถ้าซื้อกลางโซน เป้าคือสูงสุด 120 วัน และตัดขาดทุนที่จุดโครงสร้างเสีย">R:R</th><th>สถานะ</th></tr></thead><tbody>${rows.map(zoneRow).join("")||`<tr><td colspan="7" class="flat">ยังไม่มีข้อมูลโซน</td></tr>`}</tbody></table></div></section>`;
+  const inN=rows.filter(s=>s.zones.status==="in").length,nearN=rows.filter(s=>s.zones.status==="near").length;
+  return `<section id="zones">${shead("03","SUPPORT ZONES","โซนรับทางเทคนิค","บริเวณที่แนวรับเดิม เส้นเฉลี่ย และ Fibonacci มาซ้อนกัน คำนวณจากราคาย้อนหลัง ไม่ได้รับประกันว่าราคาจะยืนได้ และไม่ใช่คำแนะนำให้ซื้อ กดการ์ดเพื่อดูรายละเอียด",`<span class="zch up">${inN} อยู่ในโซน</span><span class="zch cool">${nearN} ใกล้โซน</span>`)}<div class="zg">${rows.map(zoneCard).join("")||`<div class="box msg flat">ยังไม่มีข้อมูลโซน</div>`}</div></section>`;
 }
 function zoneBlock(d){
   const z=d.zones;if(!z)return"";
@@ -328,25 +501,45 @@ function calcRows(mc,o,y){
   return sens.map(s=>({s,e:none?0:est(s,sh)})).sort((a,b)=>b.e-a.e).map(({s,e})=>`<tr><td>${esc(s.name)}<span class="sym">${esc(s.symbol)}</span></td><td class="${sc(e)}"><b>${pcs(e,2)}</b></td><td class="flat">R² ${fmt(s.r2,2)} • ${none?"–":rel(s,sh)}</td></tr>`).join("");
 }
 function macroSection(data){
+  const hd=shead("05","SCENARIO","วิเคราะห์สถานการณ์","ลองสมมติว่าน้ำมันและดอกเบี้ยขยับ แล้วดูว่าหุ้นแต่ละตัวเคยขยับตามมากน้อยแค่ไหน คำนวณจากการถดถอยผลตอบแทนรายวันย้อนหลัง 1 ปี เป็นภาพคร่าวๆ ไม่ใช่การพยากรณ์");
   const mc=data.macro;
-  if(!mc)return `<section id="macro"><h2>วิเคราะห์สถานการณ์</h2><div class="box msg">ยังไม่มีข้อมูลส่วนนี้ ลองรัน fetch_data.py ใหม่</div></section>`;
+  if(!mc)return `<section id="macro">${hd}<div class="box msg">ยังไม่มีข้อมูลส่วนนี้ ลองรัน fetch_data.py ใหม่</div></section>`;
   const c=mc.context||{},chip=(k,v)=>v?`<span><small>${k}</small> ${v}</span>`:"";
-  const ctx=[chip("Brent",c.brent?fmt(c.brent.price)+" ("+pcs(c.brent.chg1m)+" ใน 1 เดือน)":""),chip("ผลตอบแทน 10 ปี",c.y10?fmt(c.y10.level)+"% ("+(c.y10.chg1m_bp>0?"+":"")+fmt(c.y10.chg1m_bp,0)+"bp ใน 1 เดือน)":""),chip("ดอกเบี้ยเฟด",c.fedfunds?fmt(c.fedfunds.rate)+"%":""),chip("CPI YoY",c.cpi?fmt(c.cpi.yoy,1)+"%"+(c.cpi.core_yoy!=null?" (core "+fmt(c.cpi.core_yoy,1)+"%)":""):"")].join("");
-  const pre=[["น้ำมัน +10%","10,0"],["น้ำมัน −10%","-10,0"],["ผลตอบแทน 10 ปี +0.25%","0,25"],["ผลตอบแทน 10 ปี −0.25%","0,-25"],["น้ำมัน +10% และผลตอบแทน +0.25%","10,25"]];
-  return `<section id="macro"><h2>วิเคราะห์สถานการณ์</h2><p class="note">ถ้าข่าวเรื่องน้ำมัน ดอกเบี้ย เงินเฟ้อ หรือมาตรการการค้าออกมาแบบต่างๆ ตลาดและหุ้นที่ติดตามอาจได้รับผลอย่างไร ข้อความอธิบายเป็นหลักเศรษฐกิจทั่วไป ไม่ใช่การพยากรณ์ ผลลัพธ์จริงขึ้นกับสาเหตุของข่าวและสิ่งที่ตลาดคาดไว้ก่อนหน้า</p><div class="ctx">${ctx}${chip("ทองคำ",c.gold?fmt(c.gold.price)+" ("+pcs(c.gold.chg1m)+" ใน 1 เดือน)":"")}</div><div class="tabs" id="macroTabs" role="tablist">${MFAC.map((k,i)=>`<button role="tab" aria-selected="${i===0}" data-f="${k}">${esc(PB[k].label)}</button>`).join("")}</div><div id="macroBody"></div>
-  <h3 style="margin:30px 0 4px;font-size:1.05rem">ลองสมมติสถานการณ์</h3><p class="note">คำนวณจากการถดถอยของผลตอบแทนรายวันย้อนหลัง 1 ปีกับการเปลี่ยนแปลงของ Brent และผลตอบแทนพันธบัตร 10 ปี (ใช้ 10 ปีเป็นตัวแทนทิศทางดอกเบี้ย ซึ่งไม่เท่ากับการตัดสินใจของเฟดโดยตรง) ตัวแบบอธิบายการขยับของหุ้นได้น้อย ดูได้จากค่า R² เพราะยังมีผลประกอบการและข่าว AI และความสัมพันธ์เปลี่ยนได้ตามช่วงเวลา ใช้เป็นภาพคร่าวๆ เท่านั้น</p>
-  <div class="calc"><div><label for="mOil">น้ำมัน Brent เปลี่ยน (%)</label><input id="mOil" type="number" step="1" value="10"></div><div><label for="mY">ผลตอบแทน 10 ปี เปลี่ยน (bp)</label><input id="mY" type="number" step="5" value="0"></div>${pre.map(([t,v])=>`<button data-pre="${v}">${esc(t)}</button>`).join("")}</div>
-  <div class="box scroll"><table class="mt"><thead><tr><th>หุ้น/ดัชนี</th><th>ประมาณการเปลี่ยนแปลง</th><th>ความน่าเชื่อถือของความสัมพันธ์</th></tr></thead><tbody id="mRes"></tbody></table></div></section>`;
+  const ctx=[chip("Brent",c.brent?fmt(c.brent.price)+" ("+pcs(c.brent.chg1m)+" ใน 1 เดือน)":""),chip("ผลตอบแทน 10 ปี",c.y10?fmt(c.y10.level)+"% ("+(c.y10.chg1m_bp>0?"+":"")+fmt(c.y10.chg1m_bp,0)+"bp ใน 1 เดือน)":""),chip("ดอกเบี้ยเฟด",c.fedfunds?fmt(c.fedfunds.rate)+"%":""),chip("CPI YoY",c.cpi?fmt(c.cpi.yoy,1)+"%"+(c.cpi.core_yoy!=null?" (core "+fmt(c.cpi.core_yoy,1)+"%)":""):""),chip("ทองคำ",c.gold?fmt(c.gold.price)+" ("+pcs(c.gold.chg1m)+" ใน 1 เดือน)":"")].join("");
+  const pre=[["น้ำมัน +10%","10,0"],["น้ำมัน −10%","-10,0"],["ดอกเบี้ย −20bp","0,-20"],["ดอกเบี้ย +20bp","0,20"],["รีเซ็ต","0,0"]];
+  return `<section id="macro">${hd}<div class="lab"><div class="labl"><div class="presets" id="mPre">${pre.map(([t,v])=>`<button type="button" data-pre="${v}" aria-pressed="false">${esc(t)}</button>`).join("")}</div>
+  <div class="sl"><div class="slh"><span>น้ำมัน Brent เปลี่ยน</span><b id="mOilV">+10%</b></div><input id="mOil" type="range" min="-20" max="20" step="1" value="10" aria-label="น้ำมัน Brent เปลี่ยน (%)"><div class="sle"><span>−20%</span><span>+20%</span></div></div>
+  <div class="sl"><div class="slh"><span>ผลตอบแทน 10 ปี เปลี่ยน</span><b id="mYV">0 bp</b></div><input id="mY" type="range" min="-60" max="60" step="5" value="0" aria-label="ผลตอบแทน 10 ปี เปลี่ยน (bp)"><div class="sle"><span>−60bp</span><span>+60bp</span></div></div>
+  <div class="interp" id="mInterp"></div><div class="tiles" id="mTiles"></div></div>
+  <div class="labr"><div class="labh"><span>หุ้นที่อ่อนไหวต่อสถานการณ์นี้</span><span>ประมาณการ %</span></div><div class="rank" id="mRank"></div><p class="note" style="margin:10px 0 0">R² ต่ำหมายถึงน้ำมันและดอกเบี้ยอธิบายการขยับของหุ้นได้น้อย (ผลประกอบการและข่าว AI มีผลมากกว่า) ใช้เป็นภาพคร่าวๆ เท่านั้น</p></div></div>
+  <h3 class="sub3">สถานการณ์รายปัจจัย</h3><div class="ctx">${ctx}</div><div class="tabs" id="macroTabs" role="tablist">${MFAC.map((k,i)=>`<button role="tab" aria-selected="${i===0}" data-f="${k}">${esc(PB[k].label)}</button>`).join("")}</div><div id="macroBody"></div></section>`;
 }
 function bindMacro(data){
   const mc=data.macro,body=document.getElementById("macroBody");
-  if(!body)return;
+  if(!mc||!body)return;
   const draw=k=>{body.innerHTML=drawFactor(k,mc)};
   draw("oil");
   document.querySelectorAll("#macroTabs button").forEach(b=>b.onclick=()=>{document.querySelectorAll("#macroTabs button").forEach(x=>x.setAttribute("aria-selected",x===b));draw(b.dataset.f)});
-  const run=()=>{mRes.innerHTML=calcRows(mc,parseFloat(mOil.value)||0,parseFloat(mY.value)||0)};
-  mOil.oninput=run;mY.oninput=run;
-  document.querySelectorAll("[data-pre]").forEach(b=>b.onclick=()=>{const[o,y]=b.dataset.pre.split(",");mOil.value=o;mY.value=y;run()});
+  const c=mc.context||{},sens=mc.sens||[];
+  const interp=(o,y)=>{
+    const a=o>=5?"<b>น้ำมัน</b> · น้ำมันขึ้นแรง ต้นทุนพลังงานและเงินเฟ้อมักเร่ง ตลาดมักกลัวเฟดคงดอกเบี้ยสูงนาน":o<=-5?"<b>น้ำมัน</b> · น้ำมันลดลงแรง แรงกดดันเงินเฟ้อลดลง มักหนุนหุ้นเทค แต่ต้องดูว่าลดเพราะอะไร":"<b>น้ำมัน</b> · น้ำมันแทบไม่ขยับ ไม่ใช่ปัจจัยหลักในสถานการณ์นี้";
+    const b=y>=10?"<b>ดอกเบี้ย</b> · ผลตอบแทนพันธบัตรขึ้น หุ้นเติบโตที่ราคาอิงกำไรอนาคตมักถูกกดดัน":y<=-10?"<b>ดอกเบี้ย</b> · ผลตอบแทนพันธบัตรลดลง ต้นทุนเงินทุนต่ำลง มักหนุนหุ้นเติบโต":"<b>ดอกเบี้ย</b> · ผลตอบแทนพันธบัตรแทบไม่ขยับ ไม่ใช่ปัจจัยหลักรอบนี้";
+    return `<div>${a}</div><div>${b}</div>`;
+  };
+  const run=()=>{
+    const o=+mOil.value,y=+mY.value,sh={oil:o,dy:y},none=!o&&!y;
+    mOilV.textContent=(o>0?"+":"")+o+"%";mYV.textContent=(y>0?"+":"")+y+" bp";
+    document.querySelectorAll("#mPre button").forEach(b=>{const[a,z]=b.dataset.pre.split(",").map(Number);b.setAttribute("aria-pressed",String(a===o&&z===y))});
+    mInterp.innerHTML=interp(o,y);
+    const e=s=>s?(none?0:est(s,sh)):null,ix=sens.find(s=>s.symbol==="^IXIC"),sx=sens.find(s=>s.symbol==="^SOX");
+    const tile=(v,l)=>`<div><strong class="${v==null?"flat":sc(v)}">${v==null?"–":pcs(v,1)}</strong><small>${l}</small></div>`;
+    mTiles.innerHTML=tile(e(ix),"Nasdaq · ประมาณการ")+tile(e(sx),"SOX ชิป · ประมาณการ")+`<div><strong>${c.brent?fmt(c.brent.price):"–"}</strong><small>Brent ล่าสุด${c.brent?" · "+pcs(c.brent.chg1m,1)+" 1 เดือน":""}</small></div>`;
+    const rows=sens.filter(s=>!s.symbol.startsWith("^")).map(s=>({s,e:none?0:est(s,sh)})).sort((a,b)=>Math.abs(b.e)-Math.abs(a.e));
+    const mx=Math.max(0.0001,...rows.map(r=>Math.abs(r.e)));
+    mRank.innerHTML=none?`<div class="rkn" style="padding:16px 0">เลื่อนแถบด้านซ้ายหรือกดปุ่มด้านบนเพื่อจำลองสถานการณ์</div>`:rows.map(({s,e})=>{const w=(Math.abs(e)/mx*50).toFixed(1);return `<div class="rk"><div class="rkt"><b>${esc(s.symbol)}</b><span class="${sc(e)}">${pcs(e,1)}</span></div><div class="rkb ${sc(e)}"><i style="${e<0?"right:50%":"left:50%"};width:${w}%"></i></div><div class="rkn">${esc(s.name)} · R² ${fmt(s.r2,2)}</div></div>`}).join("");
+  };
+  mOil.addEventListener("input",run);mY.addEventListener("input",run);
+  document.querySelectorAll("#mPre button").forEach(b=>b.onclick=()=>{const[a,z]=b.dataset.pre.split(",");mOil.value=a;mY.value=z;run()});
   run();
 }
 const BB={
@@ -361,35 +554,86 @@ const LV=[["ปกติ","up"],["ตึงตัว","warn"],["ร้อนแ�
 const bcls=s=>s<.34?"up":s<.67?"warn":"down";
 function bubbleStat(data){const b=data.bubble;return b?`<a class="pill" href="#bubble"><small>ความร้อนแรง AI</small><strong class="${bcls(b.score)}">${esc(b.label)}</strong></a>`:""}
 function bubbleSection(data){
+  const hd=r=>shead("06","AI BUBBLE WATCH","AI bubble watch","ตัวชี้วัดที่บอกว่าราคาหุ้นกลุ่ม AI ตึงตัวแค่ไหน ยิ่งคะแนนสูง ยิ่งพึ่งความคาดหวังในอนาคตมาก และปรับฐานได้แรงขึ้นถ้าความคาดหวังเปลี่ยน",r);
   const b=data.bubble;
-  if(!b)return `<section id="bubble"><h2>AI bubble watch</h2><div class="box msg">ยังไม่มีข้อมูลส่วนนี้ (ต้องมีหุ้น AI หลักที่ติดตามอย่างน้อย 3 ตัว)</div></section>`;
-  const present=new Set(data.groups.flatMap(g=>g.items.map(i=>i.symbol))),a=b.ai;
+  if(!b)return `<section id="bubble">${hd("")}<div class="box msg">ยังไม่มีข้อมูลส่วนนี้ (ต้องมีหุ้น AI หลักที่ติดตามอย่างน้อย 3 ตัว)</div></section>`;
+  const items=Object.fromEntries(data.groups.flatMap(g=>g.items.map(i=>[i.symbol,i])));
+  const present=new Set(Object.keys(items)),a=b.ai,k=b.indicators.length;
+  const col=b.score<.34?"var(--up)":b.score<.67?"var(--warn)":"var(--down)",cl=b.score<.34?"up":b.score<.67?"warn":"down";
+  const L=Math.PI*110,len=Math.max(2,b.score*L);
+  const gauge=`<svg class="gg" viewBox="0 0 260 150" role="img" aria-label="คะแนนความร้อนแรงรวม ${Math.round(b.score*100)} จาก 100"><path d="M20,130 A110,110 0 0 1 240,130" fill="none" stroke-width="18" stroke-linecap="round" style="stroke:var(--line)"/><path d="M20,130 A110,110 0 0 1 240,130" fill="none" stroke-width="18" stroke-linecap="round" stroke-dasharray="${len.toFixed(1)} ${(L+20).toFixed(1)}" style="stroke:${col}"/><text class="gn" x="130" y="112" text-anchor="middle">${Math.round(b.score*100)}</text><text class="gs" x="130" y="134" text-anchor="middle">/ 100</text></svg>`;
+  const basket=(b.basket||[]).filter(s=>items[s]).map(s=>`<span class="bk ${cls(items[s].pct)}">${esc(s)} ${pcs(items[s].pct,1)}</span>`).join("");
+  const cells=b.indicators.map(x=>`<div class="ic2" title="${esc(x.note)}"><div class="ich"><span>${esc(x.name)}</span><span class="lvb ${LV[x.level][1]}">${LV[x.level][0]}</span></div><div class="icv">${esc(x.value)}</div><div class="seg3">${[0,1,2].map(i=>`<i class="${i<=x.level?LV[x.level][1]:""}"></i>`).join("")}</div><div class="icr">${esc(x.rule)}</div></div>`).join("")+(k%2?`<div class="ic2"></div>`:"");
   const ai=a?`<div class="ai"><b>สรุปโดย Claude</b> <small class="flat">จากตัวชี้วัดและพาดหัวด้านล่างเท่านั้น</small><p>${esc(a.summary)}</p>${(a.hot||[]).length?`<p class="down">สัญญาณที่ร้อน: ${a.hot.map(esc).join(" • ")}</p>`:""}${(a.ok||[]).length?`<p class="up">ที่ยังรับได้: ${a.ok.map(esc).join(" • ")}</p>`:""}${(a.watch||[]).length?`<p>ควรติดตามต่อ: ${a.watch.map(esc).join(" • ")}</p>`:""}</div>`:"";
-  const rows=b.indicators.map(x=>`<tr><td>${esc(x.name)}<small>${esc(x.note)}</small></td><td><b>${esc(x.value)}</b></td><td class="${LV[x.level][1]}"><span class="chip">${LV[x.level][0]}</span></td><td class="flat"><small>${esc(x.rule)}</small></td></tr>`).join("");
   const hl=(b.headlines||[]).filter(okUrl).map(n=>`<a class="news" href="${esc(n.url)}" target="_blank" rel="noopener noreferrer"><small>${esc(n.source)} ${ago(n.time)}</small>${esc(n.title_th||n.title)}${n.title_th?`<small>${esc(n.title)}</small>`:""}</a>`).join("")||`<div class="msg flat">ไม่พบพาดหัวที่เกี่ยวข้องในข้อมูลชุดนี้</div>`;
   const sc2=BB.scen.map(s=>{const t=s.tags.filter(x=>present.has(x));return `<div><h3>${esc(s.t)}</h3><p>${esc(s.m)}</p>${t.length?`<div class="chips">${t.map(x=>`<span>${esc(x)}</span>`).join("")}</div>`:""}<p><small>ควรจับตา: ${esc(s.w)}</small></p></div>`}).join("");
-  return `<section id="bubble"><h2>AI bubble watch</h2><p class="note">รวมสัญญาณที่วัดได้จากหุ้น AI หลักที่ติดตาม (${esc(b.basket.join(", "))}) เพื่อดูว่าตลาดร้อนแรงแค่ไหน ไม่ได้บอกว่าเป็นฟองสบู่หรือไม่ และไม่ได้ทำนายว่าจะกลับตัวเมื่อไร เพราะโดยทั่วไปรู้ได้ชัดเจนเมื่อเหตุการณ์ผ่านไปแล้ว เกณฑ์แต่ละข้อเป็นดุลยพินิจทั่วไปที่ปรับได้</p>
-  <div class="box an"><b>ความร้อนแรงรวม: <span class="${bcls(b.score)}">${esc(b.label)}</span></b> <small class="flat">(คะแนน ${fmt(b.score*100,0)}/100)</small><div class="meter" role="img" aria-label="ระดับความร้อนแรงรวม"><i style="left:${(b.score*100).toFixed(0)}%"></i></div><div class="mlab"><span>ยังไม่ร้อนแรง</span><span>เริ่มตึงตัว</span><span>ร้อนแรง</span></div></div>
-  ${ai}
-  <h3 style="margin:22px 0 6px;font-size:1.05rem">ตัวชี้วัดรายข้อ</h3><div class="box scroll"><table class="bt"><thead><tr><th>ตัวชี้วัด</th><th>ค่าปัจจุบัน</th><th>สถานะ</th><th>เกณฑ์</th></tr></thead><tbody>${rows}</tbody></table></div>
-  <h3 style="margin:22px 0 6px;font-size:1.05rem">พาดหัวที่พูดถึงฟองสบู่และความร้อนแรง</h3><div class="box">${hl}</div>
-  <h3 style="margin:22px 0 0;font-size:1.05rem">ข้อโต้แย้งสองฝั่ง</h3><p class="note">เรื่องนี้นักวิเคราะห์เห็นต่างกันจริง ต่อไปนี้คือเหตุผลที่แต่ละฝั่งมักยกขึ้นมา</p>
+  return `<section id="bubble">${hd(`<span class="pill2">${k} ตัวชี้วัด</span>`)}<div class="bw"><div class="gc">${gauge}<div class="glab ${cl}">${esc(b.label)}</div><p class="gcap">คะแนนรวมจากตัวชี้วัดทั้ง ${k} ข้อ เทียบกับเกณฑ์ที่ตั้งไว้ (เป็นดุลยพินิจทั่วไป ไม่ใช่การพยากรณ์)</p><div class="bkh">ตะกร้าหุ้น AI</div><div class="bks">${basket}</div></div><div class="ig">${cells}</div></div>
+  <p class="note" style="margin-top:14px">มาตรวัดบอกความร้อนแรง ไม่ได้บอกว่าเป็นฟองสบู่หรือไม่ และไม่ได้ทำนายว่าจะกลับตัวเมื่อไร เพราะโดยทั่วไปรู้ได้ชัดเจนเมื่อเหตุการณ์ผ่านไปแล้ว</p>${ai}
+  <h3 class="sub3">พาดหัวที่พูดถึงฟองสบู่และความร้อนแรง</h3><div class="box">${hl}</div>
+  <h3 class="sub3">ข้อโต้แย้งสองฝั่ง</h3><p class="note">เรื่องนี้นักวิเคราะห์เห็นต่างกันจริง ต่อไปนี้คือเหตุผลที่แต่ละฝั่งมักยกขึ้นมา</p>
   <div class="two"><div><h3 class="down">ฝั่งที่กังวลว่าเป็นฟองสบู่</h3><ul>${BB.con.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div><h3 class="up">ฝั่งที่เห็นว่ายังไม่ใช่ฟองสบู่</h3><ul>${BB.pro.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div></div>
-  <h3 style="margin:22px 0 0;font-size:1.05rem">ถ้าเหตุการณ์ออกมาแบบต่างๆ</h3><div class="mc">${sc2}</div></section>`;
+  <h3 class="sub3">ถ้าเหตุการณ์ออกมาแบบต่างๆ</h3><div class="mc">${sc2}</div></section>`;
 }
 const PF_KEY="pf.v1";
 function pfLoad(){try{return JSON.parse(localStorage.getItem(PF_KEY))||{}}catch(e){return{}}}
 function pfSave(s){try{localStorage.setItem(PF_KEY,JSON.stringify(s))}catch(e){}}
+const PFS_KEY="pfs.v1",PFS_DEF=["NVDA","MSFT","AAPL","GOOGL","META","AVGO","AMD","TSM"];
+function pfsLoad(){try{return JSON.parse(localStorage.getItem(PFS_KEY))||{}}catch(e){return{}}}
+function pfsSave(o){try{localStorage.setItem(PFS_KEY,JSON.stringify(o))}catch(e){}}
 function portfolioSection(data){
-  if(!data.hist)return `<section id="portfolio"><h2>พอร์ตจำลอง</h2><div class="box msg">ยังไม่มีข้อมูลประวัติราคา ลองรัน fetch_data.py ใหม่</div></section>`;
-  return `<section id="portfolio"><h2>พอร์ตจำลอง</h2><p class="note">เลือกหุ้นและสัดส่วน ระบบจะย้อนดูว่าถ้าถือพอร์ตนี้ตลอดช่วงที่เลือก ผลตอบแทนต่อปี ความผันผวน และการลดลงสูงสุดเป็นเท่าไร พร้อมเทียบ Nasdaq และ S&P 500 นี่คือผลย้อนหลัง ไม่ใช่การคาดการณ์อนาคต ใช้ราคาปรับปันผลแล้ว ไม่รวมภาษี ค่าธรรมเนียม และค่าเงิน</p>
+  const seg=`<div class="seg" id="pfsSeg" role="group" aria-label="ช่วงเวลา"><button type="button" data-p="1" aria-pressed="false">1 เดือน</button><button type="button" data-p="3" aria-pressed="true">3 เดือน</button><button type="button" data-p="12" aria-pressed="false">1 ปี</button></div>`;
+  return `<section id="portfolio">${shead("08","SIMULATOR","พอร์ตจำลอง","เลือกหุ้นที่สนใจเพื่อดูว่าถ้าถือน้ำหนักเท่ากันทั้งหมด ผลตอบแทนจะเทียบกับ Nasdaq เป็นอย่างไร ระบบบันทึกที่เลือกไว้ในเครื่องนี้อัตโนมัติ",seg)}<div class="chipsel" id="pfsChips"></div><div id="pfsOut"></div><details class="adv"><summary>เครื่องมือขั้นสูง: ปรับน้ำหนักเอง ปรับสมดุล ผลตอบแทนต่อปี ความผันผวน</summary>${portfolioAdvHTML(data)}</details></section>`;
+}
+const pfsLine=a=>a.map(x=>(x/a[0]-1)*100);
+function pfsChart(port,bench){
+  const w=640,h=240,all=[0,...port,...(bench||[])],mn=Math.min(...all),mx=Math.max(...all),r=mx-mn||1,n=port.length;
+  const y=v=>(h-10-(v-mn)/r*(h-20)).toFixed(1),x=(i,m)=>(i/(m-1)*w).toFixed(1);
+  const pl=(a,c)=>`<polyline class="${c}" points="${a.map((v,i)=>x(i,a.length)+","+y(v)).join(" ")}"/>`;
+  return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="กราฟผลตอบแทนพอร์ตเทียบ Nasdaq"><line class="z0" x1="0" x2="${w}" y1="${y(0)}" y2="${y(0)}"/>${bench?pl(bench,"p2"):""}${pl(port,"p1")}</svg>`;
+}
+function pfsRender(data,sel,per){
+  const all=Object.fromEntries(data.groups.flatMap(g=>g.items.map(i=>[i.symbol,i]))),h=data.hist||{series:{}};
+  const n=per===1?22:per===3?63:53;
+  const get=s=>{
+    if(per===12){const a=h.series[s];if(!a)return null;const v=a.slice(-n);return v.length===n&&v.every(x=>x!=null)?v:null}
+    const it=all[s];return it&&it.series&&it.series.length>=n?it.series.slice(-n):null;
+  };
+  const used=[],skip=[];
+  sel.forEach(s=>{const v=get(s);v?used.push([s,v]):skip.push(s)});
+  if(!used.length)return `<div class="box msg flat">เลือกหุ้นอย่างน้อย 1 ตัวที่มีข้อมูลครบช่วงนี้ เพื่อดูผลตอบแทน${skip.length?` (ไม่มีข้อมูลครบ: ${skip.map(esc).join(", ")})`:""}</div>`;
+  const lines=used.map(([s,v])=>pfsLine(v)),m=lines[0].length;
+  const port=Array.from({length:m},(_,i)=>lines.reduce((a,l)=>a+l[i],0)/lines.length);
+  const bv=get("^IXIC"),bench=bv?pfsLine(bv):null,ret=port[m-1],br=bench?bench[bench.length-1]:null;
+  const wgt=Math.round(100/used.length);
+  const rows=used.map(([s],i)=>{const r=lines[i][m-1];return `<div class="row2"><span>${esc(s)}<span class="w">${wgt}%</span></span><span class="${sc(r)}">${pcs(r,1)}</span></div>`}).join("");
+  return `<div class="sim"><div class="simc"><div class="simh"><div><div class="l">ผลตอบแทนพอร์ต (น้ำหนักเท่ากัน)</div><div class="big ${sc(ret)}">${pcs(ret,1)}</div></div><div class="r">${br==null?"":`<div>Nasdaq ${pcs(br,1)}</div><div class="${sc(ret-br)}">${ret>=br?"ชนะตลาด":"แพ้ตลาด"} ${pcs(ret-br,1)}</div>`}</div></div>${pfsChart(port,bench)}<div class="leg"><span style="color:var(--accent)"><i></i>พอร์ตของคุณ</span>${bench?`<span><i></i>Nasdaq</span>`:"<span></span>"}<span>${used.length} หุ้น</span></div></div>
+  <div class="siml sl2"><div class="hh"><span>รายตัว</span><span>น้ำหนัก / ผลตอบแทน</span></div>${rows}<p class="note" style="margin:12px 0 0">${skip.length?`ไม่มีข้อมูลครบช่วงนี้จึงไม่นับ: ${skip.map(esc).join(", ")} • `:""}คำนวณจากราคาปิดย้อนหลัง ไม่รวมภาษี ค่าธรรมเนียม และค่าเงิน หุ้นในรายการเป็นหุ้นที่เลือกไว้ในวันนี้ ผลย้อนหลังจึงมักดูดีกว่าที่ผู้ลงทุนจริงจะได้ ไม่ใช่คำแนะนำการลงทุน</p></div></div>`;
+}
+function bindPfs(data,stocks){
+  const chips=document.getElementById("pfsChips"),out=document.getElementById("pfsOut");
+  if(!chips||!out)return;
+  const syms=stocks.map(s=>s.symbol),st=pfsLoad();
+  let sel=(Array.isArray(st.sel)?st.sel:PFS_DEF).filter(s=>syms.includes(s)),per=[1,3,12].includes(st.per)?st.per:3;
+  const draw=()=>{
+    chips.innerHTML=syms.map(s=>`<button type="button" class="cs" data-s="${esc(s)}" aria-pressed="${sel.includes(s)}">${esc(s)}</button>`).join("");
+    document.querySelectorAll("#pfsSeg button").forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.p===per)));
+    out.innerHTML=pfsRender(data,sel,per);
+    pfsSave({sel,per});
+  };
+  chips.addEventListener("click",e=>{const b=e.target.closest("[data-s]");if(!b)return;const s=b.dataset.s;sel=sel.includes(s)?sel.filter(x=>x!==s):[...sel,s];draw()});
+  document.querySelectorAll("#pfsSeg button").forEach(b=>b.onclick=()=>{per=+b.dataset.p;draw()});
+  draw();
+}
+function portfolioAdvHTML(data){
+  if(!data.hist)return `<div class="pfadv"><div class="box msg">ยังไม่มีข้อมูลประวัติราคา ลองรัน fetch_data.py ใหม่</div></div>`;
+  return `<div class="pfadv"><p class="note">เลือกหุ้นและสัดส่วน ระบบจะย้อนดูว่าถ้าถือพอร์ตนี้ตลอดช่วงที่เลือก ผลตอบแทนต่อปี ความผันผวน และการลดลงสูงสุดเป็นเท่าไร พร้อมเทียบ Nasdaq และ S&P 500 นี่คือผลย้อนหลัง ไม่ใช่การคาดการณ์อนาคต ใช้ราคาปรับปันผลแล้ว ไม่รวมภาษี ค่าธรรมเนียม และค่าเงิน</p>
   <div class="box an"><div class="pfc">
    <div><label for="pfAmt">เงินลงทุนเริ่มต้น (USD)</label><input id="pfAmt" type="number" min="100" step="1000" value="10000"></div>
    <div><label for="pfYrs">ช่วงย้อนหลัง</label><select id="pfYrs"><option value="1">1 ปี</option><option value="3">3 ปี</option><option value="5" selected>5 ปี</option></select></div>
    <div><label for="pfReb">การปรับสมดุล</label><select id="pfReb"><option value="0">ไม่ปรับ (ซื้อแล้วถือ)</option><option value="1" selected>ปรับกลับสัดส่วนเดิมทุกปี</option></select></div>
    <button id="pfEq">ถ่วงเท่ากัน</button><button id="pfClr">ล้างทั้งหมด</button></div>
   <div class="pfg" id="pfList"></div><p class="note" id="pfTot" style="margin:12px 0 0"></p></div>
-  <div class="pfo" id="pfOut"></div></section>`;
+  <div class="pfo" id="pfOut"></div></div>`;
 }
 function pfChart(lines){
   const w=640,h=220,all=lines.flatMap(l=>l.v),min=Math.min(...all),max=Math.max(...all),r=max-min||1,n=lines[0].v.length;
@@ -417,7 +661,7 @@ function pfCalc(data,w,amt,yrs,reb){
   const mdd=v=>{let pk=v[0],m=0;v.forEach(x=>{pk=Math.max(pk,x);m=Math.min(m,x/pk-1)});return m*100};
   const bench=(sym,nm,c,d)=>{const a=h.series[sym];if(!a||a[i0]==null)return null;let p=a[i0];const v=a.slice(i0).map(x=>{if(x!=null)p=x;return amt*p/a[i0]});return {n:nm,v,c,d}};
   const bs=[bench("^IXIC","Nasdaq","#8b97a8"),bench("^GSPC","S&P 500","#d9a441",1)].filter(Boolean);
-  const all=[{n:"พอร์ตจำลอง",v:val,c:"#58a6ff",sw:2.2},...bs];
+  const all=[{n:"พอร์ตจำลอง",v:val,c:"#38bdf8",sw:2.2},...bs];
   const row=l=>`<tr><td>${esc(l.n)}</td><td class="${sc(cagr(l.v))}"><b>${pcs(cagr(l.v),1)}</b></td><td class="${sc(tot(l.v))}">${pcs(tot(l.v),1)}</td><td>${fmt(vol(l.v),1)}%</td><td class="down">${fmt(mdd(l.v),1)}%</td><td>${fmt(l.v[l.v.length-1],0)}</td></tr>`;
   const warn=[...notes];
   if(years<1)warn.push(`ช่วงข้อมูลสั้นกว่า 1 ปี (${fmt(years,2)} ปี) การแปลงเป็น % ต่อปีอาจให้ตัวเลขที่ไม่สมจริง ดูผลตอบแทนรวมประกอบ`);
@@ -557,11 +801,12 @@ function repaintCards(data){
 }
 function repaintRows(data){
   const m=Object.fromEntries(data.groups.flatMap(g=>g.items.map(i=>[i.symbol,i])));
-  document.querySelectorAll("#stocks tr[data-sym], #zones tr[data-sym]").forEach(tr=>{
+  document.querySelectorAll("#stocks tr[data-sym], #zones .zc[data-sym]").forEach(tr=>{
     const d=m[tr.dataset.sym];
     if(!d)return;
     const p=tr.querySelector("td.price");
     if(p)p.textContent=fmt(d.price);
+    const zp=tr.querySelector(".zp");if(zp)zp.textContent=fmt(d.price);
     if(tr.closest("#stocks")){const c=tr.children;c[1].className=cls(d.change);c[3].className=cls(d.pct);c[3].textContent=sg(d.pct)+fmt(d.pct)+"%"}
   });
 }
@@ -577,6 +822,77 @@ function startQuotes(data,onApply){
   };
   pull();setInterval(pull,300000);
   document.addEventListener("visibilitychange",()=>{if(!document.hidden)pull()});
+}
+const WL_KEY="wl.v1",WL_COL=["#38bdf8","#34d399","#fbbf24","#f472b6","#a78bfa","#fb923c"];
+function wlDefault(){return{lists:[{id:"l1",name:"รายการโปรด",color:WL_COL[0],syms:[]}],active:"l1"}}
+function wlLoad(){try{const s=JSON.parse(localStorage.getItem(WL_KEY));if(s&&Array.isArray(s.lists)&&s.lists.length)return s}catch(e){}return wlDefault()}
+function wlSave(s){try{localStorage.setItem(WL_KEY,JSON.stringify(s))}catch(e){}}
+function wlHas(sym){const s=wlLoad(),l=s.lists.find(x=>x.id===s.active)||s.lists[0];return !!(l&&(l.syms||[]).includes(sym))}
+function bindWatchlist(data,searchable,openStock){
+  const view=document.getElementById("wlView");
+  if(!view)return;
+  const side=document.getElementById("wlSide"),col=document.getElementById("wlMainCol"),by=Object.fromEntries(searchable.map(s=>[s.symbol,s]));
+  let S=wlLoad(),adding=false;
+  S.lists=S.lists.map(l=>({id:String(l.id),name:String(l.name||"รายการ").slice(0,40),color:WL_COL.includes(l.color)?l.color:WL_COL[0],syms:(l.syms||[]).filter(x=>by[x])}));
+  if(!S.lists.some(l=>l.id===S.active))S.active=S.lists[0].id;
+  const cur=()=>S.lists.find(l=>l.id===S.active),save=()=>wlSave(S);
+  const render=()=>{
+    const l=cur(),items=l.syms.map(x=>by[x]).filter(Boolean),n=items.length;
+    const avg=n?items.reduce((a,d)=>a+d.pct,0)/n:null,up=items.filter(d=>d.pct>0).length,dn=items.filter(d=>d.pct<0).length;
+    const ab=items.filter(d=>d.sma50!=null&&d.price>d.sma50).length,zn=items.filter(d=>d.zones&&(d.zones.status==="in"||d.zones.status==="near")).length;
+    document.getElementById("wlLive").textContent="ข้อมูลสด | "+new Date(data.liveAt||data.updated).toLocaleString("th-TH",{timeZone:"Asia/Bangkok",day:"numeric",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"});
+    side.innerHTML=`<div class="t"><span>รายการของฉัน</span><span>${S.lists.length} รายการ</span></div>`+S.lists.map(x=>`<div class="wli ${x.id===S.active?"on":""}" role="button" tabindex="0" data-id="${esc(x.id)}"><span class="dot" style="background:${x.color}"></span><span class="nm">${esc(x.name)}</span><span class="ct">${x.syms.length}</span><button type="button" class="ic3" data-ren="${esc(x.id)}" aria-label="เปลี่ยนชื่อรายการ">✎</button><button type="button" class="ic3" data-del="${esc(x.id)}" aria-label="ลบรายการ">🗑</button></div>`).join("")+(adding?`<input class="wln" id="wlNew" maxlength="40" placeholder="ชื่อรายการ แล้วกด Enter" aria-label="ชื่อรายการใหม่">`:`<button type="button" class="wlnew" id="wlAdd">+ สร้างรายการใหม่</button>`);
+    const tile=(k,v,c="")=>`<div><small>${k}</small><strong class="${c}">${v}</strong></div>`;
+    col.innerHTML=`<div class="wst">${tile("หุ้นในรายการ",n)}${tile("เฉลี่ยวันนี้",avg==null?"–":pcs(avg,2),avg==null?"flat":sc(avg))}${tile("บวก / ลบ",n?up+" / "+dn:"–")}${tile("เหนือ SMA50",n?ab+" / "+n:"–")}${tile("ใน-ใกล้โซนรับ",n?zn+" / "+n:"–","cool")}</div>
+    <div class="wla"><input id="wlIn" list="wlOpts" placeholder="เพิ่มหุ้นเข้าลิสต์ เช่น TSLA หรือ Nvidia" aria-label="เพิ่มหุ้นเข้ารายการ" autocomplete="off"><datalist id="wlOpts">${searchable.filter(s=>!l.syms.includes(s.symbol)).map(s=>`<option value="${esc(s.symbol)}">${esc(s.name)}</option>`).join("")}</datalist></div>
+    <div class="wlt">${n?`<table><thead><tr><th>หุ้น</th><th>30 วัน</th><th style="text-align:right">ราคา</th><th style="text-align:right">วันนี้</th><th>สัญญาณ</th><th></th></tr></thead><tbody>${items.map(d=>`<tr class="r" data-sym="${esc(d.symbol)}" tabindex="0"><td><span class="tk">${esc(d.symbol)}</span></td><td class="${cls(d.change)}">${spark(d.series.slice(-30))}</td><td class="price" style="text-align:right">${fmt(d.price)}</td><td class="${cls(d.pct)}" style="text-align:right">${pcs(d.pct,2)}</td><td><span class="chip ${lab[d.label]||"flat"}">${esc(d.label||"–")}</span></td><td><button type="button" class="x" data-rm="${esc(d.symbol)}" aria-label="เอา ${esc(d.symbol)} ออกจากรายการ">✕</button></td></tr>`).join("")}</tbody></table>`:`<div class="wle">ยังไม่มีหุ้นในรายการนี้ พิมพ์ชื่อหรือรหัสในช่องด้านบนเพื่อเพิ่ม</div>`}</div>
+    <p class="note" style="margin:10px 0 0">ตัวเลขเป็นราคาล่าสุดจากฟีดเดียวกับแดชบอร์ดหลัก รายการเก็บไว้ในเบราว์เซอร์เครื่องนี้ ไม่ซิงก์ข้ามอุปกรณ์</p>`;
+  };
+  const addStock=(v,loose)=>{
+    v=v.trim().toLowerCase();
+    if(!v)return;
+    const m=searchable.find(s=>s.symbol.toLowerCase()===v)||searchable.find(s=>s.name.toLowerCase()===v)||(loose?searchable.find(s=>s.symbol.toLowerCase().startsWith(v)||s.name.toLowerCase().includes(v)):null);
+    if(!m)return;
+    const l=cur();
+    if(!l.syms.includes(m.symbol)){l.syms.push(m.symbol);save()}
+    render();
+    const i=document.getElementById("wlIn");if(i)i.focus();
+  };
+  side.addEventListener("click",e=>{
+    const rn=e.target.closest("[data-ren]"),dl=e.target.closest("[data-del]"),it=e.target.closest("[data-id]");
+    if(e.target.closest("#wlAdd")){adding=true;render();document.getElementById("wlNew").focus();return}
+    if(rn){const l=S.lists.find(x=>x.id===rn.dataset.ren),nm=prompt("ชื่อรายการ",l.name);if(nm&&nm.trim()){l.name=nm.trim().slice(0,40);save();render()}return}
+    if(dl){const l=S.lists.find(x=>x.id===dl.dataset.del);if(l&&confirm("ลบรายการ \""+l.name+"\" ?")){S.lists=S.lists.filter(x=>x!==l);if(!S.lists.length)S.lists=wlDefault().lists;if(!S.lists.some(x=>x.id===S.active))S.active=S.lists[0].id;save();render()}return}
+    if(it){S.active=it.dataset.id;save();render()}
+  });
+  side.addEventListener("keydown",e=>{
+    if(e.target.id==="wlNew"){
+      if(e.key==="Enter"){const nm=e.target.value.trim();if(nm){const id="l"+Date.now();S.lists.push({id,name:nm.slice(0,40),color:WL_COL[S.lists.length%WL_COL.length],syms:[]});S.active=id}adding=false;save();render()}
+      else if(e.key==="Escape"){adding=false;render()}
+    }else if((e.key==="Enter"||e.key===" ")&&e.target.dataset&&e.target.dataset.id){e.preventDefault();S.active=e.target.dataset.id;save();render()}
+  });
+  col.addEventListener("click",e=>{
+    const rm=e.target.closest("[data-rm]");
+    if(rm){const l=cur();l.syms=l.syms.filter(x=>x!==rm.dataset.rm);save();render();return}
+    const tr=e.target.closest("tr.r");if(tr)openStock(tr.dataset.sym);
+  });
+  col.addEventListener("keydown",e=>{
+    if(e.target.id==="wlIn"&&e.key==="Enter"){addStock(e.target.value,true);return}
+    const tr=e.target.closest&&e.target.closest("tr.r");
+    if(tr&&e.target===tr&&(e.key==="Enter"||e.key===" ")){e.preventDefault();openStock(tr.dataset.sym)}
+  });
+  col.addEventListener("input",e=>{if(e.target.id==="wlIn")addStock(e.target.value,false)});
+  document.getElementById("dlgBody").addEventListener("click",e=>{
+    const b=e.target.closest("[data-star]");
+    if(!b)return;
+    const sym=b.dataset.star,l=cur();
+    l.syms=l.syms.includes(sym)?l.syms.filter(x=>x!==sym):[...l.syms,sym];
+    save();b.textContent=l.syms.includes(sym)?"★ ในรายการ":"☆ เพิ่มในรายการ";render();
+  });
+  const route=()=>{const on=location.hash==="#/watchlists";document.body.classList.toggle("wlmode",on);if(on){render();window.scrollTo(0,0)}};
+  window.addEventListener("hashchange",route);
+  window.wlRender=()=>{if(document.body.classList.contains("wlmode"))render()};
+  route();
 }
 const CATS=["ทั้งหมด","ตลาดและเศรษฐกิจ","เทคโนโลยี","ธนาคารและนักวิเคราะห์","ธนาคารกลาง","หุ้นรายตัว"];
 const okUrl=n=>/^https?:\/\//.test(n.url);
@@ -610,7 +926,7 @@ function analysisHTML(data){
 function detail(d){
   const up=d.target&&d.price?(d.target/d.price-1)*100:null;
   const kv=(k,v,c="")=>`<div><small>${k}</small><span class="${c}">${v}</span></div>`;
-  return `<div class="dh"><div><h3>${esc(d.name)} <span class="sym">${esc(d.symbol)}</span></h3><div class="${cls(d.change)}">${fmt(d.price)} (${chg(d)})</div></div><button onclick="dlg.close()">ปิด</button></div>
+  return `<div class="dh"><div><h3>${esc(d.name)} <span class="sym">${esc(d.symbol)}</span></h3><div class="${cls(d.change)}">${fmt(d.price)} (${chg(d)})</div></div><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end"><button type="button" class="starb" data-star="${esc(d.symbol)}" title="เพิ่มหรือเอาหุ้นนี้ออกจากรายการที่เลือกอยู่ในหน้า รายการของฉัน">${wlHas(d.symbol)?"★ ในรายการ":"☆ เพิ่มในรายการ"}</button><button onclick="dlg.close()">ปิด</button></div></div>
   <div class="db">${bigChart(d)}
   <p class="note">ราคาปิด 90 วัน เส้นประคือค่าเฉลี่ย 50 และ 200 วัน แถบสีฟ้าคือโซนรับ (แสดงเมื่ออยู่ในช่วงกราฟ)</p>
   <h4>สรุปสัญญาณ: <span class="${lab[d.label]||"flat"}">${esc(d.label||"–")}</span> (คะแนน ${d.score??"–"})</h4>
@@ -635,7 +951,7 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
   document.getElementById("stats").innerHTML=st("Nasdaq",nq.pct==null?"–":sg(nq.pct)+fmt(nq.pct)+"%",cls(nq.pct))+st("เซมิคอนดักเตอร์",sox.pct==null?"–":sg(sox.pct)+fmt(sox.pct)+"%",cls(sox.pct))+st("VIX",fmt(vix.price,1),vix.price>25?"down":vix.price<16?"up":"")+st("หุ้นเหนือ SMA50",`${above}/${stocks.length}`)+st("สัญญาณขาขึ้น",`${bull}/${stocks.length}`)+st("ข่าวบวก / ลบ",`${nc.pos} / ${nc.neg}`)+st("ใกล้โซนรับ",`${stocks.filter(s=>s.zones&&(s.zones.status==="in"||s.zones.status==="near")).length}/${stocks.length}`)+bubbleStat(data);
   };
   paintTop();
-  document.getElementById("app").innerHTML=overviewSection(data)+newsStrip(data)+stocksSection(data.groups.find(g=>g.detail===true))+zonesSection(stocks)+fundSection(stocks)+macroSection(data)+bubbleSection(data)+portfolioSection(data)+analysisHTML(data)+newsSection(data);
+  document.getElementById("app").innerHTML=overviewSection(data)+newsStrip(data)+stocksSection(data.groups.find(g=>g.detail===true))+zonesSection(stocks)+fundSection(stocks)+macroSection(data)+bubbleSection(data)+analysisHTML(data)+newsSection(data)+portfolioSection(data);
   bindNews(data.news||[]);
   bindMacro(data);
   bindOverview(data);
@@ -643,11 +959,13 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
   bindPortfolio(data);
   const searchable=[...stocks,...data.groups.filter(g=>g.detail==="search").flatMap(g=>g.items)];
   const openStock=sym=>{const d=searchable.find(s=>s.symbol===sym);if(d){dlgBody.innerHTML=detail(d);dlg.showModal()}};
-  const open=el=>openStock(el.closest("tr[data-sym]")?.dataset.sym);
+  const open=el=>openStock(el.closest("[data-sym]")?.dataset.sym);
   bindSearch(searchable,openStock);
-  document.querySelectorAll("tr[data-sym]").forEach(tr=>{tr.onclick=()=>open(tr);tr.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open(tr)}}});
+  bindPfs(data,stocks);
+  bindWatchlist(data,searchable,openStock);
+  document.querySelectorAll("tr[data-sym],.zc[data-sym]").forEach(tr=>{tr.onclick=()=>open(tr);tr.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open(tr)}}});
   dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
-  startQuotes(data,()=>{paintTop();repaintCards(data);repaintRows(data)});
+  startQuotes(data,()=>{paintTop();repaintCards(data);repaintRows(data);if(window.wlRender)window.wlRender()});
 }).catch(()=>{
   document.getElementById("headline").textContent="ยังไม่มีข้อมูล";
   document.getElementById("stats").innerHTML="";
