@@ -344,10 +344,30 @@ body.wlmode nav,body.wlmode header.hero,body.wlmode #app,body.wlmode #foot{displ
 @media (max-width:820px){nav{flex-wrap:wrap;gap:8px 12px}.srch{flex:1 1 160px}.links{order:3;width:100%;margin-left:0;overflow-x:auto;gap:16px}section[id]{scroll-margin-top:112px}.hero .wrap{grid-template-columns:minmax(0,1fr)}.idx{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.row{grid-template-columns:minmax(0,1fr) 80px 96px}svg.sp{width:80px}.nc{flex-basis:78%}.pill strong{font-size:1.1rem}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.authb{font:inherit;font-size:.88rem;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:7px 16px;cursor:pointer;white-space:nowrap;max-width:200px;overflow:hidden;text-overflow:ellipsis}
+.authb:hover{border-color:var(--accent);color:var(--accent)}
+.authb[hidden]{display:none}
+.wlh .authb{margin-left:0}
+#authDlg{width:min(420px,calc(100% - 24px))}
+.adb{padding:20px}
+.adh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.adh h3{margin:0;font-size:1.05rem}
+.adh button{background:none;border:0;color:var(--mute);font-size:1.1rem;cursor:pointer}
+.adb p{color:var(--mute);font-size:.88rem;line-height:1.6;margin:0 0 14px}
+.adb .abtn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;font:inherit;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--hover);color:var(--ink);cursor:pointer;margin-bottom:10px}
+.adb .abtn:hover{border-color:var(--accent)}
+.adb .abtn.pri{background:var(--accent);border-color:var(--accent);color:#06121c;font-weight:600}
+.adb .asep{display:flex;align-items:center;gap:10px;color:var(--mute);font-size:.8rem;margin:12px 0}
+.adb .asep::before,.adb .asep::after{content:"";flex:1;height:1px;background:var(--line)}
+.adb input[type=email]{width:100%;box-sizing:border-box;font:inherit;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);margin-bottom:10px}
+.adb .amsg{font-size:.86rem;line-height:1.5;margin-top:8px;min-height:1.2em}
+.adb .amsg.ok{color:var(--up)}.adb .amsg.err{color:var(--down)}
+.adb .awho{font-family:var(--mono);font-size:.9rem;word-break:break-all;color:var(--ink);margin-bottom:6px}
 </style>
 </head>
 <body id="top">
-<nav><a class="logo" href="#top"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="16" r="9"/><circle cx="16" cy="16" r="2.2" fill="currentColor"/><path d="M16 3v6M16 23v6M3 16h6M23 16h6"/></svg><span class="lt"><b>HUNSCOPE</b><small>กล้องส่องตลาดเทค</small></span></a><div class="srch"><input id="q" type="search" placeholder="ค้นหาหุ้น" aria-label="ค้นหาหุ้น" autocomplete="off"><div class="qres" id="qres" hidden></div></div><div class="links"><a href="#overview">ภาพรวม</a><a href="#zones">โซนรับ</a><a href="#fundamentals">พื้นฐาน</a><a href="#macro">สถานการณ์</a><a href="#bubble">AI bubble</a><a href="#analysis">ข่าว</a><a href="#portfolio">พอร์ตจำลอง</a><a href="#/watchlists">รายการของฉัน</a></div></nav>
+<nav><a class="logo" href="#top"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="16" r="9"/><circle cx="16" cy="16" r="2.2" fill="currentColor"/><path d="M16 3v6M16 23v6M3 16h6M23 16h6"/></svg><span class="lt"><b>HUNSCOPE</b><small>กล้องส่องตลาดเทค</small></span></a><div class="srch"><input id="q" type="search" placeholder="ค้นหาหุ้น" aria-label="ค้นหาหุ้น" autocomplete="off"><div class="qres" id="qres" hidden></div></div><div class="links"><a href="#overview">ภาพรวม</a><a href="#zones">โซนรับ</a><a href="#fundamentals">พื้นฐาน</a><a href="#macro">สถานการณ์</a><a href="#bubble">AI bubble</a><a href="#analysis">ข่าว</a><a href="#portfolio">พอร์ตจำลอง</a><a href="#/watchlists">รายการของฉัน</a></div><button type="button" class="authb" data-auth hidden>เข้าสู่ระบบ</button></nav>
 <header class="hero"><div class="wrap">
   <div><h1 id="headline">กำลังโหลด…</h1>
   <p class="sub" id="meta"></p></div>
@@ -355,8 +375,9 @@ body.wlmode nav,body.wlmode header.hero,body.wlmode #app,body.wlmode #foot{displ
 </div></header>
 <main class="wrap" id="app"><section><div class="idx"><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div></div></section></main>
 <div class="wrap" id="foot"><footer>ตัวชี้วัดคำนวณจากราคาปิดรายวัน (RSI 14 วัน, MACD 12/26/9, เส้นเฉลี่ย 50 และ 200 วัน) คะแนนสัญญาณเป็นการนับแนวโน้มแบบง่าย ไม่ใช่คำแนะนำให้ซื้อหรือขาย ข้อมูลจาก Yahoo Finance อาจล่าช้าหรือผิดพลาดได้</footer></div>
-<div id="wlView"><div class="wlh"><a class="logo" href="#"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="16" r="9"/><circle cx="16" cy="16" r="2.2" fill="currentColor"/><path d="M16 3v6M16 23v6M3 16h6M23 16h6"/></svg><span class="lt"><b>HUNSCOPE</b><small>กล้องส่องตลาดเทค</small></span></a><a class="back" href="#">← กลับแดชบอร์ด</a><span class="live" id="wlLive">ข้อมูลสด</span></div><main class="wrap"><div class="shead"><div><div class="eyebrow"><b>WATCHLIST</b><i></i><span>แยกจากแดชบอร์ดหลัก</span></div><h2 class="big">รายการหุ้นที่เฝ้าดู</h2><p class="sdesc">สร้างได้หลายรายการเพื่อแยกกลุ่มหุ้นที่สนใจ เพิ่มหรือถอดหุ้นได้ตลอด ระบบบันทึกรายการไว้ในเครื่องนี้อัตโนมัติ และดึงราคาจากฟีดเดียวกับแดชบอร์ดหลัก กดที่หุ้นเพื่อเปิดรายละเอียด</p></div></div><div class="wlg"><aside class="wls" id="wlSide"></aside><div id="wlMainCol"></div></div></main></div>
+<div id="wlView"><div class="wlh"><a class="logo" href="#"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="16" r="9"/><circle cx="16" cy="16" r="2.2" fill="currentColor"/><path d="M16 3v6M16 23v6M3 16h6M23 16h6"/></svg><span class="lt"><b>HUNSCOPE</b><small>กล้องส่องตลาดเทค</small></span></a><a class="back" href="#">← กลับแดชบอร์ด</a><span class="live" id="wlLive">ข้อมูลสด</span><button type="button" class="authb" data-auth hidden>เข้าสู่ระบบ</button></div><main class="wrap"><div class="shead"><div><div class="eyebrow"><b>WATCHLIST</b><i></i><span>แยกจากแดชบอร์ดหลัก</span></div><h2 class="big">รายการหุ้นที่เฝ้าดู</h2><p class="sdesc">สร้างได้หลายรายการเพื่อแยกกลุ่มหุ้นที่สนใจ เพิ่มหรือถอดหุ้นได้ตลอด ระบบบันทึกรายการไว้ในเครื่องนี้อัตโนมัติ และดึงราคาจากฟีดเดียวกับแดชบอร์ดหลัก กดที่หุ้นเพื่อเปิดรายละเอียด</p></div></div><div class="wlg"><aside class="wls" id="wlSide"></aside><div id="wlMainCol"></div></div></main></div>
 <dialog id="dlg"><div id="dlgBody"></div></dialog>
+<dialog id="authDlg"><div class="adb"><div class="adh"><h3>บัญชี Hunscope</h3><button type="button" id="authX" aria-label="ปิด">✕</button></div><div id="authBody"></div></div></dialog>
 <script>
 const fmt=(n,d=2)=>n==null?"–":Number(n).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -979,6 +1000,118 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
     if(last===null)last=d.updated;else if(d.updated!==last)location.reload();
   }).catch(()=>{});
   check();setInterval(check,300000);
+})();
+</script>
+<script>
+/* ===== ระบบล็อกอิน + ซิงก์รายการของฉัน/พอร์ตจำลอง (Supabase) =====
+   ตั้งค่า: ใส่ url และ anonKey จากหน้า Project Settings > API ของ Supabase (ดู AUTH_SETUP.md)
+   ถ้าปล่อยว่าง ปุ่มเข้าสู่ระบบจะซ่อนอยู่ และเว็บทำงานเหมือนเดิม (เก็บในเครื่องอย่างเดียว)
+   anonKey เป็นคีย์สาธารณะโดยออกแบบ ปลอดภัยเพราะตาราง user_data เปิด Row Level Security แล้ว */
+(function(){
+  const CFG={url:"https://yhhchgdrmdqzwqvyxolk.supabase.co",anonKey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InloaGNoZ2RybWRxendxdnl4b2xrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMyMDYyNjIsImV4cCI6MjEwODc4MjI2Mn0.tdXWv4PFOFM1BJ_EoQa2jnFvqAum1gi2RhxoGXXLlHE"};
+  const KEYS={wl:"wl.v1",pf:"pf.v1",pfs:"pfs.v1"};
+  if(!CFG.url||!CFG.anonKey)return;
+
+  const $=id=>document.getElementById(id);
+  const btns=()=>document.querySelectorAll("[data-auth]");
+  const rawSet=Storage.prototype.setItem;
+  let sb=null,user=null,applying=false,timer=null,lastSync=null,msg={t:"",c:""};
+
+  const read=k=>{try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}};
+  const snap=()=>({wl:read(KEYS.wl),pf:read(KEYS.pf),pfs:read(KEYS.pfs)});
+  const localHasData=()=>{
+    const s=snap();
+    return !!((s.wl&&Array.isArray(s.wl.lists)&&s.wl.lists.some(l=>(l.syms||[]).length))||(s.pf&&Object.keys(s.pf).length)||(s.pfs&&Object.keys(s.pfs).length));
+  };
+  const hhmm=()=>new Date().toLocaleTimeString("th-TH",{hour:"2-digit",minute:"2-digit"});
+  const setMsg=(t,c)=>{msg={t,c:c||""};const m=$("amsg");if(m){m.textContent=t;m.className="amsg "+(c||"")}};
+
+  // ดักการบันทึกคีย์ของเรา แล้วส่งขึ้นคลาวด์แบบหน่วงเวลา (ไม่ต้องแก้โค้ดเดิม)
+  Storage.prototype.setItem=function(k,v){
+    rawSet.call(this,k,v);
+    if(!applying&&user&&this===window.localStorage&&Object.values(KEYS).includes(k))schedulePush();
+  };
+  function schedulePush(){clearTimeout(timer);timer=setTimeout(push,1500)}
+
+  async function push(){
+    if(!user)return;
+    const s=snap();
+    const {error}=await sb.from("user_data").upsert({user_id:user.id,wl:s.wl,pf:s.pf,pfs:s.pfs,updated_at:new Date().toISOString()});
+    if(error){setMsg("ซิงก์ไม่สำเร็จ: "+error.message,"err");return}
+    lastSync=hhmm();paint();
+  }
+
+  async function sync(){
+    if(!user)return;
+    const {data,error}=await sb.from("user_data").select("wl,pf,pfs").eq("user_id",user.id).maybeSingle();
+    if(error){setMsg("อ่านข้อมูลจากบัญชีไม่ได้: "+error.message,"err");return}
+    if(!data){await push();return}                       // บัญชีใหม่: อัปโหลดข้อมูลในเครื่องขึ้นไป
+    const diff=Object.keys(KEYS).filter(k=>data[k]!=null&&JSON.stringify(data[k])!==JSON.stringify(read(KEYS[k])));
+    if(!diff.length){lastSync=hhmm();paint();sessionStorage.removeItem("hs.reloaded");return}
+    if(localHasData()&&!sessionStorage.getItem("hs.reloaded")){
+      const useCloud=confirm("พบข้อมูลในบัญชีที่ต่างจากข้อมูลในเครื่องนี้\n\nตกลง = ใช้ข้อมูลในบัญชี (แทนที่ข้อมูลในเครื่องนี้)\nยกเลิก = ใช้ข้อมูลในเครื่องนี้ (อัปโหลดทับข้อมูลในบัญชี)");
+      if(!useCloud){await push();return}
+    }
+    applying=true;
+    diff.forEach(k=>rawSet.call(localStorage,KEYS[k],JSON.stringify(data[k])));
+    applying=false;
+    sessionStorage.setItem("hs.reloaded","1");
+    location.reload();                                    // โหลดหน้าใหม่เพื่อให้ลิสต์และพอร์ตแสดงข้อมูลจากบัญชี
+  }
+
+  function paint(){
+    btns().forEach(b=>{b.hidden=false;b.textContent=user?("👤 "+(user.email||"บัญชีของฉัน")):"เข้าสู่ระบบ"});
+    const body=$("authBody");if(!body)return;
+    if(user){
+      body.innerHTML='<p>ลิสต์ในหน้ารายการของฉันและพอร์ตจำลองจะซิงก์กับบัญชีนี้อัตโนมัติ</p><div class="awho"></div><p id="asyn"></p><button type="button" class="abtn" id="aOut">ออกจากระบบ</button><div class="amsg" id="amsg"></div>';
+      body.querySelector(".awho").textContent=user.email||"";
+      $("asyn").textContent=lastSync?("ซิงก์ล่าสุด "+lastSync+" น."):"กำลังซิงก์…";
+      $("aOut").onclick=async()=>{await sb.auth.signOut()};
+    }else{
+      body.innerHTML='<p>เข้าสู่ระบบเพื่อเก็บรายการหุ้นและพอร์ตจำลองไว้กับบัญชี ใช้ได้ทุกเครื่อง ไม่ต้องใช้ก็ได้ เว็บยังใช้งานได้ตามปกติ</p><button type="button" class="abtn pri" id="aG">เข้าสู่ระบบด้วย Google</button><div class="asep">หรือ</div><input type="email" id="aEm" placeholder="อีเมลของคุณ" autocomplete="email" aria-label="อีเมล"><button type="button" class="abtn" id="aMl">ส่งลิงก์เข้าสู่ระบบทางอีเมล</button><div class="amsg" id="amsg"></div>';
+      $("aG").onclick=async()=>{
+        const {error}=await sb.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.href.split("#")[0]}});
+        if(error)setMsg("เข้าสู่ระบบด้วย Google ไม่ได้: "+error.message,"err");
+      };
+      const sendLink=async()=>{
+        const em=$("aEm").value.trim();
+        if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){setMsg("กรอกอีเมลให้ถูกต้อง","err");return}
+        setMsg("กำลังส่งลิงก์…");
+        const {error}=await sb.auth.signInWithOtp({email:em,options:{emailRedirectTo:location.href.split("#")[0]}});
+        if(error)setMsg("ส่งไม่สำเร็จ: "+error.message,"err");else setMsg("ส่งลิงก์ไปที่ "+em+" แล้ว เปิดอีเมลและกดลิงก์เพื่อเข้าสู่ระบบ","ok");
+      };
+      $("aMl").onclick=sendLink;
+      $("aEm").onkeydown=e=>{if(e.key==="Enter")sendLink()};
+    }
+    if(msg.t)setMsg(msg.t,msg.c);
+  }
+
+  function init(){
+    sb=window.supabase.createClient(CFG.url,CFG.anonKey,{auth:{flowType:"pkce",persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+    document.addEventListener("click",e=>{if(e.target.closest("[data-auth]")){paint();$("authDlg").showModal()}});
+    $("authX").onclick=()=>$("authDlg").close();
+    $("authDlg").addEventListener("click",e=>{if(e.target===$("authDlg"))$("authDlg").close()});
+    paint();
+    sb.auth.onAuthStateChange((ev,session)=>{
+      setTimeout(()=>{
+        user=session?session.user:null;
+        if(!user)lastSync=null;
+        if(ev==="SIGNED_OUT")msg={t:"",c:""};
+        paint();
+        if(user&&(ev==="INITIAL_SESSION"||ev==="SIGNED_IN")){
+          if(ev==="SIGNED_IN"&&$("authDlg").open)$("authDlg").close();
+          sync();
+        }
+      },0);
+    });
+  }
+
+  // โหลดไลบรารีเฉพาะเมื่อมีการตั้งค่า (ล็อกเวอร์ชันไว้)
+  const s=document.createElement("script");
+  s.src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js";
+  s.onload=init;
+  s.onerror=()=>console.warn("โหลด Supabase ไม่ได้ ระบบล็อกอินจะไม่ทำงาน");
+  document.head.appendChild(s);
 })();
 </script>
 </body>
