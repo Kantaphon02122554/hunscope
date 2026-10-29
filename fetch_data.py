@@ -125,7 +125,9 @@ def fundamentals(symbol):
     except Exception:
         return {}
     out = {"pe": r(i.get("trailingPE")), "fpe": r(i.get("forwardPE")), "mcap": i.get("marketCap"),
-           "target": r(i.get("targetMeanPrice")), "rec": i.get("recommendationKey")}
+           "target": r(i.get("targetMeanPrice")), "targetLow": r(i.get("targetLowPrice")),
+           "targetHigh": r(i.get("targetHighPrice")), "nAnalysts": i.get("numberOfAnalystOpinions"),
+           "rec": i.get("recommendationKey")}
     return {k: v for k, v in out.items() if v is not None}
 
 

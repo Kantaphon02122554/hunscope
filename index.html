@@ -380,6 +380,39 @@ body.wlmode nav,body.wlmode header.hero,body.wlmode #app,body.wlmode #foot{displ
 .alst{font-size:.78rem;color:var(--mute);white-space:nowrap}.alst.on{color:var(--accent)}
 #alToast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(20px);opacity:0;pointer-events:none;background:var(--panel);color:var(--ink);border:1px solid var(--accent);border-radius:12px;padding:10px 16px;z-index:50;transition:.25s;max-width:calc(100% - 24px)}
 #alToast.show{opacity:1;transform:translateX(-50%)}
+
+dialog:has(.sd){width:min(1000px,calc(100% - 24px))}
+.sd:focus{outline:none}
+.sd .dh{align-items:center;padding:18px 20px 12px}
+.sd .px{margin-top:2px;font-size:1.05rem}.sd .px b{font-size:1.25rem}
+.dbt{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.alwrap{margin:0 20px 10px;border:1px solid var(--line);border-radius:10px;background:var(--hover)}
+.alwrap[hidden]{display:none}
+.alwrap .db{padding:12px 14px}
+.sdtop{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:20px;align-items:start}
+.pc{width:100%;height:auto;display:block;color:var(--ink)}
+.pc text{fill:var(--mute)}.pc rect+text,.pc rect+text+text{fill:#fff}
+.sds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.sc3{background:var(--hover);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.sc3 small{display:block;color:var(--mute);font-size:.78rem}
+.sc3 b{display:block;font-size:1.15rem;margin:2px 0}
+.sc3 span{display:block;color:var(--mute);font-size:.84rem}
+.sdt{display:flex;gap:4px;border-bottom:1px solid var(--line);margin:18px 0 14px;overflow-x:auto}
+.sdt button{font:inherit;background:none;border:0;border-bottom:2px solid transparent;color:var(--mute);padding:8px 14px;cursor:pointer;white-space:nowrap}
+.sdt button:hover{color:var(--ink)}
+.sdt button.on{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+.sdp[hidden]{display:none}
+.sdp .kv{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.sdp .kv>div{background:var(--hover);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.sdp .kv small{overflow-wrap:anywhere}
+.sdp .kv span{font-weight:600;font-size:1.02rem}
+.lnk{font:inherit;font-size:.88rem;background:none;border:0;color:var(--accent);cursor:pointer;padding:0;text-decoration:underline}
+.sdx{margin:10px 0 4px;color:var(--mute);font-size:.9rem}
+.sdx summary{cursor:pointer}
+.sdx ul{margin:8px 0 0;padding-left:20px;line-height:1.6}
+.qc{margin-bottom:14px}.qc svg{width:100%;max-width:640px;height:auto;display:block;color:var(--ink)}.qc text{fill:var(--mute)}
+.qc .chips i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
+@media(max-width:760px){.sdtop{grid-template-columns:1fr}.sds{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body id="top">
@@ -884,7 +917,7 @@ function bindWatchlist(data,searchable,openStock){
     col.innerHTML=`<div class="wst">${tile("หุ้นในรายการ",n)}${tile("เฉลี่ยวันนี้",avg==null?"–":pcs(avg,2),avg==null?"flat":sc(avg))}${tile("บวก / ลบ",n?up+" / "+dn:"–")}${tile("เหนือ SMA50",n?ab+" / "+n:"–")}${tile("ใน-ใกล้โซนรับ",n?zn+" / "+n:"–","cool")}</div>
     <div class="wla"><input id="wlIn" list="wlOpts" placeholder="เพิ่มหุ้นเข้าลิสต์ เช่น TSLA หรือ Nvidia" aria-label="เพิ่มหุ้นเข้ารายการ" autocomplete="off"><datalist id="wlOpts">${searchable.filter(s=>!l.syms.includes(s.symbol)).map(s=>`<option value="${esc(s.symbol)}">${esc(s.name)}</option>`).join("")}</datalist></div>
     <div class="wlt">${n?`<table><thead><tr><th>หุ้น</th><th>30 วัน</th><th style="text-align:right">ราคา</th><th style="text-align:right">วันนี้</th><th>สัญญาณ</th><th></th></tr></thead><tbody>${items.map(d=>`<tr class="r" data-sym="${esc(d.symbol)}" tabindex="0"><td><span class="tk">${esc(d.symbol)}</span></td><td class="${cls(d.change)}">${spark(d.series.slice(-30))}</td><td class="price" style="text-align:right">${fmt(d.price)}</td><td class="${cls(d.pct)}" style="text-align:right">${pcs(d.pct,2)}</td><td><span class="chip ${lab[d.label]||"flat"}">${esc(d.label||"–")}</span></td><td><button type="button" class="x" data-rm="${esc(d.symbol)}" aria-label="เอา ${esc(d.symbol)} ออกจากรายการ">✕</button></td></tr>`).join("")}</tbody></table>`:`<div class="wle">ยังไม่มีหุ้นในรายการนี้ พิมพ์ชื่อหรือรหัสในช่องด้านบนเพื่อเพิ่ม</div>`}</div>
-    <p class="note" style="margin:10px 0 0">ตัวเลขเป็นราคาล่าสุดจากฟีดเดียวกับแดชบอร์ดหลัก รายการเก็บไว้ในเบราว์เซอร์เครื่องนี้ ไม่ซิงก์ข้ามอุปกรณ์</p>`;
+    <p class="note" style="margin:10px 0 0">ตัวเลขเป็นราคาล่าสุดจากฟีดเดียวกับแดชบอร์ดหลัก รายการเก็บไว้ในเบราว์เซอร์เครื่องนี้ ถ้าเข้าสู่ระบบจะซิงก์ข้ามอุปกรณ์ให้</p>`;
   };
   const addStock=(v,loose)=>{
     v=v.trim().toLowerCase();
@@ -961,19 +994,90 @@ function analysisHTML(data){
   ${Object.keys(a.by_symbol||{}).length?`<h3>ความรู้สึกข่าวรายหุ้น</h3><div class="chips">${Object.entries(a.by_symbol).map(([s,v])=>`<span class="${sc(v)}">${esc(s)} ${v>0?"+":""}${v}</span>`).join("")}</div>`:""}
   </div></section>`;
 }
-function detail(d){
-  const up=d.target&&d.price?(d.target/d.price-1)*100:null;
-  const kv=(k,v,c="")=>`<div><small>${k}</small><span class="${c}">${v}</span></div>`;
-  return `<div class="dh"><div><h3>${esc(d.name)} <span class="sym">${esc(d.symbol)}</span></h3><div class="${cls(d.change)}">${fmt(d.price)} (${chg(d)})</div></div><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end"><button type="button" class="starb" data-star="${esc(d.symbol)}" title="เพิ่มหรือเอาหุ้นนี้ออกจากรายการที่เลือกอยู่ในหน้า รายการของฉัน">${wlHas(d.symbol)?"★ ในรายการ":"☆ เพิ่มในรายการ"}</button><button onclick="dlg.close()">ปิด</button></div></div>
-  <div class="db">${bigChart(d)}
-  <p class="note">ราคาปิด 90 วัน เส้นประคือค่าเฉลี่ย 50 และ 200 วัน แถบสีฟ้าคือโซนรับ (แสดงเมื่ออยู่ในช่วงกราฟ)</p>
-  <h4>สรุปสัญญาณ: <span class="${lab[d.label]||"flat"}">${esc(d.label||"–")}</span> (คะแนน ${d.score??"–"})</h4>
-  <ul class="sg">${(d.signals||[]).map(s=>`<li><b class="${s.score>0?"up":s.score<0?"down":"flat"}">${s.score>0?"+":s.score<0?"−":"•"}</b><span>${esc(s.name)}: ${esc(s.text)}</span></li>`).join("")}</ul>
-  <p class="note">RSI สูงกว่า 70 มักถูกมองว่าซื้อมากเกินไป ต่ำกว่า 30 ขายมากเกินไป</p>
-  ${zoneBlock(d)}${fundBlock(d)}<h4>ผลตอบแทนและช่วงราคา</h4><div class="kv">${kv("1 เดือน",d.ret1m==null?"–":sg(d.ret1m)+fmt(d.ret1m)+"%",cls(d.ret1m))}${kv("3 เดือน",d.ret3m==null?"–":sg(d.ret3m)+fmt(d.ret3m)+"%",cls(d.ret3m))}${kv("สูงสุด 52 สัปดาห์",fmt(d.high52))}${kv("ต่ำสุด 52 สัปดาห์",fmt(d.low52))}</div>
-  <h4>มูลค่า</h4><div class="kv">${kv("P/E ย้อนหลัง",fmt(d.pe,1))}${kv("P/E คาดการณ์",fmt(d.fpe,1))}${kv("มูลค่าตลาด",d.mcap?big(d.mcap)+" USD":"–")}${kv("ราคาเป้าหมายเฉลี่ย",d.target?fmt(d.target)+(up==null?"":` (${sg(up)}${fmt(up,1)}%)`):"–")}${kv("นักวิเคราะห์ส่วนใหญ่",rec[d.rec]||"–")}</div>
-  <h4>ข่าวล่าสุด</h4><div class="box">${newsList(d.news||[],false)}</div></div>`;
+function priceChart(d){
+  const v=d.series;if(!v||v.length<2)return"";
+  const W=780,H=300,T=14,B=14,price=d.price,avg=d.target,lo=d.targetLow,hi=d.targetHigh;
+  const hasF=avg!=null||lo!=null||hi!=null,PW=hasF?600:W,X1=W-100,TX=W-96;
+  const fv=hasF?[price,avg,lo,hi].filter(n=>n!=null&&isFinite(n)):[];
+  const min=Math.min(...v,...fv),max=Math.max(...v,...fv),r=max-min||1,y=n=>T+(max-n)/r*(H-T-B);
+  const pts=v.map((n,i)=>(i/(v.length-1)*PW).toFixed(1)+","+y(n).toFixed(1)).join(" ");
+  const grid=[0,1,2,3].map(k=>{const yy=(T+k*(H-T-B)/3).toFixed(1);return `<line x1="0" x2="${PW}" y1="${yy}" y2="${yy}" stroke="currentColor" opacity=".07"/>`}).join("");
+  const bands=((d.zones||{}).list||[]).filter(z=>z.high>=min&&z.low<=max).map(z=>{const t=y(Math.min(z.high,max));return `<rect x="0" y="${t.toFixed(1)}" width="${PW}" height="${Math.max(2,y(Math.max(z.low,min))-t).toFixed(1)}" fill="#38bdf8" opacity=".14"/>`}).join("");
+  const ref=(val,c,t)=>val!=null&&val>=min&&val<=max?`<line x1="0" x2="${PW}" y1="${y(val).toFixed(1)}" y2="${y(val).toFixed(1)}" stroke="${c}" stroke-dasharray="4 4" opacity=".75"/><text x="6" y="${(y(val)-4).toFixed(1)}" fill="${c}" font-size="11">${t}</text>`:"";
+  const cy=y(price==null?v[v.length-1]:price);
+  let fun="";
+  if(hasF&&price!=null){
+    const col=n=>n>=price?"#22c55e":"#ef4444";
+    const poly=(val,c)=>val==null?"":`<polygon points="${PW},${cy.toFixed(1)} ${X1},${y(val).toFixed(1)} ${X1},${cy.toFixed(1)}" fill="${c}" opacity=".16"/><line x1="${PW}" y1="${cy.toFixed(1)}" x2="${X1}" y2="${y(val).toFixed(1)}" stroke="${c}" stroke-dasharray="2 3"/>`;
+    fun+=poly(hi,"#22c55e")+poly(lo,"#ef4444");
+    if(avg!=null)fun+=`<line x1="${PW}" y1="${cy.toFixed(1)}" x2="${X1}" y2="${y(avg).toFixed(1)}" stroke="${col(avg)}" stroke-width="1.6" stroke-dasharray="5 4"/>`;
+    fun+=`<line x1="${PW}" y1="${cy.toFixed(1)}" x2="${X1}" y2="${cy.toFixed(1)}" stroke="#60a5fa" stroke-width="1.4"/>`;
+    const tags=[[hi,"สูงสุด"],[avg,"เฉลี่ย"],[lo,"ต่ำสุด"],[price,"ปัจจุบัน"]].filter(t=>t[0]!=null).map(t=>({val:t[0],label:t[1],y:y(t[0]),c:t[1]==="ปัจจุบัน"?"#3b82f6":col(t[0])})).sort((p,q)=>p.y-q.y);
+    const th=34;
+    tags.forEach((t,i)=>{t.t=Math.max(t.y,th/2+2);if(i&&t.t-tags[i-1].t<th+2)t.t=tags[i-1].t+th+2});
+    for(let i=tags.length-1;i>=0;i--){const lim=i===tags.length-1?H-th/2-2:tags[i+1].t-th-2;if(tags[i].t>lim)tags[i].t=lim}
+    fun+=tags.map(t=>{const pc=t.label==="ปัจจุบัน"?"":" "+sg(t.val-price)+fmt((t.val/price-1)*100,1)+"%";return `<line x1="${X1}" y1="${t.y.toFixed(1)}" x2="${TX}" y2="${t.t.toFixed(1)}" stroke="${t.c}" opacity=".5"/><rect x="${TX}" y="${(t.t-th/2).toFixed(1)}" width="94" height="${th}" rx="6" fill="${t.c}"/><text x="${TX+6}" y="${(t.t-3).toFixed(1)}" fill="#fff" font-size="11">${t.label}${pc}</text><text x="${TX+6}" y="${(t.t+11).toFixed(1)}" fill="#fff" font-size="12" font-weight="700">${fmt(t.val)}</text>`}).join("");
+  }
+  return `<svg class="pc" viewBox="0 0 ${W} ${H}" role="img" aria-label="กราฟราคา 90 วัน${hasF?" พร้อมช่วงราคาเป้าหมายของนักวิเคราะห์":""}">${grid}${bands}${ref(d.sma50,"#38bdf8","SMA50")}${ref(d.sma200,"#d9a441","SMA200")}<polyline points="${pts}" fill="none" stroke="#60a5fa" stroke-width="2.2" stroke-linejoin="round"/>${fun}<circle cx="${PW}" cy="${cy.toFixed(1)}" r="4" fill="#60a5fa"/></svg>`;
 }
+function qChart(f){
+  const qs=((f&&f.quarters)||[]).filter(q=>q.rev!=null).slice(0,8).reverse();
+  if(qs.length<2)return"";
+  const W=640,H=220,pl=44,pr=44,pt=14,pb=30,iw=W-pl-pr,ih=H-pt-pb;
+  const mx=Math.max(...qs.map(q=>Math.max(q.rev||0,q.ni||0)))||1;
+  const nms=qs.map(q=>q.nm).filter(n=>n!=null),nmin=nms.length?Math.min(...nms):0,nmax=nms.length?Math.max(...nms):1,nr=(nmax-nmin)||1;
+  const gw=iw/qs.length,bw=Math.min(22,gw*.32),yv=n=>pt+ih-Math.max(n||0,0)/mx*ih,ym=n=>pt+ih-(n-nmin)/nr*ih*.9-ih*.05;
+  const bars=qs.map((q,i)=>{const cx=pl+gw*(i+.5);
+    return `<rect x="${(cx-bw-1).toFixed(1)}" y="${yv(q.rev).toFixed(1)}" width="${bw.toFixed(1)}" height="${(pt+ih-yv(q.rev)).toFixed(1)}" rx="2" fill="#3b82f6"><title>รายได้ ${esc(q.date)}: ${fmt(q.rev)}</title></rect>`
+     +(q.ni==null?"":`<rect x="${(cx+1).toFixed(1)}" y="${yv(q.ni).toFixed(1)}" width="${bw.toFixed(1)}" height="${(pt+ih-yv(q.ni)).toFixed(1)}" rx="2" fill="#22d3ee"><title>กำไรสุทธิ ${esc(q.date)}: ${fmt(q.ni)}</title></rect>`)
+     +`<text x="${cx.toFixed(1)}" y="${H-12}" text-anchor="middle" font-size="10">${esc(String(q.date).slice(2,7))}</text>`}).join("");
+  const mp=qs.map((q,i)=>q.nm==null?null:(pl+gw*(i+.5)).toFixed(1)+","+ym(q.nm).toFixed(1)).filter(Boolean);
+  const line=mp.length>1?`<polyline points="${mp.join(" ")}" fill="none" stroke="#f59e0b" stroke-width="2"/>`+mp.map(pt2=>`<circle cx="${pt2.split(",")[0]}" cy="${pt2.split(",")[1]}" r="3" fill="#f59e0b"/>`).join(""):"";
+  return `<div class="qc"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="รายได้ กำไรสุทธิ และอัตรากำไรสุทธิรายไตรมาส"><line x1="${pl}" x2="${W-pr}" y1="${pt+ih}" y2="${pt+ih}" stroke="currentColor" opacity=".2"/><text x="${pl-6}" y="${pt+8}" text-anchor="end" font-size="10">${fmt(mx,0)}</text><text x="${pl-6}" y="${pt+ih}" text-anchor="end" font-size="10">0</text>${nms.length?`<text x="${W-pr+6}" y="${pt+8}" font-size="10">${fmt(nmax,0)}%</text><text x="${W-pr+6}" y="${pt+ih}" font-size="10">${fmt(nmin,0)}%</text>`:""}${bars}${line}</svg><div class="chips"><span><i style="background:#3b82f6"></i>รายได้</span><span><i style="background:#22d3ee"></i>กำไรสุทธิ</span><span><i style="background:#f59e0b"></i>อัตรากำไรสุทธิ (%)</span><span>หน่วย: พันล้าน</span></div></div>`;
+}
+function sumCards(d){
+  const z=d.zones,s=z?(ZS[z.status]||ZS.far):null,f=d.fund,nz=z&&z.list&&z.list[0];
+  const up=d.target&&d.price?(d.target/d.price-1)*100:null;
+  const card=(k,v,c,sub)=>`<div class="sc3"><small>${k}</small><b class="${c||""}">${v}</b>${sub?`<span>${sub}</span>`:""}</div>`;
+  return card("สัญญาณเทคนิค",esc(d.label||"–"),lab[d.label]||"flat","คะแนน "+(d.score==null?"–":d.score))
+    +(z?card("โซนรับ",s[0],s[1],nz?`${fmt(nz.low)} – ${fmt(nz.high)}`:"ไม่พบแนวรับใกล้ราคา"):"")
+    +(f?card("พื้นฐานบริษัท",esc(f.quality||"–"),qc(f.quality),esc(f.valuation||"")):"")
+    +(d.rec||d.target?card("นักวิเคราะห์",rec[d.rec]||"–",up==null?"":cls(up),up==null?"":`เป้าเฉลี่ย ${sg(up)}${fmt(up,1)}%`):"");
+}
+function detail(d){
+  const up=d.target&&d.price?(d.target/d.price-1)*100:null,news=d.news||[],z=d.zones,nz=z&&z.list&&z.list[0];
+  const kv=(k,v,c="")=>`<div><small>${k}</small><span class="${c}">${v}</span></div>`;
+  const fN=d.targetLow!=null&&d.targetHigh!=null;
+  const note=hasT=>`ภาพรวมราคาปิด 90 วัน เส้นประฟ้าและเหลืองคือค่าเฉลี่ย 50 และ 200 วัน แถบฟ้าคือโซนรับ`+(hasT?` ส่วนกรวยด้านขวาคือช่วงราคาเป้าหมายของนักวิเคราะห์ เป็นความเห็นของนักวิเคราะห์ ไม่ใช่การพยากรณ์${d.nAnalysts?` (จาก ${d.nAnalysts} ราย)`:""}${fN?"":" และตอนนี้มีเฉพาะราคาเป้าหมายเฉลี่ย"}`:"");
+  const tabs=[["ov","ภาพรวม"],["te","เทคนิค"],...(d.fund?[["fu","พื้นฐาน"]]:[]),["nw","ข่าว"+(news.length?` (${news.length})`:"")]];
+  const ov=`<h4 style="margin-top:0">ผลตอบแทนและช่วงราคา</h4><div class="kv">${kv("1 เดือน",d.ret1m==null?"–":sg(d.ret1m)+fmt(d.ret1m)+"%",cls(d.ret1m))}${kv("3 เดือน",d.ret3m==null?"–":sg(d.ret3m)+fmt(d.ret3m)+"%",cls(d.ret3m))}${kv("สูงสุด 52 สัปดาห์",fmt(d.high52))}${kv("ต่ำสุด 52 สัปดาห์",fmt(d.low52))}</div>
+  <h4>มูลค่า</h4><div class="kv">${kv("P/E ย้อนหลัง",fmt(d.pe,1))}${kv("P/E คาดการณ์",fmt(d.fpe,1))}${kv("มูลค่าตลาด",d.mcap?big(d.mcap)+" USD":"–")}${kv("ราคาเป้าหมายเฉลี่ย",d.target?fmt(d.target)+(up==null?"":` (${sg(up)}${fmt(up,1)}%)`):"–")}${fN?kv("ช่วงเป้านักวิเคราะห์",fmt(d.targetLow)+" – "+fmt(d.targetHigh)):""}${kv("นักวิเคราะห์ส่วนใหญ่",rec[d.rec]||"–")}</div>
+  ${z?`<h4>โซนรับใกล้สุด</h4><p class="note" style="margin:0">${nz?`<b>${fmt(nz.low)} – ${fmt(nz.high)}</b> ${nz.dist_pct<=0?"ราคาอยู่ในโซนนี้":"ห่างจากราคา "+fmt(nz.dist_pct,1)+"%"} • ${esc((nz.labels||[]).join(" + "))}`:"ไม่พบแนวรับใกล้ราคาปัจจุบัน"} <button type="button" class="lnk" data-sdgo="te">ดูรายละเอียด</button></p>`:""}
+  <h4>ข่าวล่าสุด</h4><div class="box">${newsList(news.slice(0,3),false)}</div>${news.length>3?`<p class="note" style="margin:8px 0 0"><button type="button" class="lnk" data-sdgo="nw">ดูข่าวทั้งหมด ${news.length} รายการ</button></p>`:""}`;
+  const te=`<h4 style="margin-top:0">สรุปสัญญาณ: <span class="${lab[d.label]||"flat"}">${esc(d.label||"–")}</span> (คะแนน ${d.score==null?"–":d.score})</h4>
+  <ul class="sg">${(d.signals||[]).map(s=>`<li><b class="${s.score>0?"up":s.score<0?"down":"flat"}">${s.score>0?"+":s.score<0?"−":"•"}</b><span>${esc(s.name)}: ${esc(s.text)}</span></li>`).join("")}</ul>
+  <details class="sdx"><summary>แต่ละสัญญาณหมายถึงอะไร</summary><ul><li>ค่าเฉลี่ย 50 และ 200 วัน (SMA): ราคาอยู่เหนือเส้น มักถูกมองว่าแนวโน้มช่วงนั้นเป็นขาขึ้น อยู่ต่ำกว่ามักถูกมองว่าเป็นขาลง</li><li>MACD: วัดแรงส่งของราคา ถ้าต่ำกว่าเส้นสัญญาณ แปลว่าแรงขายนำอยู่</li><li>RSI: สูงกว่า 70 มักถูกมองว่าซื้อมากเกินไป ต่ำกว่า 30 ขายมากเกินไป</li><li>ทั้งหมดคำนวณจากราคาในอดีต ใช้ประกอบการตัดสินใจเท่านั้น</li></ul></details>
+  ${zoneBlock(d)}`;
+  const panes=[["ov",ov],["te",te],...(d.fund?[["fu",qChart(d.fund)+fundBlock(d)]]:[]),["nw",`<div class="box">${newsList(news,false)}</div>`]];
+  return `<div class="sd" tabindex="-1" autofocus><div class="dh"><div><h3>${esc(d.name)} <span class="sym">${esc(d.symbol)}</span></h3><div class="px ${cls(d.change)}"><b>${fmt(d.price)}</b> <span>(${chg(d)})</span></div></div><div class="dbt"><button type="button" data-alto title="ตั้งแจ้งเตือนราคาของหุ้นนี้">🔔 แจ้งเตือน</button><button type="button" class="starb" data-star="${esc(d.symbol)}" title="เพิ่มหรือเอาหุ้นนี้ออกจากรายการที่เลือกอยู่ในหน้า รายการของฉัน">${wlHas(d.symbol)?"★ ในรายการ":"☆ เพิ่มในรายการ"}</button><button type="button" onclick="dlg.close()">ปิด</button></div></div>
+  <div class="alwrap" hidden><!--ALSLOT--></div>
+  <div class="db"><div class="sdtop"><div class="sdch">${priceChart(d)}<p class="note" style="margin:6px 0 0">${note(d.target!=null||d.targetLow!=null||d.targetHigh!=null)}</p></div><div class="sds">${sumCards(d)}</div></div>
+  <div class="sdt" role="tablist">${tabs.map((t,i)=>`<button type="button" role="tab" aria-selected="${i===0}" class="${i===0?"on":""}" data-sdtab="${t[0]}">${t[1]}</button>`).join("")}</div>
+  ${panes.map((p,i)=>`<div class="sdp" data-sdpane="${p[0]}"${i?" hidden":""}>${p[1]}</div>`).join("")}</div></div>`;
+}
+document.addEventListener("click",e=>{
+  const t=e.target;if(!t.closest)return;
+  const go=t.closest("[data-sdtab],[data-sdgo]");
+  if(go){
+    const sd=go.closest(".sd");if(!sd)return;
+    const k=go.dataset.sdtab||go.dataset.sdgo;
+    sd.querySelectorAll("[data-sdtab]").forEach(b=>{const on=b.dataset.sdtab===k;b.classList.toggle("on",on);b.setAttribute("aria-selected",String(on))});
+    sd.querySelectorAll("[data-sdpane]").forEach(p=>{p.hidden=p.dataset.sdpane!==k});
+    return;
+  }
+  const al=t.closest("[data-alto]");
+  if(al){const w=al.closest(".sd")&&al.closest(".sd").querySelector(".alwrap");if(w)w.hidden=!w.hidden}
+});
 
 fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(data=>{
   const all=data.groups.flatMap(g=>g.items),by=s=>all.find(i=>i.symbol===s)||{},stocks=(data.groups.find(g=>g.detail===true)||{items:[]}).items;
@@ -1105,7 +1209,7 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
   const oApply=window.applyQuotes;
   if(typeof oApply==="function")window.applyQuotes=function(){const r=oApply.apply(this,arguments);setTimeout(check,0);return r};
   const oDetail=window.detail;
-  if(typeof oDetail==="function")window.detail=function(d){return oDetail(d)+block(d)};
+  if(typeof oDetail==="function")window.detail=function(d){const html=oDetail(d);return html.indexOf("<!--ALSLOT-->")>=0?html.replace("<!--ALSLOT-->",block(d)):html+block(d)};
 
   document.addEventListener("change",e=>{
     const t=e.target.closest&&e.target.closest("[data-altype]");
