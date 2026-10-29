@@ -171,23 +171,55 @@ def fetch(symbol, detail):
     return d
 
 
+def load_old():
+    """อ่าน data.json รอบก่อน เพื่อใช้แทนตัวที่ดึงรอบนี้ไม่ได้ (กันหุ้นหายจากหน้าเว็บเพราะ Yahoo สะดุดชั่วคราว)"""
+    try:
+        with open("data.json", encoding="utf-8") as f:
+            old = json.load(f)
+        return {i["symbol"]: i for g in old.get("groups", []) for i in g.get("items", [])}
+    except Exception:
+        return {}
+
+
+def fresh(item, days=10):
+    try:
+        return (dt.date.today() - dt.date.fromisoformat(item["date"])).days <= days
+    except Exception:
+        return False
+
+
 def main():
     groups, feed = [], []
+    old = load_old()
+    expected, got, failed, reused = 0, 0, [], []
     for title, symbols, detail in GROUPS:
         items = []
         for symbol, name in symbols.items():
+            expected += 1
+            d, why = None, "ไม่มีข้อมูลราคา (สัญลักษณ์ผิด หรือเพิ่งเข้าตลาด)"
             try:
                 d = fetch(symbol, detail)
             except Exception as e:  # ตัวใดตัวหนึ่งพังก็ไม่ให้ทั้งหน้าพัง
-                print(f"ข้ามหุ้น {symbol}: {e}")
-                continue
+                why = str(e)
             if d:
+                got += 1
                 if detail:
                     d["news"] = newsfeed.prepare(d.get("news", []), "หุ้นรายตัว", [symbol])
                     if detail is True:  # ข่าวของหุ้นกลุ่มค้นหาอย่างเดียวไม่เข้าฟีดรวม
                         feed += d["news"][:3]
                 items.append({"symbol": symbol, "name": name, **d})
+            else:
+                failed.append(symbol)
+                print(f"ข้ามหุ้น {symbol}: {why}")
+                if symbol in old and fresh(old[symbol]):  # ใช้ข้อมูลรอบก่อนแทน (ไม่เก่าเกิน 10 วัน) และติดป้าย stale ไว้
+                    items.append({**old[symbol], "stale": True})
+                    reused.append(symbol)
         groups.append({"title": title, "detail": detail, "items": items})
+    print(f"ดึงสำเร็จ {got}/{expected} ตัว" + (f" | ใช้ข้อมูลรอบก่อนแทน: {', '.join(reused)}" if reused else ""))
+    if expected and got < 0.6 * expected:
+        # Yahoo ล่มหรือบล็อกทั้งรอบ: ไม่เขียนทับ data.json ที่ดีอยู่ และให้ workflow ขึ้นว่าล้มเหลว
+        print(f"ดึงได้น้อยเกินไป ({got}/{expected}) ไม่เขียนทับ data.json: {', '.join(failed)}")
+        raise SystemExit(1)
     feed += newsfeed.prepare(news("^GSPC", 6) or news("SPY", 6), "ตลาดและเศรษฐกิจ")
     feed += newsfeed.collect()
     seen, merged = set(), []

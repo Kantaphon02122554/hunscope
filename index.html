@@ -349,7 +349,7 @@ body.wlmode nav,body.wlmode header.hero,body.wlmode #app,body.wlmode #foot{displ
 .authb:hover{border-color:var(--accent);color:var(--accent)}
 .authb[hidden]{display:none}
 .wlh .authb{margin-left:0}
-#authDlg{width:min(420px,calc(100% - 24px))}
+#authDlg,#alDlg{width:min(420px,calc(100% - 24px))}
 .adb{padding:20px}
 .adh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .adh h3{margin:0;font-size:1.05rem}
@@ -364,10 +364,26 @@ body.wlmode nav,body.wlmode header.hero,body.wlmode #app,body.wlmode #foot{displ
 .adb .amsg{font-size:.86rem;line-height:1.5;margin-top:8px;min-height:1.2em}
 .adb .amsg.ok{color:var(--up)}.adb .amsg.err{color:var(--down)}
 .adb .awho{font-family:var(--mono);font-size:.9rem;word-break:break-all;color:var(--ink);margin-bottom:6px}
+
+[data-al-n]:not(:empty){margin-left:6px;background:var(--down);color:#fff;border-radius:999px;padding:1px 7px;font-size:.72rem}
+.alb h4{margin-top:0}
+.alf{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.alf select,.alf input{font:inherit;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.alf input{width:130px}.alf input:disabled{opacity:.4}
+.alf button{font:inherit;padding:9px 14px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:#06121c;font-weight:600;cursor:pointer}
+.all{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px}
+.all li{display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:10px}
+.all li>div{flex:1;min-width:0}
+.all li small{display:block;color:var(--mute)}
+.all li button{font:inherit;font-size:.8rem;background:none;border:1px solid var(--line);border-radius:8px;color:var(--mute);padding:4px 8px;cursor:pointer}
+.all li button:hover{border-color:var(--accent);color:var(--accent)}
+.alst{font-size:.78rem;color:var(--mute);white-space:nowrap}.alst.on{color:var(--accent)}
+#alToast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(20px);opacity:0;pointer-events:none;background:var(--panel);color:var(--ink);border:1px solid var(--accent);border-radius:12px;padding:10px 16px;z-index:50;transition:.25s;max-width:calc(100% - 24px)}
+#alToast.show{opacity:1;transform:translateX(-50%)}
 </style>
 </head>
 <body id="top">
-<nav><a class="logo" href="#top"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="16" r="9"/><circle cx="16" cy="16" r="2.2" fill="currentColor"/><path d="M16 3v6M16 23v6M3 16h6M23 16h6"/></svg><span class="lt"><b>HUNSCOPE</b><small>กล้องส่องตลาดเทค</small></span></a><div class="srch"><input id="q" type="search" placeholder="ค้นหาหุ้น" aria-label="ค้นหาหุ้น" autocomplete="off"><div class="qres" id="qres" hidden></div></div><div class="links"><a href="#overview">ภาพรวม</a><a href="#zones">โซนรับ</a><a href="#fundamentals">พื้นฐาน</a><a href="#macro">สถานการณ์</a><a href="#bubble">AI bubble</a><a href="#analysis">ข่าว</a><a href="#portfolio">พอร์ตจำลอง</a><a href="#/watchlists">รายการของฉัน</a></div><button type="button" class="authb" data-auth hidden>เข้าสู่ระบบ</button></nav>
+<nav><a class="logo" href="#top"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="16" r="9"/><circle cx="16" cy="16" r="2.2" fill="currentColor"/><path d="M16 3v6M16 23v6M3 16h6M23 16h6"/></svg><span class="lt"><b>HUNSCOPE</b><small>กล้องส่องตลาดเทค</small></span></a><div class="srch"><input id="q" type="search" placeholder="ค้นหาหุ้น" aria-label="ค้นหาหุ้น" autocomplete="off"><div class="qres" id="qres" hidden></div></div><div class="links"><a href="#overview">ภาพรวม</a><a href="#zones">โซนรับ</a><a href="#fundamentals">พื้นฐาน</a><a href="#macro">สถานการณ์</a><a href="#bubble">AI bubble</a><a href="#analysis">ข่าว</a><a href="#portfolio">พอร์ตจำลอง</a><a href="#/watchlists">รายการของฉัน</a></div><button type="button" class="authb" data-al-open title="การแจ้งเตือนราคา" aria-label="การแจ้งเตือนราคา">🔔<span data-al-n></span></button><button type="button" class="authb" data-auth hidden>เข้าสู่ระบบ</button></nav>
 <header class="hero"><div class="wrap">
   <div><h1 id="headline">กำลังโหลด…</h1>
   <p class="sub" id="meta"></p></div>
@@ -375,8 +391,9 @@ body.wlmode nav,body.wlmode header.hero,body.wlmode #app,body.wlmode #foot{displ
 </div></header>
 <main class="wrap" id="app"><section><div class="idx"><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div></div></section></main>
 <div class="wrap" id="foot"><footer>ตัวชี้วัดคำนวณจากราคาปิดรายวัน (RSI 14 วัน, MACD 12/26/9, เส้นเฉลี่ย 50 และ 200 วัน) คะแนนสัญญาณเป็นการนับแนวโน้มแบบง่าย ไม่ใช่คำแนะนำให้ซื้อหรือขาย ข้อมูลจาก Yahoo Finance อาจล่าช้าหรือผิดพลาดได้</footer></div>
-<div id="wlView"><div class="wlh"><a class="logo" href="#"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="16" r="9"/><circle cx="16" cy="16" r="2.2" fill="currentColor"/><path d="M16 3v6M16 23v6M3 16h6M23 16h6"/></svg><span class="lt"><b>HUNSCOPE</b><small>กล้องส่องตลาดเทค</small></span></a><a class="back" href="#">← กลับแดชบอร์ด</a><span class="live" id="wlLive">ข้อมูลสด</span><button type="button" class="authb" data-auth hidden>เข้าสู่ระบบ</button></div><main class="wrap"><div class="shead"><div><div class="eyebrow"><b>WATCHLIST</b><i></i><span>แยกจากแดชบอร์ดหลัก</span></div><h2 class="big">รายการหุ้นที่เฝ้าดู</h2><p class="sdesc">สร้างได้หลายรายการเพื่อแยกกลุ่มหุ้นที่สนใจ เพิ่มหรือถอดหุ้นได้ตลอด ระบบบันทึกรายการไว้ในเครื่องนี้อัตโนมัติ และดึงราคาจากฟีดเดียวกับแดชบอร์ดหลัก กดที่หุ้นเพื่อเปิดรายละเอียด</p></div></div><div class="wlg"><aside class="wls" id="wlSide"></aside><div id="wlMainCol"></div></div></main></div>
+<div id="wlView"><div class="wlh"><a class="logo" href="#"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="16" r="9"/><circle cx="16" cy="16" r="2.2" fill="currentColor"/><path d="M16 3v6M16 23v6M3 16h6M23 16h6"/></svg><span class="lt"><b>HUNSCOPE</b><small>กล้องส่องตลาดเทค</small></span></a><a class="back" href="#">← กลับแดชบอร์ด</a><span class="live" id="wlLive">ข้อมูลสด</span><button type="button" class="authb" data-al-open title="การแจ้งเตือนราคา" aria-label="การแจ้งเตือนราคา">🔔<span data-al-n></span></button><button type="button" class="authb" data-auth hidden>เข้าสู่ระบบ</button></div><main class="wrap"><div class="shead"><div><div class="eyebrow"><b>WATCHLIST</b><i></i><span>แยกจากแดชบอร์ดหลัก</span></div><h2 class="big">รายการหุ้นที่เฝ้าดู</h2><p class="sdesc">สร้างได้หลายรายการเพื่อแยกกลุ่มหุ้นที่สนใจ เพิ่มหรือถอดหุ้นได้ตลอด ระบบบันทึกรายการไว้ในเครื่องนี้อัตโนมัติ และดึงราคาจากฟีดเดียวกับแดชบอร์ดหลัก กดที่หุ้นเพื่อเปิดรายละเอียด</p></div></div><div class="wlg"><aside class="wls" id="wlSide"></aside><div id="wlMainCol"></div></div></main></div>
 <dialog id="dlg"><div id="dlgBody"></div></dialog>
+<dialog id="alDlg"><div class="adb"><div class="adh"><h3>แจ้งเตือนราคา</h3><button type="button" id="alX" aria-label="ปิด">✕</button></div><div id="alBody"></div></div></dialog>
 <dialog id="authDlg"><div class="adb"><div class="adh"><h3>บัญชี Hunscope</h3><button type="button" id="authX" aria-label="ปิด">✕</button></div><div id="authBody"></div></div></dialog>
 <script>
 const fmt=(n,d=2)=>n==null?"–":Number(n).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
@@ -1003,25 +1020,155 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
 })();
 </script>
 <script>
+/* ===== แจ้งเตือนราคา: ตรวจเมื่อเปิดหน้าเว็บค้างไว้ (ราคาอัปเดตราว 10 นาทีช่วงตลาดเปิด) =====
+   เก็บใน localStorage คีย์ al.v1 และซิงก์กับบัญชีถ้าล็อกอินไว้ ไม่ใช่การแจ้งเตือนแบบพุชเมื่อปิดแท็บ */
+(function(){
+  const KEY="al.v1",MAX=100;
+  const $=id=>document.getElementById(id);
+  const E=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const F=(n,d=2)=>n==null?"–":Number(n).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
+  let DATA=null;
+  const load=()=>{try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&Array.isArray(s.rules))return s}catch(e){}return{rules:[]}};
+  const save=s=>{try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){}};
+  const items=()=>{const m={};if(DATA)DATA.groups.forEach(g=>g.items.forEach(i=>{m[i.symbol]=i}));return m};
+  const zoneHigh=it=>{const z=it&&it.zones&&it.zones.list&&it.zones.list[0];return z?z.high:null};
+  const cond=(r,it)=>{
+    if(!it||it.price==null)return false;
+    if(r.type==="below")return it.price<=r.level;
+    if(r.type==="above")return it.price>=r.level;
+    if(r.type==="zone"){const h=zoneHigh(it);return h!=null&&it.price<=h}
+    return false;
+  };
+  const label=r=>r.type==="zone"?"ราคาเข้าโซนรับ":(r.type==="below"?"ราคาลงมาถึง ":"ราคาขึ้นไปถึง ")+F(r.level);
+  const when=iso=>new Date(iso).toLocaleString("th-TH",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"});
+
+  function row(r,withSym){
+    const it=items()[r.sym]||{};
+    const st=r.fired?'<span class="alst on">เตือนแล้ว '+E(when(r.fired))+'</span>':'<span class="alst">รออยู่</span>';
+    return '<li><div><b>'+(withSym?E(r.sym)+' ':'')+E(label(r))+'</b><small>'+E(it.name||'')+' ราคาล่าสุด '+F(it.price)+'</small></div>'+st
+      +(r.fired?'<button type="button" data-alre="'+E(r.id)+'">เปิดใหม่</button>':'')
+      +'<button type="button" data-aldel="'+E(r.id)+'" aria-label="ลบ">✕</button></li>';
+  }
+  const rowsFor=sym=>load().rules.filter(r=>r.sym===sym).map(r=>row(r,false)).join("");
+
+  function block(d){
+    const z=zoneHigh(d)!=null;
+    return '<div class="db alb" data-alsym="'+E(d.symbol)+'"><h4>แจ้งเตือนราคา</h4><div class="alf">'
+      +'<select data-altype aria-label="เงื่อนไข"><option value="below">ราคาลงมาถึง</option><option value="above">ราคาขึ้นไปถึง</option>'+(z?'<option value="zone">ราคาเข้าโซนรับ</option>':'')+'</select>'
+      +'<input type="number" step="any" min="0" inputmode="decimal" data-allevel placeholder="ราคา (USD)" aria-label="ราคา">'
+      +'<button type="button" data-aladd>เพิ่มแจ้งเตือน</button></div>'
+      +'<div class="note" data-almsg></div><ul class="all" data-allist>'+rowsFor(d.symbol)+'</ul></div>';
+  }
+
+  function toast(t){
+    let el=$("alToast");
+    if(!el){el=document.createElement("div");el.id="alToast";el.setAttribute("role","status");document.body.appendChild(el)}
+    el.textContent=t;el.className="show";clearTimeout(toast.t);toast.t=setTimeout(()=>{el.className=""},8000);
+  }
+  function notify(r,it){
+    const t=r.sym+": "+label(r)+" (ราคา "+F(it.price)+")";
+    toast("🔔 "+t);
+    try{if(window.Notification&&Notification.permission==="granted")new Notification("Hunscope",{body:t})}catch(e){}
+  }
+  function badge(){
+    const n=load().rules.filter(r=>r.fired&&!r.seen).length;
+    document.querySelectorAll("[data-al-n]").forEach(el=>{el.textContent=n?String(n):""});
+  }
+  function refresh(){
+    document.querySelectorAll("[data-alsym]").forEach(b=>{const l=b.querySelector("[data-allist]");if(l)l.innerHTML=rowsFor(b.dataset.alsym)});
+    if($("alDlg")&&$("alDlg").open)paintDlg();
+    badge();
+  }
+  function check(){
+    const s=load(),m=items();let ch=false;
+    s.rules.forEach(r=>{
+      if(r.fired)return;
+      const it=m[r.sym];
+      if(cond(r,it)){r.fired=new Date().toISOString();r.seen=false;ch=true;notify(r,it)}
+    });
+    if(ch){save(s);refresh()}else badge();
+  }
+  function paintDlg(){
+    const s=load(),perm=window.Notification?Notification.permission:"unsupported";
+    let h='<p>เว็บตรวจราคาเมื่อเปิดหน้านี้ค้างไว้ในเบราว์เซอร์ (ราคาอัปเดตราว 10 นาทีช่วงตลาดสหรัฐเปิด) ถ้าปิดแท็บหรือปิดเบราว์เซอร์จะไม่มีการแจ้งเตือน</p>';
+    if(perm==="default")h+='<button type="button" class="abtn" data-alperm>เปิดการแจ้งเตือนบนเบราว์เซอร์</button>';
+    else if(perm==="denied")h+='<p class="amsg err">เบราว์เซอร์บล็อกการแจ้งเตือนไว้ แก้ได้ที่การตั้งค่าเว็บไซต์ของเบราว์เซอร์</p>';
+    h+=s.rules.length?'<ul class="all">'+s.rules.map(r=>row(r,true)).join("")+'</ul>'
+      :'<p>ยังไม่มีแจ้งเตือน เปิดหน้ารายละเอียดหุ้นแล้วเพิ่มได้ที่ส่วน “แจ้งเตือนราคา”</p>';
+    if(s.rules.some(r=>r.fired))h+='<button type="button" class="abtn" style="margin-top:12px" data-alclear>ลบที่เตือนแล้วทั้งหมด</button>';
+    $("alBody").innerHTML=h;
+  }
+
+  // ต่อเข้ากับฟังก์ชันเดิมของหน้า โดยไม่แก้โค้ดเดิม
+  const oStart=window.startQuotes;
+  if(typeof oStart==="function")window.startQuotes=function(data){DATA=data;setTimeout(check,1500);return oStart.apply(this,arguments)};
+  const oApply=window.applyQuotes;
+  if(typeof oApply==="function")window.applyQuotes=function(){const r=oApply.apply(this,arguments);setTimeout(check,0);return r};
+  const oDetail=window.detail;
+  if(typeof oDetail==="function")window.detail=function(d){return oDetail(d)+block(d)};
+
+  document.addEventListener("change",e=>{
+    const t=e.target.closest&&e.target.closest("[data-altype]");
+    if(t){const i=t.closest(".alf").querySelector("[data-allevel]");i.disabled=t.value==="zone"}
+  });
+  document.addEventListener("click",e=>{
+    const t=e.target;if(!t.closest)return;
+    const add=t.closest("[data-aladd]");
+    if(add){
+      const box=add.closest("[data-alsym]"),sym=box.dataset.alsym,type=box.querySelector("[data-altype]").value,msg=box.querySelector("[data-almsg]");
+      const it=items()[sym],lv=parseFloat(box.querySelector("[data-allevel]").value);
+      const r={id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),sym,type,level:type==="zone"?null:lv,fired:null,seen:true};
+      const s=load();
+      if(type!=="zone"&&!(lv>0)){msg.textContent="กรอกราคาที่มากกว่า 0";return}
+      if(cond(r,it)){msg.textContent=type==="zone"?"ราคาอยู่ในโซนรับหรือต่ำกว่าโซนแล้ว":"ราคาปัจจุบัน "+F(it&&it.price)+" เข้าเงื่อนไขนี้อยู่แล้ว ลองตั้งราคาที่ยังไม่ถึง";return}
+      if(s.rules.some(x=>!x.fired&&x.sym===sym&&x.type===type&&x.level===r.level)){msg.textContent="มีแจ้งเตือนนี้อยู่แล้ว";return}
+      if(s.rules.length>=MAX){msg.textContent="ตั้งได้สูงสุด "+MAX+" รายการ ลบรายการเก่าก่อน";return}
+      s.rules.push(r);save(s);msg.textContent="เพิ่มแล้ว";box.querySelector("[data-allevel]").value="";refresh();return;
+    }
+    const del=t.closest("[data-aldel]");
+    if(del){const s=load();s.rules=s.rules.filter(r=>r.id!==del.dataset.aldel);save(s);refresh();return}
+    const re=t.closest("[data-alre]");
+    if(re){
+      const s=load(),r=s.rules.find(x=>x.id===re.dataset.alre);
+      if(r){r.fired=null;r.seen=true;save(s);refresh();check()}
+      return;
+    }
+    if(t.closest("[data-alclear]")){const s=load();s.rules=s.rules.filter(r=>!r.fired);save(s);refresh();return}
+    if(t.closest("[data-alperm]")){
+      try{Notification.requestPermission().then(()=>paintDlg())}catch(err){}
+      return;
+    }
+    if(t.closest("[data-al-open]")){
+      paintDlg();$("alDlg").showModal();
+      const s=load();if(s.rules.some(r=>r.fired&&!r.seen)){s.rules.forEach(r=>{if(r.fired)r.seen=true});save(s)}
+      badge();return;
+    }
+  });
+  $("alX").onclick=()=>$("alDlg").close();
+  $("alDlg").addEventListener("click",e=>{if(e.target===$("alDlg"))$("alDlg").close()});
+  badge();
+})();
+</script>
+<script>
 /* ===== ระบบล็อกอิน + ซิงก์รายการของฉัน/พอร์ตจำลอง (Supabase) =====
    ตั้งค่า: ใส่ url และ anonKey จากหน้า Project Settings > API ของ Supabase (ดู AUTH_SETUP.md)
    ถ้าปล่อยว่าง ปุ่มเข้าสู่ระบบจะซ่อนอยู่ และเว็บทำงานเหมือนเดิม (เก็บในเครื่องอย่างเดียว)
    anonKey เป็นคีย์สาธารณะโดยออกแบบ ปลอดภัยเพราะตาราง user_data เปิด Row Level Security แล้ว */
 (function(){
   const CFG={url:"https://yhhchgdrmdqzwqvyxolk.supabase.co",anonKey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InloaGNoZ2RybWRxendxdnl4b2xrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMyMDYyNjIsImV4cCI6MjEwODc4MjI2Mn0.tdXWv4PFOFM1BJ_EoQa2jnFvqAum1gi2RhxoGXXLlHE"};
-  const KEYS={wl:"wl.v1",pf:"pf.v1",pfs:"pfs.v1"};
+  const KEYS={wl:"wl.v1",pf:"pf.v1",pfs:"pfs.v1",al:"al.v1"};
   if(!CFG.url||!CFG.anonKey)return;
 
   const $=id=>document.getElementById(id);
   const btns=()=>document.querySelectorAll("[data-auth]");
   const rawSet=Storage.prototype.setItem;
-  let sb=null,user=null,applying=false,timer=null,lastSync=null,msg={t:"",c:""};
+  let sb=null,user=null,applying=false,timer=null,lastSync=null,alCol=true,msg={t:"",c:""};
 
   const read=k=>{try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}};
-  const snap=()=>({wl:read(KEYS.wl),pf:read(KEYS.pf),pfs:read(KEYS.pfs)});
+  const snap=()=>({wl:read(KEYS.wl),pf:read(KEYS.pf),pfs:read(KEYS.pfs),al:read(KEYS.al)});
   const localHasData=()=>{
     const s=snap();
-    return !!((s.wl&&Array.isArray(s.wl.lists)&&s.wl.lists.some(l=>(l.syms||[]).length))||(s.pf&&Object.keys(s.pf).length)||(s.pfs&&Object.keys(s.pfs).length));
+    return !!((s.wl&&Array.isArray(s.wl.lists)&&s.wl.lists.some(l=>(l.syms||[]).length))||(s.pf&&Object.keys(s.pf).length)||(s.pfs&&Object.keys(s.pfs).length)||(s.al&&Array.isArray(s.al.rules)&&s.al.rules.length));
   };
   const hhmm=()=>new Date().toLocaleTimeString("th-TH",{hour:"2-digit",minute:"2-digit"});
   const setMsg=(t,c)=>{msg={t,c:c||""};const m=$("amsg");if(m){m.textContent=t;m.className="amsg "+(c||"")}};
@@ -1036,14 +1183,19 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
   async function push(){
     if(!user)return;
     const s=snap();
-    const {error}=await sb.from("user_data").upsert({user_id:user.id,wl:s.wl,pf:s.pf,pfs:s.pfs,updated_at:new Date().toISOString()});
+    const row={user_id:user.id,wl:s.wl,pf:s.pf,pfs:s.pfs,updated_at:new Date().toISOString()};
+    if(alCol)row.al=s.al;
+    let {error}=await sb.from("user_data").upsert(row);
+    if(error&&alCol){alCol=false;delete row.al;({error}=await sb.from("user_data").upsert(row))}  // ยังไม่ได้เพิ่มคอลัมน์ al: ซิงก์ส่วนอื่นต่อได้
     if(error){setMsg("ซิงก์ไม่สำเร็จ: "+error.message,"err");return}
     lastSync=hhmm();paint();
   }
 
   async function sync(){
     if(!user)return;
-    const {data,error}=await sb.from("user_data").select("wl,pf,pfs").eq("user_id",user.id).maybeSingle();
+    let res=await sb.from("user_data").select(alCol?"wl,pf,pfs,al":"wl,pf,pfs").eq("user_id",user.id).maybeSingle();
+    if(res.error&&alCol){alCol=false;res=await sb.from("user_data").select("wl,pf,pfs").eq("user_id",user.id).maybeSingle()}
+    const {data,error}=res;
     if(error){setMsg("อ่านข้อมูลจากบัญชีไม่ได้: "+error.message,"err");return}
     if(!data){await push();return}                       // บัญชีใหม่: อัปโหลดข้อมูลในเครื่องขึ้นไป
     const diff=Object.keys(KEYS).filter(k=>data[k]!=null&&JSON.stringify(data[k])!==JSON.stringify(read(KEYS[k])));
