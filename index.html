@@ -1302,6 +1302,18 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
     return !!((s.wl&&Array.isArray(s.wl.lists)&&s.wl.lists.some(l=>(l.syms||[]).length))||(s.pf&&Object.keys(s.pf).length)||(s.pfs&&Object.keys(s.pfs).length)||(s.al&&Array.isArray(s.al.rules)&&s.al.rules.length));
   };
   const hhmm=()=>new Date().toLocaleTimeString("th-TH",{hour:"2-digit",minute:"2-digit"});
+  // เทียบข้อมูลโดยไม่สนลำดับ key (ฐานข้อมูล jsonb จัดลำดับ key ใหม่ ทำให้เทียบตรงๆ แล้วต่างกันเสมอ)
+  const KS=Object.keys(KEYS);
+  const keysNow=()=>alCol?KS:KS.filter(k=>k!=="al");
+  const canon=v=>{
+    if(v==null)return "null";
+    const norm=x=>Array.isArray(x)?x.map(norm):(x&&typeof x==="object"?Object.keys(x).sort().reduce((o,k)=>{o[k]=norm(x[k]);return o},{}):x);
+    return JSON.stringify(norm(v));
+  };
+  // จดสถานะข้อมูลตอนซิงก์สำเร็จครั้งล่าสุด (แยกตามบัญชี) ไว้ตัดสินว่าฝั่งไหนเป็นฝ่ายแก้
+  const baseKey=()=>"hs.base."+(user?user.id:"");
+  const getBase=()=>{try{return JSON.parse(localStorage.getItem(baseKey()))}catch(e){return null}};
+  const setBase=s=>{const o={};keysNow().forEach(k=>{o[k]=canon(s[k])});rawSet.call(localStorage,baseKey(),JSON.stringify(o))};
   const setMsg=(t,c)=>{msg={t,c:c||""};const m=$("amsg");if(m){m.textContent=t;m.className="amsg "+(c||"")}};
 
   // ดักการบันทึกคีย์ของเรา แล้วส่งขึ้นคลาวด์แบบหน่วงเวลา (ไม่ต้องแก้โค้ดเดิม)
@@ -1319,27 +1331,51 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
     let {error}=await sb.from("user_data").upsert(row);
     if(error&&alCol){alCol=false;delete row.al;({error}=await sb.from("user_data").upsert(row))}  // ยังไม่ได้เพิ่มคอลัมน์ al: ซิงก์ส่วนอื่นต่อได้
     if(error){setMsg("ซิงก์ไม่สำเร็จ: "+error.message,"err");return}
-    lastSync=hhmm();paint();
+    setBase(s);lastSync=hhmm();paint();
   }
 
-  async function sync(){
-    if(!user)return;
-    let res=await sb.from("user_data").select(alCol?"wl,pf,pfs,al":"wl,pf,pfs").eq("user_id",user.id).maybeSingle();
-    if(res.error&&alCol){alCol=false;res=await sb.from("user_data").select("wl,pf,pfs").eq("user_id",user.id).maybeSingle()}
+  async function doSync(){
+    if(!user)return true;
+    const uid=user.id;
+    let res=await sb.from("user_data").select(alCol?"wl,pf,pfs,al":"wl,pf,pfs").eq("user_id",uid).maybeSingle();
+    if(res.error&&alCol){alCol=false;res=await sb.from("user_data").select("wl,pf,pfs").eq("user_id",uid).maybeSingle()}
     const {data,error}=res;
-    if(error){setMsg("อ่านข้อมูลจากบัญชีไม่ได้: "+error.message,"err");return}
-    if(!data){await push();return}                       // บัญชีใหม่: อัปโหลดข้อมูลในเครื่องขึ้นไป
-    const diff=Object.keys(KEYS).filter(k=>data[k]!=null&&JSON.stringify(data[k])!==JSON.stringify(read(KEYS[k])));
-    if(!diff.length){lastSync=hhmm();paint();sessionStorage.removeItem("hs.reloaded");return}
-    if(localHasData()&&!sessionStorage.getItem("hs.reloaded")){
+    if(error){setMsg("อ่านข้อมูลจากบัญชีไม่ได้: "+error.message,"err");return false}
+    if(!data){await push();return true}                  // บัญชีใหม่: อัปโหลดข้อมูลในเครื่องขึ้นไป
+    const base=getBase(),local=snap(),take=[],conflict=[];let needPush=false;
+    keysNow().forEach(k=>{
+      const l=canon(local[k]),c=canon(data[k]);
+      if(l===c)return;                                   // เหมือนกันแล้ว
+      if(c==="null"){needPush=true;return}               // บัญชียังไม่มีข้อมูลส่วนนี้: ส่งขึ้นไป (ไม่ลบข้อมูลในเครื่อง)
+      if(l==="null"){take.push(k);return}                // เครื่องนี้ยังว่าง: ใช้ข้อมูลจากบัญชี
+      const b=base?base[k]:undefined;
+      if(b===undefined){conflict.push(k);return}         // ไม่เคยซิงก์บนเครื่องนี้ แต่สองฝั่งมีข้อมูลต่างกัน
+      if(l===b){take.push(k);return}                     // เครื่องนี้ไม่ได้แก้ตั้งแต่ซิงก์ล่าสุด: รับข้อมูลใหม่จากบัญชี
+      if(c===b){needPush=true;return}                    // บัญชีไม่เปลี่ยน: ส่งข้อมูลที่แก้ในเครื่องนี้ขึ้นไป
+      conflict.push(k);                                  // แก้ทั้งสองฝั่ง
+    });
+    if(conflict.length){
       const useCloud=confirm("พบข้อมูลในบัญชีที่ต่างจากข้อมูลในเครื่องนี้\n\nตกลง = ใช้ข้อมูลในบัญชี (แทนที่ข้อมูลในเครื่องนี้)\nยกเลิก = ใช้ข้อมูลในเครื่องนี้ (อัปโหลดทับข้อมูลในบัญชี)");
-      if(!useCloud){await push();return}
+      if(useCloud)take.push(...conflict);else needPush=true;
     }
-    applying=true;
-    diff.forEach(k=>rawSet.call(localStorage,KEYS[k],JSON.stringify(data[k])));
-    applying=false;
-    sessionStorage.setItem("hs.reloaded","1");
-    location.reload();                                    // โหลดหน้าใหม่เพื่อให้ลิสต์และพอร์ตแสดงข้อมูลจากบัญชี
+    if(take.length){
+      applying=true;
+      take.forEach(k=>rawSet.call(localStorage,KEYS[k],JSON.stringify(data[k])));
+      applying=false;
+    }
+    if(needPush)await push();else{setBase(snap());lastSync=hhmm();paint()}
+    if(take.length){                                     // โหลดหน้าใหม่เพื่อให้ลิสต์และพอร์ตแสดงข้อมูลจากบัญชี (กันวนซ้ำไม่เกิน 2 ครั้ง)
+      const n=+(sessionStorage.getItem("hs.rl")||0);
+      if(n<2){sessionStorage.setItem("hs.rl",String(n+1));location.reload()}
+    }else sessionStorage.removeItem("hs.rl");
+    return true;
+  }
+  let syncing=null,syncedUid=null;
+  function sync(){
+    if(!user)return Promise.resolve();
+    if(syncing)return syncing;                           // กันซิงก์ซ้อนกัน (เช่น INITIAL_SESSION กับ SIGNED_IN มาพร้อมกัน)
+    syncing=doSync().then(ok=>{if(!ok)syncedUid=null},()=>{syncedUid=null;setMsg("ซิงก์ไม่สำเร็จ","err")}).then(()=>{syncing=null});
+    return syncing;
   }
 
   function paint(){
@@ -1378,12 +1414,12 @@ fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}
     sb.auth.onAuthStateChange((ev,session)=>{
       setTimeout(()=>{
         user=session?session.user:null;
-        if(!user)lastSync=null;
+        if(!user){lastSync=null;syncedUid=null}
         if(ev==="SIGNED_OUT")msg={t:"",c:""};
         paint();
         if(user&&(ev==="INITIAL_SESSION"||ev==="SIGNED_IN")){
           if(ev==="SIGNED_IN"&&$("authDlg").open)$("authDlg").close();
-          sync();
+          if(syncedUid!==user.id){syncedUid=user.id;sync()}
         }
       },0);
     });
