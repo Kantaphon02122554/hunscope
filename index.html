@@ -410,7 +410,11 @@ dialog:has(.sd){width:min(1000px,calc(100% - 24px))}
 .sdx{margin:10px 0 4px;color:var(--mute);font-size:.9rem}
 .sdx summary{cursor:pointer}
 .sdx ul{margin:8px 0 0;padding-left:20px;line-height:1.6}
-.qc{margin-bottom:14px}.qc svg{width:100%;max-width:640px;height:auto;display:block;color:var(--ink)}.qc text{fill:var(--mute)}
+.qc{position:relative;margin-bottom:14px}
+.qc [data-qt]{cursor:pointer}.qc rect[data-qt]:hover{opacity:.8}
+.qtip{position:absolute;transform:translate(-50%,-115%);background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:.85rem;line-height:1.4;white-space:nowrap;pointer-events:none;z-index:5;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.qtip[hidden]{display:none}
+.qtip b{display:block}.qtip span{color:var(--mute);font-size:.78rem}.qc svg{width:100%;max-width:640px;height:auto;display:block;color:var(--ink)}.qc text{fill:var(--mute)}
 .qc .chips i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
 @media(max-width:760px){.sdtop{grid-template-columns:1fr}.sds{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
@@ -1020,20 +1024,28 @@ function priceChart(d){
   }
   return `<svg class="pc" viewBox="0 0 ${W} ${H}" role="img" aria-label="กราฟราคา 90 วัน${hasF?" พร้อมช่วงราคาเป้าหมายของนักวิเคราะห์":""}">${grid}${bands}${ref(d.sma50,"#38bdf8","SMA50")}${ref(d.sma200,"#d9a441","SMA200")}<polyline points="${pts}" fill="none" stroke="#60a5fa" stroke-width="2.2" stroke-linejoin="round"/>${fun}<circle cx="${PW}" cy="${cy.toFixed(1)}" r="4" fill="#60a5fa"/></svg>`;
 }
+function qLabel(date){
+  const m=/^(\d{4})-(\d{2})/.exec(String(date||""));
+  if(!m)return String(date||"").slice(2,7);
+  return "Q"+Math.ceil(+m[2]/3)+"'"+m[1].slice(2);
+}
 function qChart(f){
   const qs=((f&&f.quarters)||[]).filter(q=>q.rev!=null).slice(0,8).reverse();
   if(qs.length<2)return"";
+  const cur=f.currency?" "+f.currency:"";
   const W=640,H=220,pl=44,pr=44,pt=14,pb=30,iw=W-pl-pr,ih=H-pt-pb;
   const mx=Math.max(...qs.map(q=>Math.max(q.rev||0,q.ni||0)))||1;
   const nms=qs.map(q=>q.nm).filter(n=>n!=null),nmin=nms.length?Math.min(...nms):0,nmax=nms.length?Math.max(...nms):1,nr=(nmax-nmin)||1;
   const gw=iw/qs.length,bw=Math.min(22,gw*.32),yv=n=>pt+ih-Math.max(n||0,0)/mx*ih,ym=n=>pt+ih-(n-nmin)/nr*ih*.9-ih*.05;
+  const tip=(q,line)=>esc(qLabel(q.date)+" (งวดสิ้นสุด "+q.date+")|"+line);
   const bars=qs.map((q,i)=>{const cx=pl+gw*(i+.5);
-    return `<rect x="${(cx-bw-1).toFixed(1)}" y="${yv(q.rev).toFixed(1)}" width="${bw.toFixed(1)}" height="${(pt+ih-yv(q.rev)).toFixed(1)}" rx="2" fill="#3b82f6"><title>รายได้ ${esc(q.date)}: ${fmt(q.rev)}</title></rect>`
-     +(q.ni==null?"":`<rect x="${(cx+1).toFixed(1)}" y="${yv(q.ni).toFixed(1)}" width="${bw.toFixed(1)}" height="${(pt+ih-yv(q.ni)).toFixed(1)}" rx="2" fill="#22d3ee"><title>กำไรสุทธิ ${esc(q.date)}: ${fmt(q.ni)}</title></rect>`)
-     +`<text x="${cx.toFixed(1)}" y="${H-12}" text-anchor="middle" font-size="10">${esc(String(q.date).slice(2,7))}</text>`}).join("");
-  const mp=qs.map((q,i)=>q.nm==null?null:(pl+gw*(i+.5)).toFixed(1)+","+ym(q.nm).toFixed(1)).filter(Boolean);
-  const line=mp.length>1?`<polyline points="${mp.join(" ")}" fill="none" stroke="#f59e0b" stroke-width="2"/>`+mp.map(pt2=>`<circle cx="${pt2.split(",")[0]}" cy="${pt2.split(",")[1]}" r="3" fill="#f59e0b"/>`).join(""):"";
-  return `<div class="qc"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="รายได้ กำไรสุทธิ และอัตรากำไรสุทธิรายไตรมาส"><line x1="${pl}" x2="${W-pr}" y1="${pt+ih}" y2="${pt+ih}" stroke="currentColor" opacity=".2"/><text x="${pl-6}" y="${pt+8}" text-anchor="end" font-size="10">${fmt(mx,0)}</text><text x="${pl-6}" y="${pt+ih}" text-anchor="end" font-size="10">0</text>${nms.length?`<text x="${W-pr+6}" y="${pt+8}" font-size="10">${fmt(nmax,0)}%</text><text x="${W-pr+6}" y="${pt+ih}" font-size="10">${fmt(nmin,0)}%</text>`:""}${bars}${line}</svg><div class="chips"><span><i style="background:#3b82f6"></i>รายได้</span><span><i style="background:#22d3ee"></i>กำไรสุทธิ</span><span><i style="background:#f59e0b"></i>อัตรากำไรสุทธิ (%)</span><span>หน่วย: พันล้าน</span></div></div>`;
+    return `<rect x="${(cx-bw-1).toFixed(1)}" y="${yv(q.rev).toFixed(1)}" width="${bw.toFixed(1)}" height="${(pt+ih-yv(q.rev)).toFixed(1)}" rx="2" fill="#3b82f6" data-qt="${tip(q,"รายได้ "+fmt(q.rev)+" พันล้าน"+cur+(q.rev_yoy==null?"":" (YoY "+sg(q.rev_yoy)+fmt(q.rev_yoy,1)+"%)"))}"/>`
+     +(q.ni==null?"":`<rect x="${(cx+1).toFixed(1)}" y="${yv(q.ni).toFixed(1)}" width="${bw.toFixed(1)}" height="${(pt+ih-yv(q.ni)).toFixed(1)}" rx="2" fill="#22d3ee" data-qt="${tip(q,"กำไรสุทธิ "+fmt(q.ni)+" พันล้าน"+cur)}"/>`)
+     +`<text x="${cx.toFixed(1)}" y="${H-12}" text-anchor="middle" font-size="11">${esc(qLabel(q.date))}</text>`}).join("");
+  const dots=qs.map((q,i)=>q.nm==null?null:{x:pl+gw*(i+.5),y:ym(q.nm),q}).filter(Boolean);
+  const line=dots.length>1?`<polyline points="${dots.map(d=>d.x.toFixed(1)+","+d.y.toFixed(1)).join(" ")}" fill="none" stroke="#f59e0b" stroke-width="2"/>`:"";
+  const pts=dots.map(d=>`<circle cx="${d.x.toFixed(1)}" cy="${d.y.toFixed(1)}" r="3.5" fill="#f59e0b"/><circle class="qhit" cx="${d.x.toFixed(1)}" cy="${d.y.toFixed(1)}" r="12" fill="transparent" data-qt="${tip(d.q,"อัตรากำไรสุทธิ "+fmt(d.q.nm,1)+"%")}"/>`).join("");
+  return `<div class="qc"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="รายได้ กำไรสุทธิ และอัตรากำไรสุทธิรายไตรมาส เลื่อนเมาส์ไปที่แท่งหรือจุดเพื่อดูตัวเลข"><line x1="${pl}" x2="${W-pr}" y1="${pt+ih}" y2="${pt+ih}" stroke="currentColor" opacity=".2"/><text x="${pl-6}" y="${pt+8}" text-anchor="end" font-size="10">${fmt(mx,0)}</text><text x="${pl-6}" y="${pt+ih}" text-anchor="end" font-size="10">0</text>${nms.length?`<text x="${W-pr+6}" y="${pt+8}" font-size="10">${fmt(nmax,0)}%</text><text x="${W-pr+6}" y="${pt+ih}" font-size="10">${fmt(nmin,0)}%</text>`:""}${bars}${line}${pts}</svg><div class="chips"><span><i style="background:#3b82f6"></i>รายได้</span><span><i style="background:#22d3ee"></i>กำไรสุทธิ</span><span><i style="background:#f59e0b"></i>อัตรากำไรสุทธิ (%)</span><span>หน่วย: พันล้าน</span></div></div>`;
 }
 function sumCards(d){
   const z=d.zones,s=z?(ZS[z.status]||ZS.far):null,f=d.fund,nz=z&&z.list&&z.list[0];
@@ -1078,6 +1090,21 @@ document.addEventListener("click",e=>{
   const al=t.closest("[data-alto]");
   if(al){const w=al.closest(".sd")&&al.closest(".sd").querySelector(".alwrap");if(w)w.hidden=!w.hidden}
 });
+function qTipShow(el){
+  const c=el.closest(".qc");if(!c)return;
+  let tip=c.querySelector(".qtip");
+  if(!tip){tip=document.createElement("div");tip.className="qtip";c.appendChild(tip)}
+  const parts=(el.getAttribute("data-qt")||"").split("|");
+  tip.textContent="";
+  const b=document.createElement("b");b.textContent=parts[1]||"";tip.appendChild(b);
+  const s=document.createElement("span");s.textContent=parts[0]||"";tip.appendChild(s);
+  tip.hidden=false;
+  const r=el.getBoundingClientRect(),cr=c.getBoundingClientRect(),half=tip.offsetWidth/2;
+  const x=Math.min(Math.max(r.left+r.width/2-cr.left,half+4),cr.width-half-4);
+  tip.style.left=x+"px";tip.style.top=(r.top-cr.top)+"px";
+}
+document.addEventListener("mouseover",e=>{const t=e.target.closest&&e.target.closest("[data-qt]");if(t)qTipShow(t)});
+document.addEventListener("mouseout",e=>{const t=e.target.closest&&e.target.closest("[data-qt]");if(!t)return;const c=t.closest(".qc"),tip=c&&c.querySelector(".qtip");if(tip)tip.hidden=true});
 
 fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(data=>{
   const all=data.groups.flatMap(g=>g.items),by=s=>all.find(i=>i.symbol===s)||{},stocks=(data.groups.find(g=>g.detail===true)||{items:[]}).items;
