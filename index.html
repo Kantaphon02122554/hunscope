@@ -1,1437 +1,582 @@
 <!DOCTYPE html>
-<html lang="th">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="dark">
-<title>Hunscope · ส่องตลาดหุ้นเทค</title>
-<meta name="description" content="ส่องตลาดหุ้นเทค ข่าว พื้นฐาน และสถานการณ์ในที่เดียว">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🔭%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0d1117;--panel:#131a24;--hover:#18212e;--line:#222c3a;--ink:#e6edf3;--mute:#8b97a8;--up:#3fb68b;--down:#f0616d;--warn:#d9a441;--accent:#38bdf8;--mono:"JetBrains Mono","IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 "IBM Plex Sans Thai",system-ui,sans-serif}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-nav{position:sticky;top:0;z-index:5;display:flex;gap:20px;align-items:center;padding:10px max(16px,calc((100% - 1200px)/2));background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.links{display:flex;gap:18px;margin-left:auto;white-space:nowrap}
-nav .links a{text-decoration:none;color:var(--mute);font-size:.92rem;padding:8px 0}
-nav .links a:hover{color:var(--ink)}
-.srch{position:relative;flex:0 1 220px}
-.srch input{width:100%;min-height:40px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font:inherit;font-size:.92rem}
-.srch input::placeholder{color:var(--mute)}
-.qres{position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.4)}
-.qres[hidden]{display:none}
-.qres button{display:flex;justify-content:space-between;gap:10px;width:100%;background:none;border:0;border-top:1px solid var(--line);color:var(--ink);padding:10px 14px;font:inherit;font-size:.92rem;text-align:left;cursor:pointer}
-.qres button:first-child{border-top:0}
-.qres button:hover,.qres button:focus-visible{background:var(--hover)}
-.qres .flat{padding:10px 14px;font-size:.9rem}
-section[id]{scroll-margin-top:84px}
-.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
-.hero{background:radial-gradient(900px 360px at 12% 0,rgba(88,166,255,.14),transparent 70%),linear-gradient(var(--bg),var(--bg));border-bottom:1px solid var(--line)}
-.hero .wrap{padding-top:56px;padding-bottom:40px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px 32px;align-items:center}
-.hero .sub{margin:0}
-.pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.pill{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-height:64px;transition:border-color .15s,background .15s}
-.pill:hover,.pill:focus-visible{border-color:var(--accent);background:var(--hover)}
-.pill small{display:block;color:var(--mute);font-size:.82rem}
-.pill strong{font-size:1.2rem;font-variant-numeric:tabular-nums}
-.idx{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.ic{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-width:0}
-.ic .t{display:flex;justify-content:space-between;gap:6px;align-items:baseline;font-size:.82rem;color:var(--mute)}
-.ic .t b{color:var(--ink);font-weight:500;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ic .p{font-size:1.25rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;margin-top:4px}
-.ic .c{display:flex;align-items:center;gap:8px;font-size:.9rem;font-variant-numeric:tabular-nums;margin-top:2px}
-.ic .c small{color:var(--mute);font-size:.78rem}
-.ic svg.sp{width:100%;height:40px;margin-top:6px}
-.ic svg.sp polyline{vector-effect:non-scaling-stroke}
-.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:8px}
-.nc{flex:0 0 260px;scroll-snap-align:start;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;display:flex;flex-direction:column;gap:6px}
-.nc:hover,.nc:focus-visible{border-color:var(--accent)}
-.nc small{color:var(--mute);font-size:.8rem}
-.nc .tt{font-weight:500;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.nc .why{color:var(--mute);font-size:.88rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.hd{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px}
-.hd a{color:var(--accent);font-size:.9rem;text-decoration:none}
-#stocks th:nth-child(2){text-align:left}
-tr.gh td{background:var(--hover);color:var(--mute);font-size:.82rem;padding:8px 16px;text-align:left;border-top:1px solid var(--line)}
-.tabs button,.calc button,.pfc button{min-height:40px}
-.calc input,.pfc input,.pfc select{min-height:40px}
-h1{font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.2;margin:0 0 14px;max-width:16em;letter-spacing:-.01em}
-.sub{color:var(--mute);max-width:46em;margin:0 0 32px}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.stats div{background:var(--panel);padding:14px 16px}
-.stats small{display:block;color:var(--mute);font-size:.82rem}
-.stats strong{font-size:1.3rem;font-variant-numeric:tabular-nums}
-section{padding:44px 0 0}
-h2{font-size:1.25rem;margin:0 0 4px}
-.note{color:var(--mute);font-size:.9rem;margin:0 0 14px}
-.box{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.row{display:grid;grid-template-columns:minmax(0,1fr) 120px 110px;align-items:center;gap:12px;padding:12px 16px;border-top:1px solid var(--line)}
-.row:first-child{border-top:0}
-.name{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sym{color:var(--mute);font-size:.85rem;font-weight:400;margin-left:6px}
-svg.sp{width:120px;height:36px;display:block}
-.num{text-align:right;font-variant-numeric:tabular-nums}
-.price{font-weight:700;color:var(--ink)}
-.chg{font-size:.9rem}
-.up{color:var(--up)}.down{color:var(--down)}.flat{color:var(--mute)}.warn{color:var(--warn)}.cool{color:var(--accent)}
-.scroll{overflow-x:auto}
-table{width:100%;min-width:760px;border-collapse:collapse;font-variant-numeric:tabular-nums}
-th{font-weight:500;color:var(--mute);font-size:.85rem;text-align:right;padding:10px 12px;border-bottom:1px solid var(--line)}
-td{padding:11px 12px;text-align:right;border-top:1px solid var(--line)}
-th:first-child,td:first-child{text-align:left;padding-left:16px}
-tr[data-sym]{cursor:pointer}
-tr[data-sym]:hover,tr[data-sym]:focus-visible{background:var(--hover)}
-.bar{position:relative;width:90px;height:4px;background:var(--line);border-radius:2px;margin-left:auto}
-.bar i{position:absolute;top:-3px;width:3px;height:10px;background:var(--ink);border-radius:1px}
-.chip{display:inline-block;padding:1px 10px;border-radius:999px;border:1px solid currentColor;font-size:.82rem}
-.news{display:block;padding:12px 16px;border-top:1px solid var(--line);text-decoration:none}
-.news:first-child{border-top:0}
-.news:hover{background:var(--hover)}
-.news small{display:block;color:var(--mute);font-size:.82rem}
-.tag{color:var(--accent);margin-right:6px}
-footer{color:var(--mute);font-size:.85rem;padding:44px 0 56px}
-dialog{width:min(640px,calc(100% - 24px));max-height:calc(100% - 24px);overflow:auto;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:0}
-dialog::backdrop{background:rgba(0,0,0,.6)}
-.dh{display:flex;justify-content:space-between;align-items:flex-start;padding:18px 20px 8px}
-.dh h3{margin:0;font-size:1.3rem}
-.dh button{background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:4px 12px;font:inherit;cursor:pointer}
-.db{padding:0 20px 20px}
-.db h4{margin:20px 0 6px;font-size:1rem}
-.db svg.big{width:100%;height:auto;display:block}
-.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px 16px}
-.kv small{display:block;color:var(--mute);font-size:.8rem}
-.sg{list-style:none;margin:0;padding:0}
-.sg li{padding:6px 0;border-top:1px solid var(--line);display:flex;gap:10px}
-.sg li:first-child{border-top:0}
-.msg{padding:16px}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
-.tabs button{background:none;border:1px solid var(--line);color:var(--mute);border-radius:999px;padding:4px 14px;font:inherit;font-size:.9rem;cursor:pointer}
-.tabs button[aria-selected=true]{color:var(--ink);border-color:var(--accent);background:var(--hover)}
-.nt{min-width:820px}.nt th,.nt td{text-align:left;vertical-align:top}
-.nt a{text-decoration:none;font-weight:500}.nt a:hover{text-decoration:underline}
-.nt small{display:block;color:var(--mute);font-size:.82rem;font-weight:400}
-.nt .tm{white-space:nowrap;color:var(--mute)}
-.gauge{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--line);margin:8px 0 12px}
-.g-up{background:var(--up)}.g-flat{background:var(--mute);opacity:.5}.g-down{background:var(--down)}
-.an{padding:18px 20px}.an p{margin:0 0 10px}.an h3{font-size:1rem;margin:16px 0 6px}.an ul{margin:0;padding-left:1.2em}.an li{margin:4px 0}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chips span{border:1px solid var(--line);border-radius:999px;padding:1px 10px;font-size:.85rem;color:var(--mute)}
-.chips .up{color:var(--up)}.chips .down{color:var(--down)}
-.zt,.ft{min-width:840px}.zt th,.zt td,.ft th,.ft td{text-align:left}
-.ai{background:var(--hover);border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin:10px 0}.ai p{margin:0 0 6px}
-.qt{min-width:0;width:100%;font-size:.88rem}.qt th,.qt td{padding:6px 8px;text-align:right}.qt th:first-child,.qt td:first-child{text-align:left;padding-left:0}
-.sg .grp{color:var(--mute);font-size:.85rem;padding-top:10px}
-.mc{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px;margin-top:12px}
-.mc>div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
-.mc h3{font-size:1rem;margin:0 0 4px}.mc p{margin:8px 0;font-size:.92rem}.mc small{color:var(--mute)}
-.ctx{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
-.ctx span{border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:.88rem;background:var(--panel)}
-.calc{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;margin:12px 0}
-.calc label{display:block;font-size:.85rem;color:var(--mute)}
-.calc input{width:120px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:6px 8px;font:inherit}
-.calc button{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:5px 12px;font:inherit;font-size:.85rem;cursor:pointer}
-.calc button:hover{border-color:var(--accent)}
-.mt{min-width:0}.mt th,.mt td{text-align:left}
-.meter{position:relative;height:10px;border-radius:5px;background:linear-gradient(90deg,var(--up),var(--warn),var(--down));margin:12px 0 4px}
-.meter i{position:absolute;top:-4px;width:4px;height:18px;background:var(--ink);border-radius:2px;transform:translateX(-2px)}
-.mlab{display:flex;justify-content:space-between;color:var(--mute);font-size:.8rem}
-.bt{min-width:0;font-size:.92rem}.bt th,.bt td{text-align:left;vertical-align:top}.bt td small{display:block;color:var(--mute);font-size:.82rem}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:12px}
-.two>div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
-.two h3{font-size:1rem;margin:0 0 6px}.two ul{margin:0;padding-left:1.1em}.two li{margin:5px 0;font-size:.92rem}
-.pfc{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
-.pfc label{display:block;font-size:.85rem;color:var(--mute)}
-.pfc input,.pfc select,.pfr input[type=number]{background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:6px 8px;font:inherit}
-.pfc input{width:130px}
-.pfc button{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:5px 14px;font:inherit;font-size:.88rem;cursor:pointer}
-.pfc button:hover{border-color:var(--accent)}
-.pfg{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:4px 18px;margin-top:14px}
-.pfr{display:grid;grid-template-columns:22px minmax(0,1fr) 84px;align-items:center;gap:8px;padding:4px 0}
-.pfr input[type=number]{width:84px;padding:4px 6px}
-.pfr label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.pfo{margin-top:14px}.pfo svg{width:100%;height:auto;display:block}
-.pfo .leg{display:flex;flex-wrap:wrap;gap:14px;font-size:.85rem;margin:8px 0 2px}
-.pfo ul{margin:8px 0 0;padding-left:1.2em}.pfo li{margin:4px 0;font-size:.92rem}
-.bd{display:inline-flex;align-items:center;gap:4px;padding:1px 8px;border-radius:999px;font-size:.82rem;font-weight:500;border:1px solid currentColor;background:color-mix(in srgb,currentColor 12%,transparent)}
-.ic .pr{font-size:.8rem;color:var(--mute);margin-top:6px}
-.ic .pr b{font-weight:500}
-.ic svg.sp{margin-top:2px}
-.ic svg.sp path{stroke:none}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
-.seg button{background:none;border:0;color:var(--mute);padding:6px 14px;font:inherit;font-size:.85rem;cursor:pointer;min-height:36px}
-.seg button[aria-pressed=true]{background:var(--hover);color:var(--ink)}
-.hdr{display:flex;align-items:center;gap:14px}
-.nav2{display:flex;gap:6px}
-.nav2 button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;font-size:1.1rem;line-height:1}
-.nav2 button:hover{border-color:var(--accent)}
-@media (hover:none){.nav2{display:none}}
-.qres button.on{background:var(--hover)}
-.sk{position:relative;overflow:hidden}
-.sk::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);transform:translateX(-100%);animation:sh 1.4s infinite}
-@keyframes sh{to{transform:translateX(100%)}}
-.ic.sk{min-height:132px}
-@media (prefers-reduced-motion:reduce){.sk::after{animation:none}}
-.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;padding:8px 0 22px;border-bottom:1px solid var(--line);margin-bottom:24px}
-.eyebrow{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
-.eyebrow b{color:var(--accent);font-weight:500}
-.eyebrow i{display:block;width:36px;height:1px;background:var(--line)}
-h2.big{font-size:clamp(1.7rem,3.6vw,2.3rem);line-height:1.25;margin:10px 0 8px;letter-spacing:-.01em}
-.sdesc{color:var(--mute);max-width:54em;margin:0}
-.shr{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.zch,.pill2{display:inline-block;font-family:var(--mono);font-size:.78rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--panel)}
-.zch.up{color:var(--up);border-color:rgba(63,182,139,.35);background:rgba(63,182,139,.1)}
-.zch.cool{color:var(--accent);border-color:rgba(56,189,248,.35);background:rgba(56,189,248,.1)}
-.zg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.zc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;cursor:pointer;transition:border-color .15s}
-.zc:hover,.zc:focus-visible{border-color:var(--accent)}
-.zc1{display:flex;align-items:center;gap:10px}
-.tk{font-family:var(--mono);font-size:.74rem;font-weight:700;padding:3px 8px;border-radius:6px;background:var(--hover);border:1px solid var(--line);color:var(--ink)}
-.zc1 b{font-weight:500}
-.zst{margin-left:auto;font-size:.76rem;padding:2px 10px;border-radius:999px}
-.zst.up{color:var(--up);background:rgba(63,182,139,.12)}
-.zst.cool{color:var(--accent);background:rgba(56,189,248,.12)}
-.zst.flat{color:var(--mute);background:var(--hover)}
-.zc2{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px}
-.zp{font-family:var(--mono);font-size:1.45rem;font-weight:500}
-.zd{font-family:var(--mono);font-size:.82rem;color:var(--mute)}
-.trk{position:relative;height:4px;background:var(--line);border-radius:2px;margin:18px 0 8px}
-.trk .zn{position:absolute;top:-3px;height:10px;border-radius:5px;background:rgba(56,189,248,.45);border:1px solid var(--accent)}
-.trk .px{position:absolute;top:-6px;width:2px;height:16px;background:var(--ink);transform:translateX(-1px)}
-.ends{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.74rem;color:var(--mute)}
-.zl{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--line);margin-top:16px;padding-top:14px;font-size:.9rem}
-.zl span{color:var(--mute)}
-.zl b{font-family:var(--mono);font-weight:500}
-.zr{color:var(--ink);font-size:.9rem;margin-top:4px}
-.zf{display:flex;justify-content:space-between;margin-top:12px;font-family:var(--mono);font-size:.76rem;color:var(--mute)}
-@media (max-width:820px){.zg{grid-template-columns:minmax(0,1fr)}}
-.lab{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px;align-items:start}
-.labl,.labr{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
-.presets{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-.presets button{background:none;border:1px solid var(--line);color:var(--mute);border-radius:999px;padding:6px 14px;font:inherit;font-size:.85rem;cursor:pointer;min-height:36px}
-.presets button:hover{border-color:var(--accent);color:var(--ink)}
-.presets button[aria-pressed=true]{border-color:var(--accent);color:var(--accent);background:rgba(56,189,248,.1)}
-.sl{margin-bottom:18px}
-.slh{display:flex;justify-content:space-between;align-items:baseline;font-size:.92rem}
-.slh b{font-family:var(--mono);font-size:1rem;font-weight:500}
-.sl input[type=range]{width:100%;accent-color:var(--accent);margin:10px 0 2px;height:28px}
-.sle{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.74rem;color:var(--mute)}
-.interp{border-top:1px solid var(--line);padding-top:16px;font-size:.9rem;display:grid;gap:8px}
-.interp b{font-weight:700}
-.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:12px;margin-top:18px;overflow:hidden}
-.tiles>div{padding:14px 16px;border-left:1px solid var(--line)}
-.tiles>div:first-child{border-left:0}
-.tiles strong{display:block;font-family:var(--mono);font-size:1.3rem;font-weight:500}
-.tiles small{color:var(--mute);font-size:.78rem}
-.labh{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--mute);margin-bottom:10px}
-.rank{max-height:480px;overflow-y:auto;padding-right:6px}
-.rk{padding:9px 0;border-bottom:1px solid var(--line)}
-.rk:last-child{border-bottom:0}
-.rkt{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.95rem}
-.rkt b{font-weight:700}
-.rkb{position:relative;height:3px;background:var(--line);border-radius:2px;margin:6px 0 4px}
-.rkb i{position:absolute;top:0;height:3px;border-radius:2px;background:currentColor}
-.rkb::after{content:"";position:absolute;left:50%;top:-3px;width:1px;height:9px;background:var(--mute);opacity:.5}
-.rkn{font-size:.76rem;color:var(--mute);font-family:var(--mono)}
-@media (max-width:900px){.lab{grid-template-columns:minmax(0,1fr)}.tiles{grid-template-columns:minmax(0,1fr)}.tiles>div{border-left:0;border-top:1px solid var(--line)}.tiles>div:first-child{border-top:0}}
-.sub3{font-size:1.05rem;margin:32px 0 10px}
-.bw{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,2fr);gap:16px;align-items:start}
-.gc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 20px;text-align:center}
-.gg{width:100%;max-width:300px;height:auto}
-.gn{font-family:var(--mono);font-size:54px;font-weight:700;fill:var(--ink)}
-.gs{font-family:var(--mono);font-size:13px;fill:var(--mute)}
-.glab{display:inline-block;margin:8px 0 10px;padding:4px 16px;border-radius:999px;font-size:.88rem}
-.glab.up{color:var(--accent);background:rgba(56,189,248,.14)}
-.glab.warn{color:var(--warn);background:rgba(217,164,65,.14)}
-.glab.down{color:var(--down);background:rgba(240,97,109,.14)}
-.gcap{color:var(--mute);font-size:.86rem;margin:0 0 16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
-.bkh{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:var(--mute);text-align:left;margin-bottom:8px}
-.bks{display:flex;flex-wrap:wrap;gap:6px;text-align:left}
-.bk{font-family:var(--mono);font-size:.74rem;padding:3px 9px;border:1px solid var(--line);border-radius:999px;background:var(--bg)}
-.ig{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.ic2{background:var(--panel);padding:16px 18px}
-.ich{display:flex;justify-content:space-between;gap:8px;color:var(--mute);font-size:.88rem}
-.lvb{font-size:.74rem;padding:1px 9px;border-radius:6px;white-space:nowrap}
-.lvb.up{color:var(--up);background:rgba(63,182,139,.14)}
-.lvb.warn{color:var(--warn);background:rgba(217,164,65,.14)}
-.lvb.down{color:var(--down);background:rgba(240,97,109,.14)}
-.icv{font-family:var(--mono);font-size:1.5rem;font-weight:500;margin:6px 0 8px}
-.seg3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.seg3 i{height:3px;border-radius:2px;background:var(--line)}
-.seg3 i.up{background:var(--up)}
-.seg3 i.warn{background:var(--warn)}
-.seg3 i.down{background:var(--down)}
-.icr{font-size:.76rem;color:var(--mute);margin-top:8px}
-@media (max-width:900px){.bw{grid-template-columns:minmax(0,1fr)}}
-@media (max-width:560px){.ig{grid-template-columns:minmax(0,1fr)}}
-.chipsel{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
-.cs{font-family:var(--mono);font-size:.78rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--mute);cursor:pointer;min-height:36px}
-.cs:hover{border-color:var(--accent)}
-.cs[aria-pressed=true]{color:var(--accent);border-color:var(--accent);background:rgba(56,189,248,.1)}
-.sim{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:16px;align-items:start}
-.simc,.siml{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
-.simh{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:flex-start}
-.simh .l{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--mute)}
-.simh .big{font-family:var(--mono);font-size:2.6rem;font-weight:500;line-height:1.1}
-.simh .r{text-align:right;font-family:var(--mono);font-size:.88rem;line-height:1.7}
-.simc svg{width:100%;height:auto;display:block;margin-top:10px}
-.simc svg polyline{fill:none;stroke-linejoin:round;stroke-linecap:round}
-.simc svg .p1{stroke:var(--accent);stroke-width:2.2}
-.simc svg .p2{stroke:var(--mute);stroke-width:1.5}
-.simc svg .z0{stroke:var(--line);stroke-dasharray:3 4}
-.simc .leg{display:flex;justify-content:space-between;font-size:.82rem;color:var(--mute);margin-top:6px}
-.simc .leg span{display:inline-flex;align-items:center;gap:6px}
-.simc .leg i{display:inline-block;width:14px;height:2px;background:currentColor}
-.sl2 .row2{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.92rem}
-.sl2 .w{color:var(--mute);font-size:.76rem;margin-left:8px}
-.siml .hh{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--mute);margin-bottom:6px}
-details.adv{margin-top:28px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:4px 18px}
-details.adv summary{cursor:pointer;padding:14px 0;color:var(--mute);font-size:.92rem;min-height:44px}
-details.adv[open] summary{color:var(--ink)}
-@media (max-width:900px){.sim{grid-template-columns:minmax(0,1fr)}}
-.logo{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
-.logo svg{width:28px;height:28px;flex:none;color:var(--accent)}
-.logo .lt{display:flex;flex-direction:column;line-height:1.15}
-.logo b{font-family:var(--mono);font-size:1rem;letter-spacing:.2em;font-weight:700}
-.logo small{font-size:.62rem;letter-spacing:.2em;color:var(--mute)}
-@media (max-width:1100px){.logo small{display:none}}
-#wlView{display:none}
-body.wlmode #wlView{display:block}
-body.wlmode nav,body.wlmode header.hero,body.wlmode #app,body.wlmode #foot{display:none}
-.wlh{display:flex;align-items:center;gap:18px;padding:16px max(16px,calc((100% - 1200px)/2));border-bottom:1px solid var(--line)}
-.wlh a.back{color:var(--mute);text-decoration:none;font-size:.92rem}
-.wlh a.back:hover{color:var(--ink)}
-.live{margin-left:auto;display:inline-flex;gap:10px;align-items:center;font-family:var(--mono);font-size:.76rem;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
-.live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--up)}
-#wlView .shead{padding-top:36px}
-.wlg{display:grid;grid-template-columns:260px minmax(0,1fr);gap:20px;align-items:start}
-.wls{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
-.wls .t{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--mute);margin-bottom:12px}
-.wli{display:flex;align-items:center;gap:8px;border:1px solid transparent;border-radius:10px;padding:8px 10px;cursor:pointer;min-height:44px}
-.wli.on{border-color:var(--line);background:var(--hover)}
-.wli .dot{width:8px;height:8px;border-radius:50%;flex:none}
-.wli .nm{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.wli .ct{font-family:var(--mono);font-size:.76rem;color:var(--mute)}
-.wli .ic3{background:none;border:0;color:var(--mute);cursor:pointer;padding:6px;font-size:.95rem}
-.wli .ic3:hover{color:var(--ink)}
-.wlnew{width:100%;margin-top:10px;background:none;border:1px dashed var(--line);border-radius:10px;padding:10px;color:var(--mute);font:inherit;cursor:pointer;min-height:44px}
-.wlnew:hover{border-color:var(--accent);color:var(--ink)}
-.wln{width:100%;margin-top:10px;background:var(--bg);color:var(--ink);border:1px solid var(--accent);border-radius:10px;padding:10px;font:inherit;min-height:44px}
-.wst{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:14px}
-.wst>div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-.wst small{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--mute)}
-.wst strong{font-family:var(--mono);font-size:1.4rem;font-weight:500}
-.wla{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:14px}
-.wla input{width:100%;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:inherit;min-height:44px}
-.wla input:focus{border-color:var(--accent);outline:none}
-.wlt{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.wlt table{min-width:0;width:100%}
-.wlt th{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;font-weight:400}
-.wlt tr.r{cursor:pointer}
-.wlt tr.r:hover{background:var(--hover)}
-.wlt .x{background:none;border:0;color:var(--mute);cursor:pointer;font-size:1.05rem;padding:6px 10px;min-height:36px}
-.wlt .x:hover{color:var(--down)}
-.wle{padding:28px 18px;text-align:center;color:var(--mute)}
-@media (max-width:900px){.wlg{grid-template-columns:minmax(0,1fr)}.wst{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.wlt{overflow-x:auto}
-.wlh{flex-wrap:wrap;gap:10px 16px}
-@media (max-width:560px){.wlt th:nth-child(2),.wlt td:nth-child(2){display:none}.wlh a.back{white-space:nowrap}.wst strong{font-size:1.2rem}}
-@media (max-width:820px){nav{flex-wrap:wrap;gap:8px 12px}.srch{flex:1 1 160px}.links{order:3;width:100%;margin-left:0;overflow-x:auto;gap:16px}section[id]{scroll-margin-top:112px}.hero .wrap{grid-template-columns:minmax(0,1fr)}.idx{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:560px){.row{grid-template-columns:minmax(0,1fr) 80px 96px}svg.sp{width:80px}.nc{flex-basis:78%}.pill strong{font-size:1.1rem}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+<html lang="th" class="h-full bg-slate-50">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClassKhab - แพลตฟอร์มแจ้งเตือนตารางเรียนอัจฉริยะ</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Sarabun & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-.authb{font:inherit;font-size:.88rem;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:7px 16px;cursor:pointer;white-space:nowrap;max-width:200px;overflow:hidden;text-overflow:ellipsis}
-.authb:hover{border-color:var(--accent);color:var(--accent)}
-.authb[hidden]{display:none}
-.wlh .authb{margin-left:0}
-#authDlg,#alDlg{width:min(420px,calc(100% - 24px))}
-.adb{padding:20px}
-.adh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-.adh h3{margin:0;font-size:1.05rem}
-.adh button{background:none;border:0;color:var(--mute);font-size:1.1rem;cursor:pointer}
-.adb p{color:var(--mute);font-size:.88rem;line-height:1.6;margin:0 0 14px}
-.adb .abtn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;font:inherit;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--hover);color:var(--ink);cursor:pointer;margin-bottom:10px}
-.adb .abtn:hover{border-color:var(--accent)}
-.adb .abtn.pri{background:var(--accent);border-color:var(--accent);color:#06121c;font-weight:600}
-.adb .asep{display:flex;align-items:center;gap:10px;color:var(--mute);font-size:.8rem;margin:12px 0}
-.adb .asep::before,.adb .asep::after{content:"";flex:1;height:1px;background:var(--line)}
-.adb input[type=email]{width:100%;box-sizing:border-box;font:inherit;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);margin-bottom:10px}
-.adb .amsg{font-size:.86rem;line-height:1.5;margin-top:8px;min-height:1.2em}
-.adb .amsg.ok{color:var(--up)}.adb .amsg.err{color:var(--down)}
-.adb .awho{font-family:var(--mono);font-size:.9rem;word-break:break-all;color:var(--ink);margin-bottom:6px}
-
-[data-al-n]:not(:empty){margin-left:6px;background:var(--down);color:#fff;border-radius:999px;padding:1px 7px;font-size:.72rem}
-.alb h4{margin-top:0}
-.alf{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
-.alf select,.alf input{font:inherit;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
-.alf input{width:130px}.alf input:disabled{opacity:.4}
-.alf button{font:inherit;padding:9px 14px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:#06121c;font-weight:600;cursor:pointer}
-.all{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px}
-.all li{display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:10px}
-.all li>div{flex:1;min-width:0}
-.all li small{display:block;color:var(--mute)}
-.all li button{font:inherit;font-size:.8rem;background:none;border:1px solid var(--line);border-radius:8px;color:var(--mute);padding:4px 8px;cursor:pointer}
-.all li button:hover{border-color:var(--accent);color:var(--accent)}
-.alst{font-size:.78rem;color:var(--mute);white-space:nowrap}.alst.on{color:var(--accent)}
-#alToast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(20px);opacity:0;pointer-events:none;background:var(--panel);color:var(--ink);border:1px solid var(--accent);border-radius:12px;padding:10px 16px;z-index:50;transition:.25s;max-width:calc(100% - 24px)}
-#alToast.show{opacity:1;transform:translateX(-50%)}
-
-dialog:has(.sd){width:min(1000px,calc(100% - 24px))}
-.sd:focus{outline:none}
-.sd .dh{align-items:center;padding:18px 20px 12px}
-.sd .px{margin-top:2px;font-size:1.05rem}.sd .px b{font-size:1.25rem}
-.dbt{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-.alwrap{margin:0 20px 10px;border:1px solid var(--line);border-radius:10px;background:var(--hover)}
-.alwrap[hidden]{display:none}
-.alwrap .db{padding:12px 14px}
-.sdtop{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:20px;align-items:start}
-.pc{width:100%;height:auto;display:block;color:var(--ink)}
-.pc text{fill:var(--mute)}.pc rect+text,.pc rect+text+text{fill:#fff}
-.sds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.sc3{background:var(--hover);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
-.sc3 small{display:block;color:var(--mute);font-size:.78rem}
-.sc3 b{display:block;font-size:1.15rem;margin:2px 0}
-.sc3 span{display:block;color:var(--mute);font-size:.84rem}
-.sdt{display:flex;gap:4px;border-bottom:1px solid var(--line);margin:18px 0 14px;overflow-x:auto}
-.sdt button{font:inherit;background:none;border:0;border-bottom:2px solid transparent;color:var(--mute);padding:8px 14px;cursor:pointer;white-space:nowrap}
-.sdt button:hover{color:var(--ink)}
-.sdt button.on{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
-.sdp[hidden]{display:none}
-.sdp .kv{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
-.sdp .kv>div{background:var(--hover);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
-.sdp .kv small{overflow-wrap:anywhere}
-.sdp .kv span{font-weight:600;font-size:1.02rem}
-.lnk{font:inherit;font-size:.88rem;background:none;border:0;color:var(--accent);cursor:pointer;padding:0;text-decoration:underline}
-.sdx{margin:10px 0 4px;color:var(--mute);font-size:.9rem}
-.sdx summary{cursor:pointer}
-.sdx ul{margin:8px 0 0;padding-left:20px;line-height:1.6}
-.qc{position:relative;margin-bottom:14px}
-.qc [data-qt]{cursor:pointer}.qc rect[data-qt]:hover{opacity:.8}
-.qtip{position:absolute;transform:translate(-50%,-115%);background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:.85rem;line-height:1.4;white-space:nowrap;pointer-events:none;z-index:5;box-shadow:0 6px 18px rgba(0,0,0,.35)}
-.qtip[hidden]{display:none}
-.qtip b{display:block}.qtip span{color:var(--mute);font-size:.78rem}.qc svg{width:100%;max-width:640px;height:auto;display:block;color:var(--ink)}.qc text{fill:var(--mute)}
-.qc .chips i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
-@media(max-width:760px){.sdtop{grid-template-columns:1fr}.sds{grid-template-columns:repeat(2,minmax(0,1fr))}}
-</style>
-</head>
-<body id="top">
-<nav><a class="logo" href="#top"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="16" r="9"/><circle cx="16" cy="16" r="2.2" fill="currentColor"/><path d="M16 3v6M16 23v6M3 16h6M23 16h6"/></svg><span class="lt"><b>HUNSCOPE</b><small>กล้องส่องตลาดเทค</small></span></a><div class="srch"><input id="q" type="search" placeholder="ค้นหาหุ้น" aria-label="ค้นหาหุ้น" autocomplete="off"><div class="qres" id="qres" hidden></div></div><div class="links"><a href="#overview">ภาพรวม</a><a href="#zones">โซนรับ</a><a href="#fundamentals">พื้นฐาน</a><a href="#macro">สถานการณ์</a><a href="#bubble">AI bubble</a><a href="#analysis">ข่าว</a><a href="#portfolio">พอร์ตจำลอง</a><a href="#/watchlists">รายการของฉัน</a></div><button type="button" class="authb" data-al-open title="การแจ้งเตือนราคา" aria-label="การแจ้งเตือนราคา">🔔<span data-al-n></span></button><button type="button" class="authb" data-auth hidden>เข้าสู่ระบบ</button></nav>
-<header class="hero"><div class="wrap">
-  <div><h1 id="headline">กำลังโหลด…</h1>
-  <p class="sub" id="meta"></p></div>
-  <div class="pills" id="stats"><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div><div class="pill sk" style="min-height:64px"></div></div>
-</div></header>
-<main class="wrap" id="app"><section><div class="idx"><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div><div class="ic sk"></div></div></section></main>
-<div class="wrap" id="foot"><footer>ตัวชี้วัดคำนวณจากราคาปิดรายวัน (RSI 14 วัน, MACD 12/26/9, เส้นเฉลี่ย 50 และ 200 วัน) คะแนนสัญญาณเป็นการนับแนวโน้มแบบง่าย ไม่ใช่คำแนะนำให้ซื้อหรือขาย ข้อมูลจาก Yahoo Finance อาจล่าช้าหรือผิดพลาดได้</footer></div>
-<div id="wlView"><div class="wlh"><a class="logo" href="#"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="16" r="9"/><circle cx="16" cy="16" r="2.2" fill="currentColor"/><path d="M16 3v6M16 23v6M3 16h6M23 16h6"/></svg><span class="lt"><b>HUNSCOPE</b><small>กล้องส่องตลาดเทค</small></span></a><a class="back" href="#">← กลับแดชบอร์ด</a><span class="live" id="wlLive">ข้อมูลสด</span><button type="button" class="authb" data-al-open title="การแจ้งเตือนราคา" aria-label="การแจ้งเตือนราคา">🔔<span data-al-n></span></button><button type="button" class="authb" data-auth hidden>เข้าสู่ระบบ</button></div><main class="wrap"><div class="shead"><div><div class="eyebrow"><b>WATCHLIST</b><i></i><span>แยกจากแดชบอร์ดหลัก</span></div><h2 class="big">รายการหุ้นที่เฝ้าดู</h2><p class="sdesc">สร้างได้หลายรายการเพื่อแยกกลุ่มหุ้นที่สนใจ เพิ่มหรือถอดหุ้นได้ตลอด ระบบบันทึกรายการไว้ในเครื่องนี้อัตโนมัติ และดึงราคาจากฟีดเดียวกับแดชบอร์ดหลัก กดที่หุ้นเพื่อเปิดรายละเอียด</p></div></div><div class="wlg"><aside class="wls" id="wlSide"></aside><div id="wlMainCol"></div></div></main></div>
-<dialog id="dlg"><div id="dlgBody"></div></dialog>
-<dialog id="alDlg"><div class="adb"><div class="adh"><h3>แจ้งเตือนราคา</h3><button type="button" id="alX" aria-label="ปิด">✕</button></div><div id="alBody"></div></div></dialog>
-<dialog id="authDlg"><div class="adb"><div class="adh"><h3>บัญชี Hunscope</h3><button type="button" id="authX" aria-label="ปิด">✕</button></div><div id="authBody"></div></div></dialog>
-<script>
-const fmt=(n,d=2)=>n==null?"–":Number(n).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
-const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const cls=n=>n==null?"flat":n>=0?"up":"down";
-const sg=n=>n>=0?"+":"";
-const chg=d=>d.unit==="pt"?`${sg(d.change)}${fmt(d.change)} จุด`:`${sg(d.pct)}${fmt(d.pct)}%`;
-const lab={ขาขึ้น:"up",ขาลง:"down",เป็นกลาง:"flat"};
-const rec={strong_buy:"ซื้อแรง",buy:"ซื้อ",hold:"ถือ",underperform:"ต่ำกว่าตลาด",sell:"ขาย",strong_sell:"ขายแรง"};
-const big=n=>n>=1e12?fmt(n/1e12)+" ล้านล้าน":n>=1e9?fmt(n/1e9,1)+" พันล้าน":fmt(n/1e6,0)+" ล้าน";
-function ago(t){const m=(Date.now()-new Date(t))/6e4;if(!(m>=0))return"";if(m<60)return Math.max(1,Math.round(m))+" นาทีที่แล้ว";if(m<1440)return Math.round(m/60)+" ชม.ที่แล้ว";return Math.round(m/1440)+" วันที่แล้ว"}
-
-function spark(v){
-  const w=120,h=36,min=Math.min(...v),max=Math.max(...v),r=max-min||1;
-  const p=v.map((y,i)=>`${(i/(v.length-1)*w).toFixed(1)},${(h-2-(y-min)/r*(h-4)).toFixed(1)}`).join(" ");
-  return `<svg class="sp" viewBox="0 0 ${w} ${h}" aria-hidden="true"><polyline points="${p}" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
-}
-function bigChart(d){
-  const v=d.series,w=600,h=200,min=Math.min(...v),max=Math.max(...v),r=max-min||1,y=n=>h-6-(n-min)/r*(h-12);
-  const p=v.map((n,i)=>`${(i/(v.length-1)*w).toFixed(1)},${y(n).toFixed(1)}`).join(" ");
-  const bands=zs=>(zs||[]).filter(z=>z.high>=min&&z.low<=max).map(z=>{const t=y(Math.min(z.high,max));return `<rect x="0" width="${w}" y="${t}" height="${Math.max(2,y(Math.max(z.low,min))-t)}" fill="#38bdf8" opacity=".16"/>`}).join("");
-  const ref=(val,c,t)=>val!=null&&val>=min&&val<=max?`<line x1="0" x2="${w}" y1="${y(val)}" y2="${y(val)}" stroke="${c}" stroke-dasharray="4 4" opacity=".7"/><text x="${w-4}" y="${y(val)-4}" fill="${c}" font-size="11" text-anchor="end">${t}</text>`:"";
-  return `<svg class="big ${cls(v[v.length-1]-v[0])}" viewBox="0 0 ${w} ${h}" role="img" aria-label="กราฟราคา 90 วัน">${bands((d.zones||{}).list)}<polyline points="${p}" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>${ref(d.sma50,"#38bdf8","SMA50")}${ref(d.sma200,"#d9a441","SMA200")}</svg>`;
-}
-function row(d){
-  return `<div class="row ${cls(d.change)}"><div class="name" style="color:var(--ink)">${esc(d.name)}<span class="sym">${esc(d.symbol)}</span></div>${spark(d.series.slice(-30))}<div class="num"><div class="price">${fmt(d.price)}</div><div class="chg">${chg(d)}</div></div></div>`;
-}
-function stockRow(d){
-  const rc=d.rsi>70?"warn":d.rsi<30?"cool":"";
-  return `<tr data-sym="${esc(d.symbol)}" tabindex="0"><td><span style="font-weight:500">${esc(d.name)}</span><span class="sym">${esc(d.symbol)}</span></td>
-  <td class="${cls(d.change)}">${spark(d.series.slice(-30))}</td><td class="price">${fmt(d.price)}</td><td class="${cls(d.pct)}">${sg(d.pct)}${fmt(d.pct)}%</td>
-  <td class="${rc}">${fmt(d.rsi,0)}</td><td><div class="bar" title="ตำแหน่งในช่วงราคา 52 สัปดาห์"><i style="left:${d.pos52??50}%"></i></div></td>
-  <td class="${sc(d.news_score)}">${d.news_score==null?"–":(d.news_score>0?"+":"")+d.news_score}</td><td><span class="chip ${lab[d.label]||"flat"}">${esc(d.label||"–")}</span></td></tr>`;
-}
-const sc=n=>n>0?"up":n<0?"down":"flat";
-const sl=n=>n>0?"บวก":n<0?"ลบ":"กลาง";
-const ZS={in:["อยู่ในโซน","up",0],near:["ใกล้โซน","warn",1],far:["รอย่อ","flat",2],none:["ไม่พบโซน","flat",3]};
-function zoneWarn(d){
-  const w=[],n=((d.zones||{}).list||[])[0];
-  if(d.rsi>70||(d.sma50&&d.price>d.sma50*1.1))w.push("ราคาห่างเส้นเฉลี่ยหรือ RSI สูง การรอย่อมักเสี่ยงน้อยกว่าการไล่ราคา");
-  if(d.sma200&&d.price<d.sma200)w.push("ราคาต่ำกว่าเส้นเฉลี่ย 200 วัน แนวโน้มระยะยาวยังอ่อน โซนรับมีโอกาสหลุดสูงกว่าปกติ");
-  if(n&&n.strength<2)w.push("โซนใกล้สุดมีเหตุผลสนับสนุนเพียงข้อเดียว น้ำหนักน้อยกว่าโซนที่ซ้อนกันหลายระดับ");
-  if(d.zones&&d.zones.bars<120)w.push("ข้อมูลราคามีเพียง "+d.zones.bars+" วันทำการ โซนยังไม่น่าเชื่อถือเท่าหุ้นที่มีประวัติยาว");
-  if(d.news_score<0)w.push("ข่าวล่าสุดเอนไปทางลบ ควรอ่านข่าวก่อนตัดสินใจ");
-  const ne=d.fund&&d.fund.next_earnings,dd=ne?(new Date(ne)-Date.now())/864e5:null;
-  if(dd!=null&&dd<=14&&dd>=-1)w.push("ใกล้วันประกาศงบ ("+ne+") ราคามักผันผวนแรง โซนรับอาจใช้ไม่ได้");
-  return w;
-}
-function zoneRow(d){
-  const z=d.zones,n=z.list[0],s=ZS[z.status]||ZS.far;
-  return `<tr data-sym="${esc(d.symbol)}" tabindex="0"><td><span style="font-weight:500">${esc(d.name)}</span><span class="sym">${esc(d.symbol)}</span></td><td class="price">${fmt(d.price)}</td>
-  <td>${n?`${fmt(n.low)} – ${fmt(n.high)}`:"–"}</td><td>${n?(n.dist_pct<=0?"อยู่ในโซน":fmt(n.dist_pct,1)+"%"):"–"}</td><td>${n?esc(n.labels.join(" + ")):"ไม่พบแนวรับใกล้ราคา"}</td><td>${z.rr==null?"–":"1 : "+fmt(z.rr,1)}</td><td class="${s[1]}"><span class="chip">${s[0]}</span></td></tr>`;
-}
-const shead=(n,l,t,d,r="")=>`<div class="shead"><div><div class="eyebrow"><b>${n}</b><i></i><span>${l}</span></div><h2 class="big">${t}</h2><p class="sdesc">${d}</p></div>${r?`<div class="shr">${r}</div>`:""}</div>`;
-const ZC={in:"up",near:"cool",far:"flat",none:"flat"};
-function zoneCard(d){
-  const z=d.zones,n=z.list[0],s=ZS[z.status]||ZS.far,lo=d.low52,hi=d.high52;
-  const pos=v=>Math.max(0,Math.min(100,(v-lo)/(hi-lo)*100));
-  const bar=(lo!=null&&hi!=null&&hi>lo)?`<div class="trk">${n?`<i class="zn" style="left:${pos(n.low).toFixed(1)}%;width:${Math.max(1.5,pos(n.high)-pos(n.low)).toFixed(1)}%"></i>`:""}<i class="px" style="left:${pos(d.price).toFixed(1)}%"></i></div><div class="ends"><span>${fmt(lo)}</span><span>${fmt(hi)}</span></div>`:"";
-  return `<div class="zc" data-sym="${esc(d.symbol)}" tabindex="0" role="button" aria-label="ดูรายละเอียด ${esc(d.name)}"><div class="zc1"><span class="tk">${esc(d.symbol)}</span><b>${esc(d.name)}</b><span class="zst ${ZC[z.status]||"flat"}">${s[0]}</span></div><div class="zc2"><span class="zp">${fmt(d.price)}</span><span class="zd">${n?(n.dist_pct<=0?"อยู่ในโซน":"ห่าง "+fmt(n.dist_pct,1)+"%"):"ไม่พบโซนใกล้ราคา"}</span></div>${bar}<div class="zl"><span>โซนใกล้สุด</span><b>${n?fmt(n.low)+" – "+fmt(n.high):"–"}</b></div><div class="zr">${n?esc(n.labels.join(" + ")):"ไม่พบแนวรับใกล้ราคา"}</div><div class="zf"><span>R:R ${z.rr==null?"–":"1 : "+fmt(z.rr,1)}</span><span>ATR ${fmt(z.atr)}</span></div></div>`;
-}
-function zonesSection(stocks){
-  const rows=stocks.filter(s=>s.zones).sort((a,b)=>{const A=(ZS[a.zones.status]||ZS.far)[2],B=(ZS[b.zones.status]||ZS.far)[2];return A-B||((a.zones.list[0]||{}).dist_pct??99)-((b.zones.list[0]||{}).dist_pct??99)});
-  const inN=rows.filter(s=>s.zones.status==="in").length,nearN=rows.filter(s=>s.zones.status==="near").length;
-  return `<section id="zones">${shead("03","SUPPORT ZONES","โซนรับทางเทคนิค","บริเวณที่แนวรับเดิม เส้นเฉลี่ย และ Fibonacci มาซ้อนกัน คำนวณจากราคาย้อนหลัง ไม่ได้รับประกันว่าราคาจะยืนได้ และไม่ใช่คำแนะนำให้ซื้อ กดการ์ดเพื่อดูรายละเอียด",`<span class="zch up">${inN} อยู่ในโซน</span><span class="zch cool">${nearN} ใกล้โซน</span>`)}<div class="zg">${rows.map(zoneCard).join("")||`<div class="box msg flat">ยังไม่มีข้อมูลโซน</div>`}</div></section>`;
-}
-function zoneBlock(d){
-  const z=d.zones;if(!z)return"";
-  const s=ZS[z.status]||ZS.far,w=zoneWarn(d),kv=(k,v)=>`<div><small>${k}</small><span>${v}</span></div>`;
-  return `<h4>โซนรับทางเทคนิค: <span class="${s[1]}">${s[0]}</span></h4>
-  ${z.list.length?`<ul class="sg">${z.list.map(n=>`<li><b>${fmt(n.low)} – ${fmt(n.high)}</b><span>${n.dist_pct<=0?"ราคาอยู่ในโซนนี้":"ห่างจากราคา "+fmt(n.dist_pct,1)+"%"} • ${esc(n.labels.join(" + "))}</span></li>`).join("")}</ul>`:`<p class="note">ไม่พบแนวรับใกล้ราคาปัจจุบัน</p>`}
-  <div class="kv" style="margin-top:10px">${kv("จุดโครงสร้างเสีย",z.break==null?"–":fmt(z.break))}${kv("แนวต้านอ้างอิง (สูงสุด 120 วัน)",z.target==null?"–":fmt(z.target))}${kv("R:R เบื้องต้น",z.rr==null?"–":"1 : "+fmt(z.rr,1))}${kv("ATR 14 วัน",fmt(z.atr))}</div>
-  ${w.length?`<ul class="sg" style="margin-top:8px">${w.map(x=>`<li><b class="warn">!</b><span>${esc(x)}</span></li>`).join("")}</ul>`:""}
-  <p class="note">จุดโครงสร้างเสียคือต่ำกว่าโซนล่างสุด 1 ATR ถ้าราคาปิดต่ำกว่าระดับนี้ แนวรับนั้นมักถือว่าใช้ไม่ได้แล้ว โซนนี้คำนวณจากราคาล้วนๆ ไม่ได้รวมงบการเงิน (ดูหัวข้อพื้นฐานด้านล่าง)</p>`;
-}
-const qc=s=>/ดี|ไม่แพง/.test(s)?"up":/อ่อน|แพง/.test(s)?"down":"flat";
-const pcs=(n,d=1)=>n==null?"–":(n>0?"+":"")+fmt(n,d)+"%";
-function fundSection(stocks){
-  const rows=stocks.filter(s=>s.fund).map(d=>{const f=d.fund,k=f.kpi||{};return `<tr data-sym="${esc(d.symbol)}" tabindex="0"><td><span style="font-weight:500">${esc(d.name)}</span><span class="sym">${esc(d.symbol)}</span></td><td class="${sc(k.rev_yoy)}">${pcs(k.rev_yoy)}</td><td>${k.nm==null?"–":fmt(k.nm,1)+"%"}</td><td>${k.roe==null?"–":fmt(k.roe,1)+"%"}</td><td>${k.de==null?"–":fmt(k.de,2)+"x"}</td><td>${fmt(k.fpe,1)}</td><td>${esc(f.next_earnings||"–")}</td><td class="${qc(f.quality)}"><span class="chip">${esc(f.quality.replace("คุณภาพ",""))}</span></td><td class="${qc(f.valuation)}"><span class="chip">${esc(f.valuation.replace("ราคา",""))}</span></td></tr>`}).join("");
-  return `<section id="fundamentals"><h2>พื้นฐานและรายงานไตรมาส</h2><p class="note">ให้คะแนนจากการเติบโต ความสามารถทำกำไร ฐานะการเงิน และความถูกแพงด้วยเกณฑ์ทั่วไป (ไม่ปรับตามอุตสาหกรรม) กดแถวเพื่อดูงบรายไตรมาสและผลเทียบประมาณการ</p><div class="box scroll"><table class="ft"><thead><tr><th>หุ้น</th><th>รายได้โต YoY</th><th>อัตรากำไรสุทธิ</th><th>ROE</th><th>หนี้/ทุน</th><th>P/E คาดการณ์</th><th>งบถัดไป</th><th>คุณภาพ</th><th>ราคา</th></tr></thead><tbody>${rows||`<tr><td colspan="9" class="flat">ยังไม่มีข้อมูลพื้นฐาน</td></tr>`}</tbody></table></div></section>`;
-}
-function fundBlock(d){
-  const f=d.fund;if(!f)return"";
-  const gl=["growth","profit","health","value","analyst"],nm={growth:"การเติบโต",profit:"ความสามารถทำกำไร",health:"ฐานะการเงิน",value:"ความถูกแพง",analyst:"นักวิเคราะห์"};
-  const a=f.ai,ai=a?`<div class="ai"><b>สรุปโดย Claude</b> <small class="flat">จากตัวเลขในหน้านี้เท่านั้น</small><p>${esc(a.summary)}</p>${(a.strengths||[]).length?`<p class="up">จุดแข็ง: ${a.strengths.map(esc).join(" • ")}</p>`:""}${(a.risks||[]).length?`<p class="down">ข้อสังเกต/ความเสี่ยง: ${a.risks.map(esc).join(" • ")}</p>`:""}${a.quarter?`<p>ไตรมาสล่าสุด: ${esc(a.quarter)}</p>`:""}</div>`:"";
-  const ms=gl.map(g=>{const l=f.metrics.filter(m=>m.group===g);return l.length?`<li class="grp">${nm[g]}</li>`+l.map(m=>`<li><b class="${sc(m.score)}">${m.score>0?"+":m.score<0?"−":"•"}</b><span>${esc(m.name)} ${esc(m.value)}${m.text?": "+esc(m.text):""}</span></li>`).join(""):""}).join("");
-  const qs=f.quarters||[],cur=esc(f.currency||""),src=f.qsrc==="SEC"?"SEC EDGAR":"Yahoo Finance";
-  const stale=(f.surprises||[])[0]&&qs[0]&&f.surprises[0].date>qs[0].date;
-  const qt=qs.length?`<h4>รายงานไตรมาส <small class="flat">(พันล้าน ${cur} • ที่มา ${src})</small></h4>${stale?`<p class="note"><b class="warn">!</b> ผลประกอบการงวด ${esc(f.surprises[0].date)} ประกาศแล้ว แต่ตารางงบยังไม่มีไตรมาสนี้ (${src} ปรับข้อมูลงบช้ากว่าวันประกาศ)</p>`:""}<div class="scroll"><table class="qt"><thead><tr><th title="วันสุดท้ายของงวดบัญชีไตรมาสนั้น">งวดงบ</th><th>รายได้</th><th>YoY</th><th>กำไรสุทธิ</th><th>อัตรากำไรสุทธิ</th><th>EPS</th></tr></thead><tbody>${qs.map(q=>`<tr><td>${esc(q.date)}</td><td>${fmt(q.rev)}</td><td class="${sc(q.rev_yoy)}">${pcs(q.rev_yoy)}</td><td>${fmt(q.ni)}</td><td>${q.nm==null?"–":fmt(q.nm,1)+"%"}</td><td>${fmt(q.eps)}</td></tr>`).join("")}</tbody></table></div>`:"";
-  const sp=(f.surprises||[]).length?`<h4>ผลจริงเทียบประมาณการ EPS</h4><div class="chips">${f.surprises.map(s=>`<span class="${sc(s.surprise)}">${esc(s.date)} จริง ${fmt(s.actual)} / คาด ${fmt(s.estimate)} (${pcs(s.surprise)})</span>`).join("")}</div>`:"";
-  return `<h4>พื้นฐานบริษัท: <span class="${qc(f.quality)}">${esc(f.quality)}</span> • <span class="${qc(f.valuation)}">${esc(f.valuation)}</span></h4>${ai}<ul class="sg">${ms}</ul><p class="note">เกณฑ์เป็นกฎทั่วไปที่ไม่ปรับตามอุตสาหกรรม ใช้เทียบหยาบๆ เท่านั้น</p>${qt}${sp}${f.next_earnings?`<p class="note">ประกาศงบครั้งถัดไปตามที่ Yahoo ระบุ: ${esc(f.next_earnings)}</p>`:""}`;
-}
-const PB={
-oil:{label:"ราคาน้ำมัน",scen:[
- {t:"น้ำมันพุ่งแรง",c:"เช่น Brent ขึ้น 10% ขึ้นไป หรือมีข่าวอุปทานตึงตัว",shock:{oil:10},m:"ต้นทุนพลังงานและขนส่งสูงขึ้น เงินเฟ้อทั่วไปมีแนวโน้มเร่ง ตลาดมักกลัวว่าเฟดจะคงดอกเบี้ยสูงนานขึ้น ผลตอบแทนพันธบัตรขยับขึ้น หุ้นเติบโตและเทคที่ราคาอิงกำไรในอนาคตมักถูกกดดัน ผู้บริโภคมีเงินเหลือใช้จ่ายอย่างอื่นน้อยลง",w:"ท่าทีเฟด, CPI ส่วนพลังงาน, ข่าวอุปทานจากตะวันออกกลางและ OPEC"},
- {t:"น้ำมันลดลงแรง",c:"เช่น Brent ลง 10% ขึ้นไป",shock:{oil:-10},m:"แรงกดดันเงินเฟ้อลดลง เปิดทางให้เฟดผ่อนคลายได้ง่ายขึ้น มักหนุนหุ้นเทค แต่ต้องดูสาเหตุ ถ้าราคาลงเพราะความต้องการโลกอ่อนแอหรือเศรษฐกิจชะลอ ตลาดอาจมองเป็นลบต่อกำไรบริษัท",w:"สาเหตุที่ราคาลง (อุปทานเพิ่มหรือเศรษฐกิจอ่อน), ตัวเลขการจ้างงานและยอดค้าปลีก"},
- {t:"ทรงตัวในกรอบ",c:"ราคาแกว่งไม่เกิน ±3%",shock:{oil:0},m:"ผลต่อหุ้นเทคโดยตรงน้อย ตลาดมักกลับไปสนใจผลประกอบการ แนวโน้มการลงทุนด้าน AI และการประชุมเฟด",w:"ผลประกอบการไตรมาส, งบลงทุน AI ของบริษัทใหญ่"}]},
-rates:{label:"ดอกเบี้ยและเฟด",scen:[
- {t:"ดอกเบี้ยสูงขึ้นหรือเฟดเข้มกว่าคาด",c:"เฟดขึ้นดอกเบี้ย หรือคงดอกเบี้ยพร้อมสัญญาณลดช้าลง (สมมติผลตอบแทน 10 ปีขึ้น ~25bp)",shock:{dy:25},m:"อัตราคิดลดสูงขึ้น มูลค่าหุ้นที่ราคาอิงกำไรในอนาคตลดลง โดยเฉพาะหุ้นที่ P/E สูง ดอลลาร์มักแข็งค่า กระทบรายได้ต่างประเทศ และต้นทุนกู้ยืมของบริษัทที่ลงทุนหนักด้าน AI และดาต้าเซ็นเตอร์สูงขึ้น",w:"ถ้อยแถลงประธานเฟด, dot plot, ผลตอบแทนพันธบัตร 2 และ 10 ปี"},
- {t:"ดอกเบี้ยลดลงหรือเฟดผ่อนคลาย",c:"เฟดลดดอกเบี้ยหรือส่งสัญญาณลด (สมมติผลตอบแทน 10 ปีลง ~25bp)",shock:{dy:-25},m:"ต้นทุนเงินทุนต่ำลง มักหนุนหุ้นเติบโตและเทค แต่ถ้าเฟดลดเพราะเศรษฐกิจอ่อนแรงรุนแรง ตลาดอาจกังวลเรื่องกำไรบริษัทจนผลบวกหายไป เหตุผลที่ลดสำคัญกว่าตัวเลขที่ลด",w:"เหตุผลที่เฟดให้, ตัวเลขการจ้างงาน, เงินเฟ้อ"},
- {t:"เป็นไปตามที่ตลาดคาด",c:"เฟดคงดอกเบี้ยและท่าทีไม่เปลี่ยน",shock:{dy:0},m:"ตัวเลขเองไม่ทำให้ตลาดขยับมาก ปฏิกิริยามักมาจากน้ำเสียงในการแถลงและประมาณการใหม่ของเฟด",w:"คำพูดของประธานเฟดในงานแถลงข่าว"}]},
-infl:{label:"เงินเฟ้อ (CPI)",scen:[
- {t:"CPI สูงกว่าคาด",c:"โดยเฉพาะ core CPI ที่ไม่รวมอาหารและพลังงาน (สมมติผลตอบแทน 10 ปีขึ้น ~10bp)",shock:{dy:10},m:"โอกาสที่เฟดจะลดดอกเบี้ยลดลง ผลตอบแทนพันธบัตรขึ้น หุ้นเทคและหุ้นเติบโตมักถูกกดดัน ตลาดมักให้น้ำหนัก core มากกว่า headline เพราะ headline ผันผวนตามราคาน้ำมัน",w:"core CPI รายเดือน, บริการและค่าเช่า, ถ้อยแถลงเฟดหลังตัวเลข"},
- {t:"CPI ต่ำกว่าคาด",c:"สมมติผลตอบแทน 10 ปีลง ~10bp",shock:{dy:-10},m:"ผลตอบแทนพันธบัตรลดลงและความหวังลดดอกเบี้ยเพิ่มขึ้น มักหนุนหุ้นเทค แต่ถ้ามาพร้อมตัวเลขเศรษฐกิจที่อ่อนลงมาก ตลาดอาจมองเป็นสัญญาณชะลอตัว",w:"ตลาดแรงงาน, ยอดค้าปลีก, ความคาดหวังเงินเฟ้อ"},
- {t:"ตรงตามคาด",c:"headline และ core ใกล้ค่าคาดการณ์",shock:{dy:0},m:"ปฏิกิริยามักเล็ก ถ้า headline สูงเพราะน้ำมันแต่ core ทรงตัว ตลาดมักมองว่าเป็นแรงกระแทกชั่วคราวมากกว่าเงินเฟ้อที่ลุกลาม",w:"แนวโน้ม core เทียบเดือนก่อน"}]},
-gold:{label:"ทองคำ",scen:[
- {t:"ทองคำพุ่งแรง",c:"เช่น ราคาขึ้น 5% ขึ้นไปในเวลาไม่กี่สัปดาห์",m:"ความหมายขึ้นกับสาเหตุ ถ้าขึ้นเพราะผลตอบแทนที่แท้จริงลดลง เฟดผ่อนคลาย หรือดอลลาร์อ่อน มักเป็นบวกต่อหุ้นเทคด้วย แต่ถ้าขึ้นเพราะความกลัว เช่น ความตึงเครียดทางภูมิรัฐศาสตร์ ความกังวลเรื่องระบบการเงิน หรือเงินเฟ้อ ตลาดหุ้นมักถูกกดดัน โดยเฉพาะหุ้นเติบโตที่ราคาสูง",w:"ดัชนีดอลลาร์, ผลตอบแทนที่แท้จริงของพันธบัตร (TIPS), VIX, ข่าวธนาคารกลางซื้อทอง"},
- {t:"ทองคำร่วงแรง",c:"เช่น ราคาลง 5% ขึ้นไปในเวลาไม่กี่สัปดาห์",m:"ถ้าร่วงเพราะดอลลาร์แข็งหรือผลตอบแทนที่แท้จริงขึ้น แรงเดียวกันนี้มักกดดันหุ้นเติบโตด้วย ถ้าร่วงเพราะความกลัวในตลาดลดลง (risk-on) หุ้นเทคมักได้ประโยชน์ และถ้าร่วงหลังพุ่งแรงมาก อาจเป็นเพียงการขายทำกำไร",w:"ทิศทางดอลลาร์, ผลตอบแทนพันธบัตร, สัญญาณว่านักลงทุนเปลี่ยนจากตลาดปลอดภัยไปตลาดเสี่ยง"},
- {t:"ทรงตัวในกรอบ",c:"ราคาแกว่งไม่เกิน ±2%",m:"ผลต่อหุ้นเทคโดยตรงน้อย ทองคำมักใช้เป็นมาตรวัดความกังวลของตลาดควบคู่กับ VIX และดอลลาร์ เมื่อนิ่งแปลว่าตลาดยังไม่มีสัญญาณหวาดกลัวชัดเจน",w:"ถ้อยแถลงเฟดและตัวเลขเงินเฟ้อ ที่มักเป็นตัวจุดให้ทองขยับแรง"}]},
-trade:{label:"ภาษีและการส่งออกชิป",tags:["NVDA","AMD","AVGO","MU","TSM","ASML","INTC","QCOM","AMAT","LRCX","KLAC"],scen:[
- {t:"มาตรการภาษีหรือจำกัดส่งออกชิปเข้มขึ้น",c:"เช่น ข้อจำกัดการขายชิปให้จีน หรือภาษีนำเข้าสินค้าอิเล็กทรอนิกส์",m:"กลุ่มชิปและห่วงโซ่อุปทานมักถูกกดดันก่อน เพราะรายได้บางส่วนมาจากตลาดจีนและการผลิตกระจายอยู่หลายประเทศ ต้นทุนและความไม่แน่นอนของคำสั่งซื้อเพิ่มขึ้น ระดับผลกระทบต่างกันตามสัดส่วนรายได้ของแต่ละบริษัท",w:"รายละเอียดมาตรการ, ระยะเวลาบังคับใช้, คำชี้แจงจากบริษัท"},
- {t:"ข้อตกลงหรือการผ่อนคลายมาตรการ",c:"เช่น ลดภาษี หรือผ่อนปรนใบอนุญาตส่งออก",m:"ความไม่แน่นอนลดลง มักหนุนกลุ่มชิปและอุปกรณ์ที่เกี่ยวข้อง แต่ตลาดอาจรับรู้ล่วงหน้าไปแล้วถ้าข่าวรั่วก่อน",w:"ความชัดเจนของเงื่อนไข และมาตรการจะกลับมาเข้มได้หรือไม่"}]}
-};
-const MFAC=["oil","rates","infl","gold","trade"];
-const est=(s,sh)=>(s.b_oil||0)*(sh.oil||0)+(s.b_y||0)*(sh.dy||0);
-const rel=(s,sh)=>{const t=Math.max(0,sh.oil?Math.abs(s.t_oil||0):0,sh.dy?Math.abs(s.t_y||0):0);return t>=2?"ชัด":t>=1.5?"พอมี":"อ่อน"};
-function impact(sens,sh){
-  if(!sh||(!sh.oil&&!sh.dy))return"";
-  const l=sens.filter(s=>!s.symbol.startsWith("^")).map(s=>({s,e:est(s,sh),r:rel(s,sh)})).filter(x=>x.r!=="อ่อน").sort((a,b)=>Math.abs(b.e)-Math.abs(a.e)).slice(0,4);
-  const ix=sens.find(s=>s.symbol==="^IXIC");
-  return `<p><small>ประมาณจากความสัมพันธ์ย้อนหลัง 1 ปี (ในวงเล็บคือความชัดของความสัมพันธ์):</small></p>`+(l.length?`<div class="chips">${l.map(x=>`<span class="${sc(x.e)}">${esc(x.s.symbol)} ${pcs(x.e,1)} (${x.r})</span>`).join("")}</div>`:`<p class="flat">ปีที่ผ่านมาไม่พบความสัมพันธ์ชัดเจนกับหุ้นที่ติดตามในปัจจัยนี้</p>`)+(ix?`<p><small>Nasdaq โดยรวม ${pcs(est(ix,sh),1)}</small></p>`:"");
-}
-function macroNow(k,mc){
-  const c=(mc||{}).context||{};
-  if(k==="oil")return c.brent?`Brent ${fmt(c.brent.price)} ดอลลาร์ต่อบาร์เรล (${pcs(c.brent.chg1m)} ใน 1 เดือน)`:"ยังไม่มีข้อมูลราคาน้ำมัน";
-  if(k==="rates"){const y=c.y10,f=c.fedfunds;return [y?`ผลตอบแทนพันธบัตร 10 ปี ${fmt(y.level)}% (${y.chg1m_bp>0?"+":""}${fmt(y.chg1m_bp,0)}bp ใน 1 เดือน)`:"",f?`ดอกเบี้ยนโยบายเฟด (effective) ${fmt(f.rate)}% ณ ${f.date}`:""].filter(Boolean).join(" • ")||"ยังไม่มีข้อมูลดอกเบี้ย"}
-  if(k==="infl"){const p=c.cpi;return p?`CPI ล่าสุด (${p.month}) ${fmt(p.yoy,1)}% YoY${p.core_yoy!=null?` และ core ${fmt(p.core_yoy,1)}%`:""}`:"ยังไม่มีข้อมูล CPI (ดึงจาก FRED ไม่ได้)"}
-  if(k==="gold")return c.gold?`ทองคำ (ฟิวเจอร์ส) ${fmt(c.gold.price)} ดอลลาร์ต่อออนซ์ (${pcs(c.gold.chg1m)} ใน 1 เดือน)`:"ยังไม่มีข้อมูลราคาทองคำ";
-  return "ไม่มีตัวเลขอัตโนมัติสำหรับหัวข้อนี้ ดูข่าวในตารางข่าวประกอบ";
-}
-function drawFactor(k,mc){
-  const p=PB[k],sens=(mc||{}).sens||[],names=Object.fromEntries(sens.map(s=>[s.symbol,s.name]));
-  const ai=((mc||{}).ai||{})[k==="infl"?"inflation":k];
-  const now=`<div class="box an"><b>สถานการณ์ตอนนี้</b><p>${esc(macroNow(k,mc))}</p>${ai&&ai.now?`<p>${esc(ai.now)}</p>${(ai.watch||[]).length?`<ul>${ai.watch.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}<p><small>สรุปโดย Claude จากข้อมูลและพาดหัวข่าวล่าสุด ไม่ใช่คำแนะนำลงทุน</small></p>`:""}</div>`;
-  const tags=(p.tags||[]).filter(t=>names[t]);
-  const cards=p.scen.map(s=>`<div><h3>${esc(s.t)}</h3><small>${esc(s.c)}</small><p>${esc(s.m)}</p>${s.shock?impact(sens,s.shock):""}${tags.length?`<p><small>หุ้นที่ติดตามและอยู่ในธุรกิจชิป (ระดับผลกระทบต่างกันตามบริษัท):</small></p><div class="chips">${tags.map(t=>`<span>${esc(t)}</span>`).join("")}</div>`:""}<p><small>ควรจับตา: ${esc(s.w)}</small></p></div>`).join("");
-  return now+`<div class="mc">${cards}</div>`;
-}
-function calcRows(mc,o,y){
-  const sens=(mc||{}).sens||[];
-  if(!sens.length)return `<tr><td colspan="3" class="flat">ยังไม่มีข้อมูลความอ่อนไหว</td></tr>`;
-  const sh={oil:o,dy:y},none=!o&&!y;
-  return sens.map(s=>({s,e:none?0:est(s,sh)})).sort((a,b)=>b.e-a.e).map(({s,e})=>`<tr><td>${esc(s.name)}<span class="sym">${esc(s.symbol)}</span></td><td class="${sc(e)}"><b>${pcs(e,2)}</b></td><td class="flat">R² ${fmt(s.r2,2)} • ${none?"–":rel(s,sh)}</td></tr>`).join("");
-}
-function macroSection(data){
-  const hd=shead("05","SCENARIO","วิเคราะห์สถานการณ์","ลองสมมติว่าน้ำมันและดอกเบี้ยขยับ แล้วดูว่าหุ้นแต่ละตัวเคยขยับตามมากน้อยแค่ไหน คำนวณจากการถดถอยผลตอบแทนรายวันย้อนหลัง 1 ปี เป็นภาพคร่าวๆ ไม่ใช่การพยากรณ์");
-  const mc=data.macro;
-  if(!mc)return `<section id="macro">${hd}<div class="box msg">ยังไม่มีข้อมูลส่วนนี้ ลองรัน fetch_data.py ใหม่</div></section>`;
-  const c=mc.context||{},chip=(k,v)=>v?`<span><small>${k}</small> ${v}</span>`:"";
-  const ctx=[chip("Brent",c.brent?fmt(c.brent.price)+" ("+pcs(c.brent.chg1m)+" ใน 1 เดือน)":""),chip("ผลตอบแทน 10 ปี",c.y10?fmt(c.y10.level)+"% ("+(c.y10.chg1m_bp>0?"+":"")+fmt(c.y10.chg1m_bp,0)+"bp ใน 1 เดือน)":""),chip("ดอกเบี้ยเฟด",c.fedfunds?fmt(c.fedfunds.rate)+"%":""),chip("CPI YoY",c.cpi?fmt(c.cpi.yoy,1)+"%"+(c.cpi.core_yoy!=null?" (core "+fmt(c.cpi.core_yoy,1)+"%)":""):""),chip("ทองคำ",c.gold?fmt(c.gold.price)+" ("+pcs(c.gold.chg1m)+" ใน 1 เดือน)":"")].join("");
-  const pre=[["น้ำมัน +10%","10,0"],["น้ำมัน −10%","-10,0"],["ดอกเบี้ย −20bp","0,-20"],["ดอกเบี้ย +20bp","0,20"],["รีเซ็ต","0,0"]];
-  return `<section id="macro">${hd}<div class="lab"><div class="labl"><div class="presets" id="mPre">${pre.map(([t,v])=>`<button type="button" data-pre="${v}" aria-pressed="false">${esc(t)}</button>`).join("")}</div>
-  <div class="sl"><div class="slh"><span>น้ำมัน Brent เปลี่ยน</span><b id="mOilV">+10%</b></div><input id="mOil" type="range" min="-20" max="20" step="1" value="10" aria-label="น้ำมัน Brent เปลี่ยน (%)"><div class="sle"><span>−20%</span><span>+20%</span></div></div>
-  <div class="sl"><div class="slh"><span>ผลตอบแทน 10 ปี เปลี่ยน</span><b id="mYV">0 bp</b></div><input id="mY" type="range" min="-60" max="60" step="5" value="0" aria-label="ผลตอบแทน 10 ปี เปลี่ยน (bp)"><div class="sle"><span>−60bp</span><span>+60bp</span></div></div>
-  <div class="interp" id="mInterp"></div><div class="tiles" id="mTiles"></div></div>
-  <div class="labr"><div class="labh"><span>หุ้นที่อ่อนไหวต่อสถานการณ์นี้</span><span>ประมาณการ %</span></div><div class="rank" id="mRank"></div><p class="note" style="margin:10px 0 0">R² ต่ำหมายถึงน้ำมันและดอกเบี้ยอธิบายการขยับของหุ้นได้น้อย (ผลประกอบการและข่าว AI มีผลมากกว่า) ใช้เป็นภาพคร่าวๆ เท่านั้น</p></div></div>
-  <h3 class="sub3">สถานการณ์รายปัจจัย</h3><div class="ctx">${ctx}</div><div class="tabs" id="macroTabs" role="tablist">${MFAC.map((k,i)=>`<button role="tab" aria-selected="${i===0}" data-f="${k}">${esc(PB[k].label)}</button>`).join("")}</div><div id="macroBody"></div></section>`;
-}
-function bindMacro(data){
-  const mc=data.macro,body=document.getElementById("macroBody");
-  if(!mc||!body)return;
-  const draw=k=>{body.innerHTML=drawFactor(k,mc)};
-  draw("oil");
-  document.querySelectorAll("#macroTabs button").forEach(b=>b.onclick=()=>{document.querySelectorAll("#macroTabs button").forEach(x=>x.setAttribute("aria-selected",x===b));draw(b.dataset.f)});
-  const c=mc.context||{},sens=mc.sens||[];
-  const interp=(o,y)=>{
-    const a=o>=5?"<b>น้ำมัน</b> · น้ำมันขึ้นแรง ต้นทุนพลังงานและเงินเฟ้อมักเร่ง ตลาดมักกลัวเฟดคงดอกเบี้ยสูงนาน":o<=-5?"<b>น้ำมัน</b> · น้ำมันลดลงแรง แรงกดดันเงินเฟ้อลดลง มักหนุนหุ้นเทค แต่ต้องดูว่าลดเพราะอะไร":"<b>น้ำมัน</b> · น้ำมันแทบไม่ขยับ ไม่ใช่ปัจจัยหลักในสถานการณ์นี้";
-    const b=y>=10?"<b>ดอกเบี้ย</b> · ผลตอบแทนพันธบัตรขึ้น หุ้นเติบโตที่ราคาอิงกำไรอนาคตมักถูกกดดัน":y<=-10?"<b>ดอกเบี้ย</b> · ผลตอบแทนพันธบัตรลดลง ต้นทุนเงินทุนต่ำลง มักหนุนหุ้นเติบโต":"<b>ดอกเบี้ย</b> · ผลตอบแทนพันธบัตรแทบไม่ขยับ ไม่ใช่ปัจจัยหลักรอบนี้";
-    return `<div>${a}</div><div>${b}</div>`;
-  };
-  const run=()=>{
-    const o=+mOil.value,y=+mY.value,sh={oil:o,dy:y},none=!o&&!y;
-    mOilV.textContent=(o>0?"+":"")+o+"%";mYV.textContent=(y>0?"+":"")+y+" bp";
-    document.querySelectorAll("#mPre button").forEach(b=>{const[a,z]=b.dataset.pre.split(",").map(Number);b.setAttribute("aria-pressed",String(a===o&&z===y))});
-    mInterp.innerHTML=interp(o,y);
-    const e=s=>s?(none?0:est(s,sh)):null,ix=sens.find(s=>s.symbol==="^IXIC"),sx=sens.find(s=>s.symbol==="^SOX");
-    const tile=(v,l)=>`<div><strong class="${v==null?"flat":sc(v)}">${v==null?"–":pcs(v,1)}</strong><small>${l}</small></div>`;
-    mTiles.innerHTML=tile(e(ix),"Nasdaq · ประมาณการ")+tile(e(sx),"SOX ชิป · ประมาณการ")+`<div><strong>${c.brent?fmt(c.brent.price):"–"}</strong><small>Brent ล่าสุด${c.brent?" · "+pcs(c.brent.chg1m,1)+" 1 เดือน":""}</small></div>`;
-    const rows=sens.filter(s=>!s.symbol.startsWith("^")).map(s=>({s,e:none?0:est(s,sh)})).sort((a,b)=>Math.abs(b.e)-Math.abs(a.e));
-    const mx=Math.max(0.0001,...rows.map(r=>Math.abs(r.e)));
-    mRank.innerHTML=none?`<div class="rkn" style="padding:16px 0">เลื่อนแถบด้านซ้ายหรือกดปุ่มด้านบนเพื่อจำลองสถานการณ์</div>`:rows.map(({s,e})=>{const w=(Math.abs(e)/mx*50).toFixed(1);return `<div class="rk"><div class="rkt"><b>${esc(s.symbol)}</b><span class="${sc(e)}">${pcs(e,1)}</span></div><div class="rkb ${sc(e)}"><i style="${e<0?"right:50%":"left:50%"};width:${w}%"></i></div><div class="rkn">${esc(s.name)} · R² ${fmt(s.r2,2)}</div></div>`}).join("");
-  };
-  mOil.addEventListener("input",run);mY.addEventListener("input",run);
-  document.querySelectorAll("#mPre button").forEach(b=>b.onclick=()=>{const[a,z]=b.dataset.pre.split(",");mOil.value=a;mY.value=z;run()});
-  run();
-}
-const BB={
-pro:["ผู้นำอย่าง Nvidia, Microsoft และ Alphabet มีกำไรและกระแสเงินสดจริง ต่างจากหลายบริษัทในยุคดอทคอมที่แทบไม่มีรายได้","ความต้องการพลังประมวลผลยังสูงกว่าอุปทานตามที่ผู้ผลิตชิปและผู้ให้บริการคลาวด์ระบุ","การลงทุนส่วนใหญ่มาจากกระแสเงินสดของบริษัทขนาดใหญ่ ไม่ได้พึ่งหนี้เป็นหลัก","ผู้สนับสนุนมักชี้ว่า P/E ของผู้นำแม้สูงแต่ยังต่ำกว่าช่วงดอทคอมมาก"],
-con:["การลงทุนโครงสร้างพื้นฐาน AI ใหญ่กว่ารายได้จากผลิตภัณฑ์ AI ปัจจุบันมาก ต้องมีรายได้อีกมากจึงจะคุ้มทุน","เงินไหลเวียนเป็นวงระหว่างผู้ผลิตชิป ผู้ให้บริการคลาวด์ และบริษัท AI (ลงทุนในลูกค้าที่กลับมาซื้อสินค้าตัวเอง) ทำให้ความต้องการจริงวัดยาก","มีรายงานว่าการสร้างดาต้าเซ็นเตอร์บางส่วนเริ่มพึ่งหนี้และการระดมทุนนอกงบดุล","ตลาดกระจุกตัวในหุ้นไม่กี่ตัว ถ้าสัญญาณชะลอตัวปรากฏ ผลกระทบจะกระจายเร็ว","เทคโนโลยีใหม่ในอดีต (ทางรถไฟ ดอทคอม) มักมีช่วงปรับฐานรุนแรง แม้ตัวเทคโนโลยีจะเปลี่ยนโลกจริง"],
-scen:[
- {t:"การลงทุน AI ถูกปรับลด หรือรายได้ AI ต่ำกว่าคาด",tags:["NVDA","AVGO","TSM","ASML","MU","AMD"],m:"ผู้ขายชิปและอุปกรณ์มักได้รับผลก่อน เพราะคำสั่งซื้อลดลงและมูลค่าที่เคยตั้งไว้สูงถูกประเมินใหม่ ส่วนผู้ใช้จ่ายอย่าง Microsoft, Amazon, Alphabet และ Meta ผลสองทาง ต้นทุนลงแต่ตลาดอาจตั้งคำถามกับผลตอบแทนของเงินที่ลงไปแล้ว",w:"แนวโน้มงบลงทุน (capex) ในงบไตรมาสถัดไป และยอดสั่งซื้อค้างส่งของผู้ให้บริการคลาวด์"},
- {t:"รายได้ AI โตตามหรือเกินคาดต่อเนื่อง",tags:["NVDA","MSFT","GOOGL","AMZN","META"],m:"ความกังวลว่าเป็นฟองสบู่ลดลง แต่เพราะราคาสูงอยู่แล้ว ตลาดต้องการการเติบโตที่เกินคาดต่อเนื่องเพื่อรักษาระดับราคา แค่ตามคาดอาจไม่พอให้ราคาขึ้นต่อ",w:"รายได้คลาวด์และ AI อัตรากำไร และจำนวนลูกค้าที่จ่ายเงินจริง"},
- {t:"ตลาดเงินและสินเชื่อตึงตัว",tags:["OKLO","SPCX","TELO","MU","AMD"],m:"ต้นทุนกู้ของการสร้างดาต้าเซ็นเตอร์สูงขึ้น ผู้เล่นที่พึ่งหนี้อ่อนแอก่อน หุ้นที่พึ่งตลาดทุนและกระแสนักลงทุนกล้าเสี่ยง (พลังงานทางเลือก อวกาศ หุ้นเล็ก) มักผันผวนแรงกว่าผู้นำที่มีเงินสดเยอะ",w:"ส่วนต่างเครดิต, ข่าวระดมทุนและออกพันธบัตรของผู้เล่น AI, ผลตอบแทนพันธบัตร"}]
-};
-const LV=[["ปกติ","up"],["ตึงตัว","warn"],["ร้อนแรง","down"]];
-const bcls=s=>s<.34?"up":s<.67?"warn":"down";
-function bubbleStat(data){const b=data.bubble;return b?`<a class="pill" href="#bubble"><small>ความร้อนแรง AI</small><strong class="${bcls(b.score)}">${esc(b.label)}</strong></a>`:""}
-function bubbleSection(data){
-  const hd=r=>shead("06","AI BUBBLE WATCH","AI bubble watch","ตัวชี้วัดที่บอกว่าราคาหุ้นกลุ่ม AI ตึงตัวแค่ไหน ยิ่งคะแนนสูง ยิ่งพึ่งความคาดหวังในอนาคตมาก และปรับฐานได้แรงขึ้นถ้าความคาดหวังเปลี่ยน",r);
-  const b=data.bubble;
-  if(!b)return `<section id="bubble">${hd("")}<div class="box msg">ยังไม่มีข้อมูลส่วนนี้ (ต้องมีหุ้น AI หลักที่ติดตามอย่างน้อย 3 ตัว)</div></section>`;
-  const items=Object.fromEntries(data.groups.flatMap(g=>g.items.map(i=>[i.symbol,i])));
-  const present=new Set(Object.keys(items)),a=b.ai,k=b.indicators.length;
-  const col=b.score<.34?"var(--up)":b.score<.67?"var(--warn)":"var(--down)",cl=b.score<.34?"up":b.score<.67?"warn":"down";
-  const L=Math.PI*110,len=Math.max(2,b.score*L);
-  const gauge=`<svg class="gg" viewBox="0 0 260 150" role="img" aria-label="คะแนนความร้อนแรงรวม ${Math.round(b.score*100)} จาก 100"><path d="M20,130 A110,110 0 0 1 240,130" fill="none" stroke-width="18" stroke-linecap="round" style="stroke:var(--line)"/><path d="M20,130 A110,110 0 0 1 240,130" fill="none" stroke-width="18" stroke-linecap="round" stroke-dasharray="${len.toFixed(1)} ${(L+20).toFixed(1)}" style="stroke:${col}"/><text class="gn" x="130" y="112" text-anchor="middle">${Math.round(b.score*100)}</text><text class="gs" x="130" y="134" text-anchor="middle">/ 100</text></svg>`;
-  const basket=(b.basket||[]).filter(s=>items[s]).map(s=>`<span class="bk ${cls(items[s].pct)}">${esc(s)} ${pcs(items[s].pct,1)}</span>`).join("");
-  const cells=b.indicators.map(x=>`<div class="ic2" title="${esc(x.note)}"><div class="ich"><span>${esc(x.name)}</span><span class="lvb ${LV[x.level][1]}">${LV[x.level][0]}</span></div><div class="icv">${esc(x.value)}</div><div class="seg3">${[0,1,2].map(i=>`<i class="${i<=x.level?LV[x.level][1]:""}"></i>`).join("")}</div><div class="icr">${esc(x.rule)}</div></div>`).join("")+(k%2?`<div class="ic2"></div>`:"");
-  const ai=a?`<div class="ai"><b>สรุปโดย Claude</b> <small class="flat">จากตัวชี้วัดและพาดหัวด้านล่างเท่านั้น</small><p>${esc(a.summary)}</p>${(a.hot||[]).length?`<p class="down">สัญญาณที่ร้อน: ${a.hot.map(esc).join(" • ")}</p>`:""}${(a.ok||[]).length?`<p class="up">ที่ยังรับได้: ${a.ok.map(esc).join(" • ")}</p>`:""}${(a.watch||[]).length?`<p>ควรติดตามต่อ: ${a.watch.map(esc).join(" • ")}</p>`:""}</div>`:"";
-  const hl=(b.headlines||[]).filter(okUrl).map(n=>`<a class="news" href="${esc(n.url)}" target="_blank" rel="noopener noreferrer"><small>${esc(n.source)} ${ago(n.time)}</small>${esc(n.title_th||n.title)}${n.title_th?`<small>${esc(n.title)}</small>`:""}</a>`).join("")||`<div class="msg flat">ไม่พบพาดหัวที่เกี่ยวข้องในข้อมูลชุดนี้</div>`;
-  const sc2=BB.scen.map(s=>{const t=s.tags.filter(x=>present.has(x));return `<div><h3>${esc(s.t)}</h3><p>${esc(s.m)}</p>${t.length?`<div class="chips">${t.map(x=>`<span>${esc(x)}</span>`).join("")}</div>`:""}<p><small>ควรจับตา: ${esc(s.w)}</small></p></div>`}).join("");
-  return `<section id="bubble">${hd(`<span class="pill2">${k} ตัวชี้วัด</span>`)}<div class="bw"><div class="gc">${gauge}<div class="glab ${cl}">${esc(b.label)}</div><p class="gcap">คะแนนรวมจากตัวชี้วัดทั้ง ${k} ข้อ เทียบกับเกณฑ์ที่ตั้งไว้ (เป็นดุลยพินิจทั่วไป ไม่ใช่การพยากรณ์)</p><div class="bkh">ตะกร้าหุ้น AI</div><div class="bks">${basket}</div></div><div class="ig">${cells}</div></div>
-  <p class="note" style="margin-top:14px">มาตรวัดบอกความร้อนแรง ไม่ได้บอกว่าเป็นฟองสบู่หรือไม่ และไม่ได้ทำนายว่าจะกลับตัวเมื่อไร เพราะโดยทั่วไปรู้ได้ชัดเจนเมื่อเหตุการณ์ผ่านไปแล้ว</p>${ai}
-  <h3 class="sub3">พาดหัวที่พูดถึงฟองสบู่และความร้อนแรง</h3><div class="box">${hl}</div>
-  <h3 class="sub3">ข้อโต้แย้งสองฝั่ง</h3><p class="note">เรื่องนี้นักวิเคราะห์เห็นต่างกันจริง ต่อไปนี้คือเหตุผลที่แต่ละฝั่งมักยกขึ้นมา</p>
-  <div class="two"><div><h3 class="down">ฝั่งที่กังวลว่าเป็นฟองสบู่</h3><ul>${BB.con.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div><h3 class="up">ฝั่งที่เห็นว่ายังไม่ใช่ฟองสบู่</h3><ul>${BB.pro.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div></div>
-  <h3 class="sub3">ถ้าเหตุการณ์ออกมาแบบต่างๆ</h3><div class="mc">${sc2}</div></section>`;
-}
-const PF_KEY="pf.v1";
-function pfLoad(){try{return JSON.parse(localStorage.getItem(PF_KEY))||{}}catch(e){return{}}}
-function pfSave(s){try{localStorage.setItem(PF_KEY,JSON.stringify(s))}catch(e){}}
-const PFS_KEY="pfs.v1",PFS_DEF=["NVDA","MSFT","AAPL","GOOGL","META","AVGO","AMD","TSM"];
-function pfsLoad(){try{return JSON.parse(localStorage.getItem(PFS_KEY))||{}}catch(e){return{}}}
-function pfsSave(o){try{localStorage.setItem(PFS_KEY,JSON.stringify(o))}catch(e){}}
-function portfolioSection(data){
-  const seg=`<div class="seg" id="pfsSeg" role="group" aria-label="ช่วงเวลา"><button type="button" data-p="1" aria-pressed="false">1 เดือน</button><button type="button" data-p="3" aria-pressed="true">3 เดือน</button><button type="button" data-p="12" aria-pressed="false">1 ปี</button></div>`;
-  return `<section id="portfolio">${shead("08","SIMULATOR","พอร์ตจำลอง","เลือกหุ้นที่สนใจเพื่อดูว่าถ้าถือน้ำหนักเท่ากันทั้งหมด ผลตอบแทนจะเทียบกับ Nasdaq เป็นอย่างไร ระบบบันทึกที่เลือกไว้ในเครื่องนี้อัตโนมัติ",seg)}<div class="chipsel" id="pfsChips"></div><div id="pfsOut"></div><details class="adv"><summary>เครื่องมือขั้นสูง: ปรับน้ำหนักเอง ปรับสมดุล ผลตอบแทนต่อปี ความผันผวน</summary>${portfolioAdvHTML(data)}</details></section>`;
-}
-const pfsLine=a=>a.map(x=>(x/a[0]-1)*100);
-function pfsChart(port,bench){
-  const w=640,h=240,all=[0,...port,...(bench||[])],mn=Math.min(...all),mx=Math.max(...all),r=mx-mn||1,n=port.length;
-  const y=v=>(h-10-(v-mn)/r*(h-20)).toFixed(1),x=(i,m)=>(i/(m-1)*w).toFixed(1);
-  const pl=(a,c)=>`<polyline class="${c}" points="${a.map((v,i)=>x(i,a.length)+","+y(v)).join(" ")}"/>`;
-  return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="กราฟผลตอบแทนพอร์ตเทียบ Nasdaq"><line class="z0" x1="0" x2="${w}" y1="${y(0)}" y2="${y(0)}"/>${bench?pl(bench,"p2"):""}${pl(port,"p1")}</svg>`;
-}
-function pfsRender(data,sel,per){
-  const all=Object.fromEntries(data.groups.flatMap(g=>g.items.map(i=>[i.symbol,i]))),h=data.hist||{series:{}};
-  const n=per===1?22:per===3?63:53;
-  const get=s=>{
-    if(per===12){const a=h.series[s];if(!a)return null;const v=a.slice(-n);return v.length===n&&v.every(x=>x!=null)?v:null}
-    const it=all[s];return it&&it.series&&it.series.length>=n?it.series.slice(-n):null;
-  };
-  const used=[],skip=[];
-  sel.forEach(s=>{const v=get(s);v?used.push([s,v]):skip.push(s)});
-  if(!used.length)return `<div class="box msg flat">เลือกหุ้นอย่างน้อย 1 ตัวที่มีข้อมูลครบช่วงนี้ เพื่อดูผลตอบแทน${skip.length?` (ไม่มีข้อมูลครบ: ${skip.map(esc).join(", ")})`:""}</div>`;
-  const lines=used.map(([s,v])=>pfsLine(v)),m=lines[0].length;
-  const port=Array.from({length:m},(_,i)=>lines.reduce((a,l)=>a+l[i],0)/lines.length);
-  const bv=get("^IXIC"),bench=bv?pfsLine(bv):null,ret=port[m-1],br=bench?bench[bench.length-1]:null;
-  const wgt=Math.round(100/used.length);
-  const rows=used.map(([s],i)=>{const r=lines[i][m-1];return `<div class="row2"><span>${esc(s)}<span class="w">${wgt}%</span></span><span class="${sc(r)}">${pcs(r,1)}</span></div>`}).join("");
-  return `<div class="sim"><div class="simc"><div class="simh"><div><div class="l">ผลตอบแทนพอร์ต (น้ำหนักเท่ากัน)</div><div class="big ${sc(ret)}">${pcs(ret,1)}</div></div><div class="r">${br==null?"":`<div>Nasdaq ${pcs(br,1)}</div><div class="${sc(ret-br)}">${ret>=br?"ชนะตลาด":"แพ้ตลาด"} ${pcs(ret-br,1)}</div>`}</div></div>${pfsChart(port,bench)}<div class="leg"><span style="color:var(--accent)"><i></i>พอร์ตของคุณ</span>${bench?`<span><i></i>Nasdaq</span>`:"<span></span>"}<span>${used.length} หุ้น</span></div></div>
-  <div class="siml sl2"><div class="hh"><span>รายตัว</span><span>น้ำหนัก / ผลตอบแทน</span></div>${rows}<p class="note" style="margin:12px 0 0">${skip.length?`ไม่มีข้อมูลครบช่วงนี้จึงไม่นับ: ${skip.map(esc).join(", ")} • `:""}คำนวณจากราคาปิดย้อนหลัง ไม่รวมภาษี ค่าธรรมเนียม และค่าเงิน หุ้นในรายการเป็นหุ้นที่เลือกไว้ในวันนี้ ผลย้อนหลังจึงมักดูดีกว่าที่ผู้ลงทุนจริงจะได้ ไม่ใช่คำแนะนำการลงทุน</p></div></div>`;
-}
-function bindPfs(data,stocks){
-  const chips=document.getElementById("pfsChips"),out=document.getElementById("pfsOut");
-  if(!chips||!out)return;
-  const syms=stocks.map(s=>s.symbol),st=pfsLoad();
-  let sel=(Array.isArray(st.sel)?st.sel:PFS_DEF).filter(s=>syms.includes(s)),per=[1,3,12].includes(st.per)?st.per:3;
-  const draw=()=>{
-    chips.innerHTML=syms.map(s=>`<button type="button" class="cs" data-s="${esc(s)}" aria-pressed="${sel.includes(s)}">${esc(s)}</button>`).join("");
-    document.querySelectorAll("#pfsSeg button").forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.p===per)));
-    out.innerHTML=pfsRender(data,sel,per);
-    pfsSave({sel,per});
-  };
-  chips.addEventListener("click",e=>{const b=e.target.closest("[data-s]");if(!b)return;const s=b.dataset.s;sel=sel.includes(s)?sel.filter(x=>x!==s):[...sel,s];draw()});
-  document.querySelectorAll("#pfsSeg button").forEach(b=>b.onclick=()=>{per=+b.dataset.p;draw()});
-  draw();
-}
-function portfolioAdvHTML(data){
-  if(!data.hist)return `<div class="pfadv"><div class="box msg">ยังไม่มีข้อมูลประวัติราคา ลองรัน fetch_data.py ใหม่</div></div>`;
-  return `<div class="pfadv"><p class="note">เลือกหุ้นและสัดส่วน ระบบจะย้อนดูว่าถ้าถือพอร์ตนี้ตลอดช่วงที่เลือก ผลตอบแทนต่อปี ความผันผวน และการลดลงสูงสุดเป็นเท่าไร พร้อมเทียบ Nasdaq และ S&P 500 นี่คือผลย้อนหลัง ไม่ใช่การคาดการณ์อนาคต ใช้ราคาปรับปันผลแล้ว ไม่รวมภาษี ค่าธรรมเนียม และค่าเงิน</p>
-  <div class="box an"><div class="pfc">
-   <div><label for="pfAmt">เงินลงทุนเริ่มต้น (USD)</label><input id="pfAmt" type="number" min="100" step="1000" value="10000"></div>
-   <div><label for="pfYrs">ช่วงย้อนหลัง</label><select id="pfYrs"><option value="1">1 ปี</option><option value="3">3 ปี</option><option value="5" selected>5 ปี</option></select></div>
-   <div><label for="pfReb">การปรับสมดุล</label><select id="pfReb"><option value="0">ไม่ปรับ (ซื้อแล้วถือ)</option><option value="1" selected>ปรับกลับสัดส่วนเดิมทุกปี</option></select></div>
-   <button id="pfEq">ถ่วงเท่ากัน</button><button id="pfClr">ล้างทั้งหมด</button></div>
-  <div class="pfg" id="pfList"></div><p class="note" id="pfTot" style="margin:12px 0 0"></p></div>
-  <div class="pfo" id="pfOut"></div></div>`;
-}
-function pfChart(lines){
-  const w=640,h=220,all=lines.flatMap(l=>l.v),min=Math.min(...all),max=Math.max(...all),r=max-min||1,n=lines[0].v.length;
-  const y=v=>(h-8-(v-min)/r*(h-16)).toFixed(1),x=i=>(i/(n-1)*w).toFixed(1);
-  return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="กราฟมูลค่าพอร์ตเทียบดัชนี">${lines.map(l=>`<polyline points="${l.v.map((v,i)=>x(i)+","+y(v)).join(" ")}" fill="none" stroke="${l.c}" stroke-width="${l.sw||1.6}"${l.d?' stroke-dasharray="5 4"':""} stroke-linejoin="round"/>`).join("")}</svg><div class="leg">${lines.map(l=>`<span style="color:${l.c}">${l.d?"╌╌":"──"} ${esc(l.n)}</span>`).join("")}</div>`;
-}
-function pfCalc(data,w,amt,yrs,reb){
-  const h=data.hist,D=h.dates,N=D.length,syms=Object.keys(w),notes=[];
-  const names=Object.fromEntries(data.groups.flatMap(g=>g.items.map(i=>[i.symbol,i.name])));
-  const first=s=>h.series[s].findIndex(v=>v!=null);
-  let i0=Math.max(0,N-1-yrs*52);
-  const lim=syms.map(s=>[s,first(s)]).sort((a,b)=>b[1]-a[1])[0];
-  if(lim[1]>i0){i0=lim[1];notes.push(`ข้อมูลของ ${esc(names[lim[0]]||lim[0])} เริ่มเมื่อ ${D[lim[1]]} จึงย่อช่วงย้อนหลังลงตามนั้น`)}
-  const weeks=N-1-i0;
-  if(weeks<8)return `<div class="box msg">ข้อมูลร่วมของหุ้นที่เลือกสั้นเกินไปที่จะคำนวณ (ต้องมีอย่างน้อย 8 สัปดาห์)</div>`;
-  const fill=s=>{let p=null;return h.series[s].slice(i0).map(v=>{if(v!=null)p=v;return p})};
-  const P=Object.fromEntries(syms.map(s=>[s,fill(s)])),n=weeks+1;
-  const tw=syms.reduce((a,s)=>a+w[s],0),W=Object.fromEntries(syms.map(s=>[s,w[s]/tw]));
-  const units={},set=(i,V)=>syms.forEach(s=>units[s]=V*W[s]/P[s][i]);
-  set(0,amt);const val=[];
-  for(let i=0;i<n;i++){const V=syms.reduce((a,s)=>a+units[s]*P[s][i],0);if(reb&&i>0&&i%52===0)set(i,V);val.push(V)}
-  const years=(new Date(D[N-1])-new Date(D[i0]))/(365.25*864e5);
-  const cagr=v=>(Math.pow(v[v.length-1]/v[0],1/years)-1)*100,tot=v=>(v[v.length-1]/v[0]-1)*100;
-  const vol=v=>{const r=[];for(let i=1;i<v.length;i++)r.push(v[i]/v[i-1]-1);const m=r.reduce((a,b)=>a+b,0)/r.length;return Math.sqrt(r.reduce((a,b)=>a+(b-m)**2,0)/(r.length-1))*Math.sqrt(52)*100};
-  const mdd=v=>{let pk=v[0],m=0;v.forEach(x=>{pk=Math.max(pk,x);m=Math.min(m,x/pk-1)});return m*100};
-  const bench=(sym,nm,c,d)=>{const a=h.series[sym];if(!a||a[i0]==null)return null;let p=a[i0];const v=a.slice(i0).map(x=>{if(x!=null)p=x;return amt*p/a[i0]});return {n:nm,v,c,d}};
-  const bs=[bench("^IXIC","Nasdaq","#8b97a8"),bench("^GSPC","S&P 500","#d9a441",1)].filter(Boolean);
-  const all=[{n:"พอร์ตจำลอง",v:val,c:"#38bdf8",sw:2.2},...bs];
-  const row=l=>`<tr><td>${esc(l.n)}</td><td class="${sc(cagr(l.v))}"><b>${pcs(cagr(l.v),1)}</b></td><td class="${sc(tot(l.v))}">${pcs(tot(l.v),1)}</td><td>${fmt(vol(l.v),1)}%</td><td class="down">${fmt(mdd(l.v),1)}%</td><td>${fmt(l.v[l.v.length-1],0)}</td></tr>`;
-  const warn=[...notes];
-  if(years<1)warn.push(`ช่วงข้อมูลสั้นกว่า 1 ปี (${fmt(years,2)} ปี) การแปลงเป็น % ต่อปีอาจให้ตัวเลขที่ไม่สมจริง ดูผลตอบแทนรวมประกอบ`);
-  const top=syms.slice().sort((a,b)=>W[b]-W[a])[0];
-  if(W[top]>0.4)warn.push(`${esc(names[top]||top)} มีสัดส่วน ${fmt(W[top]*100,0)}% พอร์ตพึ่งหุ้นตัวเดียวมาก`);
-  if(syms.length<5)warn.push("เลือกหุ้นน้อยกว่า 5 ตัว ความผันผวนมักสูงกว่าพอร์ตที่กระจายกว่านี้");
-  const chip=syms.filter(s=>PB.trade.tags.includes(s)).reduce((a,s)=>a+W[s],0);
-  if(chip>0.6)warn.push(`หุ้นกลุ่มชิปมีสัดส่วน ${fmt(chip*100,0)}% หุ้นกลุ่มเดียวกันมักขึ้นลงพร้อมกัน การกระจายจึงน้อยกว่าที่จำนวนตัวบอก`);
-  const stk=syms.map(s=>{const a=P[s],t=(a[n-1]/a[0]-1)*100,c=(Math.pow(a[n-1]/a[0],1/years)-1)*100;return `<tr><td>${esc(names[s]||s)}<span class="sym">${esc(s)}</span></td><td>${fmt(W[s]*100,1)}%</td><td class="${sc(c)}">${pcs(c,1)}</td><td class="${sc(t)}">${pcs(t,1)}</td></tr>`}).join("");
-  const diff=bs[0]?cagr(val)-cagr(bs[0].v):null;
-  return `<div class="stats" style="margin-bottom:14px"><div><small>ผลตอบแทนต่อปี (CAGR)</small><strong class="${sc(cagr(val))}">${pcs(cagr(val),1)}</strong></div><div><small>ผลตอบแทนรวม ${fmt(years,1)} ปี</small><strong class="${sc(tot(val))}">${pcs(tot(val),1)}</strong></div><div><small>มูลค่าสิ้นสุด (USD)</small><strong>${fmt(val[n-1],0)}</strong></div><div><small>ผันผวนต่อปี</small><strong>${fmt(vol(val),1)}%</strong></div><div><small>ลดลงสูงสุด (รายสัปดาห์)</small><strong class="down">${fmt(mdd(val),1)}%</strong></div>${diff==null?"":`<div><small>เทียบ Nasdaq ต่อปี</small><strong class="${sc(diff)}">${pcs(diff,1)}</strong></div>`}</div>
-  ${warn.length?`<div class="box an" style="margin-bottom:14px"><b class="warn">ข้อควรระวัง</b><ul>${warn.map(x=>`<li>${x}</li>`).join("")}</ul></div>`:""}
-  <div class="box an">${pfChart(all)}<p class="note" style="margin:6px 0 0">${D[i0]} ถึง ${D[N-1]} • เริ่มที่ ${fmt(amt,0)} USD ${reb?"ปรับสมดุลทุก 52 สัปดาห์":"ซื้อแล้วถือ"}</p></div>
-  <h3 style="margin:18px 0 6px;font-size:1.05rem">เทียบกับดัชนี</h3><div class="box scroll"><table class="bt"><thead><tr><th></th><th>ต่อปี</th><th>รวม</th><th>ผันผวนต่อปี</th><th>ลดลงสูงสุด</th><th>มูลค่าสิ้นสุด</th></tr></thead><tbody>${all.map(row).join("")}</tbody></table></div>
-  <h3 style="margin:18px 0 6px;font-size:1.05rem">รายตัวในพอร์ต</h3><div class="box scroll"><table class="bt"><thead><tr><th>หุ้น</th><th>สัดส่วนเริ่มต้น</th><th>ต่อปี</th><th>รวม</th></tr></thead><tbody>${stk}</tbody></table></div>
-  <p class="note" style="margin-top:12px">หุ้นในรายการนี้เป็นหุ้นที่เลือกไว้ในวันนี้ ซึ่งหลายตัวเป็นผู้ชนะของช่วงที่ผ่านมา ผลย้อนหลังจึงมักดูดีกว่าที่ผู้ลงทุนจริงจะได้ในอนาคต ใช้ข้อมูลรายสัปดาห์ การลดลงสูงสุดรายวันอาจลึกกว่าที่แสดง ผลในอดีตไม่รับประกันอนาคต และนี่ไม่ใช่คำแนะนำการลงทุน</p>`;
-}
-function bindPortfolio(data){
-  const h=data.hist,el=document.getElementById("pfList");
-  if(!h||!el)return;
-  const stocks=[...((data.groups.find(g=>g.detail===true)||{}).items||[]),...data.groups.flatMap(g=>g.items).filter(s=>s.symbol==="GLD")].filter(s=>h.series[s.symbol]);
-  const q=(a,s)=>document.querySelector(`[data-${a}="${s}"]`);
-  el.innerHTML=stocks.map(s=>`<div class="pfr"><input type="checkbox" id="pc_${esc(s.symbol)}" data-s="${esc(s.symbol)}"><label for="pc_${esc(s.symbol)}">${esc(s.name)}<span class="sym">${esc(s.symbol)}</span></label><input type="number" min="0" max="100" step="1" data-w="${esc(s.symbol)}" aria-label="สัดส่วน ${esc(s.name)} (%)" placeholder="%"></div>`).join("");
-  const st=pfLoad();
-  if(st.amt)pfAmt.value=st.amt;if(st.yrs)pfYrs.value=st.yrs;if(st.reb!=null)pfReb.value=st.reb;
-  Object.entries(st.sel||{}).forEach(([s,v])=>{if(stocks.some(x=>x.symbol===s)&&v>0){q("s",s).checked=true;q("w",s).value=v}});
-  const run=()=>{
-    const w={};
-    stocks.forEach(s=>{const v=parseFloat(q("w",s.symbol).value);if(q("s",s.symbol).checked&&v>0)w[s.symbol]=v});
-    const amt=Math.max(100,parseFloat(pfAmt.value)||10000);
-    pfSave({sel:w,amt:pfAmt.value,yrs:pfYrs.value,reb:pfReb.value});
-    const t=Object.values(w).reduce((a,b)=>a+b,0);
-    pfTot.textContent=t?`รวมสัดส่วน ${fmt(t,1)}%${Math.abs(t-100)>0.05?" (ระบบจะปรับให้รวมเป็น 100% ตามสัดส่วนที่ใส่)":""}`:"ยังไม่ได้เลือกหุ้น";
-    pfOut.innerHTML=t?pfCalc(data,w,amt,parseInt(pfYrs.value),pfReb.value==="1"):`<div class="box msg flat">เลือกหุ้นอย่างน้อย 1 ตัวและใส่สัดส่วน (%) เพื่อดูผลย้อนหลัง</div>`;
-  };
-  el.addEventListener("input",e=>{const t=e.target;if(t.dataset.w)q("s",t.dataset.w).checked=parseFloat(t.value)>0;run()});
-  el.addEventListener("change",e=>{const t=e.target;if(t.dataset.s){const i=q("w",t.dataset.s);if(t.checked&&!(parseFloat(i.value)>0))i.value=10;if(!t.checked)i.value="";run()}});
-  pfEq.onclick=()=>{const on=stocks.filter(s=>q("s",s.symbol).checked);if(!on.length){pfTot.textContent="เลือกหุ้นก่อน แล้วจึงกดถ่วงเท่ากัน";return}const v=Math.round(1000/on.length)/10;on.forEach(s=>q("w",s.symbol).value=v);run()};
-  pfClr.onclick=()=>{stocks.forEach(s=>{q("s",s.symbol).checked=false;q("w",s.symbol).value=""});run()};
-  [pfAmt,pfYrs,pfReb].forEach(x=>x.addEventListener("input",run));
-  run();
-}
-const IDX=[["^IXIC","Nasdaq"],["^GSPC","S&P 500"],["^DJI","Dow Jones"],["^SOX","SOX ชิป"],["BZ=F","น้ำมัน Brent"],["^TNX","พันธบัตร 10 ปี"],["^VIX","VIX"],["GC=F","ทองคำ"]];
-const IU={"BZ=F":"USD","^TNX":"%","GC=F":"USD/oz"};
-const TONE={"^VIX":-1,"^TNX":-1,"BZ=F":-1,"GC=F":0};
-const tone=(s,x)=>{const k=TONE[s]===undefined?1:TONE[s];return k===0?"flat":(x>=0?1:-1)*k>0?"up":"down"};
-function area(v){
-  const w=120,h=36,min=Math.min(...v),max=Math.max(...v),r=max-min||1;
-  const p=v.map((y,i)=>[(i/(v.length-1)*w).toFixed(1),(h-3-(y-min)/r*(h-6)).toFixed(1)]);
-  return `<svg class="sp" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><path d="M${p.map(q=>q.join(",")).join(" L")} L${w},${h} L0,${h} Z" fill="currentColor" fill-opacity=".12"/><polyline points="${p.map(q=>q.join(",")).join(" ")}" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
-}
-function idxCards(data,n){
-  const all=Object.fromEntries(data.groups.flatMap(g=>g.items.map(i=>[i.symbol,i])));
-  return IDX.filter(([s])=>all[s]).map(([s,nm])=>{
-    const d=all[s],v=d.series.slice(-n),per=(v[v.length-1]/v[0]-1)*100,t=tone(s,d.change),up=d.change>=0;
-    const amt=d.unit==="pt"?fmt(Math.abs(d.change))+" จุด":fmt(Math.abs(d.pct))+"%";
-    return `<div class="ic ${t}"><div class="t"><b>${esc(nm)}</b>${IU[s]?`<span>${IU[s]}</span>`:""}</div><div class="p">${fmt(d.price)}</div><div class="c"><span class="bd ${t}">${up?"▲":"▼"} ${amt}</span><small>วันนี้</small></div>${area(v)}<div class="pr">${n<40?"1 เดือน":"3 เดือน"} <b class="${tone(s,per)}">${pcs(per,1)}</b></div></div>`;
-  }).join("");
-}
-function overviewSection(data){
-  return `<section id="overview"><div class="hd"><h2>ดัชนีและปัจจัยตลาด</h2><div class="seg" role="group" aria-label="ช่วงของกราฟ"><button type="button" data-n="22" aria-pressed="true">1 เดือน</button><button type="button" data-n="63" aria-pressed="false">3 เดือน</button></div></div><div class="idx" id="idxGrid">${idxCards(data,22)}</div><p class="note" style="margin:10px 0 0">ลูกศรบอกทิศทางราคาจริง ส่วนสีของ VIX ผลตอบแทน 10 ปี และน้ำมันบอกผลต่อตลาดหุ้นโดยทั่วไป (ขึ้นเป็นสีแดง) ทองคำใช้สีกลาง</p></section>`;
-}
-function bindOverview(data){
-  const grid=document.getElementById("idxGrid");
-  if(!grid)return;
-  document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{
-    document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",x===b));
-    grid.innerHTML=idxCards(data,parseInt(b.dataset.n));
-  });
-}
-function bindStrip(){
-  const s=document.querySelector(".strip");
-  if(!s)return;
-  document.querySelectorAll(".nav2 button").forEach(b=>b.onclick=()=>s.scrollBy({left:parseInt(b.dataset.d)*280,behavior:window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}));
-}
-function newsStrip(data){
-  const l=(data.news||[]).filter(okUrl).slice(0,10);
-  if(!l.length)return"";
-  return `<section id="newsstrip"><div class="hd"><h2>ข่าวเด่น</h2><div class="hdr"><a href="#news">ดูตารางข่าวทั้งหมด →</a><div class="nav2"><button type="button" data-d="-1" aria-label="เลื่อนข่าวไปทางซ้าย">‹</button><button type="button" data-d="1" aria-label="เลื่อนข่าวไปทางขวา">›</button></div></div></div><div class="strip" tabindex="0" aria-label="ข่าวล่าสุด เลื่อนดูด้านข้าง">${l.map(n=>`<a class="nc" href="${esc(n.url)}" target="_blank" rel="noopener noreferrer"><small>${esc(n.source)} • ${ago(n.time)} <span class="chip ${sc(n.sent)}">${sl(n.sent)}</span></small><span class="tt">${esc(n.title_th||n.title)}</span>${n.reason?`<span class="why">${esc(n.reason)}</span>`:(n.symbols||[]).length?`<span class="why">${n.symbols.map(esc).join(" • ")}</span>`:""}</a>`).join("")}</div></section>`;
-}
-function stocksSection(g){
-  if(!g)return"";
-  const cs=new Set(PB.trade.tags),chips=g.items.filter(i=>cs.has(i.symbol)),others=g.items.filter(i=>!cs.has(i.symbol));
-  const hdr=t=>`<tr class="gh"><td colspan="8">${t}</td></tr>`;
-  const body=(chips.length?hdr("ชิปและเซมิคอนดักเตอร์")+chips.map(stockRow).join(""):"")+(others.length?hdr("บริษัทเทคและธีมอื่นๆ")+others.map(stockRow).join(""):"");
-  return `<section id="stocks"><h2>หุ้นรายตัว</h2><p class="note">กดที่แถวเพื่อดูตัวชี้วัด มูลค่า และข่าวรายตัว หรือพิมพ์ชื่อในช่องค้นหาด้านบน ซึ่งค้นหาหุ้นเพิ่มเติมที่ไม่แสดงในตารางได้ด้วย</p><div class="box scroll"><table><thead><tr><th>หุ้น</th><th>30 วัน</th><th>ราคา</th><th>วันนี้</th><th title="Relative Strength Index 14 วัน">RSI</th><th>ช่วง 52 สัปดาห์</th><th title="คะแนนความรู้สึกของข่าวรายตัว (บวก/ลบ)">ข่าว</th><th>สัญญาณ</th></tr></thead><tbody>${body}</tbody></table></div></section>`;
-}
-function bindSearch(stocks,openStock){
-  const q=document.getElementById("q"),box=document.getElementById("qres");
-  if(!q)return;
-  q.placeholder="ค้นหาหุ้น ("+stocks.length+" ตัว)"+(window.matchMedia&&matchMedia("(hover:none)").matches?"":" · กด /");
-  let cur=-1;
-  const items=()=>[...box.querySelectorAll("[data-o]")];
-  const mark=()=>items().forEach((b,i)=>b.classList.toggle("on",i===cur));
-  const hide=()=>{box.hidden=true;box.innerHTML="";cur=-1};
-  const pick=sym=>{openStock(sym);q.value="";hide()};
-  q.addEventListener("input",()=>{
-    const t=q.value.trim().toLowerCase();
-    cur=-1;
-    if(!t){hide();return}
-    const r=stocks.filter(s=>s.symbol.toLowerCase().includes(t)||s.name.toLowerCase().includes(t)).slice(0,8);
-    box.innerHTML=r.length?r.map(s=>`<button type="button" data-o="${esc(s.symbol)}"><span>${esc(s.name)} <span class="sym">${esc(s.symbol)}</span></span><span class="${cls(s.pct)}">${pcs(s.pct,2)}</span></button>`).join(""):`<div class="flat">ไม่พบหุ้นที่ค้นหา</div>`;
-    box.hidden=false;
-  });
-  q.addEventListener("keydown",e=>{
-    const l=items();
-    if(e.key==="ArrowDown"&&l.length){e.preventDefault();cur=(cur+1)%l.length;mark()}
-    else if(e.key==="ArrowUp"&&l.length){e.preventDefault();cur=(cur<=0?l.length:cur)-1;mark()}
-    else if(e.key==="Escape"){q.value="";hide();q.blur()}
-    else if(e.key==="Enter"){const b=l[cur>=0?cur:0];if(b)pick(b.dataset.o)}
-  });
-  box.addEventListener("click",e=>{const b=e.target.closest("[data-o]");if(b)pick(b.dataset.o)});
-  document.addEventListener("click",e=>{if(!e.target.closest(".srch"))hide()});
-  document.addEventListener("keydown",e=>{
-    const tag=(document.activeElement||{}).tagName||"";
-    if((e.key==="k"&&(e.ctrlKey||e.metaKey))||(e.key==="/"&&!/INPUT|TEXTAREA|SELECT/.test(tag))){e.preventDefault();q.focus();q.select()}
-  });
-}
-function applyQuotes(data,qj){
-  const base=new Date(data.updated).getTime();let n=0,mx=0;
-  data.groups.forEach(g=>g.items.forEach(i=>{
-    const q=qj.q[i.symbol];
-    if(!q||q.price==null)return;
-    const t=new Date(q.t).getTime();
-    if(!(t>base))return;
-    if(i.price!==q.price||i.change!==q.change){i.price=q.price;i.change=q.change;i.pct=q.pct;n++}
-    mx=Math.max(mx,t);
-  }));
-  if(mx)data.liveAt=mx;
-  return n>0;
-}
-function repaintCards(data){
-  const g=document.getElementById("idxGrid");
-  if(!g)return;
-  const b=document.querySelector('.seg button[aria-pressed="true"]');
-  g.innerHTML=idxCards(data,b?parseInt(b.dataset.n):22);
-}
-function repaintRows(data){
-  const m=Object.fromEntries(data.groups.flatMap(g=>g.items.map(i=>[i.symbol,i])));
-  document.querySelectorAll("#stocks tr[data-sym], #zones .zc[data-sym]").forEach(tr=>{
-    const d=m[tr.dataset.sym];
-    if(!d)return;
-    const p=tr.querySelector("td.price");
-    if(p)p.textContent=fmt(d.price);
-    const zp=tr.querySelector(".zp");if(zp)zp.textContent=fmt(d.price);
-    if(tr.closest("#stocks")){const c=tr.children;c[1].className=cls(d.change);c[3].className=cls(d.pct);c[3].textContent=sg(d.pct)+fmt(d.pct)+"%"}
-  });
-}
-function startQuotes(data,onApply){
-  let last="";
-  const pull=()=>{
-    if(document.hidden)return;
-    fetch("quotes.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():null).then(qj=>{
-      if(!qj||!qj.q||qj.updated===last)return;
-      last=qj.updated;
-      if(applyQuotes(data,qj))onApply(qj);
-    }).catch(()=>{});
-  };
-  pull();setInterval(pull,300000);
-  document.addEventListener("visibilitychange",()=>{if(!document.hidden)pull()});
-}
-const WL_KEY="wl.v1",WL_COL=["#38bdf8","#34d399","#fbbf24","#f472b6","#a78bfa","#fb923c"];
-function wlDefault(){return{lists:[{id:"l1",name:"รายการโปรด",color:WL_COL[0],syms:[]}],active:"l1"}}
-function wlLoad(){try{const s=JSON.parse(localStorage.getItem(WL_KEY));if(s&&Array.isArray(s.lists)&&s.lists.length)return s}catch(e){}return wlDefault()}
-function wlSave(s){try{localStorage.setItem(WL_KEY,JSON.stringify(s))}catch(e){}}
-function wlHas(sym){const s=wlLoad(),l=s.lists.find(x=>x.id===s.active)||s.lists[0];return !!(l&&(l.syms||[]).includes(sym))}
-function bindWatchlist(data,searchable,openStock){
-  const view=document.getElementById("wlView");
-  if(!view)return;
-  const side=document.getElementById("wlSide"),col=document.getElementById("wlMainCol"),by=Object.fromEntries(searchable.map(s=>[s.symbol,s]));
-  let S=wlLoad(),adding=false;
-  S.lists=S.lists.map(l=>({id:String(l.id),name:String(l.name||"รายการ").slice(0,40),color:WL_COL.includes(l.color)?l.color:WL_COL[0],syms:(l.syms||[]).filter(x=>by[x])}));
-  if(!S.lists.some(l=>l.id===S.active))S.active=S.lists[0].id;
-  const cur=()=>S.lists.find(l=>l.id===S.active),save=()=>wlSave(S);
-  const render=()=>{
-    const l=cur(),items=l.syms.map(x=>by[x]).filter(Boolean),n=items.length;
-    const avg=n?items.reduce((a,d)=>a+d.pct,0)/n:null,up=items.filter(d=>d.pct>0).length,dn=items.filter(d=>d.pct<0).length;
-    const ab=items.filter(d=>d.sma50!=null&&d.price>d.sma50).length,zn=items.filter(d=>d.zones&&(d.zones.status==="in"||d.zones.status==="near")).length;
-    document.getElementById("wlLive").textContent="ข้อมูลสด | "+new Date(data.liveAt||data.updated).toLocaleString("th-TH",{timeZone:"Asia/Bangkok",day:"numeric",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"});
-    side.innerHTML=`<div class="t"><span>รายการของฉัน</span><span>${S.lists.length} รายการ</span></div>`+S.lists.map(x=>`<div class="wli ${x.id===S.active?"on":""}" role="button" tabindex="0" data-id="${esc(x.id)}"><span class="dot" style="background:${x.color}"></span><span class="nm">${esc(x.name)}</span><span class="ct">${x.syms.length}</span><button type="button" class="ic3" data-ren="${esc(x.id)}" aria-label="เปลี่ยนชื่อรายการ">✎</button><button type="button" class="ic3" data-del="${esc(x.id)}" aria-label="ลบรายการ">🗑</button></div>`).join("")+(adding?`<input class="wln" id="wlNew" maxlength="40" placeholder="ชื่อรายการ แล้วกด Enter" aria-label="ชื่อรายการใหม่">`:`<button type="button" class="wlnew" id="wlAdd">+ สร้างรายการใหม่</button>`);
-    const tile=(k,v,c="")=>`<div><small>${k}</small><strong class="${c}">${v}</strong></div>`;
-    col.innerHTML=`<div class="wst">${tile("หุ้นในรายการ",n)}${tile("เฉลี่ยวันนี้",avg==null?"–":pcs(avg,2),avg==null?"flat":sc(avg))}${tile("บวก / ลบ",n?up+" / "+dn:"–")}${tile("เหนือ SMA50",n?ab+" / "+n:"–")}${tile("ใน-ใกล้โซนรับ",n?zn+" / "+n:"–","cool")}</div>
-    <div class="wla"><input id="wlIn" list="wlOpts" placeholder="เพิ่มหุ้นเข้าลิสต์ เช่น TSLA หรือ Nvidia" aria-label="เพิ่มหุ้นเข้ารายการ" autocomplete="off"><datalist id="wlOpts">${searchable.filter(s=>!l.syms.includes(s.symbol)).map(s=>`<option value="${esc(s.symbol)}">${esc(s.name)}</option>`).join("")}</datalist></div>
-    <div class="wlt">${n?`<table><thead><tr><th>หุ้น</th><th>30 วัน</th><th style="text-align:right">ราคา</th><th style="text-align:right">วันนี้</th><th>สัญญาณ</th><th></th></tr></thead><tbody>${items.map(d=>`<tr class="r" data-sym="${esc(d.symbol)}" tabindex="0"><td><span class="tk">${esc(d.symbol)}</span></td><td class="${cls(d.change)}">${spark(d.series.slice(-30))}</td><td class="price" style="text-align:right">${fmt(d.price)}</td><td class="${cls(d.pct)}" style="text-align:right">${pcs(d.pct,2)}</td><td><span class="chip ${lab[d.label]||"flat"}">${esc(d.label||"–")}</span></td><td><button type="button" class="x" data-rm="${esc(d.symbol)}" aria-label="เอา ${esc(d.symbol)} ออกจากรายการ">✕</button></td></tr>`).join("")}</tbody></table>`:`<div class="wle">ยังไม่มีหุ้นในรายการนี้ พิมพ์ชื่อหรือรหัสในช่องด้านบนเพื่อเพิ่ม</div>`}</div>
-    <p class="note" style="margin:10px 0 0">ตัวเลขเป็นราคาล่าสุดจากฟีดเดียวกับแดชบอร์ดหลัก รายการเก็บไว้ในเบราว์เซอร์เครื่องนี้ ถ้าเข้าสู่ระบบจะซิงก์ข้ามอุปกรณ์ให้</p>`;
-  };
-  const addStock=(v,loose)=>{
-    v=v.trim().toLowerCase();
-    if(!v)return;
-    const m=searchable.find(s=>s.symbol.toLowerCase()===v)||searchable.find(s=>s.name.toLowerCase()===v)||(loose?searchable.find(s=>s.symbol.toLowerCase().startsWith(v)||s.name.toLowerCase().includes(v)):null);
-    if(!m)return;
-    const l=cur();
-    if(!l.syms.includes(m.symbol)){l.syms.push(m.symbol);save()}
-    render();
-    const i=document.getElementById("wlIn");if(i)i.focus();
-  };
-  side.addEventListener("click",e=>{
-    const rn=e.target.closest("[data-ren]"),dl=e.target.closest("[data-del]"),it=e.target.closest("[data-id]");
-    if(e.target.closest("#wlAdd")){adding=true;render();document.getElementById("wlNew").focus();return}
-    if(rn){const l=S.lists.find(x=>x.id===rn.dataset.ren),nm=prompt("ชื่อรายการ",l.name);if(nm&&nm.trim()){l.name=nm.trim().slice(0,40);save();render()}return}
-    if(dl){const l=S.lists.find(x=>x.id===dl.dataset.del);if(l&&confirm("ลบรายการ \""+l.name+"\" ?")){S.lists=S.lists.filter(x=>x!==l);if(!S.lists.length)S.lists=wlDefault().lists;if(!S.lists.some(x=>x.id===S.active))S.active=S.lists[0].id;save();render()}return}
-    if(it){S.active=it.dataset.id;save();render()}
-  });
-  side.addEventListener("keydown",e=>{
-    if(e.target.id==="wlNew"){
-      if(e.key==="Enter"){const nm=e.target.value.trim();if(nm){const id="l"+Date.now();S.lists.push({id,name:nm.slice(0,40),color:WL_COL[S.lists.length%WL_COL.length],syms:[]});S.active=id}adding=false;save();render()}
-      else if(e.key==="Escape"){adding=false;render()}
-    }else if((e.key==="Enter"||e.key===" ")&&e.target.dataset&&e.target.dataset.id){e.preventDefault();S.active=e.target.dataset.id;save();render()}
-  });
-  col.addEventListener("click",e=>{
-    const rm=e.target.closest("[data-rm]");
-    if(rm){const l=cur();l.syms=l.syms.filter(x=>x!==rm.dataset.rm);save();render();return}
-    const tr=e.target.closest("tr.r");if(tr)openStock(tr.dataset.sym);
-  });
-  col.addEventListener("keydown",e=>{
-    if(e.target.id==="wlIn"&&e.key==="Enter"){addStock(e.target.value,true);return}
-    const tr=e.target.closest&&e.target.closest("tr.r");
-    if(tr&&e.target===tr&&(e.key==="Enter"||e.key===" ")){e.preventDefault();openStock(tr.dataset.sym)}
-  });
-  col.addEventListener("input",e=>{if(e.target.id==="wlIn")addStock(e.target.value,false)});
-  document.getElementById("dlgBody").addEventListener("click",e=>{
-    const b=e.target.closest("[data-star]");
-    if(!b)return;
-    const sym=b.dataset.star,l=cur();
-    l.syms=l.syms.includes(sym)?l.syms.filter(x=>x!==sym):[...l.syms,sym];
-    save();b.textContent=l.syms.includes(sym)?"★ ในรายการ":"☆ เพิ่มในรายการ";render();
-  });
-  const route=()=>{const on=location.hash==="#/watchlists";document.body.classList.toggle("wlmode",on);if(on){render();window.scrollTo(0,0)}};
-  window.addEventListener("hashchange",route);
-  window.wlRender=()=>{if(document.body.classList.contains("wlmode"))render()};
-  route();
-}
-const CATS=["ทั้งหมด","ตลาดและเศรษฐกิจ","เทคโนโลยี","ธนาคารและนักวิเคราะห์","ธนาคารกลาง","หุ้นรายตัว"];
-const okUrl=n=>/^https?:\/\//.test(n.url);
-function newsList(list,tags=true){
-  return list.filter(okUrl).map(n=>`<a class="news" href="${esc(n.url)}" target="_blank" rel="noopener noreferrer"><small>${esc(n.source)} ${ago(n.time)} <span class="chip ${sc(n.sent)}">${sl(n.sent)}</span></small>${tags?(n.symbols||[]).map(s=>`<span class="tag">${esc(s)}</span>`).join(""):""}${esc(n.title_th||n.title)}${n.title_th?`<small>${esc(n.title)}</small>`:""}</a>`).join("")||`<div class="msg flat">ยังไม่มีข่าวในข้อมูลชุดนี้</div>`;
-}
-function newsRows(list){
-  return list.filter(okUrl).map(n=>`<tr><td class="tm">${ago(n.time)}</td><td><a href="${esc(n.url)}" target="_blank" rel="noopener noreferrer">${esc(n.title_th||n.title)}</a>${n.title_th?`<small>${esc(n.title)}</small>`:""}${n.reason?`<small>${esc(n.reason)}</small>`:""}</td><td>${esc(n.source)}<small>${esc(n.category)}</small></td><td>${(n.symbols||[]).map(s=>`<span class="tag">${esc(s)}</span>`).join("")||"–"}</td><td class="${sc(n.sent)}"><span class="chip">${sl(n.sent)}</span></td></tr>`).join("");
-}
-function newsSection(data){
-  const list=data.news||[],cats=CATS.filter(c=>c==="ทั้งหมด"||list.some(n=>n.category===c));
-  return `<section id="news"><h2>ตารางข่าว</h2><p class="note">รวมข่าวจากสื่อการเงิน ธนาคารและนักวิเคราะห์ และธนาคารกลาง (ต้นฉบับเป็นภาษาอังกฤษ)</p><div class="tabs" role="tablist">${cats.map((c,i)=>`<button role="tab" aria-selected="${i===0}" data-cat="${esc(c)}">${esc(c)}</button>`).join("")}</div><div class="box scroll"><table class="nt"><thead><tr><th>เวลา</th><th>ข่าว</th><th>แหล่งที่มา</th><th>หุ้น</th><th>ความรู้สึก</th></tr></thead><tbody id="ntb"></tbody></table></div></section>`;
-}
-function bindNews(list){
-  const draw=c=>{ntb.innerHTML=newsRows(c==="ทั้งหมด"?list:list.filter(n=>n.category===c))||`<tr><td colspan="5" class="flat">ไม่มีข่าวในหมวดนี้</td></tr>`};
-  draw("ทั้งหมด");
-  document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tabs button").forEach(x=>x.setAttribute("aria-selected",x===b));draw(b.dataset.cat)});
-}
-function analysisHTML(data){
-  const a=data.analysis||{},c=a.counts||{pos:0,neu:0,neg:0},t=(c.pos+c.neu+c.neg)||1,w=n=>(n/t*100).toFixed(1),ai=a.method==="claude";
-  return `<section id="analysis"><h2>วิเคราะห์ข่าว</h2><p class="note">${ai?"สรุปจากพาดหัวข่าวโดย Claude (ไม่ได้อ่านเนื้อหาเต็ม) ไม่ใช่คำแนะนำลงทุน":"นับคำสำคัญในพาดหัวแบบง่าย ตั้ง ANTHROPIC_API_KEY ใน GitHub Secrets เพื่อให้ Claude สรุปและแปลเป็นภาษาไทย"}</p><div class="box an">
-  <div><b class="up">บวก ${c.pos}</b> &nbsp;<span class="flat">กลาง ${c.neu}</span> &nbsp;<b class="down">ลบ ${c.neg}</b></div>
-  <div class="gauge" role="img" aria-label="สัดส่วนข่าวบวก กลาง ลบ"><i class="g-up" style="width:${w(c.pos)}%"></i><i class="g-flat" style="width:${w(c.neu)}%"></i><i class="g-down" style="width:${w(c.neg)}%"></i></div>
-  ${a.summary?`<p>${esc(a.summary)}</p>`:""}
-  ${(a.themes||[]).length?`<h3>ประเด็นหลัก</h3><ul>${a.themes.map(x=>`<li><b>${esc(x.title)}</b> ${esc(x.detail)}</li>`).join("")}</ul>`:""}
-  ${(a.watch||[]).length?`<h3>สิ่งที่ต้องจับตา</h3><ul>${a.watch.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}
-  ${(a.topics||[]).length?`<h3>หัวข้อที่ถูกพูดถึงบ่อย</h3><div class="chips">${a.topics.map(x=>`<span>${esc(x.name)} ${x.count}</span>`).join("")}</div>`:""}
-  ${Object.keys(a.by_symbol||{}).length?`<h3>ความรู้สึกข่าวรายหุ้น</h3><div class="chips">${Object.entries(a.by_symbol).map(([s,v])=>`<span class="${sc(v)}">${esc(s)} ${v>0?"+":""}${v}</span>`).join("")}</div>`:""}
-  </div></section>`;
-}
-function priceChart(d){
-  const v=d.series;if(!v||v.length<2)return"";
-  const W=780,H=300,T=14,B=14,price=d.price,avg=d.target,lo=d.targetLow,hi=d.targetHigh;
-  const hasF=avg!=null||lo!=null||hi!=null,PW=hasF?600:W,X1=W-100,TX=W-96;
-  const fv=hasF?[price,avg,lo,hi].filter(n=>n!=null&&isFinite(n)):[];
-  const min=Math.min(...v,...fv),max=Math.max(...v,...fv),r=max-min||1,y=n=>T+(max-n)/r*(H-T-B);
-  const pts=v.map((n,i)=>(i/(v.length-1)*PW).toFixed(1)+","+y(n).toFixed(1)).join(" ");
-  const grid=[0,1,2,3].map(k=>{const yy=(T+k*(H-T-B)/3).toFixed(1);return `<line x1="0" x2="${PW}" y1="${yy}" y2="${yy}" stroke="currentColor" opacity=".07"/>`}).join("");
-  const bands=((d.zones||{}).list||[]).filter(z=>z.high>=min&&z.low<=max).map(z=>{const t=y(Math.min(z.high,max));return `<rect x="0" y="${t.toFixed(1)}" width="${PW}" height="${Math.max(2,y(Math.max(z.low,min))-t).toFixed(1)}" fill="#38bdf8" opacity=".14"/>`}).join("");
-  const ref=(val,c,t)=>val!=null&&val>=min&&val<=max?`<line x1="0" x2="${PW}" y1="${y(val).toFixed(1)}" y2="${y(val).toFixed(1)}" stroke="${c}" stroke-dasharray="4 4" opacity=".75"/><text x="6" y="${(y(val)-4).toFixed(1)}" fill="${c}" font-size="11">${t}</text>`:"";
-  const cy=y(price==null?v[v.length-1]:price);
-  let fun="";
-  if(hasF&&price!=null){
-    const col=n=>n>=price?"#22c55e":"#ef4444";
-    const poly=(val,c)=>val==null?"":`<polygon points="${PW},${cy.toFixed(1)} ${X1},${y(val).toFixed(1)} ${X1},${cy.toFixed(1)}" fill="${c}" opacity=".16"/><line x1="${PW}" y1="${cy.toFixed(1)}" x2="${X1}" y2="${y(val).toFixed(1)}" stroke="${c}" stroke-dasharray="2 3"/>`;
-    fun+=poly(hi,"#22c55e")+poly(lo,"#ef4444");
-    if(avg!=null)fun+=`<line x1="${PW}" y1="${cy.toFixed(1)}" x2="${X1}" y2="${y(avg).toFixed(1)}" stroke="${col(avg)}" stroke-width="1.6" stroke-dasharray="5 4"/>`;
-    fun+=`<line x1="${PW}" y1="${cy.toFixed(1)}" x2="${X1}" y2="${cy.toFixed(1)}" stroke="#60a5fa" stroke-width="1.4"/>`;
-    const tags=[[hi,"สูงสุด"],[avg,"เฉลี่ย"],[lo,"ต่ำสุด"],[price,"ปัจจุบัน"]].filter(t=>t[0]!=null).map(t=>({val:t[0],label:t[1],y:y(t[0]),c:t[1]==="ปัจจุบัน"?"#3b82f6":col(t[0])})).sort((p,q)=>p.y-q.y);
-    const th=34;
-    tags.forEach((t,i)=>{t.t=Math.max(t.y,th/2+2);if(i&&t.t-tags[i-1].t<th+2)t.t=tags[i-1].t+th+2});
-    for(let i=tags.length-1;i>=0;i--){const lim=i===tags.length-1?H-th/2-2:tags[i+1].t-th-2;if(tags[i].t>lim)tags[i].t=lim}
-    fun+=tags.map(t=>{const pc=t.label==="ปัจจุบัน"?"":" "+sg(t.val-price)+fmt((t.val/price-1)*100,1)+"%";return `<line x1="${X1}" y1="${t.y.toFixed(1)}" x2="${TX}" y2="${t.t.toFixed(1)}" stroke="${t.c}" opacity=".5"/><rect x="${TX}" y="${(t.t-th/2).toFixed(1)}" width="94" height="${th}" rx="6" fill="${t.c}"/><text x="${TX+6}" y="${(t.t-3).toFixed(1)}" fill="#fff" font-size="11">${t.label}${pc}</text><text x="${TX+6}" y="${(t.t+11).toFixed(1)}" fill="#fff" font-size="12" font-weight="700">${fmt(t.val)}</text>`}).join("");
-  }
-  return `<svg class="pc" viewBox="0 0 ${W} ${H}" role="img" aria-label="กราฟราคา 90 วัน${hasF?" พร้อมช่วงราคาเป้าหมายของนักวิเคราะห์":""}">${grid}${bands}${ref(d.sma50,"#38bdf8","SMA50")}${ref(d.sma200,"#d9a441","SMA200")}<polyline points="${pts}" fill="none" stroke="#60a5fa" stroke-width="2.2" stroke-linejoin="round"/>${fun}<circle cx="${PW}" cy="${cy.toFixed(1)}" r="4" fill="#60a5fa"/></svg>`;
-}
-function qLabel(date){
-  const m=/^(\d{4})-(\d{2})/.exec(String(date||""));
-  if(!m)return String(date||"").slice(2,7);
-  return "Q"+Math.ceil(+m[2]/3)+"'"+m[1].slice(2);
-}
-function qChart(f){
-  const qs=((f&&f.quarters)||[]).filter(q=>q.rev!=null).slice(0,8).reverse();
-  if(qs.length<2)return"";
-  const cur=f.currency?" "+f.currency:"";
-  const W=640,H=220,pl=44,pr=44,pt=14,pb=30,iw=W-pl-pr,ih=H-pt-pb;
-  const mx=Math.max(...qs.map(q=>Math.max(q.rev||0,q.ni||0)))||1;
-  const nms=qs.map(q=>q.nm).filter(n=>n!=null),nmin=nms.length?Math.min(...nms):0,nmax=nms.length?Math.max(...nms):1,nr=(nmax-nmin)||1;
-  const gw=iw/qs.length,bw=Math.min(22,gw*.32),yv=n=>pt+ih-Math.max(n||0,0)/mx*ih,ym=n=>pt+ih-(n-nmin)/nr*ih*.9-ih*.05;
-  const tip=(q,line)=>esc(qLabel(q.date)+" (งวดสิ้นสุด "+q.date+")|"+line);
-  const bars=qs.map((q,i)=>{const cx=pl+gw*(i+.5);
-    return `<rect x="${(cx-bw-1).toFixed(1)}" y="${yv(q.rev).toFixed(1)}" width="${bw.toFixed(1)}" height="${(pt+ih-yv(q.rev)).toFixed(1)}" rx="2" fill="#3b82f6" data-qt="${tip(q,"รายได้ "+fmt(q.rev)+" พันล้าน"+cur+(q.rev_yoy==null?"":" (YoY "+sg(q.rev_yoy)+fmt(q.rev_yoy,1)+"%)"))}"/>`
-     +(q.ni==null?"":`<rect x="${(cx+1).toFixed(1)}" y="${yv(q.ni).toFixed(1)}" width="${bw.toFixed(1)}" height="${(pt+ih-yv(q.ni)).toFixed(1)}" rx="2" fill="#22d3ee" data-qt="${tip(q,"กำไรสุทธิ "+fmt(q.ni)+" พันล้าน"+cur)}"/>`)
-     +`<text x="${cx.toFixed(1)}" y="${H-12}" text-anchor="middle" font-size="11">${esc(qLabel(q.date))}</text>`}).join("");
-  const dots=qs.map((q,i)=>q.nm==null?null:{x:pl+gw*(i+.5),y:ym(q.nm),q}).filter(Boolean);
-  const line=dots.length>1?`<polyline points="${dots.map(d=>d.x.toFixed(1)+","+d.y.toFixed(1)).join(" ")}" fill="none" stroke="#f59e0b" stroke-width="2"/>`:"";
-  const pts=dots.map(d=>`<circle cx="${d.x.toFixed(1)}" cy="${d.y.toFixed(1)}" r="3.5" fill="#f59e0b"/><circle class="qhit" cx="${d.x.toFixed(1)}" cy="${d.y.toFixed(1)}" r="12" fill="transparent" data-qt="${tip(d.q,"อัตรากำไรสุทธิ "+fmt(d.q.nm,1)+"%")}"/>`).join("");
-  return `<div class="qc"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="รายได้ กำไรสุทธิ และอัตรากำไรสุทธิรายไตรมาส เลื่อนเมาส์ไปที่แท่งหรือจุดเพื่อดูตัวเลข"><line x1="${pl}" x2="${W-pr}" y1="${pt+ih}" y2="${pt+ih}" stroke="currentColor" opacity=".2"/><text x="${pl-6}" y="${pt+8}" text-anchor="end" font-size="10">${fmt(mx,0)}</text><text x="${pl-6}" y="${pt+ih}" text-anchor="end" font-size="10">0</text>${nms.length?`<text x="${W-pr+6}" y="${pt+8}" font-size="10">${fmt(nmax,0)}%</text><text x="${W-pr+6}" y="${pt+ih}" font-size="10">${fmt(nmin,0)}%</text>`:""}${bars}${line}${pts}</svg><div class="chips"><span><i style="background:#3b82f6"></i>รายได้</span><span><i style="background:#22d3ee"></i>กำไรสุทธิ</span><span><i style="background:#f59e0b"></i>อัตรากำไรสุทธิ (%)</span><span>หน่วย: พันล้าน</span></div></div>`;
-}
-function sumCards(d){
-  const z=d.zones,s=z?(ZS[z.status]||ZS.far):null,f=d.fund,nz=z&&z.list&&z.list[0];
-  const up=d.target&&d.price?(d.target/d.price-1)*100:null;
-  const card=(k,v,c,sub)=>`<div class="sc3"><small>${k}</small><b class="${c||""}">${v}</b>${sub?`<span>${sub}</span>`:""}</div>`;
-  return card("สัญญาณเทคนิค",esc(d.label||"–"),lab[d.label]||"flat","คะแนน "+(d.score==null?"–":d.score))
-    +(z?card("โซนรับ",s[0],s[1],nz?`${fmt(nz.low)} – ${fmt(nz.high)}`:"ไม่พบแนวรับใกล้ราคา"):"")
-    +(f?card("พื้นฐานบริษัท",esc(f.quality||"–"),qc(f.quality),esc(f.valuation||"")):"")
-    +(d.rec||d.target?card("นักวิเคราะห์",rec[d.rec]||"–",up==null?"":cls(up),up==null?"":`เป้าเฉลี่ย ${sg(up)}${fmt(up,1)}%`):"");
-}
-function detail(d){
-  const up=d.target&&d.price?(d.target/d.price-1)*100:null,news=d.news||[],z=d.zones,nz=z&&z.list&&z.list[0];
-  const kv=(k,v,c="")=>`<div><small>${k}</small><span class="${c}">${v}</span></div>`;
-  const fN=d.targetLow!=null&&d.targetHigh!=null;
-  const note=hasT=>`ภาพรวมราคาปิด 90 วัน เส้นประฟ้าและเหลืองคือค่าเฉลี่ย 50 และ 200 วัน แถบฟ้าคือโซนรับ`+(hasT?` ส่วนกรวยด้านขวาคือช่วงราคาเป้าหมายของนักวิเคราะห์ เป็นความเห็นของนักวิเคราะห์ ไม่ใช่การพยากรณ์${d.nAnalysts?` (จาก ${d.nAnalysts} ราย)`:""}${fN?"":" และตอนนี้มีเฉพาะราคาเป้าหมายเฉลี่ย"}`:"");
-  const tabs=[["ov","ภาพรวม"],["te","เทคนิค"],...(d.fund?[["fu","พื้นฐาน"]]:[]),["nw","ข่าว"+(news.length?` (${news.length})`:"")]];
-  const ov=`<h4 style="margin-top:0">ผลตอบแทนและช่วงราคา</h4><div class="kv">${kv("1 เดือน",d.ret1m==null?"–":sg(d.ret1m)+fmt(d.ret1m)+"%",cls(d.ret1m))}${kv("3 เดือน",d.ret3m==null?"–":sg(d.ret3m)+fmt(d.ret3m)+"%",cls(d.ret3m))}${kv("สูงสุด 52 สัปดาห์",fmt(d.high52))}${kv("ต่ำสุด 52 สัปดาห์",fmt(d.low52))}</div>
-  <h4>มูลค่า</h4><div class="kv">${kv("P/E ย้อนหลัง",fmt(d.pe,1))}${kv("P/E คาดการณ์",fmt(d.fpe,1))}${kv("มูลค่าตลาด",d.mcap?big(d.mcap)+" USD":"–")}${kv("ราคาเป้าหมายเฉลี่ย",d.target?fmt(d.target)+(up==null?"":` (${sg(up)}${fmt(up,1)}%)`):"–")}${fN?kv("ช่วงเป้านักวิเคราะห์",fmt(d.targetLow)+" – "+fmt(d.targetHigh)):""}${kv("นักวิเคราะห์ส่วนใหญ่",rec[d.rec]||"–")}</div>
-  ${z?`<h4>โซนรับใกล้สุด</h4><p class="note" style="margin:0">${nz?`<b>${fmt(nz.low)} – ${fmt(nz.high)}</b> ${nz.dist_pct<=0?"ราคาอยู่ในโซนนี้":"ห่างจากราคา "+fmt(nz.dist_pct,1)+"%"} • ${esc((nz.labels||[]).join(" + "))}`:"ไม่พบแนวรับใกล้ราคาปัจจุบัน"} <button type="button" class="lnk" data-sdgo="te">ดูรายละเอียด</button></p>`:""}
-  <h4>ข่าวล่าสุด</h4><div class="box">${newsList(news.slice(0,3),false)}</div>${news.length>3?`<p class="note" style="margin:8px 0 0"><button type="button" class="lnk" data-sdgo="nw">ดูข่าวทั้งหมด ${news.length} รายการ</button></p>`:""}`;
-  const te=`<h4 style="margin-top:0">สรุปสัญญาณ: <span class="${lab[d.label]||"flat"}">${esc(d.label||"–")}</span> (คะแนน ${d.score==null?"–":d.score})</h4>
-  <ul class="sg">${(d.signals||[]).map(s=>`<li><b class="${s.score>0?"up":s.score<0?"down":"flat"}">${s.score>0?"+":s.score<0?"−":"•"}</b><span>${esc(s.name)}: ${esc(s.text)}</span></li>`).join("")}</ul>
-  <details class="sdx"><summary>แต่ละสัญญาณหมายถึงอะไร</summary><ul><li>ค่าเฉลี่ย 50 และ 200 วัน (SMA): ราคาอยู่เหนือเส้น มักถูกมองว่าแนวโน้มช่วงนั้นเป็นขาขึ้น อยู่ต่ำกว่ามักถูกมองว่าเป็นขาลง</li><li>MACD: วัดแรงส่งของราคา ถ้าต่ำกว่าเส้นสัญญาณ แปลว่าแรงขายนำอยู่</li><li>RSI: สูงกว่า 70 มักถูกมองว่าซื้อมากเกินไป ต่ำกว่า 30 ขายมากเกินไป</li><li>ทั้งหมดคำนวณจากราคาในอดีต ใช้ประกอบการตัดสินใจเท่านั้น</li></ul></details>
-  ${zoneBlock(d)}`;
-  const panes=[["ov",ov],["te",te],...(d.fund?[["fu",qChart(d.fund)+fundBlock(d)]]:[]),["nw",`<div class="box">${newsList(news,false)}</div>`]];
-  return `<div class="sd" tabindex="-1" autofocus><div class="dh"><div><h3>${esc(d.name)} <span class="sym">${esc(d.symbol)}</span></h3><div class="px ${cls(d.change)}"><b>${fmt(d.price)}</b> <span>(${chg(d)})</span></div></div><div class="dbt"><button type="button" data-alto title="ตั้งแจ้งเตือนราคาของหุ้นนี้">🔔 แจ้งเตือน</button><button type="button" class="starb" data-star="${esc(d.symbol)}" title="เพิ่มหรือเอาหุ้นนี้ออกจากรายการที่เลือกอยู่ในหน้า รายการของฉัน">${wlHas(d.symbol)?"★ ในรายการ":"☆ เพิ่มในรายการ"}</button><button type="button" onclick="dlg.close()">ปิด</button></div></div>
-  <div class="alwrap" hidden><!--ALSLOT--></div>
-  <div class="db"><div class="sdtop"><div class="sdch">${priceChart(d)}<p class="note" style="margin:6px 0 0">${note(d.target!=null||d.targetLow!=null||d.targetHigh!=null)}</p></div><div class="sds">${sumCards(d)}</div></div>
-  <div class="sdt" role="tablist">${tabs.map((t,i)=>`<button type="button" role="tab" aria-selected="${i===0}" class="${i===0?"on":""}" data-sdtab="${t[0]}">${t[1]}</button>`).join("")}</div>
-  ${panes.map((p,i)=>`<div class="sdp" data-sdpane="${p[0]}"${i?" hidden":""}>${p[1]}</div>`).join("")}</div></div>`;
-}
-document.addEventListener("click",e=>{
-  const t=e.target;if(!t.closest)return;
-  const go=t.closest("[data-sdtab],[data-sdgo]");
-  if(go){
-    const sd=go.closest(".sd");if(!sd)return;
-    const k=go.dataset.sdtab||go.dataset.sdgo;
-    sd.querySelectorAll("[data-sdtab]").forEach(b=>{const on=b.dataset.sdtab===k;b.classList.toggle("on",on);b.setAttribute("aria-selected",String(on))});
-    sd.querySelectorAll("[data-sdpane]").forEach(p=>{p.hidden=p.dataset.sdpane!==k});
-    return;
-  }
-  const al=t.closest("[data-alto]");
-  if(al){const w=al.closest(".sd")&&al.closest(".sd").querySelector(".alwrap");if(w)w.hidden=!w.hidden}
-});
-function qTipShow(el){
-  const c=el.closest(".qc");if(!c)return;
-  let tip=c.querySelector(".qtip");
-  if(!tip){tip=document.createElement("div");tip.className="qtip";c.appendChild(tip)}
-  const parts=(el.getAttribute("data-qt")||"").split("|");
-  tip.textContent="";
-  const b=document.createElement("b");b.textContent=parts[1]||"";tip.appendChild(b);
-  const s=document.createElement("span");s.textContent=parts[0]||"";tip.appendChild(s);
-  tip.hidden=false;
-  const r=el.getBoundingClientRect(),cr=c.getBoundingClientRect(),half=tip.offsetWidth/2;
-  const x=Math.min(Math.max(r.left+r.width/2-cr.left,half+4),cr.width-half-4);
-  tip.style.left=x+"px";tip.style.top=(r.top-cr.top)+"px";
-}
-document.addEventListener("mouseover",e=>{const t=e.target.closest&&e.target.closest("[data-qt]");if(t)qTipShow(t)});
-document.addEventListener("mouseout",e=>{const t=e.target.closest&&e.target.closest("[data-qt]");if(!t)return;const c=t.closest(".qc"),tip=c&&c.querySelector(".qtip");if(tip)tip.hidden=true});
-
-fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(data=>{
-  const all=data.groups.flatMap(g=>g.items),by=s=>all.find(i=>i.symbol===s)||{},stocks=(data.groups.find(g=>g.detail===true)||{items:[]}).items;
-  const paintTop=()=>{
-  const nq=by("^IXIC"),sox=by("^SOX"),vix=by("^VIX");
-  const t=nq.pct>=.3?"ตลาดเทคปรับขึ้น":nq.pct<=-.3?"ตลาดเทคปรับลง":"ตลาดเทคทรงตัว";
-  const c=sox.pct<=-1?" ชิปถูกขายหนัก":sox.pct>=1?" ชิปนำตลาด":"";
-  $h=document.getElementById("headline");$h.textContent=nq.pct==null?"Hunscope":t+c;
-  const dates=all.map(i=>i.date).sort(),upd=new Date(data.updated).toLocaleString("th-TH",{timeZone:"Asia/Bangkok",dateStyle:"medium",timeStyle:"short"});
-  document.getElementById("meta").textContent=data.liveAt?`ราคาระหว่างวัน ณ ${new Date(data.liveAt).toLocaleTimeString("th-TH",{timeZone:"Asia/Bangkok",hour:"2-digit",minute:"2-digit"})} น. (อาจล่าช้าราว 15 นาที) • ตัวชี้วัดและงบคำนวณจากข้อมูลปิดตลาด ${dates[dates.length-1]||"-"} (อัปเดต ${upd} เวลาไทย)`:`ราคาปิดล่าสุดของตลาดสหรัฐ ${dates[dates.length-1]||"-"} อัปเดตเมื่อ ${upd} (เวลาไทย)`;
-  const above=stocks.filter(s=>s.sma50!=null&&s.price>s.sma50).length,bull=stocks.filter(s=>s.label==="ขาขึ้น").length;
-  const nc=(data.analysis||{}).counts||{pos:0,neg:0};const SL={"Nasdaq":"#overview","เซมิคอนดักเตอร์":"#overview","VIX":"#overview","หุ้นเหนือ SMA50":"#stocks","สัญญาณขาขึ้น":"#stocks","ข่าวบวก / ลบ":"#analysis","ใกล้โซนรับ":"#zones"};const st=(k,v,c="")=>`<a class="pill" href="${SL[k]}"><small>${k}</small><strong class="${c}">${v}</strong></a>`;
-  document.getElementById("stats").innerHTML=st("Nasdaq",nq.pct==null?"–":sg(nq.pct)+fmt(nq.pct)+"%",cls(nq.pct))+st("เซมิคอนดักเตอร์",sox.pct==null?"–":sg(sox.pct)+fmt(sox.pct)+"%",cls(sox.pct))+st("VIX",fmt(vix.price,1),vix.price>25?"down":vix.price<16?"up":"")+st("หุ้นเหนือ SMA50",`${above}/${stocks.length}`)+st("สัญญาณขาขึ้น",`${bull}/${stocks.length}`)+st("ข่าวบวก / ลบ",`${nc.pos} / ${nc.neg}`)+st("ใกล้โซนรับ",`${stocks.filter(s=>s.zones&&(s.zones.status==="in"||s.zones.status==="near")).length}/${stocks.length}`)+bubbleStat(data);
-  };
-  paintTop();
-  document.getElementById("app").innerHTML=overviewSection(data)+newsStrip(data)+stocksSection(data.groups.find(g=>g.detail===true))+zonesSection(stocks)+fundSection(stocks)+macroSection(data)+bubbleSection(data)+analysisHTML(data)+newsSection(data)+portfolioSection(data);
-  bindNews(data.news||[]);
-  bindMacro(data);
-  bindOverview(data);
-  bindStrip();
-  bindPortfolio(data);
-  const searchable=[...stocks,...data.groups.filter(g=>g.detail==="search").flatMap(g=>g.items)];
-  const openStock=sym=>{const d=searchable.find(s=>s.symbol===sym);if(d){dlgBody.innerHTML=detail(d);dlg.showModal()}};
-  const open=el=>openStock(el.closest("[data-sym]")?.dataset.sym);
-  bindSearch(searchable,openStock);
-  bindPfs(data,stocks);
-  bindWatchlist(data,searchable,openStock);
-  document.querySelectorAll("tr[data-sym],.zc[data-sym]").forEach(tr=>{tr.onclick=()=>open(tr);tr.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open(tr)}}});
-  dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
-  startQuotes(data,()=>{paintTop();repaintCards(data);repaintRows(data);if(window.wlRender)window.wlRender()});
-}).catch(()=>{
-  document.getElementById("headline").textContent="ยังไม่มีข้อมูล";
-  document.getElementById("stats").innerHTML="";
-  document.getElementById("app").innerHTML=`<section><div class="box msg">ยังโหลด data.json ไม่ได้ รัน <code>python fetch_data.py</code> เพื่อสร้างไฟล์ แล้วเปิดหน้านี้ผ่านเซิร์ฟเวอร์ เช่น <code>python -m http.server</code> (เปิดไฟล์ตรงๆ เบราว์เซอร์จะบล็อกการอ่านไฟล์)</div></section>`;
-});
-// ---- รีเฟรชอัตโนมัติ: ตรวจ data.json ทุก 5 นาที ถ้ามีข้อมูลรอบใหม่จะโหลดหน้าใหม่ให้ (ลบบล็อกนี้ได้ถ้าไม่ต้องการ)
-(function(){
-  let last=null;
-  const check=()=>fetch("data.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():null).then(d=>{
-    if(!d||!d.updated)return;
-    if(last===null)last=d.updated;else if(d.updated!==last)location.reload();
-  }).catch(()=>{});
-  check();setInterval(check,300000);
-})();
-</script>
-<script>
-/* ===== แจ้งเตือนราคา: ตรวจเมื่อเปิดหน้าเว็บค้างไว้ (ราคาอัปเดตราว 10 นาทีช่วงตลาดเปิด) =====
-   เก็บใน localStorage คีย์ al.v1 และซิงก์กับบัญชีถ้าล็อกอินไว้ ไม่ใช่การแจ้งเตือนแบบพุชเมื่อปิดแท็บ */
-(function(){
-  const KEY="al.v1",MAX=100;
-  const $=id=>document.getElementById(id);
-  const E=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-  const F=(n,d=2)=>n==null?"–":Number(n).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
-  let DATA=null;
-  const load=()=>{try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&Array.isArray(s.rules))return s}catch(e){}return{rules:[]}};
-  const save=s=>{try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){}};
-  const items=()=>{const m={};if(DATA)DATA.groups.forEach(g=>g.items.forEach(i=>{m[i.symbol]=i}));return m};
-  const zoneHigh=it=>{const z=it&&it.zones&&it.zones.list&&it.zones.list[0];return z?z.high:null};
-  const cond=(r,it)=>{
-    if(!it||it.price==null)return false;
-    if(r.type==="below")return it.price<=r.level;
-    if(r.type==="above")return it.price>=r.level;
-    if(r.type==="zone"){const h=zoneHigh(it);return h!=null&&it.price<=h}
-    return false;
-  };
-  const label=r=>r.type==="zone"?"ราคาเข้าโซนรับ":(r.type==="below"?"ราคาลงมาถึง ":"ราคาขึ้นไปถึง ")+F(r.level);
-  const when=iso=>new Date(iso).toLocaleString("th-TH",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"});
-
-  function row(r,withSym){
-    const it=items()[r.sym]||{};
-    const st=r.fired?'<span class="alst on">เตือนแล้ว '+E(when(r.fired))+'</span>':'<span class="alst">รออยู่</span>';
-    return '<li><div><b>'+(withSym?E(r.sym)+' ':'')+E(label(r))+'</b><small>'+E(it.name||'')+' ราคาล่าสุด '+F(it.price)+'</small></div>'+st
-      +(r.fired?'<button type="button" data-alre="'+E(r.id)+'">เปิดใหม่</button>':'')
-      +'<button type="button" data-aldel="'+E(r.id)+'" aria-label="ลบ">✕</button></li>';
-  }
-  const rowsFor=sym=>load().rules.filter(r=>r.sym===sym).map(r=>row(r,false)).join("");
-
-  function block(d){
-    const z=zoneHigh(d)!=null;
-    return '<div class="db alb" data-alsym="'+E(d.symbol)+'"><h4>แจ้งเตือนราคา</h4><div class="alf">'
-      +'<select data-altype aria-label="เงื่อนไข"><option value="below">ราคาลงมาถึง</option><option value="above">ราคาขึ้นไปถึง</option>'+(z?'<option value="zone">ราคาเข้าโซนรับ</option>':'')+'</select>'
-      +'<input type="number" step="any" min="0" inputmode="decimal" data-allevel placeholder="ราคา (USD)" aria-label="ราคา">'
-      +'<button type="button" data-aladd>เพิ่มแจ้งเตือน</button></div>'
-      +'<div class="note" data-almsg></div><ul class="all" data-allist>'+rowsFor(d.symbol)+'</ul></div>';
-  }
-
-  function toast(t){
-    let el=$("alToast");
-    if(!el){el=document.createElement("div");el.id="alToast";el.setAttribute("role","status");document.body.appendChild(el)}
-    el.textContent=t;el.className="show";clearTimeout(toast.t);toast.t=setTimeout(()=>{el.className=""},8000);
-  }
-  function notify(r,it){
-    const t=r.sym+": "+label(r)+" (ราคา "+F(it.price)+")";
-    toast("🔔 "+t);
-    try{if(window.Notification&&Notification.permission==="granted")new Notification("Hunscope",{body:t})}catch(e){}
-  }
-  function badge(){
-    const n=load().rules.filter(r=>r.fired&&!r.seen).length;
-    document.querySelectorAll("[data-al-n]").forEach(el=>{el.textContent=n?String(n):""});
-  }
-  function refresh(){
-    document.querySelectorAll("[data-alsym]").forEach(b=>{const l=b.querySelector("[data-allist]");if(l)l.innerHTML=rowsFor(b.dataset.alsym)});
-    if($("alDlg")&&$("alDlg").open)paintDlg();
-    badge();
-  }
-  function check(){
-    const s=load(),m=items();let ch=false;
-    s.rules.forEach(r=>{
-      if(r.fired)return;
-      const it=m[r.sym];
-      if(cond(r,it)){r.fired=new Date().toISOString();r.seen=false;ch=true;notify(r,it)}
-    });
-    if(ch){save(s);refresh()}else badge();
-  }
-  function paintDlg(){
-    const s=load(),perm=window.Notification?Notification.permission:"unsupported";
-    let h='<p>เว็บตรวจราคาเมื่อเปิดหน้านี้ค้างไว้ในเบราว์เซอร์ (ราคาอัปเดตราว 10 นาทีช่วงตลาดสหรัฐเปิด) ถ้าปิดแท็บหรือปิดเบราว์เซอร์จะไม่มีการแจ้งเตือน</p>';
-    if(perm==="default")h+='<button type="button" class="abtn" data-alperm>เปิดการแจ้งเตือนบนเบราว์เซอร์</button>';
-    else if(perm==="denied")h+='<p class="amsg err">เบราว์เซอร์บล็อกการแจ้งเตือนไว้ แก้ได้ที่การตั้งค่าเว็บไซต์ของเบราว์เซอร์</p>';
-    h+=s.rules.length?'<ul class="all">'+s.rules.map(r=>row(r,true)).join("")+'</ul>'
-      :'<p>ยังไม่มีแจ้งเตือน เปิดหน้ารายละเอียดหุ้นแล้วเพิ่มได้ที่ส่วน “แจ้งเตือนราคา”</p>';
-    if(s.rules.some(r=>r.fired))h+='<button type="button" class="abtn" style="margin-top:12px" data-alclear>ลบที่เตือนแล้วทั้งหมด</button>';
-    $("alBody").innerHTML=h;
-  }
-
-  // ต่อเข้ากับฟังก์ชันเดิมของหน้า โดยไม่แก้โค้ดเดิม
-  const oStart=window.startQuotes;
-  if(typeof oStart==="function")window.startQuotes=function(data){DATA=data;setTimeout(check,1500);return oStart.apply(this,arguments)};
-  const oApply=window.applyQuotes;
-  if(typeof oApply==="function")window.applyQuotes=function(){const r=oApply.apply(this,arguments);setTimeout(check,0);return r};
-  const oDetail=window.detail;
-  if(typeof oDetail==="function")window.detail=function(d){const html=oDetail(d);return html.indexOf("<!--ALSLOT-->")>=0?html.replace("<!--ALSLOT-->",block(d)):html+block(d)};
-
-  document.addEventListener("change",e=>{
-    const t=e.target.closest&&e.target.closest("[data-altype]");
-    if(t){const i=t.closest(".alf").querySelector("[data-allevel]");i.disabled=t.value==="zone"}
-  });
-  document.addEventListener("click",e=>{
-    const t=e.target;if(!t.closest)return;
-    const add=t.closest("[data-aladd]");
-    if(add){
-      const box=add.closest("[data-alsym]"),sym=box.dataset.alsym,type=box.querySelector("[data-altype]").value,msg=box.querySelector("[data-almsg]");
-      const it=items()[sym],lv=parseFloat(box.querySelector("[data-allevel]").value);
-      const r={id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),sym,type,level:type==="zone"?null:lv,fired:null,seen:true};
-      const s=load();
-      if(type!=="zone"&&!(lv>0)){msg.textContent="กรอกราคาที่มากกว่า 0";return}
-      if(cond(r,it)){msg.textContent=type==="zone"?"ราคาอยู่ในโซนรับหรือต่ำกว่าโซนแล้ว":"ราคาปัจจุบัน "+F(it&&it.price)+" เข้าเงื่อนไขนี้อยู่แล้ว ลองตั้งราคาที่ยังไม่ถึง";return}
-      if(s.rules.some(x=>!x.fired&&x.sym===sym&&x.type===type&&x.level===r.level)){msg.textContent="มีแจ้งเตือนนี้อยู่แล้ว";return}
-      if(s.rules.length>=MAX){msg.textContent="ตั้งได้สูงสุด "+MAX+" รายการ ลบรายการเก่าก่อน";return}
-      s.rules.push(r);save(s);msg.textContent="เพิ่มแล้ว";box.querySelector("[data-allevel]").value="";refresh();return;
-    }
-    const del=t.closest("[data-aldel]");
-    if(del){const s=load();s.rules=s.rules.filter(r=>r.id!==del.dataset.aldel);save(s);refresh();return}
-    const re=t.closest("[data-alre]");
-    if(re){
-      const s=load(),r=s.rules.find(x=>x.id===re.dataset.alre);
-      if(r){r.fired=null;r.seen=true;save(s);refresh();check()}
-      return;
-    }
-    if(t.closest("[data-alclear]")){const s=load();s.rules=s.rules.filter(r=>!r.fired);save(s);refresh();return}
-    if(t.closest("[data-alperm]")){
-      try{Notification.requestPermission().then(()=>paintDlg())}catch(err){}
-      return;
-    }
-    if(t.closest("[data-al-open]")){
-      paintDlg();$("alDlg").showModal();
-      const s=load();if(s.rules.some(r=>r.fired&&!r.seen)){s.rules.forEach(r=>{if(r.fired)r.seen=true});save(s)}
-      badge();return;
-    }
-  });
-  $("alX").onclick=()=>$("alDlg").close();
-  $("alDlg").addEventListener("click",e=>{if(e.target===$("alDlg"))$("alDlg").close()});
-  badge();
-})();
-</script>
-<script>
-/* ===== ระบบล็อกอิน + ซิงก์รายการของฉัน/พอร์ตจำลอง (Supabase) =====
-   ตั้งค่า: ใส่ url และ anonKey จากหน้า Project Settings > API ของ Supabase (ดู AUTH_SETUP.md)
-   ถ้าปล่อยว่าง ปุ่มเข้าสู่ระบบจะซ่อนอยู่ และเว็บทำงานเหมือนเดิม (เก็บในเครื่องอย่างเดียว)
-   anonKey เป็นคีย์สาธารณะโดยออกแบบ ปลอดภัยเพราะตาราง user_data เปิด Row Level Security แล้ว */
-(function(){
-  const CFG={url:"https://yhhchgdrmdqzwqvyxolk.supabase.co",anonKey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InloaGNoZ2RybWRxendxdnl4b2xrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMyMDYyNjIsImV4cCI6MjEwODc4MjI2Mn0.tdXWv4PFOFM1BJ_EoQa2jnFvqAum1gi2RhxoGXXLlHE"};
-  const KEYS={wl:"wl.v1",pf:"pf.v1",pfs:"pfs.v1",al:"al.v1"};
-  if(!CFG.url||!CFG.anonKey)return;
-
-  const $=id=>document.getElementById(id);
-  const btns=()=>document.querySelectorAll("[data-auth]");
-  const rawSet=Storage.prototype.setItem;
-  let sb=null,user=null,applying=false,timer=null,lastSync=null,alCol=true,msg={t:"",c:""};
-
-  const read=k=>{try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}};
-  const snap=()=>({wl:read(KEYS.wl),pf:read(KEYS.pf),pfs:read(KEYS.pfs),al:read(KEYS.al)});
-  const localHasData=()=>{
-    const s=snap();
-    return !!((s.wl&&Array.isArray(s.wl.lists)&&s.wl.lists.some(l=>(l.syms||[]).length))||(s.pf&&Object.keys(s.pf).length)||(s.pfs&&Object.keys(s.pfs).length)||(s.al&&Array.isArray(s.al.rules)&&s.al.rules.length));
-  };
-  const hhmm=()=>new Date().toLocaleTimeString("th-TH",{hour:"2-digit",minute:"2-digit"});
-  // เทียบข้อมูลโดยไม่สนลำดับ key (ฐานข้อมูล jsonb จัดลำดับ key ใหม่ ทำให้เทียบตรงๆ แล้วต่างกันเสมอ)
-  const KS=Object.keys(KEYS);
-  const keysNow=()=>alCol?KS:KS.filter(k=>k!=="al");
-  const canon=v=>{
-    if(v==null)return "null";
-    const norm=x=>Array.isArray(x)?x.map(norm):(x&&typeof x==="object"?Object.keys(x).sort().reduce((o,k)=>{o[k]=norm(x[k]);return o},{}):x);
-    return JSON.stringify(norm(v));
-  };
-  // จดสถานะข้อมูลตอนซิงก์สำเร็จครั้งล่าสุด (แยกตามบัญชี) ไว้ตัดสินว่าฝั่งไหนเป็นฝ่ายแก้
-  const baseKey=()=>"hs.base."+(user?user.id:"");
-  const getBase=()=>{try{return JSON.parse(localStorage.getItem(baseKey()))}catch(e){return null}};
-  const setBase=s=>{const o={};keysNow().forEach(k=>{o[k]=canon(s[k])});rawSet.call(localStorage,baseKey(),JSON.stringify(o))};
-  const setMsg=(t,c)=>{msg={t,c:c||""};const m=$("amsg");if(m){m.textContent=t;m.className="amsg "+(c||"")}};
-
-  // ดักการบันทึกคีย์ของเรา แล้วส่งขึ้นคลาวด์แบบหน่วงเวลา (ไม่ต้องแก้โค้ดเดิม)
-  Storage.prototype.setItem=function(k,v){
-    rawSet.call(this,k,v);
-    if(!applying&&user&&this===window.localStorage&&Object.values(KEYS).includes(k))schedulePush();
-  };
-  function schedulePush(){clearTimeout(timer);timer=setTimeout(push,1500)}
-
-  async function push(){
-    if(!user)return;
-    const s=snap();
-    const row={user_id:user.id,wl:s.wl,pf:s.pf,pfs:s.pfs,updated_at:new Date().toISOString()};
-    if(alCol)row.al=s.al;
-    let {error}=await sb.from("user_data").upsert(row);
-    if(error&&alCol){alCol=false;delete row.al;({error}=await sb.from("user_data").upsert(row))}  // ยังไม่ได้เพิ่มคอลัมน์ al: ซิงก์ส่วนอื่นต่อได้
-    if(error){setMsg("ซิงก์ไม่สำเร็จ: "+error.message,"err");return}
-    setBase(s);lastSync=hhmm();paint();
-  }
-
-  async function doSync(){
-    if(!user)return true;
-    const uid=user.id;
-    let res=await sb.from("user_data").select(alCol?"wl,pf,pfs,al":"wl,pf,pfs").eq("user_id",uid).maybeSingle();
-    if(res.error&&alCol){alCol=false;res=await sb.from("user_data").select("wl,pf,pfs").eq("user_id",uid).maybeSingle()}
-    const {data,error}=res;
-    if(error){setMsg("อ่านข้อมูลจากบัญชีไม่ได้: "+error.message,"err");return false}
-    if(!data){await push();return true}                  // บัญชีใหม่: อัปโหลดข้อมูลในเครื่องขึ้นไป
-    const base=getBase(),local=snap(),take=[],conflict=[];let needPush=false;
-    keysNow().forEach(k=>{
-      const l=canon(local[k]),c=canon(data[k]);
-      if(l===c)return;                                   // เหมือนกันแล้ว
-      if(c==="null"){needPush=true;return}               // บัญชียังไม่มีข้อมูลส่วนนี้: ส่งขึ้นไป (ไม่ลบข้อมูลในเครื่อง)
-      if(l==="null"){take.push(k);return}                // เครื่องนี้ยังว่าง: ใช้ข้อมูลจากบัญชี
-      const b=base?base[k]:undefined;
-      if(b===undefined){conflict.push(k);return}         // ไม่เคยซิงก์บนเครื่องนี้ แต่สองฝั่งมีข้อมูลต่างกัน
-      if(l===b){take.push(k);return}                     // เครื่องนี้ไม่ได้แก้ตั้งแต่ซิงก์ล่าสุด: รับข้อมูลใหม่จากบัญชี
-      if(c===b){needPush=true;return}                    // บัญชีไม่เปลี่ยน: ส่งข้อมูลที่แก้ในเครื่องนี้ขึ้นไป
-      conflict.push(k);                                  // แก้ทั้งสองฝั่ง
-    });
-    if(conflict.length){
-      const useCloud=confirm("พบข้อมูลในบัญชีที่ต่างจากข้อมูลในเครื่องนี้\n\nตกลง = ใช้ข้อมูลในบัญชี (แทนที่ข้อมูลในเครื่องนี้)\nยกเลิก = ใช้ข้อมูลในเครื่องนี้ (อัปโหลดทับข้อมูลในบัญชี)");
-      if(useCloud)take.push(...conflict);else needPush=true;
-    }
-    if(take.length){
-      applying=true;
-      take.forEach(k=>rawSet.call(localStorage,KEYS[k],JSON.stringify(data[k])));
-      applying=false;
-    }
-    if(needPush)await push();else{setBase(snap());lastSync=hhmm();paint()}
-    if(take.length){                                     // โหลดหน้าใหม่เพื่อให้ลิสต์และพอร์ตแสดงข้อมูลจากบัญชี (กันวนซ้ำไม่เกิน 2 ครั้ง)
-      const n=+(sessionStorage.getItem("hs.rl")||0);
-      if(n<2){sessionStorage.setItem("hs.rl",String(n+1));location.reload()}
-    }else sessionStorage.removeItem("hs.rl");
-    return true;
-  }
-  let syncing=null,syncedUid=null;
-  function sync(){
-    if(!user)return Promise.resolve();
-    if(syncing)return syncing;                           // กันซิงก์ซ้อนกัน (เช่น INITIAL_SESSION กับ SIGNED_IN มาพร้อมกัน)
-    syncing=doSync().then(ok=>{if(!ok)syncedUid=null},()=>{syncedUid=null;setMsg("ซิงก์ไม่สำเร็จ","err")}).then(()=>{syncing=null});
-    return syncing;
-  }
-
-  function paint(){
-    btns().forEach(b=>{b.hidden=false;b.textContent=user?("👤 "+(user.email||"บัญชีของฉัน")):"เข้าสู่ระบบ"});
-    const body=$("authBody");if(!body)return;
-    if(user){
-      body.innerHTML='<p>ลิสต์ในหน้ารายการของฉันและพอร์ตจำลองจะซิงก์กับบัญชีนี้อัตโนมัติ</p><div class="awho"></div><p id="asyn"></p><button type="button" class="abtn" id="aOut">ออกจากระบบ</button><div class="amsg" id="amsg"></div>';
-      body.querySelector(".awho").textContent=user.email||"";
-      $("asyn").textContent=lastSync?("ซิงก์ล่าสุด "+lastSync+" น."):"กำลังซิงก์…";
-      $("aOut").onclick=async()=>{await sb.auth.signOut()};
-    }else{
-      body.innerHTML='<p>เข้าสู่ระบบเพื่อเก็บรายการหุ้นและพอร์ตจำลองไว้กับบัญชี ใช้ได้ทุกเครื่อง ไม่ต้องใช้ก็ได้ เว็บยังใช้งานได้ตามปกติ</p><button type="button" class="abtn pri" id="aG">เข้าสู่ระบบด้วย Google</button><div class="asep">หรือ</div><input type="email" id="aEm" placeholder="อีเมลของคุณ" autocomplete="email" aria-label="อีเมล"><button type="button" class="abtn" id="aMl">ส่งลิงก์เข้าสู่ระบบทางอีเมล</button><div class="amsg" id="amsg"></div>';
-      $("aG").onclick=async()=>{
-        const {error}=await sb.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.href.split("#")[0]}});
-        if(error)setMsg("เข้าสู่ระบบด้วย Google ไม่ได้: "+error.message,"err");
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Sarabun', 'Inter', 'sans-serif'],
+            },
+          },
+        },
       };
-      const sendLink=async()=>{
-        const em=$("aEm").value.trim();
-        if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){setMsg("กรอกอีเมลให้ถูกต้อง","err");return}
-        setMsg("กำลังส่งลิงก์…");
-        const {error}=await sb.auth.signInWithOtp({email:em,options:{emailRedirectTo:location.href.split("#")[0]}});
-        if(error)setMsg("ส่งไม่สำเร็จ: "+error.message,"err");else setMsg("ส่งลิงก์ไปที่ "+em+" แล้ว เปิดอีเมลและกดลิงก์เพื่อเข้าสู่ระบบ","ok");
-      };
-      $("aMl").onclick=sendLink;
-      $("aEm").onkeydown=e=>{if(e.key==="Enter")sendLink()};
-    }
-    if(msg.t)setMsg(msg.t,msg.c);
-  }
+    </script>
+    <style>
+      body {
+        font-family: 'Sarabun', 'Inter', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="h-full text-slate-800 antialiased bg-slate-50 flex flex-col">
 
-  function init(){
-    sb=window.supabase.createClient(CFG.url,CFG.anonKey,{auth:{flowType:"pkce",persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
-    document.addEventListener("click",e=>{if(e.target.closest("[data-auth]")){paint();$("authDlg").showModal()}});
-    $("authX").onclick=()=>$("authDlg").close();
-    $("authDlg").addEventListener("click",e=>{if(e.target===$("authDlg"))$("authDlg").close()});
-    paint();
-    sb.auth.onAuthStateChange((ev,session)=>{
-      setTimeout(()=>{
-        user=session?session.user:null;
-        if(!user){lastSync=null;syncedUid=null}
-        if(ev==="SIGNED_OUT")msg={t:"",c:""};
-        paint();
-        if(user&&(ev==="INITIAL_SESSION"||ev==="SIGNED_IN")){
-          if(ev==="SIGNED_IN"&&$("authDlg").open)$("authDlg").close();
-          if(syncedUid!==user.id){syncedUid=user.id;sync()}
+    <!-- ========================================== -->
+    <!-- 1. AUTHENTICATION MODAL / SCREEN           -->
+    <!-- ========================================== -->
+    <div id="authScreen" class="min-h-screen flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-md fixed inset-0 z-50 overflow-y-auto">
+      <div class="w-full max-w-md bg-white p-8 rounded-3xl shadow-2xl border border-slate-100 relative my-8">
+        <div class="text-center mb-6">
+          <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-slate-900 flex items-center justify-center text-white shadow-lg">
+            <i data-lucide="book-open" class="w-6 h-6"></i>
+          </div>
+          <h1 class="text-2xl font-bold text-slate-900">เข้าสู่ระบบ ClassKhab</h1>
+          <p class="text-xs text-slate-500 mt-1">เลือกระดับชั้นเรียนเพื่อดูตารางสอนโรงเรียนท่าบ่อ</p>
+        </div>
+
+        <form id="loginForm" onsubmit="handleLogin(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">เลือกระดับชั้น / ห้องเรียน</label>
+            <div class="relative">
+              <select id="loginClass" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900">
+                <optgroup label="ระดับชั้น ม.3 (พิเศษ / MEP)">
+                  <option value="ม.3/1">ม.3/1 พิเศษ วิทย์-คณิต</option>
+                  <option value="ม.3/2">ม.3/2 พิเศษ วิทย์-คณิต</option>
+                  <option value="ม.3/3">ม.3/3 MEP</option>
+                </optgroup>
+                <optgroup label="ระดับชั้น ม.3 (ห้องทั่วไป)">
+                  <option value="ม.3/4">ม.3/4</option>
+                  <option value="ม.3/5">ม.3/5</option>
+                  <option value="ม.3/6">ม.3/6</option>
+                  <option value="ม.3/7">ม.3/7</option>
+                  <option value="ม.3/8">ม.3/8</option>
+                  <option value="ม.3/9">ม.3/9</option>
+                  <option value="ม.3/10">ม.3/10</option>
+                  <option value="ม.3/11">ม.3/11</option>
+                  <option value="ม.3/12">ม.3/12</option>
+                  <option value="ม.3/13">ม.3/13</option>
+                  <option value="ม.3/14">ม.3/14</option>
+                </optgroup>
+                <optgroup label="ระดับชั้น ม.4">
+                  <option value="ม.4/1">ม.4/1 Talent</option>
+                  <option value="ม.4/2">ม.4/2 Talent</option>
+                  <option value="ม.4/3">ม.4/3 Gifted English</option>
+                </optgroup>
+              </select>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-3 top-3.5 pointer-events-none"></i>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">รหัสผ่านห้องเรียน</label>
+            <div class="relative">
+              <input type="password" id="loginPassword" placeholder="รหัสทดสอบ: 123456" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900" />
+              <i data-lucide="lock" class="w-4 h-4 text-slate-400 absolute right-3 top-3.5"></i>
+            </div>
+          </div>
+
+          <div id="loginError" class="hidden text-xs text-rose-500 bg-rose-50 p-2.5 rounded-xl border border-rose-200"></div>
+
+          <button type="submit" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm rounded-xl shadow-md transition-all flex items-center justify-center space-x-2">
+            <span>เข้าใช้งานตารางเรียน</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- 2. MAIN APP & HERO SECTION                 -->
+    <!-- ========================================== -->
+    <div id="mainDashboard" class="hidden flex-col min-h-screen overflow-x-hidden">
+      
+      <!-- Responsive Header Nav -->
+      <header class="py-4 md:py-6 bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200/60">
+        <div class="max-w-7xl px-4 mx-auto sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between">
+            <div class="flex-shrink-0">
+              <a href="#" class="flex items-center space-x-2 rounded outline-none">
+                <div class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-white">
+                  <i data-lucide="book-open" class="w-4 h-4"></i>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-slate-900">ClassKhab</span>
+              </a>
+            </div>
+
+            <div class="flex lg:hidden">
+              <button type="button" class="text-slate-900 p-2" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+              </button>
+            </div>
+
+            <div class="hidden lg:flex lg:ml-16 lg:items-center lg:justify-center lg:space-x-10">
+              <span id="navGradeLabel" class="text-sm font-semibold text-slate-900 bg-slate-100 px-3 py-1 rounded-full">ห้องเรียน: --</span>
+              <span id="navTimeText" class="text-sm font-medium text-slate-500">เวลา: --:--:--</span>
+            </div>
+
+            <div class="hidden lg:ml-auto lg:flex lg:items-center lg:space-x-4">
+              <button onclick="requestNotificationPermission()" class="inline-flex items-center space-x-2 px-4 py-2 text-sm font-bold text-slate-900 bg-slate-100 rounded-xl hover:bg-slate-200 transition-all">
+                <i data-lucide="bell" class="w-4 h-4"></i>
+                <span>เปิดแจ้งเตือน</span>
+              </button>
+              <button onclick="handleLogout()" class="inline-flex items-center justify-center px-5 py-2 text-sm font-bold text-white bg-slate-900 rounded-xl hover:bg-slate-700 transition-all">
+                ออกจากระบบ
+              </button>
+            </div>
+          </div>
+
+          <div id="mobileMenu" class="hidden lg:hidden pt-4 pb-2 border-t border-slate-100 mt-4 space-y-3">
+            <div id="mobileGradeLabel" class="text-sm font-semibold text-slate-700 bg-slate-100 p-2.5 rounded-xl">ห้องเรียน: --</div>
+            <button onclick="requestNotificationPermission()" class="w-full text-left p-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-xl flex items-center space-x-2">
+              <i data-lucide="bell" class="w-4 h-4"></i>
+              <span>เปิดแจ้งเตือนเบราว์เซอร์</span>
+            </button>
+            <button onclick="handleLogout()" class="w-full text-center py-2.5 text-sm font-bold text-white bg-rose-600 rounded-xl">
+              ออกจากระบบ
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero Banner Section -->
+      <section class="pt-10 sm:pt-14 pb-12 bg-slate-50">
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div class="max-w-3xl mx-auto text-center">
+            <h1 class="px-6 text-sm font-semibold tracking-wide text-blue-600 uppercase">Smart School Schedule System</h1>
+            <p class="mt-4 text-4xl font-extrabold text-slate-900 sm:text-5xl lg:text-6xl tracking-tight">
+              ไม่พลาดทุกคาบเรียนด้วยระบบ
+              <span class="relative inline-flex">
+                <span class="bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] blur-lg filter opacity-30 absolute inset-0"></span>
+                <span class="relative bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">ClassKhab</span>
+              </span>
+            </p>
+            <p class="mt-4 text-base sm:text-lg text-slate-600">
+              เช็กตารางเรียนรายวัน คาบเรียนปัจจุบัน และนับถอยหลังคาบถัดไปแบบเรียลไทม์ โรงเรียนท่าบ่อ
+            </p>
+          </div>
+        </div>
+
+        <!-- Dashboard UI Container -->
+        <div class="mt-8 px-4 mx-auto max-w-6xl sm:px-6 lg:px-8">
+          <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200/80 space-y-6">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div class="md:col-span-2 bg-gradient-to-br from-slate-900 to-slate-800 text-white p-6 rounded-2xl shadow-md flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="text-[11px] font-bold uppercase tracking-wider bg-white/10 px-3 py-1 rounded-full text-blue-300">คาบเรียนปัจจุบัน</span>
+                    <span class="flex items-center space-x-1.5 text-xs text-emerald-400 font-medium bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                      <span>กำลังเรียน</span>
+                    </span>
+                  </div>
+                  <h3 id="activeSubject" class="text-2xl sm:text-3xl font-bold mb-2">กำลังคำนวณ...</h3>
+                  <p id="activeMeta" class="text-sm text-slate-300">--:-- | ห้อง -- | ครู --</p>
+                </div>
+                <div class="mt-6">
+                  <div class="flex justify-between text-xs text-slate-400 mb-1">
+                    <span>เวลาเหลือในคาบนี้</span>
+                    <span id="activeCountdown" class="text-white font-bold">-- นาที</span>
+                  </div>
+                  <div class="w-full bg-slate-700/50 rounded-full h-2 overflow-hidden">
+                    <div id="progressBar" class="bg-blue-500 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                <div>
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 bg-slate-200 px-3 py-1 rounded-full">คาบถัดไป</span>
+                  <h4 id="nextSubject" class="text-xl font-bold text-slate-800 mt-3 mb-1">--</h4>
+                  <p id="nextMeta" class="text-xs text-slate-500">เวลา -- | ห้อง --</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between">
+                  <span class="text-xs text-slate-400">เริ่มในอีก</span>
+                  <span id="nextCountdown" class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">-- นาที</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-4 border-b border-slate-100 gap-2">
+                <h3 class="font-bold text-slate-800 text-base">ตารางเรียนสัปดาห์นี้</h3>
+                <div class="flex overflow-x-auto space-x-1 bg-slate-100 p-1 rounded-xl text-xs font-medium" id="dayTabs">
+                  <button onclick="selectDay('จันทร์')" class="day-tab px-3 py-1.5 rounded-lg text-slate-600" data-day="จันทร์">จันทร์</button>
+                  <button onclick="selectDay('อังคาร')" class="day-tab px-3 py-1.5 rounded-lg text-slate-600" data-day="อังคาร">อังคาร</button>
+                  <button onclick="selectDay('พุธ')" class="day-tab px-3 py-1.5 rounded-lg text-slate-600" data-day="พุธ">พุธ</button>
+                  <button onclick="selectDay('พฤหัสบดี')" class="day-tab px-3 py-1.5 rounded-lg text-slate-600" data-day="พฤหัสบดี">พฤหัสบดี</button>
+                  <button onclick="selectDay('ศุกร์')" class="day-tab px-3 py-1.5 rounded-lg text-slate-600" data-day="ศุกร์">ศุกร์</button>
+                  <button onclick="selectDay('all')" class="day-tab px-3 py-1.5 rounded-lg bg-white text-slate-900 font-bold shadow-sm" data-day="all">ทั้งหมด</button>
+                </div>
+              </div>
+
+              <div id="scheduleContainer" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <footer class="mt-auto bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400">
+        <p>© ClassKhab • Powered by Tailwind CSS & GitHub Pages</p>
+      </footer>
+    </div>
+
+    <script>
+      const periods = [
+        { p: 1, time: '08:20-09:10' },
+        { p: 2, time: '09:15-10:05' },
+        { p: 3, time: '10:20-11:10' },
+        { p: 4, time: '11:15-12:05' },
+        { p: 5, time: '12:10-13:00' },
+        { p: 6, time: '13:05-13:55' },
+        { p: 7, time: '14:00-14:50' },
+        { p: 8, time: '14:55-15:45' },
+        { p: 9, time: '15:50-16:40' },
+        { p: 10, time: '16:45-17:35' },
+      ];
+
+      const scheduleData = {
+        'ม.3/1': [
+          { day: 'จันทร์', period: 1, subject: 'ค23204', room: '412', teacher: 'ครูวาสนา' },
+          { day: 'จันทร์', period: 2, subject: 'อ23102', room: '111', teacher: 'ครูนันทรัตน์' },
+          { day: 'จันทร์', period: 3, subject: 'ท23102', room: '502', teacher: 'ครูปัทมาวรรณ' },
+          { day: 'จันทร์', period: 4, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'จันทร์', period: 5, subject: 'ว23102', room: 'เกษตร 1', teacher: 'ครูธัญญารัตน์' },
+          { day: 'จันทร์', period: 6, subject: 'พ23104', room: 'สน.กรีฑา', teacher: 'ครูเพชรสุพร' },
+          { day: 'จันทร์', period: 7, subject: 'พ23102', room: 'หอประชุม 1', teacher: 'ครูสรไกร' },
+          { day: 'จันทร์', period: 8, subject: 'ค23102', room: '416', teacher: 'ครูสันติ' },
+          { day: 'อังคาร', period: 1, subject: 'ว23202', room: '613', teacher: 'ครูคาวิน' },
+          { day: 'อังคาร', period: 2, subject: 'อ23102', room: '111', teacher: 'ครูนันทรัตน์' },
+          { day: 'อังคาร', period: 3, subject: 'แนะแนว', room: '437', teacher: 'ครูทีปกร' },
+          { day: 'อังคาร', period: 4, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'อังคาร', period: 5, subject: 'ค้นคว้า', room: 'ห้องเรียนประจำ', teacher: '-' },
+          { day: 'อังคาร', period: 6, subject: 'ค23102', room: '416', teacher: 'ครูสันติ' },
+          { day: 'อังคาร', period: 7, subject: 'ส23102', room: '317', teacher: 'ครูนิศากรณ์' },
+          { day: 'อังคาร', period: 8, subject: 'ว23102', room: 'เกษตร 1', teacher: 'ครูธัญญารัตน์' },
+          { day: 'พุธ', period: 1, subject: 'ท23102', room: '502', teacher: 'ครูปัทมาวรรณ' },
+          { day: 'พุธ', period: 2, subject: 'E20206', room: '617', teacher: 'ครู Ronalie' },
+          { day: 'พุธ', period: 3, subject: 'ส23102', room: '317', teacher: 'ครูนิศากรณ์' },
+          { day: 'พุธ', period: 4, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'พุธ', period: 5, subject: 'ว23102', room: '221', teacher: 'ครูคาวิน' },
+          { day: 'พุธ', period: 6, subject: 'ศ23102', room: '306', teacher: 'ครูสุเมธ' },
+          { day: 'พุธ', period: 7, subject: 'ศ23102', room: '306', teacher: 'ครูสุเมธ' },
+          { day: 'พุธ', period: 8, subject: 'กิจกรรม', room: '-', teacher: '-' },
+          { day: 'พฤหัสบดี', period: 1, subject: 'อ23102', room: '111', teacher: 'ครูนันทรัตน์' },
+          { day: 'พฤหัสบดี', period: 2, subject: 'ค23204', room: '412', teacher: 'ครูวาสนา' },
+          { day: 'พฤหัสบดี', period: 3, subject: 'ว23191', room: '121', teacher: 'ครูชมัยพร' },
+          { day: 'พฤหัสบดี', period: 4, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'พฤหัสบดี', period: 5, subject: 'ค23102', room: '416', teacher: 'ครูสันติ' },
+          { day: 'พฤหัสบดี', period: 6, subject: 'ส23102', room: '317', teacher: 'ครูนิศากรณ์' },
+          { day: 'พฤหัสบดี', period: 7, subject: 'ว23102', room: '221', teacher: 'ครูคาวิน' },
+          { day: 'พฤหัสบดี', period: 8, subject: 'ว23102', room: '221', teacher: 'ครูคาวิน' },
+          { day: 'ศุกร์', period: 1, subject: 'ส20206', room: '423', teacher: 'ครูธนชัย' },
+          { day: 'ศุกร์', period: 2, subject: 'ว23202', room: '613', teacher: 'ครูคาวิน' },
+          { day: 'ศุกร์', period: 3, subject: 'ว23202', room: '613', teacher: 'ครูคาวิน' },
+          { day: 'ศุกร์', period: 4, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'ศุกร์', period: 5, subject: 'ส23131', room: '328', teacher: 'ครูอานนท์' },
+          { day: 'ศุกร์', period: 6, subject: 'ท23102', room: '502', teacher: 'ครูปัทมาวรรณ' },
+          { day: 'ศุกร์', period: 7, subject: 'อบรมจริยธรรม', room: '-', teacher: '-' },
+          { day: 'ศุกร์', period: 8, subject: 'ชุมนุม', room: '-', teacher: '-' },
+        ],
+        'ม.3/2': [
+          { day: 'จันทร์', period: 1, subject: 'ว23102', room: 'เกษตร 1', teacher: 'ครูธัญญารัตน์' },
+          { day: 'จันทร์', period: 2, subject: 'ว23202', room: '613', teacher: 'ครูคาวิน' },
+          { day: 'จันทร์', period: 3, subject: 'ว23202', room: '613', teacher: 'ครูคาวิน' },
+          { day: 'จันทร์', period: 4, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'จันทร์', period: 5, subject: 'ส23131', room: '328', teacher: 'ครูอานนท์' },
+          { day: 'จันทร์', period: 6, subject: 'E20206', room: '617', teacher: 'ครู Ronalie' },
+          { day: 'จันทร์', period: 7, subject: 'ส23102', room: '315', teacher: 'ครูจันทร์เพ็ญ' },
+          { day: 'อังคาร', period: 1, subject: 'ท23102', room: '506', teacher: 'ครูสมปราถนา' },
+          { day: 'อังคาร', period: 2, subject: 'พ23102', room: 'หอประชุม 1', teacher: 'ครูสรไกร' },
+          { day: 'อังคาร', period: 3, subject: 'ค23102', room: '416', teacher: 'ครูสันติ' },
+          { day: 'อังคาร', period: 4, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'อังคาร', period: 5, subject: 'ส23102', room: '315', teacher: 'ครูจันทร์เพ็ญ' },
+          { day: 'อังคาร', period: 6, subject: 'อ23102', room: '112', teacher: 'ครูปริญนภา' },
+          { day: 'อังคาร', period: 7, subject: 'ค23204', room: '412', teacher: 'ครูวาสนา' },
+          { day: 'อังคาร', period: 8, subject: 'ว23202', room: '215', teacher: 'ครูคาวิน' },
+          { day: 'พุธ', period: 1, subject: 'ว23102', room: '227', teacher: 'ครูศิริพร' },
+          { day: 'พุธ', period: 2, subject: 'ว23191', room: '121', teacher: 'ครูชมัยพร' },
+          { day: 'พุธ', period: 3, subject: 'ค23204', room: '412', teacher: 'ครูวาสนา' },
+          { day: 'พุธ', period: 4, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'พุธ', period: 5, subject: 'ท23102', room: '506', teacher: 'ครูสมปราถนา' },
+          { day: 'พุธ', period: 6, subject: 'ส23102', room: '315', teacher: 'ครูจันทร์เพ็ญ' },
+          { day: 'พุธ', period: 7, subject: 'แนะแนว', room: '437', teacher: 'ครูทีปกร' },
+          { day: 'พุธ', period: 8, subject: 'กิจกรรม', room: '-', teacher: '-' },
+        ],
+        'ม.3/3': [
+          { day: 'จันทร์', period: 1, subject: 'ส23102', room: '625', teacher: 'ครูนิศากรณ์' },
+          { day: 'จันทร์', period: 2, subject: 'อ23102', room: '625', teacher: 'ครู Ronalie' },
+          { day: 'จันทร์', period: 3, subject: 'ส22131', room: '625', teacher: 'ครูอานนท์' },
+          { day: 'จันทร์', period: 4, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'จันทร์', period: 5, subject: 'ว23102', room: '216', teacher: 'ครูศิริพร' },
+          { day: 'จันทร์', period: 6, subject: 'ว23102', room: '216', teacher: 'ครูศิริพร' },
+          { day: 'จันทร์', period: 7, subject: 'ว23102', room: '625', teacher: 'ครูสมปราถนา' },
+          { day: 'จันทร์', period: 8, subject: 'E23204', room: '625', teacher: 'ครู Eugene' },
+        ],
+        'ม.3/4': [], 'ม.3/5': [], 'ม.3/6': [], 'ม.3/7': [], 'ม.3/8': [], 'ม.3/9': [], 'ม.3/10': [], 'ม.3/11': [], 'ม.3/12': [], 'ม.3/13': [], 'ม.3/14': [],
+        'ม.4/1': [
+          { day: 'จันทร์', period: 1, subject: 'ว30242', room: '621', teacher: 'ครูกฤติยา' },
+          { day: 'จันทร์', period: 2, subject: 'ว30242', room: '621', teacher: 'ครูกฤติยา' },
+          { day: 'จันทร์', period: 3, subject: 'ว30202', room: '222', teacher: 'ครูธนิกานต์' },
+          { day: 'จันทร์', period: 4, subject: 'ว30202', room: '222', teacher: 'ครูธนิกานต์' },
+          { day: 'จันทร์', period: 5, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'จันทร์', period: 6, subject: 'ค31102', room: '421', teacher: 'ครูนันทชัย' },
+          { day: 'จันทร์', period: 7, subject: 'ว30287', room: '627', teacher: 'ครูสุดารัตน์' },
+          { day: 'จันทร์', period: 8, subject: 'ว30287', room: '627', teacher: 'ครูสุดารัตน์' },
+          { day: 'จันทร์', period: 9, subject: 'ศ31102', room: '301', teacher: 'ครูศุภวิชญ์' },
+          { day: 'อังคาร', period: 1, subject: 'ค31202', room: '421', teacher: 'ครูนันทชัย' },
+          { day: 'อังคาร', period: 2, subject: 'ค31202', room: '421', teacher: 'ครูนันทชัย' },
+          { day: 'อังคาร', period: 3, subject: 'E30202', room: '618', teacher: 'ครู Mae' },
+          { day: 'อังคาร', period: 4, subject: 'ง31102', room: 'คหกรรม 1', teacher: 'ครูจิราภรณ์' },
+          { day: 'อังคาร', period: 5, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'อังคาร', period: 6, subject: 'อ31102', room: '114', teacher: 'ครูอัจฉรา' },
+          { day: 'อังคาร', period: 7, subject: 'ท31102', room: '515', teacher: 'ครูสุวิมล' },
+          { day: 'อังคาร', period: 8, subject: 'ว30202', room: '222', teacher: 'ครูธนิกานต์' },
+        ],
+        'ม.4/2': [
+          { day: 'จันทร์', period: 1, subject: 'ว30202', room: '221', teacher: 'ครูนิรมล' },
+          { day: 'จันทร์', period: 2, subject: 'ว30202', room: '221', teacher: 'ครูนิรมล' },
+          { day: 'จันทร์', period: 3, subject: 'ว30297', room: '122', teacher: 'ครูวีระพล' },
+          { day: 'จันทร์', period: 4, subject: 'ว30297', room: '122', teacher: 'ครูวีระพล' },
+          { day: 'จันทร์', period: 5, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'จันทร์', period: 6, subject: 'อ31102', room: '112', teacher: 'ครูปริญภา' },
+          { day: 'จันทร์', period: 7, subject: 'ค31204', room: '427', teacher: 'ครูธิวัฒน์' },
+          { day: 'จันทร์', period: 8, subject: 'E30202', room: '618', teacher: 'ครู Mae' },
+          { day: 'อังคาร', period: 1, subject: 'ว30222', room: '222', teacher: 'ครูสมประสงค์' },
+          { day: 'อังคาร', period: 2, subject: 'ว30222', room: '222', teacher: 'ครูสมประสงค์' },
+          { day: 'อังคาร', period: 3, subject: 'ว30242', room: '638', teacher: 'ครูศิริวิชญ์' },
+          { day: 'อังคาร', period: 4, subject: 'ค31102', room: '421', teacher: 'ครูนันทชัย' },
+          { day: 'อังคาร', period: 5, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'อังคาร', period: 6, subject: 'ศ31102', room: '307', teacher: 'ครูศุภวิชญ์' },
+          { day: 'อังคาร', period: 7, subject: 'ว30287', room: '627', teacher: 'ครูสุดารัตน์' },
+          { day: 'อังคาร', period: 8, subject: 'ว30287', room: '627', teacher: 'ครูสุดารัตน์' },
+          { day: 'อังคาร', period: 9, subject: 'พ31102', room: 'อาคารพละ', teacher: 'ครูธนกฤต' },
+          { day: 'พุธ', period: 1, subject: 'ว30202', room: '221', teacher: 'ครูนิรมล' },
+          { day: 'พุธ', period: 2, subject: 'อ31102', room: '112', teacher: 'ครูปริญภา' },
+          { day: 'พุธ', period: 3, subject: 'ว30242', room: '621', teacher: 'ครูศิริวิชญ์' },
+          { day: 'พุธ', period: 4, subject: 'ว30242', room: '621', teacher: 'ครูศิริวิชญ์' },
+          { day: 'พุธ', period: 5, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'พุธ', period: 6, subject: 'ว31191', room: '122', teacher: 'ครูแสงเดือน' },
+          { day: 'พุธ', period: 7, subject: 'ค31102', room: '421', teacher: 'ครูนันทชัย' },
+          { day: 'พุธ', period: 8, subject: 'ค31204', room: '427', teacher: 'ครูธิวัฒน์' },
+          { day: 'พฤหัสบดี', period: 1, subject: 'ค31202', room: '421', teacher: 'ครูนันทชัย' },
+          { day: 'พฤหัสบดี', period: 2, subject: 'ท33102', room: '501', teacher: 'ครูอุเทน' },
+          { day: 'พฤหัสบดี', period: 3, subject: 'E30202', room: '618', teacher: 'ครู Mae' },
+          { day: 'พฤหัสบดี', period: 4, subject: 'แนะแนว', room: '438', teacher: 'ครูกาญจนา' },
+          { day: 'พฤหัสบดี', period: 5, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'พฤหัสบดี', period: 6, subject: 'ท33102', room: '501', teacher: 'ครูอุเทน' },
+          { day: 'พฤหัสบดี', period: 7, subject: 'ว30222', room: '222', teacher: 'ครูสมประสงค์' },
+          { day: 'พฤหัสบดี', period: 8, subject: 'ส31102', room: '321', teacher: 'ครูกรรณิการ์' },
+          { day: 'ศุกร์', period: 1, subject: 'ส30202', room: '613', teacher: 'ครูนิรมล' },
+          { day: 'ศุกร์', period: 2, subject: 'ส30131', room: '327', teacher: 'ครูสุทธิรัตน์' },
+          { day: 'ศุกร์', period: 3, subject: 'ส31102', room: '321', teacher: 'ครูกรรณิการ์' },
+          { day: 'ศุกร์', period: 4, subject: 'ง31102', room: 'เกษตร 1', teacher: 'ครูธัญญารัตน์' },
+          { day: 'ศุกร์', period: 5, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'ศุกร์', period: 6, subject: 'ค31202', room: '421', teacher: 'ครูนันทชัย' },
+          { day: 'ศุกร์', period: 7, subject: 'ค31202', room: '421', teacher: 'ครูนันทชัย' },
+          { day: 'ศุกร์', period: 8, subject: 'ชุมนุม', room: '-', teacher: '-' },
+        ],
+        'ม.4/3': [
+          { day: 'จันทร์', period: 1, subject: 'ว30222', room: '222', teacher: 'ครูสุดารัตน์' },
+          { day: 'จันทร์', period: 2, subject: 'ว31191', room: '122', teacher: 'ครูแสงเดือน' },
+          { day: 'จันทร์', period: 3, subject: 'อ31102', room: '112', teacher: 'ครูปริญภา' },
+          { day: 'จันทร์', period: 4, subject: 'ง31102', room: 'คหกรรม 1', teacher: 'ครูจิราภรณ์' },
+          { day: 'จันทร์', period: 5, subject: 'พักกลางวัน', room: '-', teacher: '-' },
+          { day: 'จันทร์', period: 6, subject: 'ว30242', room: '638', teacher: 'ครูกฤติยา' },
+          { day: 'จันทร์', period: 7, subject: 'ค31202', room: '422', teacher: 'ครูพิชญานี' },
+          { day: 'จันทร์', period: 8, subject: 'ส31102', room: '321', teacher: 'ครูกรรณิการ์' },
+        ]
+      };
+
+      let currentGrade = localStorage.getItem('classkhab_grade') || null;
+      let selectedDayFilter = 'all';
+
+      window.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+        if (currentGrade) {
+          showDashboard();
+        } else {
+          showAuthScreen();
         }
-      },0);
-    });
-  }
+      });
 
-  // โหลดไลบรารีเฉพาะเมื่อมีการตั้งค่า (ล็อกเวอร์ชันไว้)
-  const s=document.createElement("script");
-  s.src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js";
-  s.onload=init;
-  s.onerror=()=>console.warn("โหลด Supabase ไม่ได้ ระบบล็อกอินจะไม่ทำงาน");
-  document.head.appendChild(s);
-})();
-</script>
-</body>
+      function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+      }
+
+      function handleLogin(e) {
+        e.preventDefault();
+        const selectedClass = document.getElementById('loginClass').value;
+        const password = document.getElementById('loginPassword').value;
+        const errDiv = document.getElementById('loginError');
+
+        if (password === '123456') {
+          errDiv.classList.add('hidden');
+          currentGrade = selectedClass;
+          localStorage.setItem('classkhab_grade', currentGrade);
+          showDashboard();
+        } else {
+          errDiv.textContent = 'รหัสผ่านไม่ถูกต้อง! (ใช้รหัสผ่านทดสอบ: 123456)';
+          errDiv.classList.remove('hidden');
+        }
+      }
+
+      function handleLogout() {
+        localStorage.removeItem('classkhab_grade');
+        currentGrade = null;
+        showAuthScreen();
+      }
+
+      function showAuthScreen() {
+        document.getElementById('authScreen').classList.remove('hidden');
+        document.getElementById('mainDashboard').classList.add('hidden');
+      }
+
+      function showDashboard() {
+        document.getElementById('authScreen').classList.add('hidden');
+        document.getElementById('mainDashboard').classList.remove('hidden');
+        document.getElementById('mainDashboard').classList.add('flex');
+
+        document.getElementById('navGradeLabel').textContent = `ห้องเรียน: ${currentGrade}`;
+        document.getElementById('mobileGradeLabel').textContent = `ห้องเรียน: ${currentGrade}`;
+
+        renderSchedule();
+        updateTimeTracker();
+        setInterval(updateTimeTracker, 1000);
+      }
+
+      function selectDay(dayName) {
+        selectedDayFilter = dayName;
+        document.querySelectorAll('.day-tab').forEach((tab) => {
+          if (tab.dataset.day === dayName) {
+            tab.className = 'day-tab px-3 py-1.5 rounded-lg bg-white text-slate-900 font-bold shadow-sm';
+          } else {
+            tab.className = 'day-tab px-3 py-1.5 rounded-lg text-slate-600';
+          }
+        });
+        renderSchedule();
+      }
+
+      function renderSchedule() {
+        const container = document.getElementById('scheduleContainer');
+        container.innerHTML = '';
+
+        const data = scheduleData[currentGrade] || scheduleData['ม.3/1'];
+        const days = ['จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์'];
+        const displayDays = selectedDayFilter === 'all' ? days : [selectedDayFilter];
+
+        displayDays.forEach((day) => {
+          const dayItems = data.filter((item) => item.day === day);
+          if (dayItems.length === 0) return;
+
+          const dayCard = document.createElement('div');
+          dayCard.className = 'bg-slate-50 border border-slate-200 rounded-2xl p-4';
+
+          let html = `<h4 class="font-bold text-slate-800 text-sm mb-3">วัน${day}</h4><div class="space-y-2">`;
+
+          dayItems.forEach((item) => {
+            const timeStr = periods[item.period - 1].time;
+            html += `
+              <div class="bg-white p-3 rounded-xl border border-slate-200/80 text-xs">
+                <div class="font-bold text-slate-800">${item.subject} <span class="font-normal text-slate-400">(คาบ ${item.period})</span></div>
+                <div class="text-slate-500 text-[11px] mt-0.5">${timeStr} • ห้อง ${item.room} ${item.teacher !== '-' ? '• ' + item.teacher : ''}</div>
+              </div>
+            `;
+          });
+
+          html += `</div>`;
+          dayCard.innerHTML = html;
+          container.appendChild(dayCard);
+        });
+      }
+
+      function updateTimeTracker() {
+        const now = new Date();
+        document.getElementById('navTimeText').textContent = `เวลา: ${now.toLocaleTimeString('th-TH')}`;
+
+        const dayNames = ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์'];
+        const todayName = dayNames[now.getDay()];
+        const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+        const data = scheduleData[currentGrade] || scheduleData['ม.3/1'];
+        const todayItems = data.filter((i) => i.day === todayName);
+
+        let activeItem = null;
+        let nextItem = null;
+
+        for (let item of todayItems) {
+          const timeRange = periods[item.period - 1].time;
+          const [startStr, endStr] = timeRange.split('-');
+          const startMin = timeToMinutes(startStr);
+          const endMin = timeToMinutes(endStr);
+
+          if (currentMinutes >= startMin && currentMinutes < endMin) {
+            activeItem = { ...item, startMin, endMin };
+          } else if (currentMinutes < startMin && !nextItem) {
+            nextItem = { ...item, startMin };
+          }
+        }
+
+        if (activeItem) {
+          document.getElementById('activeSubject').textContent = activeItem.subject;
+          document.getElementById('activeMeta').textContent = `${periods[activeItem.period - 1].time} | ห้อง ${activeItem.room} | ${activeItem.teacher}`;
+          const remainingMinutes = activeItem.endMin - currentMinutes;
+          const totalDuration = activeItem.endMin - activeItem.startMin;
+          const progressPercent = Math.min(100, Math.max(0, ((totalDuration - remainingMinutes) / totalDuration) * 100));
+
+          document.getElementById('activeCountdown').textContent = `${remainingMinutes} นาที`;
+          document.getElementById('progressBar').style.width = `${progressPercent}%`;
+        } else {
+          document.getElementById('activeSubject').textContent = 'ไม่อยู่ในช่วงคาบเรียน';
+          document.getElementById('activeMeta').textContent = '--:-- | ห้อง -- | ครู --';
+          document.getElementById('activeCountdown').textContent = '0 นาที';
+          document.getElementById('progressBar').style.width = '0%';
+        }
+
+        if (nextItem) {
+          document.getElementById('nextSubject').textContent = nextItem.subject;
+          document.getElementById('nextMeta').textContent = `${periods[nextItem.period - 1].time} | ห้อง ${nextItem.room}`;
+          document.getElementById('nextCountdown').textContent = `${nextItem.startMin - currentMinutes} นาที`;
+        } else {
+          document.getElementById('nextSubject').textContent = 'หมดคาบเรียนวันนี้แล้ว';
+          document.getElementById('nextMeta').textContent = 'ไม่มีคาบเรียนถัดไป';
+          document.getElementById('nextCountdown').textContent = 'พักผ่อน';
+        }
+      }
+
+      function timeToMinutes(tStr) {
+        const [h, m] = tStr.split(':').map(Number);
+        return h * 60 + m;
+      }
+
+      function requestNotificationPermission() {
+        if (!('Notification' in window)) {
+          alert('เบราว์เซอร์นี้ไม่รองรับการแจ้งเตือน');
+          return;
+        }
+        Notification.requestPermission().then((permission) => {
+          if (permission === 'granted') {
+            new Notification('ClassKhab', { body: 'เปิดระบบแจ้งเตือนเรียบร้อยแล้ว!' });
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
