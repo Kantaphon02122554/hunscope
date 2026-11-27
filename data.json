@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T03:51:53.071032+00:00",
+ "updated": "2026-11-27T03:52:57.341004+00:00",
  "groups": [
   {
    "title": "ดัชนี",
@@ -710,7 +710,7 @@
       "atr": 15.83,
       "bars": 251
      },
-     "pe": 16.68,
+     "pe": 16.04,
      "fpe": 8.99,
      "mcap": 3605147156480,
      "target": 242.43,
@@ -896,10 +896,10 @@
      },
      "news": [
       {
-       "title": "Jensen Huang reclaims throne at Nvidia: Here's the bottom line for investors",
-       "url": "https://finance.yahoo.com/video/jensen-huang-reclaims-throne-at-nvidia-heres-the-bottom-line-for-investors-212803135.html",
+       "title": "Will Jensen Huang's second act as Nvidia CEO be different?",
+       "url": "https://finance.yahoo.com/video/jensen-huangs-second-act-nvidia-140000599.html",
        "source": "Yahoo Finance Video",
-       "time": "2026-11-25T21:28:03Z",
+       "time": "2026-11-26T14:00:00Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
@@ -910,10 +910,10 @@
        ]
       },
       {
-       "title": "Jensen Huang's return, neocloud risk, and a holiday retail rally",
-       "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-and-a-holiday-retail-rally-222042649.html",
+       "title": "Jensen Huang 'absolutely could be fired again,' legal expert says",
+       "url": "https://finance.yahoo.com/video/jensen-huang-absolutely-could-fired-130000374.html",
        "source": "Yahoo Finance Video",
-       "time": "2026-11-25T21:00:00Z",
+       "time": "2026-11-26T13:00:00Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [],
@@ -922,39 +922,10 @@
        ]
       },
       {
-       "title": "Nvidia is cheap on paper, so why won't the market buy it?",
-       "url": "https://finance.yahoo.com/video/nvidia-is-cheap-on-paper-so-why-wont-the-market-buy-it-192215326.html",
+       "title": "5 things I'm thankful for in AI",
+       "url": "https://finance.yahoo.com/video/5-things-im-thankful-ai-120000522.html",
        "source": "Yahoo Finance Video",
-       "time": "2026-11-25T19:22:15Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [
-        "ชิป"
-       ],
-       "symbols": [
-        "NVDA"
-       ]
-      },
-      {
-       "title": "Why Nvidia's 'Jensen put' failed to stop the AI trade meltdown",
-       "url": "https://finance.yahoo.com/markets/article/why-nvidias-jensen-put-did-little-to-ease-the-ai-trade-meltdown-185334279.html",
-       "source": "Yahoo Finance",
-       "time": "2026-11-25T18:53:34Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [
-        "AI",
-        "ชิป"
-       ],
-       "symbols": [
-        "NVDA"
-       ]
-      },
-      {
-       "title": "China added nearly 10 times more power capacity than the US in 2025 as the AI race heats up",
-       "url": "https://finance.yahoo.com/technology/article/china-added-nearly-10-times-more-power-capacity-than-the-us-in-2025-as-the-ai-race-heats-up-174910324.html",
-       "source": "Yahoo Finance",
-       "time": "2026-11-25T17:49:10Z",
+       "time": "2026-11-26T12:00:00Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
@@ -963,9 +934,36 @@
        "symbols": [
         "NVDA"
        ]
+      },
+      {
+       "title": "5 Best Quantum Computing Stocks To Buy for 2027",
+       "url": "https://finance.yahoo.com/technology/articles/5-best-quantum-computing-stocks-032149616.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-27T03:21:49Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "NVDA"
+       ]
+      },
+      {
+       "title": "Nvidia Is Down 35% From Its All-Time High, Tied for Its Biggest Drop Since the AI Boom Began. Is It a Buy?",
+       "url": "https://www.fool.com/investing/2026/11/26/nvidia-is-down-35-from-its-all-time-high-tied-for-its-biggest-drop-since-the-ai-boom-began-is-it-a-buy/",
+       "source": "Motley Fool",
+       "time": "2026-11-27T03:20:02Z",
+       "category": "หุ้นรายตัว",
+       "sent": -1,
+       "topics": [
+        "AI",
+        "ชิป"
+       ],
+       "symbols": [
+        "NVDA"
+       ]
       }
      ],
-     "news_score": 0
+     "news_score": -1
     },
     {
      "symbol": "MSFT",
@@ -1325,36 +1323,10 @@
      },
      "news": [
       {
-       "title": "Japan's biggest banks pick Solana as Fidelity adds DeFi tokens",
-       "url": "https://finance.yahoo.com/video/japans-biggest-banks-pick-solana-as-fidelity-adds-defi-tokens-222056705.html",
-       "source": "Yahoo Finance Video",
-       "time": "2026-11-25T17:00:00Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [],
-       "symbols": [
-        "MSFT"
-       ]
-      },
-      {
-       "title": "Tariffs are back as Anthropic sinks further below its IPO price",
-       "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html",
-       "source": "Yahoo Finance Video",
-       "time": "2026-11-25T16:05:24Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [
-        "ภาษีและการค้า"
-       ],
-       "symbols": [
-        "MSFT"
-       ]
-      },
-      {
-       "title": "Microsoft declares a code red in the middle of a 'Patchpocalypse'",
-       "url": "https://finance.yahoo.com/markets/article/microsoft-declares-a-code-red-in-the-middle-of-a-patchpocalypse-193740712.html",
-       "source": "Yahoo Finance",
-       "time": "2026-11-24T19:37:40Z",
+       "title": "5 Best Quantum Computing Stocks To Buy for 2027",
+       "url": "https://finance.yahoo.com/technology/articles/5-best-quantum-computing-stocks-032149616.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-27T03:21:49Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [],
@@ -1363,12 +1335,48 @@
        ]
       },
       {
-       "title": "Nvidia’s Market Cap Falls Below Microsoft’s: Analyst Flags Five Overhangs For NVDA Stock",
-       "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-s-market-cap-falls-below-microsoft-s-analyst-flags-five-overhangs-for-nvda-stock/cNbx4KZR9Z3",
-       "source": "Stocktwits",
-       "time": "2026-11-26T02:39:42Z",
+       "title": "5 Best Tech Stocks to Buy for 2027 According to Hedge Funds",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/5-best-tech-stocks-buy-030856400.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-27T03:08:56Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "MSFT"
+       ]
+      },
+      {
+       "title": "Tech Stock Sell-Off: Down 13%, Is Microsoft a Buy Now?",
+       "url": "https://www.fool.com/investing/2026/11/26/tech-stock-sell-off-down-13-is-microsoft-a-buy-now/",
+       "source": "Motley Fool",
+       "time": "2026-11-26T22:20:02Z",
        "category": "หุ้นรายตัว",
        "sent": -1,
+       "topics": [],
+       "symbols": [
+        "MSFT"
+       ]
+      },
+      {
+       "title": "Steve Cohen’s 5 Biggest Stock Bets for 2027",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/steve-cohen-5-biggest-stock-220614898.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-26T22:06:14Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "MSFT"
+       ]
+      },
+      {
+       "title": "Jensen Huang’s Return Doesn’t Make Nvidia Stock (NVDA) a Buy",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-return-doesn-t-212200380.html",
+       "source": "TipRanks",
+       "time": "2026-11-26T21:22:00Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
        "topics": [
         "ชิป"
        ],
@@ -1376,24 +1384,9 @@
         "MSFT",
         "NVDA"
        ]
-      },
-      {
-       "title": "Apple Stock Defies AI Selloff: Is It the Market's Safe Haven?",
-       "url": "https://beincrypto.com/apple-stock-ai-selloff-safe-haven/",
-       "source": "BeInCrypto",
-       "time": "2026-11-26T01:00:00Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [
-        "AI"
-       ],
-       "symbols": [
-        "AAPL",
-        "MSFT"
-       ]
       }
      ],
-     "news_score": -4
+     "news_score": -1
     },
     {
      "symbol": "AAPL",
@@ -1753,64 +1746,67 @@
      },
      "news": [
       {
-       "title": "Is the market experiencing a 'dead cat' bounce?",
-       "url": "https://finance.yahoo.com/video/is-the-market-experiencing-a-dead-cat-bounce-212704552.html",
-       "source": "Yahoo Finance Video",
-       "time": "2026-11-25T21:27:04Z",
+       "title": "Apple (AAPL) Has Found a New AI Opportunity That Has Little to Do With the iPhone",
+       "url": "https://finance.yahoo.com/technology/ai/articles/apple-aapl-found-ai-opportunity-031905510.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-27T03:19:05Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
-       "topics": [],
-       "symbols": [
-        "AAPL"
-       ]
-      },
-      {
-       "title": "Michael Burry Says He’s Shorting The Market’s ‘Generals’ As Apple Flashes A Warning Last Seen In 2002",
-       "url": "https://stocktwits.com/news-articles/markets/equity/michael-burry-shorting-market-generals-apple-warning-last-seen-in-2002/cNbx7IxR9Ze",
-       "source": "Stocktwits",
-       "time": "2026-11-26T03:44:40Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [],
-       "symbols": [
-        "AAPL"
-       ]
-      },
-      {
-       "title": "Dow Jones Futures Rise; Market Goes On Wild Ride As Nasdaq Slashes Losses",
-       "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-wild-ride-nasdaq-nvidia-slash-losses-anthropic-higher/?src=A00220&yptr=yahoo",
-       "source": "Investor's Business Daily",
-       "time": "2026-11-26T03:39:36Z",
-       "category": "หุ้นรายตัว",
-       "sent": 1,
-       "topics": [],
-       "symbols": [
-        "AAPL"
-       ]
-      },
-      {
-       "title": "Nvidia’s Market Cap Falls Below Microsoft’s: Analyst Flags Five Overhangs For NVDA Stock",
-       "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-s-market-cap-falls-below-microsoft-s-analyst-flags-five-overhangs-for-nvda-stock/cNbx4KZR9Z3",
-       "source": "Stocktwits",
-       "time": "2026-11-26T02:39:42Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
        "topics": [
-        "ชิป"
+        "AI"
+       ],
+       "symbols": [
+        "AAPL"
+       ]
+      },
+      {
+       "title": "Target cut its Apple Black Friday discount in half",
+       "url": "https://www.thestreet.com/retail/target-cut-its-apple-black-friday-discount-in-half",
+       "source": "TheStreet",
+       "time": "2026-11-27T03:17:00Z",
+       "category": "หุ้นรายตัว",
+       "sent": -1,
+       "topics": [],
+       "symbols": [
+        "AAPL"
+       ]
+      },
+      {
+       "title": "Apple Enters the AI Agent Race as It Takes on OpenAI, Anthropic, and Meta. What That Means for AAPL Stock.",
+       "url": "https://www.barchart.com/story/news/9022924/apple-enters-the-ai-agent-race-as-it-takes-on-openai-anthropic-and-meta-what-that-means-for-aapl-stock",
+       "source": "Barchart",
+       "time": "2026-11-26T19:30:03Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [
+        "AI"
        ],
        "symbols": [
         "AAPL",
-        "MSFT",
-        "NVDA"
+        "META"
        ]
       },
       {
-       "title": "Apple Stock Defies AI Selloff: Is It the Market's Safe Haven?",
-       "url": "https://beincrypto.com/apple-stock-ai-selloff-safe-haven/",
-       "source": "BeInCrypto",
-       "time": "2026-11-26T01:00:00Z",
+       "title": "Apple Stocks Rise as AI Selloff Spares the iPhone Maker",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/apple-stocks-rise-ai-selloff-190038273.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T19:00:38Z",
        "category": "หุ้นรายตัว",
-       "sent": -1,
+       "sent": 0,
+       "topics": [
+        "AI"
+       ],
+       "symbols": [
+        "AAPL"
+       ]
+      },
+      {
+       "title": "Apple Removes Talkie From App Store After Reports of Inappropriate AI Messages",
+       "url": "https://finance.yahoo.com/technology/ai/articles/apple-removes-talkie-app-store-180937483.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T18:09:37Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
        "topics": [
         "AI"
        ],
@@ -1819,7 +1815,7 @@
        ]
       }
      ],
-     "news_score": -2
+     "news_score": -1
     },
     {
      "symbol": "GOOGL",
@@ -2146,71 +2142,67 @@
      },
      "news": [
       {
-       "title": "SpaceX gets approval for 1 million data center satellites",
-       "url": "https://finance.yahoo.com/technology/ai/articles/spacex-gets-approval-1-million-023847485.html",
-       "source": "LA Times",
-       "time": "2026-11-26T02:38:47Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "GOOGL",
-        "SPCX"
-       ]
-      },
-      {
-       "title": "Apple Stock Defies AI Selloff: Is It the Market's Safe Haven?",
-       "url": "https://beincrypto.com/apple-stock-ai-selloff-safe-haven/",
-       "source": "BeInCrypto",
-       "time": "2026-11-26T01:00:00Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [
-        "AI"
-       ],
-       "symbols": [
-        "AAPL",
-        "GOOGL"
-       ]
-      },
-      {
-       "title": "5 Best Strong Buy Growth Stocks to Buy for 2027",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/5-best-strong-buy-growth-004610627.html",
+       "title": "5 Best Quantum Computing Stocks To Buy for 2027",
+       "url": "https://finance.yahoo.com/technology/articles/5-best-quantum-computing-stocks-032149616.html",
        "source": "Insider Monkey",
-       "time": "2026-11-26T00:46:10Z",
+       "time": "2026-11-27T03:21:49Z",
        "category": "หุ้นรายตัว",
-       "sent": 1,
+       "sent": 0,
        "topics": [],
        "symbols": [
         "GOOGL"
        ]
       },
       {
-       "title": "SpaceX wins approval to launch one million AI data centre satellites",
-       "url": "https://www.proactiveinvestors.com/companies/news/1102478/spacex-wins-approval-to-launch-one-million-ai-data-centre-satellites-1102478.html",
-       "source": "Proactive",
-       "time": "2026-11-26T00:27:00Z",
+       "title": "5 Best Tech Stocks to Buy for 2027 According to Hedge Funds",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/5-best-tech-stocks-buy-030856400.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-27T03:08:56Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "GOOGL"
+       ]
+      },
+      {
+       "title": "‘How Can TSLA Compete With Waymo?’ Gary Black Questions Tesla’s Robotaxi Strategy, Predicts Waymo Will Lead in Miles and Trips",
+       "url": "https://finance.yahoo.com/technology/articles/tsla-compete-waymo-gary-black-013007370.html",
+       "source": "Benzinga",
+       "time": "2026-11-27T01:30:07Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "GOOGL",
+        "TSLA"
+       ]
+      },
+      {
+       "title": "Jim Lebenthal Says This Is “a Correction, Not Something Worse.” Why He’s Buying More Alphabet",
+       "url": "https://247wallst.com/investing/2026/11/26/jim-lebenthal-says-this-is-a-correction-not-something-worse-why-hes-buying-more-alphabet/",
+       "source": "24/7 Wall St.",
+       "time": "2026-11-26T22:07:55Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "GOOGL"
+       ]
+      },
+      {
+       "title": "Jensen Huang’s Return Doesn’t Make Nvidia Stock (NVDA) a Buy",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-return-doesn-t-212200380.html",
+       "source": "TipRanks",
+       "time": "2026-11-26T21:22:00Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
-        "AI"
+        "ชิป"
        ],
        "symbols": [
         "GOOGL",
-        "SPCX"
-       ]
-      },
-      {
-       "title": "Bill Gurley: Investors Weren’t “Scrambling to Actually Own Anthropic.” That’s a Problem for Amazon and Alphabet",
-       "url": "https://www.tikr.com/blog/bill-gurley-investors-werent-scrambling-to-actually-own-anthropic-thats-a-problem-for-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261125-5qg4553j",
-       "source": "TIKR",
-       "time": "2026-11-25T23:43:06Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "AMZN",
-        "GOOGL"
+        "NVDA"
        ]
       }
      ],
@@ -2572,10 +2564,22 @@
      },
      "news": [
       {
-       "title": "Nvidia is cheap on paper, so why won't the market buy it?",
-       "url": "https://finance.yahoo.com/video/nvidia-is-cheap-on-paper-so-why-wont-the-market-buy-it-192215326.html",
-       "source": "Yahoo Finance Video",
-       "time": "2026-11-25T19:22:15Z",
+       "title": "5 Best Tech Stocks to Buy for 2027 According to Hedge Funds",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/5-best-tech-stocks-buy-030856400.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-27T03:08:56Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "META"
+       ]
+      },
+      {
+       "title": "Jensen Huang’s Return Doesn’t Make Nvidia Stock (NVDA) a Buy",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-return-doesn-t-212200380.html",
+       "source": "TipRanks",
+       "time": "2026-11-26T21:22:00Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
@@ -2587,56 +2591,12 @@
        ]
       },
       {
-       "title": "Tariffs are back as Anthropic sinks further below its IPO price",
-       "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html",
-       "source": "Yahoo Finance Video",
-       "time": "2026-11-25T16:05:24Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [
-        "ภาษีและการค้า"
-       ],
-       "symbols": [
-        "META"
-       ]
-      },
-      {
-       "title": "Amazon and Meta are negotiating the future of AI shopping. Consumers aren't quite there yet.",
-       "url": "https://finance.yahoo.com/technology/article/amazon-and-meta-are-negotiating-the-future-of-ai-shopping-consumers-arent-quite-there-yet-144215428.html",
-       "source": "Yahoo Finance",
-       "time": "2026-11-25T14:42:15Z",
+       "title": "Apple Enters the AI Agent Race as It Takes on OpenAI, Anthropic, and Meta. What That Means for AAPL Stock.",
+       "url": "https://www.barchart.com/story/news/9022924/apple-enters-the-ai-agent-race-as-it-takes-on-openai-anthropic-and-meta-what-that-means-for-aapl-stock",
+       "source": "Barchart",
+       "time": "2026-11-26T19:30:03Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
-       "topics": [
-        "AI"
-       ],
-       "symbols": [
-        "AMZN",
-        "META"
-       ]
-      },
-      {
-       "title": "Amazon, Meta reportedly in talks to remove block on Muse AI agent",
-       "url": "https://finance.yahoo.com/video/amazon-meta-reportedly-in-talks-to-remove-block-on-muse-ai-agent-143616531.html",
-       "source": "Yahoo Finance Video",
-       "time": "2026-11-25T14:36:16Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [
-        "AI"
-       ],
-       "symbols": [
-        "AMZN",
-        "META"
-       ]
-      },
-      {
-       "title": "Apple Stock Defies AI Selloff: Is It the Market's Safe Haven?",
-       "url": "https://beincrypto.com/apple-stock-ai-selloff-safe-haven/",
-       "source": "BeInCrypto",
-       "time": "2026-11-26T01:00:00Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
        "topics": [
         "AI"
        ],
@@ -2644,9 +2604,37 @@
         "AAPL",
         "META"
        ]
+      },
+      {
+       "title": "AMD Stocks Slip 1.75% After Filing Registers 337 Million Shares for Resale",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stocks-slip-1-75-182928246.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T18:29:28Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [
+        "ชิป"
+       ],
+       "symbols": [
+        "AMD",
+        "META"
+       ]
+      },
+      {
+       "title": "Stanley Druckenmiller, Bill Ackman and 7 Other Famous Investors Own Amazon. Here’s Who Bought and Sold Recently",
+       "url": "https://www.tikr.com/blog/stanley-druckenmiller-bill-ackman-and-7-other-famous-investors-own-amazon-heres-who-bought-and-sold-recently?ref=yahoofinance&tlnk=yf-261126-2mffj2wm",
+       "source": "TIKR",
+       "time": "2026-11-26T18:11:13Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "AMZN",
+        "META"
+       ]
       }
      ],
-     "news_score": -2
+     "news_score": 0
     },
     {
      "symbol": "AVGO",
@@ -2986,10 +2974,10 @@
      },
      "news": [
       {
-       "title": "Why Retail Investors Are Watching AMD and AI Infrastructure Stocks After SpaceX Satellite News",
-       "url": "https://finance.yahoo.com/technology/ai/articles/why-retail-investors-watching-amd-021215050.html",
-       "source": "Simply Wall St.",
-       "time": "2026-11-26T02:12:15Z",
+       "title": "Broadcom (AVGO) Could Be the Biggest Winner From the Shift to Custom AI Chips",
+       "url": "https://finance.yahoo.com/technology/ai/articles/broadcom-avgo-could-biggest-winner-031533044.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-27T03:15:33Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
@@ -2997,16 +2985,29 @@
         "ชิป"
        ],
        "symbols": [
-        "AMD",
-        "AVGO",
-        "SPCX"
+        "AVGO"
        ]
       },
       {
-       "title": "Broadcom Stock Hasn't Traded This Low Since July 2025. I Think It's a Buy.",
-       "url": "https://www.fool.com/investing/2026/11/25/broadcom-stock-hasn-t-traded-this-low-since-july-2025-i-think-it-s-a-buy/",
+       "title": "These 2 AI Chip Stocks Are Down 36% to 39% From Their Highs. Here’s What History Says Happens Next.",
+       "url": "https://www.fool.com/investing/2026/11/26/these-2-ai-chip-stocks-are-down-36-to-39-from-their-highs-here-s-what-history-says-happens-next/",
        "source": "Motley Fool",
-       "time": "2026-11-26T01:03:02Z",
+       "time": "2026-11-27T00:20:02Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [
+        "AI",
+        "ชิป"
+       ],
+       "symbols": [
+        "AVGO"
+       ]
+      },
+      {
+       "title": "5 Most Oversold Semiconductor Stocks to Buy for 2027",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/5-most-oversold-semiconductor-stocks-194738573.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-26T19:47:38Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
@@ -3017,45 +3018,36 @@
        ]
       },
       {
-       "title": "5 Best Strong Buy Growth Stocks to Buy for 2027",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/5-best-strong-buy-growth-004610627.html",
-       "source": "Insider Monkey",
-       "time": "2026-11-26T00:46:10Z",
-       "category": "หุ้นรายตัว",
-       "sent": 1,
-       "topics": [],
-       "symbols": [
-        "AVGO"
-       ]
-      },
-      {
-       "title": "AI stock rout deepens but damage is limited by afternoon bounce",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/ai-stock-rout-deepens-damage-222733772.html",
-       "source": "Reuters",
-       "time": "2026-11-25T22:27:33Z",
+       "title": "Goldman Sachs resets Broadcom's 12-month price target before earnings",
+       "url": "https://www.thestreet.com/investing/stocks/avgo-broadcom-stock-goldman-sachs-resets-avgo-stock-12-month-price-target-before-earnings",
+       "source": "TheStreet",
+       "time": "2026-11-26T19:33:15Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
-        "AI"
+        "ชิป",
+        "ผลประกอบการ"
        ],
        "symbols": [
         "AVGO"
        ]
       },
       {
-       "title": "Analysts Expect More From Marvell Than Marvell Does",
-       "url": "https://www.trefis.com/stock/mrvl/articles/628747/analysts-expect-more-from-marvell-than-marvell-does/2026-11-25",
-       "source": "Trefis",
-       "time": "2026-11-25T22:24:47Z",
+       "title": "Broadcom Stocks Edge Lower After Rebounding From an Intraday Low of $278",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-edge-lower-rebounding-183041028.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T18:30:41Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
-       "topics": [],
+       "topics": [
+        "ชิป"
+       ],
        "symbols": [
         "AVGO"
        ]
       }
      ],
-     "news_score": 1
+     "news_score": 0
     },
     {
      "symbol": "AMD",
@@ -3395,43 +3387,64 @@
      },
      "news": [
       {
-       "title": "Nvidia, AMD, and Micron stocks trim steep losses amid jittery AI trade",
-       "url": "https://finance.yahoo.com/markets/article/nvidia-amd-micron-stocks-sink-as-investors-flee-ai-trade-134518921.html",
-       "source": "Yahoo Finance",
-       "time": "2026-11-25T13:45:18Z",
+       "title": "Eric Trump-Backed Robot Startup’s Employees Lose Health Insurance After Weeks Without Pay as Company Scrambles for $150 Million Lifeline: Report",
+       "url": "https://finance.yahoo.com/healthcare/articles/eric-trump-backed-robot-startup-023005325.html",
+       "source": "Benzinga",
+       "time": "2026-11-27T02:30:05Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
-       "topics": [
-        "AI",
-        "ชิป"
-       ],
+       "topics": [],
        "symbols": [
-        "AMD",
-        "MU",
-        "NVDA"
+        "AMD"
        ]
       },
       {
-       "title": "Why Retail Investors Are Watching AMD and AI Infrastructure Stocks After SpaceX Satellite News",
-       "url": "https://finance.yahoo.com/technology/ai/articles/why-retail-investors-watching-amd-021215050.html",
+       "title": "5 Most Oversold Semiconductor Stocks to Buy for 2027",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/5-most-oversold-semiconductor-stocks-194738573.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-26T19:47:38Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [
+        "ชิป"
+       ],
+       "symbols": [
+        "AMD"
+       ]
+      },
+      {
+       "title": "KHC, PINS, AMD: 3 Bets I’d Consider Waging From Thanksgiving Eve’s Top 25 Unusually Active Options",
+       "url": "https://www.barchart.com/story/news/9022595/khc-pins-amd-3-bets-id-consider-waging-from-thanksgiving-eves-top-25-unusually-active-options",
+       "source": "Barchart",
+       "time": "2026-11-26T18:30:04Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [
+        "ชิป"
+       ],
+       "symbols": [
+        "AMD"
+       ]
+      },
+      {
+       "title": "AMD Stocks Slip 1.75% After Filing Registers 337 Million Shares for Resale",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stocks-slip-1-75-182928246.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T18:29:28Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [
+        "ชิป"
+       ],
+       "symbols": [
+        "AMD"
+       ]
+      },
+      {
+       "title": "nVent Electric (NVT) Brings AI Data Center Cooling And Power Systems To SC26",
+       "url": "https://finance.yahoo.com/technology/ai/articles/nvent-electric-nvt-brings-ai-171331695.html",
        "source": "Simply Wall St.",
-       "time": "2026-11-26T02:12:15Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [
-        "AI",
-        "ชิป"
-       ],
-       "symbols": [
-        "AMD",
-        "SPCX"
-       ]
-      },
-      {
-       "title": "Tech Stocks Stall Into Thanksgiving: Will the AI Rebound Return?",
-       "url": "https://beincrypto.com/tech-stocks-stall-thanksgiving-nvidia-rebound/",
-       "source": "BeInCrypto",
-       "time": "2026-11-26T01:19:53Z",
+       "time": "2026-11-26T17:13:31Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
@@ -3439,34 +3452,6 @@
        ],
        "symbols": [
         "AMD"
-       ]
-      },
-      {
-       "title": "Big AI Buyers Want a Second Source. Is AMD (AMD) It?",
-       "url": "https://finance.yahoo.com/technology/ai/articles/big-ai-buyers-want-second-005602621.html",
-       "source": "Insider Monkey",
-       "time": "2026-11-26T00:56:02Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [
-        "AI",
-        "ชิป"
-       ],
-       "symbols": [
-        "AMD"
-       ]
-      },
-      {
-       "title": "Anthropic Earns “$80 a Year per Watt” of GPUs, Says Modal’s CEO. That’s Good News for SpaceX",
-       "url": "https://www.tikr.com/blog/anthropic-earns-80-a-year-per-watt-of-gpus-says-modals-ceo-thats-good-news-for-spacex?ref=yahoofinance&tlnk=yf-261125-5cgv35mg",
-       "source": "TIKR",
-       "time": "2026-11-25T23:41:46Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "AMD",
-        "SPCX"
        ]
       }
      ],
@@ -3611,14 +3596,14 @@
       "atr": 25.12,
       "bars": 251
      },
-     "pe": 22.63,
-     "fpe": 14.64,
+     "pe": 22.19,
+     "fpe": 14.66,
      "mcap": 1775537094656,
      "target": 586.69,
      "targetLow": 440.0,
      "targetHigh": 1000.0,
      "nAnalysts": 20,
-     "rec": "strong_buy",
+     "rec": "none",
      "fund": {
       "currency": "TWD",
       "quality": "คุณภาพดี",
@@ -3683,7 +3668,7 @@
        {
         "group": "value",
         "name": "P/E คาดการณ์",
-        "value": "14.6",
+        "value": "14.7",
         "text": "ไม่แพง",
         "score": 1
        },
@@ -3706,13 +3691,6 @@
         "name": "ส่วนต่างถึงราคาเป้าหมายเฉลี่ย",
         "value": "+71.4%",
         "text": "เป้าหมายสูงกว่าราคาพอสมควร",
-        "score": 1
-       },
-       {
-        "group": "analyst",
-        "name": "ความเห็นนักวิเคราะห์ส่วนใหญ่",
-        "value": "ซื้อแรง",
-        "text": "",
         "score": 1
        }
       ],
@@ -3791,18 +3769,46 @@
        "nm": 51.1,
        "roe": 42.0,
        "de": 0.1519,
-       "fpe": 14.64,
+       "fpe": 14.66,
        "ps": 0.36
       }
      },
      "news": [
       {
-       "title": "Asian tech stocks jump as bargain buyers boost battered AI trade",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/asian-tech-stocks-jump-bargain-030316035.html",
-       "source": "Investing.com",
-       "time": "2026-11-26T03:03:16Z",
+       "title": "TSMC (TSM) Is Building a Semiconductor Moat That Rivals May Struggle to Cross",
+       "url": "https://finance.yahoo.com/technology/articles/tsmc-tsm-building-semiconductor-moat-031114980.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-27T03:11:14Z",
        "category": "หุ้นรายตัว",
-       "sent": 1,
+       "sent": 0,
+       "topics": [
+        "ชิป"
+       ],
+       "symbols": [
+        "TSM"
+       ]
+      },
+      {
+       "title": "Taiwan Semiconductor Stocks Slip 1.96% as Taiwan's Market Sinks 4.8% in Chip Rout",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-stocks-slip-1-190319001.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T19:03:19Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [
+        "ชิป"
+       ],
+       "symbols": [
+        "TSM"
+       ]
+      },
+      {
+       "title": "3 Top Stocks to Buy Before 2027 as Quantum Enters AI Data Centers",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/3-top-stocks-buy-2027-190000024.html",
+       "source": "Zacks",
+       "time": "2026-11-26T19:00:00Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
        "topics": [
         "AI"
        ],
@@ -3811,53 +3817,26 @@
        ]
       },
       {
-       "title": "5 Best Strong Buy Growth Stocks to Buy for 2027",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/5-best-strong-buy-growth-004610627.html",
-       "source": "Insider Monkey",
-       "time": "2026-11-26T00:46:10Z",
-       "category": "หุ้นรายตัว",
-       "sent": 1,
-       "topics": [],
-       "symbols": [
-        "TSM"
-       ]
-      },
-      {
-       "title": "Altimeter’s Brad Gerstner Says Nvidia Was Priced for “Negative Growth for 2028 and 2029.” Wall Street Expects 29%",
-       "url": "https://www.tikr.com/blog/altimeters-brad-gerstner-says-nvidia-was-priced-for-negative-growth-for-2028-and-2029-wall-street-expects-29?ref=yahoofinance&tlnk=yf-261125-3qj6vf95",
-       "source": "TIKR",
-       "time": "2026-11-25T23:39:02Z",
+       "title": "This AI Investing Prodigy Lost 65% in a Single Quarter and Is Still Up 88.5% in 2026. Here’s the Lesson for Investors.",
+       "url": "https://247wallst.com/investing/2026/11/26/this-ai-investing-prodigy-lost-65-in-a-single-quarter-and-is-still-up-88-5-in-2026-heres-the-lesson-for-investors/",
+       "source": "24/7 Wall St.",
+       "time": "2026-11-26T16:55:13Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
-        "ชิป"
-       ],
-       "symbols": [
-        "NVDA",
-        "TSM"
-       ]
-      },
-      {
-       "title": "Trump heads to Arizona next week for a high-stakes expansion of TSMC's computer chip factories",
-       "url": "https://finance.yahoo.com/technology/articles/trump-heads-arizona-next-week-225636899.html",
-       "source": "Associated Press",
-       "time": "2026-11-25T22:56:36Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [
-        "ชิป"
+        "AI"
        ],
        "symbols": [
         "TSM"
        ]
       },
       {
-       "title": "The $2 trillion chip rally is unraveling — here's what history says comes next",
-       "url": "https://finance.yahoo.com/markets/article/the-2-trillion-chip-rally-is-getting-wiped-out--heres-what-history-says-comes-next-145306996.html",
-       "source": "Yahoo Finance",
-       "time": "2026-11-25T14:53:06Z",
+       "title": "NVIDIA Just Dropped 31% in a Month. Will NVDA Stock Hit $125 or $200 First?",
+       "url": "https://247wallst.com/investing/2026/11/26/nvidia-just-dropped-31-in-a-month-will-nvda-stock-hit-125-or-200-first/",
+       "source": "24/7 Wall St.",
+       "time": "2026-11-26T16:06:22Z",
        "category": "หุ้นรายตัว",
-       "sent": 1,
+       "sent": -1,
        "topics": [
         "ชิป"
        ],
@@ -3866,7 +3845,7 @@
        ]
       }
      ],
-     "news_score": 3
+     "news_score": -1
     },
     {
      "symbol": "MU",
@@ -4007,9 +3986,9 @@
       "atr": 70.99,
       "bars": 251
      },
-     "pe": 8.47,
+     "pe": 8.09,
      "fpe": 2.93,
-     "mcap": 680268201984,
+     "mcap": 682379247616,
      "target": 1529.69,
      "targetLow": 361.0,
      "targetHigh": 3000.0,
@@ -4188,15 +4167,41 @@
        "roe": 88.0,
        "de": 0.0374,
        "fpe": 2.93,
-       "ps": 5.11
+       "ps": 5.12
       }
      },
      "news": [
       {
-       "title": "Nvidia, AMD, and Micron stocks trim steep losses amid jittery AI trade",
-       "url": "https://finance.yahoo.com/markets/article/nvidia-amd-micron-stocks-sink-as-investors-flee-ai-trade-134518921.html",
-       "source": "Yahoo Finance",
-       "time": "2026-11-25T13:45:18Z",
+       "title": "Micron (MU) Has Secured $32 Billion in Customer Commitments. Here’s Why That Matters",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/micron-mu-secured-32-billion-031249719.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-27T03:12:49Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [
+        "ชิป"
+       ],
+       "symbols": [
+        "MU"
+       ]
+      },
+      {
+       "title": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
+       "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-wild-ride-nasdaq-nvidia-slash-losses-anthropic-higher/?src=A00220&yptr=yahoo",
+       "source": "Investor's Business Daily",
+       "time": "2026-11-27T01:34:35Z",
+       "category": "หุ้นรายตัว",
+       "sent": 1,
+       "topics": [],
+       "symbols": [
+        "MU"
+       ]
+      },
+      {
+       "title": "Not Nvidia. Not Micron. If I Could Buy and Hold Only 1 Artificial Intelligence (AI) Semiconductor Stock Through 2030, This Would Be It.",
+       "url": "https://www.fool.com/investing/2026/11/26/not-nvidia-not-micron-if-i-could-buy-and-hold-only-1-artificial-intelligence-ai-semiconductor-stock-through-2030-this-would-be-it/",
+       "source": "Motley Fool",
+       "time": "2026-11-26T23:14:44Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
@@ -4204,56 +4209,31 @@
         "ชิป"
        ],
        "symbols": [
-        "AMD",
         "MU",
         "NVDA"
        ]
       },
       {
-       "title": "Dow Jones Futures Rise; Market Goes On Wild Ride As Nasdaq Slashes Losses",
-       "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-wild-ride-nasdaq-nvidia-slash-losses-anthropic-higher/?src=A00220&yptr=yahoo",
-       "source": "Investor's Business Daily",
-       "time": "2026-11-26T03:39:36Z",
-       "category": "หุ้นรายตัว",
-       "sent": 1,
-       "topics": [],
-       "symbols": [
-        "MU"
-       ]
-      },
-      {
-       "title": "Tech Stocks Stall Into Thanksgiving: Will the AI Rebound Return?",
-       "url": "https://beincrypto.com/tech-stocks-stall-thanksgiving-nvidia-rebound/",
-       "source": "BeInCrypto",
-       "time": "2026-11-26T01:19:53Z",
+       "title": "Why It’s Hard to Write Off Micron (MU) Even with a Memory Peak in Sight",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/why-hard-write-off-micron-210000375.html",
+       "source": "TipRanks",
+       "time": "2026-11-26T21:00:00Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
-        "AI"
+        "ชิป"
        ],
        "symbols": [
         "MU"
        ]
       },
       {
-       "title": "5 Best Strong Buy Growth Stocks to Buy for 2027",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/5-best-strong-buy-growth-004610627.html",
+       "title": "5 Most Oversold Semiconductor Stocks to Buy for 2027",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/5-most-oversold-semiconductor-stocks-194738573.html",
        "source": "Insider Monkey",
-       "time": "2026-11-26T00:46:10Z",
+       "time": "2026-11-26T19:47:38Z",
        "category": "หุ้นรายตัว",
-       "sent": 1,
-       "topics": [],
-       "symbols": [
-        "MU"
-       ]
-      },
-      {
-       "title": "Is Micron Cheap Only If Its Record Margin Lasts?",
-       "url": "https://www.trefis.com/stock/mu/articles/628939/is-micron-cheap-only-if-its-record-margin-lasts/2026-11-25",
-       "source": "Trefis",
-       "time": "2026-11-25T23:43:07Z",
-       "category": "หุ้นรายตัว",
-       "sent": 1,
+       "sent": 0,
        "topics": [
         "ชิป"
        ],
@@ -4262,7 +4242,7 @@
        ]
       }
      ],
-     "news_score": 3
+     "news_score": 1
     },
     {
      "symbol": "AMZN",
@@ -4611,10 +4591,10 @@
      },
      "news": [
       {
-       "title": "Jensen Huang's return, neocloud risk, and a holiday retail rally",
-       "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-and-a-holiday-retail-rally-222042649.html",
-       "source": "Yahoo Finance Video",
-       "time": "2026-11-25T21:00:00Z",
+       "title": "5 Best Quantum Computing Stocks To Buy for 2027",
+       "url": "https://finance.yahoo.com/technology/articles/5-best-quantum-computing-stocks-032149616.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-27T03:21:49Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [],
@@ -4623,54 +4603,34 @@
        ]
       },
       {
-       "title": "Nvidia is cheap on paper, so why won't the market buy it?",
-       "url": "https://finance.yahoo.com/video/nvidia-is-cheap-on-paper-so-why-wont-the-market-buy-it-192215326.html",
-       "source": "Yahoo Finance Video",
-       "time": "2026-11-25T19:22:15Z",
+       "title": "5 Best Tech Stocks to Buy for 2027 According to Hedge Funds",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/5-best-tech-stocks-buy-030856400.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-27T03:08:56Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
-       "topics": [
-        "ชิป"
-       ],
-       "symbols": [
-        "AMZN",
-        "NVDA"
-       ]
-      },
-      {
-       "title": "Tariffs are back as Anthropic sinks further below its IPO price",
-       "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html",
-       "source": "Yahoo Finance Video",
-       "time": "2026-11-25T16:05:24Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [
-        "ภาษีและการค้า"
-       ],
+       "topics": [],
        "symbols": [
         "AMZN"
        ]
       },
       {
-       "title": "Amazon and Meta are negotiating the future of AI shopping. Consumers aren't quite there yet.",
-       "url": "https://finance.yahoo.com/technology/article/amazon-and-meta-are-negotiating-the-future-of-ai-shopping-consumers-arent-quite-there-yet-144215428.html",
-       "source": "Yahoo Finance",
-       "time": "2026-11-25T14:42:15Z",
+       "title": "Weeks Before His Wife Needs a Nursing Home, He Buys a $75,000 SUV Online. Medicaid Ignores One Car Whatever It Costs, Taking $75,000 Off the Savings It Expects Them to Spend Down",
+       "url": "https://247wallst.com/personal-finance/2026/11/26/weeks-before-his-wife-needs-a-nursing-home-he-buys-a-75000-suv-online-medicaid-ignores-one-car-whatever-it-costs-taking-75000-off-the-savings-it-expects-them-to-spend-down/",
+       "source": "24/7 Wall St.",
+       "time": "2026-11-27T00:04:07Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
-       "topics": [
-        "AI"
-       ],
+       "topics": [],
        "symbols": [
-        "AMZN",
-        "META"
+        "AMZN"
        ]
       },
       {
-       "title": "Amazon, Meta reportedly in talks to remove block on Muse AI agent",
-       "url": "https://finance.yahoo.com/video/amazon-meta-reportedly-in-talks-to-remove-block-on-muse-ai-agent-143616531.html",
-       "source": "Yahoo Finance Video",
-       "time": "2026-11-25T14:36:16Z",
+       "title": "Amazon tried to kill Musk’s plan for 1 million AI satellites. The FCC chair scolded it and gave SpaceX the green light",
+       "url": "https://finance.yahoo.com/technology/ai/articles/amazon-tried-kill-musk-plan-233000718.html",
+       "source": "Moneywise",
+       "time": "2026-11-26T23:30:00Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
@@ -4678,11 +4638,23 @@
        ],
        "symbols": [
         "AMZN",
-        "META"
+        "SPCX"
+       ]
+      },
+      {
+       "title": "Steve Cohen’s 5 Biggest Stock Bets for 2027",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/steve-cohen-5-biggest-stock-220614898.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-26T22:06:14Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "AMZN"
        ]
       }
      ],
-     "news_score": -1
+     "news_score": 0
     },
     {
      "symbol": "ASML",
@@ -4826,9 +4798,9 @@
      "pe": 32.06,
      "fpe": 20.55,
      "mcap": 502230122496,
-     "target": 2109.4,
-     "targetLow": 848.01,
-     "targetHigh": 2862.07,
+     "target": 2113.34,
+     "targetLow": 849.59,
+     "targetHigh": 2867.42,
      "nAnalysts": 17,
      "rec": "strong_buy",
      "fund": {
@@ -4916,7 +4888,7 @@
        {
         "group": "analyst",
         "name": "ส่วนต่างถึงราคาเป้าหมายเฉลี่ย",
-        "value": "+61.9%",
+        "value": "+62.2%",
         "text": "เป้าหมายสูงกว่าราคาพอสมควร",
         "score": 1
        },
@@ -5009,6 +4981,58 @@
      },
      "news": [
       {
+       "title": "Netherlands will ask Washington not to enforce MATCH Act, minister says",
+       "url": "https://uk.news.yahoo.com/dutch-minister-says-us-chip-113207674.html",
+       "source": "Reuters",
+       "time": "2026-11-26T15:43:12Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "ASML"
+       ]
+      },
+      {
+       "title": "ASML Can’t Build Enough Machines for 2028. Is a 20% China Risk a Reason to Sell, or Buy More?",
+       "url": "https://www.tikr.com/blog/asml-cant-build-enough-machines-for-2028-is-a-20-china-risk-a-reason-to-sell-or-buy-more?ref=yahoofinance&tlnk=yf-261126-c9rcg432",
+       "source": "TIKR",
+       "time": "2026-11-26T09:54:20Z",
+       "category": "หุ้นรายตัว",
+       "sent": -1,
+       "topics": [
+        "ชิป"
+       ],
+       "symbols": [
+        "ASML"
+       ]
+      },
+      {
+       "title": "European Indexes Open Sharply Higher After U.S. Recovery",
+       "url": "https://www.wsj.com/finance/stocks/nikkei-rises-1-3-led-by-chip-metals-stocks-3b7004c9?siteid=yhoof2&yptr=yahoo",
+       "source": "The Wall Street Journal",
+       "time": "2026-11-26T08:35:00Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "ASML"
+       ]
+      },
+      {
+       "title": "ASML Sinks 7% in a Week: Dutch Lawmaker Warns the MATCH Act Is “Disastrous for ASML.” Time to Buy?",
+       "url": "https://www.tikr.com/blog/asml-sinks-7-in-a-week-dutch-lawmaker-warns-the-match-act-is-disastrous-for-asml-time-to-buy?ref=yahoofinance&tlnk=yf-261126-5mg6h437",
+       "source": "TIKR",
+       "time": "2026-11-26T08:28:50Z",
+       "category": "หุ้นรายตัว",
+       "sent": -1,
+       "topics": [
+        "ชิป"
+       ],
+       "symbols": [
+        "ASML"
+       ]
+      },
+      {
        "title": "ASML (ASML) Can’t Meet Demand. Is That a Strength or Risk?",
        "url": "https://finance.yahoo.com/markets/stocks/articles/asml-asml-t-meet-demand-004924571.html",
        "source": "Insider Monkey",
@@ -5020,66 +5044,6 @@
        ],
        "symbols": [
         "ASML"
-       ]
-      },
-      {
-       "title": "Why My Analysis Points to Nearly 40% Semiconductor Equipment Growth in 2026",
-       "url": "https://247wallst.com/investing/2026/11/25/why-my-analysis-points-to-nearly-40-semiconductor-equipment-growth-in-2026/",
-       "source": "24/7 Wall St.",
-       "time": "2026-11-25T23:42:34Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [
-        "ชิป"
-       ],
-       "symbols": [
-        "ASML"
-       ]
-      },
-      {
-       "title": "Chips and iPhones Are Safe From New Tariffs. Here’s What Isn’t.",
-       "url": "https://www.barrons.com/articles/apple-micron-tariffs-tech-stocks-trump-58a58e8d?siteid=yhoof2&yptr=yahoo",
-       "source": "Barrons.com",
-       "time": "2026-11-25T20:47:00Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [
-        "ชิป",
-        "ภาษีและการค้า"
-       ],
-       "symbols": [
-        "ASML"
-       ]
-      },
-      {
-       "title": "ASML Holding (ENXTAM:ASML) Faces Dutch Pushback On New US China Chip Curbs",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/asml-holding-enxtam-asml-faces-201500190.html",
-       "source": "Simply Wall St.",
-       "time": "2026-11-25T20:15:00Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [
-        "ชิป"
-       ],
-       "symbols": [
-        "ASML"
-       ]
-      },
-      {
-       "title": "Applied Materials Falls 6% Despite UBS’s $575 Target as China Chip Curbs Hit Equipment Stocks; Lam Research Drops 7%, KLA Edges Lower",
-       "url": "https://247wallst.com/investing/2026/11/25/applied-materials-falls-6-despite-ubss-575-target-as-china-chip-curbs-hit-equipment-stocks-lam-research-drops-7-kla-edges-lower/",
-       "source": "24/7 Wall St.",
-       "time": "2026-11-25T20:09:44Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [
-        "ชิป"
-       ],
-       "symbols": [
-        "AMAT",
-        "ASML",
-        "KLAC",
-        "LRCX"
        ]
       }
      ],
@@ -5394,6 +5358,44 @@
      },
      "news": [
       {
+       "title": "NuScale Just Dropped 17% in a Week to a New 52-Week Low. Is It Time to Sell, or Load Up?",
+       "url": "https://www.tikr.com/blog/nuscale-just-dropped-17-in-a-week-to-a-new-52-week-low-is-it-time-to-sell-or-load-up?ref=yahoofinance&tlnk=yf-261126-g32xg4gv",
+       "source": "TIKR",
+       "time": "2026-11-26T15:21:11Z",
+       "category": "หุ้นรายตัว",
+       "sent": -1,
+       "topics": [],
+       "symbols": [
+        "OKLO"
+       ]
+      },
+      {
+       "title": "NuScale Power (SMR) Draws Fresh Investor Focus As AI Power Demand Lifts SMR Appeal",
+       "url": "https://finance.yahoo.com/energy/articles/nuscale-power-smr-draws-fresh-141122724.html",
+       "source": "Simply Wall St.",
+       "time": "2026-11-26T14:11:22Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [
+        "AI"
+       ],
+       "symbols": [
+        "OKLO"
+       ]
+      },
+      {
+       "title": "Energy Fuels vs. Centrus Energy: Which Uranium Stock Has The Edge Now?",
+       "url": "https://finance.yahoo.com/energy/articles/energy-fuels-vs-centrus-energy-131600993.html",
+       "source": "Zacks",
+       "time": "2026-11-26T13:16:00Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "OKLO"
+       ]
+      },
+      {
        "title": "Prediction: Oklo Stock Could Have a Huge Year as Nuclear Energy Demand Accelerates",
        "url": "https://247wallst.com/investing/2026/11/25/prediction-oklo-stock-could-have-a-huge-year-as-nuclear-energy-demand-accelerates/",
        "source": "24/7 Wall St.",
@@ -5415,44 +5417,6 @@
        "topics": [
         "AI"
        ],
-       "symbols": [
-        "OKLO"
-       ]
-      },
-      {
-       "title": "OKLO Has More Cash, But Is NuScale the Better Nuclear Stock?",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/oklo-more-cash-nuscale-better-122800602.html",
-       "source": "Zacks",
-       "time": "2026-11-25T12:28:00Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "OKLO"
-       ]
-      },
-      {
-       "title": "Oklo Sinks 14% in a Week, NuScale Down 19%, as the AI Selloff Hits Nuclear Stocks. Time to Buy?",
-       "url": "https://www.tikr.com/blog/oklo-sinks-14-in-a-week-nuscale-down-19-as-the-ai-selloff-hits-nuclear-stocks-time-to-buy?ref=yahoofinance&tlnk=yf-261125-qw7frcvg",
-       "source": "TIKR",
-       "time": "2026-11-25T08:11:00Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [
-        "AI"
-       ],
-       "symbols": [
-        "OKLO"
-       ]
-      },
-      {
-       "title": "1 Reason I Haven’t Bought Oklo Stock -- and Probably Never Will",
-       "url": "https://www.fool.com/investing/2026/11/24/1-reason-i-haven-t-bought-oklo-stock-and-probably-never-will/",
-       "source": "Motley Fool",
-       "time": "2026-11-25T02:20:02Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
        "symbols": [
         "OKLO"
        ]
@@ -5768,47 +5732,10 @@
      },
      "news": [
       {
-       "title": "SpaceX, Elon Musk to give one share each to active Trump Accounts",
-       "url": "https://finance.yahoo.com/markets/article/spacex-elon-musk-to-give-one-share-each-to-active-trump-accounts-205719872.html",
-       "source": "Yahoo Finance",
-       "time": "2026-11-25T20:57:19Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "SPCX"
-       ]
-      },
-      {
-       "title": "SpaceX stock pares losses following FCC approval for data centers in space",
-       "url": "https://finance.yahoo.com/technology/article/spacex-stock-pares-losses-following-fcc-approval-for-data-centers-in-space-183757039.html",
-       "source": "Yahoo Finance",
-       "time": "2026-11-25T18:37:57Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "SPCX"
-       ]
-      },
-      {
-       "title": "Tesla and SpaceX stocks sink as merger concerns mount",
-       "url": "https://finance.yahoo.com/markets/stocks/article/tesla-and-spacex-stocks-sink-as-merger-concerns-mount-154159372.html",
-       "source": "Yahoo Finance",
-       "time": "2026-11-25T15:41:59Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [],
-       "symbols": [
-        "SPCX",
-        "TSLA"
-       ]
-      },
-      {
-       "title": "Cathie Wood Buys More SpaceX Amid Tesla Merger Talks — Ron Baron Says SpaceX Could Make $50B A Year From One Data Center",
-       "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-buys-spacex-tesla-merger-talks-ron-baron-spacex-50b-one-data-center/cNbxeDKR9Z4",
-       "source": "Stocktwits",
-       "time": "2026-11-26T03:32:35Z",
+       "title": "What Could Tesla (TSLA) Merger Talks Mean For Its Stock?",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/could-tesla-tsla-merger-talks-013007632.html",
+       "source": "Simply Wall St.",
+       "time": "2026-11-27T01:30:07Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [],
@@ -5818,19 +5745,59 @@
        ]
       },
       {
-       "title": "SpaceX gets approval for 1 million data center satellites",
-       "url": "https://finance.yahoo.com/technology/ai/articles/spacex-gets-approval-1-million-023847485.html",
-       "source": "LA Times",
-       "time": "2026-11-26T02:38:47Z",
+       "title": "Mexico wants a say in where SpaceX flies — says harmful rocket debris keeps washing up on its shores",
+       "url": "https://finance.yahoo.com/economy/policy/articles/mexico-wants-where-spacex-flies-003000153.html",
+       "source": "Moneywise",
+       "time": "2026-11-27T00:30:00Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [],
        "symbols": [
         "SPCX"
+       ]
+      },
+      {
+       "title": "Musk says he will donate another SpaceX share to American kids annually",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/musk-says-donate-another-spacex-000147660.html",
+       "source": "Investing.com",
+       "time": "2026-11-27T00:01:47Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "SPCX"
+       ]
+      },
+      {
+       "title": "Amazon tried to kill Musk’s plan for 1 million AI satellites. The FCC chair scolded it and gave SpaceX the green light",
+       "url": "https://finance.yahoo.com/technology/ai/articles/amazon-tried-kill-musk-plan-233000718.html",
+       "source": "Moneywise",
+       "time": "2026-11-26T23:30:00Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [
+        "AI"
+       ],
+       "symbols": [
+        "AMZN",
+        "SPCX"
+       ]
+      },
+      {
+       "title": "Should You Buy Tesla Stock Before December?",
+       "url": "https://www.fool.com/investing/2026/11/26/should-you-buy-tesla-stock-before-december/",
+       "source": "Motley Fool",
+       "time": "2026-11-26T22:35:02Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "SPCX",
+        "TSLA"
        ]
       }
      ],
-     "news_score": -1
+     "news_score": 0
     },
     {
      "symbol": "TELO",
@@ -6268,7 +6235,7 @@
       "rr": 0.8
      },
      "pe": 417.74,
-     "fpe": 176.05,
+     "fpe": 175.68,
      "mcap": 1502601543680,
      "target": 419.05,
      "targetLow": 128.11,
@@ -6332,14 +6299,14 @@
        {
         "group": "health",
         "name": "กระแสเงินสดอิสระ (พันล้าน)",
-        "value": "5.0",
+        "value": "5.2",
         "text": "เป็นบวก",
         "score": 1
        },
        {
         "group": "value",
         "name": "P/E คาดการณ์",
-        "value": "176.1",
+        "value": "175.7",
         "text": "ค่อนข้างแพง",
         "score": -1
        },
@@ -6447,16 +6414,16 @@
        "nm": 2.8,
        "roe": 4.0,
        "de": 0.183,
-       "fpe": 176.05,
+       "fpe": 175.68,
        "ps": 14.51
       }
      },
      "news": [
       {
-       "title": "Ten reasons the market is selling off again before Thanksgiving",
-       "url": "https://finance.yahoo.com/video/ten-reasons-the-market-is-selling-off-again-before-thanksgiving-160424234.html",
-       "source": "Yahoo Finance Video",
-       "time": "2026-11-25T16:04:24Z",
+       "title": "What Could Tesla (TSLA) Merger Talks Mean For Its Stock?",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/could-tesla-tsla-merger-talks-013007632.html",
+       "source": "Simply Wall St.",
+       "time": "2026-11-27T01:30:07Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [],
@@ -6465,36 +6432,10 @@
        ]
       },
       {
-       "title": "Tesla and SpaceX stocks sink as merger concerns mount",
-       "url": "https://finance.yahoo.com/markets/stocks/article/tesla-and-spacex-stocks-sink-as-merger-concerns-mount-154159372.html",
-       "source": "Yahoo Finance",
-       "time": "2026-11-25T15:41:59Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [],
-       "symbols": [
-        "SPCX",
-        "TSLA"
-       ]
-      },
-      {
-       "title": "Cathie Wood Buys More SpaceX Amid Tesla Merger Talks — Ron Baron Says SpaceX Could Make $50B A Year From One Data Center",
-       "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-buys-spacex-tesla-merger-talks-ron-baron-spacex-50b-one-data-center/cNbxeDKR9Z4",
-       "source": "Stocktwits",
-       "time": "2026-11-26T03:32:35Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "SPCX",
-        "TSLA"
-       ]
-      },
-      {
-       "title": "Elon Musk tells Tesla investors there is 'only one way' to eliminate poverty",
-       "url": "https://www.thestreet.com/investing/elon-musk-tells-tesla-investors-optimus-robots-will-eliminate-poverty",
-       "source": "TheStreet",
-       "time": "2026-11-26T00:37:00Z",
+       "title": "‘How Can TSLA Compete With Waymo?’ Gary Black Questions Tesla’s Robotaxi Strategy, Predicts Waymo Will Lead in Miles and Trips",
+       "url": "https://finance.yahoo.com/technology/articles/tsla-compete-waymo-gary-black-013007370.html",
+       "source": "Benzinga",
+       "time": "2026-11-27T01:30:07Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [],
@@ -6503,20 +6444,43 @@
        ]
       },
       {
-       "title": "If SpaceX and Tesla Merge Next Year, Here's What a $5,000 Investment in the Combined Company Could Be Worth by the End of 2028",
-       "url": "https://www.fool.com/investing/2026/11/25/if-spacex-and-tesla-merge-next-year-here-s-what-a-usd5-000-investment-in-the-combined-company-could-be-worth-by-the-end-of-2027/",
+       "title": "Should You Buy Tesla Stock Before December?",
+       "url": "https://www.fool.com/investing/2026/11/26/should-you-buy-tesla-stock-before-december/",
        "source": "Motley Fool",
-       "time": "2026-11-25T23:24:02Z",
+       "time": "2026-11-26T22:35:02Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [],
        "symbols": [
-        "SPCX",
+        "TSLA"
+       ]
+      },
+      {
+       "title": "Tesla Stocks Slip 1.18% as EU Delays Self-Driving Vote to December 15",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-stocks-slip-1-18-190357031.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T19:03:57Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "TSLA"
+       ]
+      },
+      {
+       "title": "Charlie Munger Said BYD Was ‘So Much Ahead Of Tesla, It’s Almost Ridiculous’ in 2023. BYD Then Outsold Tesla, But Berkshire Sold Every Share.",
+       "url": "https://www.barchart.com/story/news/9022591/charlie-munger-said-byd-was-so-much-ahead-of-tesla-its-almost-ridiculous-in-2023-byd-then-outsold-tesla-but-berkshire-sold-every-share",
+       "source": "Barchart",
+       "time": "2026-11-26T18:30:03Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
         "TSLA"
        ]
       }
      ],
-     "news_score": -1
+     "news_score": 0
     },
     {
      "symbol": "NFLX",
@@ -6657,7 +6621,7 @@
       "atr": 1.94,
       "bars": 251
      },
-     "pe": 17.02,
+     "pe": 17.17,
      "fpe": 15.76,
      "mcap": 243956826112,
      "target": 84.55,
@@ -6843,10 +6807,10 @@
      },
      "news": [
       {
-       "title": "Netflix Has 2 Growth Engines That Could Drive Its Stock Higher in 2027",
-       "url": "https://247wallst.com/investing/2026/11/25/netflix-has-2-growth-engines-that-could-drive-its-stock-higher-in-2027/",
-       "source": "24/7 Wall St.",
-       "time": "2026-11-25T18:04:06Z",
+       "title": "Here's What Would Prove Me Wrong About Netflix Stock",
+       "url": "https://www.fool.com/investing/2026/11/26/here-s-what-would-prove-me-wrong-about-netflix-stock/",
+       "source": "Motley Fool",
+       "time": "2026-11-26T18:01:02Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [],
@@ -6855,22 +6819,10 @@
        ]
       },
       {
-       "title": "Netflix Stock in Focus After $380 Million Radford Studio Center Purchase",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/netflix-stock-focus-380-million-170053613.html",
+       "title": "NFL's Thanksgiving Boom Raises Stakes for Disney, Netflix",
+       "url": "https://finance.yahoo.com/media-advertising/articles/nfls-thanksgiving-boom-raises-stakes-174228885.html",
        "source": "GuruFocus.com",
-       "time": "2026-11-25T17:00:53Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "NFLX"
-       ]
-      },
-      {
-       "title": "What Could Netflix (NFLX) Gain From Owning The Radford Studio Center?",
-       "url": "https://finance.yahoo.com/media-advertising/articles/could-netflix-nflx-gain-owning-042601498.html",
-       "source": "Simply Wall St.",
-       "time": "2026-11-25T04:26:01Z",
+       "time": "2026-11-26T17:42:28Z",
        "category": "หุ้นรายตัว",
        "sent": 1,
        "topics": [],
@@ -6879,10 +6831,10 @@
        ]
       },
       {
-       "title": "NFLX Stock Edges Lower Overnight: Streaming Giant Buys Historic ‘Seinfeld’ Studio Lot In Reported $380M Deal",
-       "url": "https://stocktwits.com/news-articles/markets/equity/nflx-stock-edges-lower-overnight-streaming-giant-buys-historic-seinfeld-studio-lot-in-reported-380-m-deal/cNbu6SoR9l4",
-       "source": "Stocktwits",
-       "time": "2026-11-25T02:46:32Z",
+       "title": "Netflix Stock Is Down 36% in 2026. Can Its Disney Partnership Make It a Buy Again?",
+       "url": "https://247wallst.com/investing/2026/11/26/netflix-stock-is-down-36-in-2026-can-its-disney-partnership-make-it-a-buy-again/",
+       "source": "24/7 Wall St.",
+       "time": "2026-11-26T16:38:57Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [],
@@ -6891,16 +6843,27 @@
        ]
       },
       {
-       "title": "Your $300,000 in XLC Holds $130,206 in Just Meta and Alphabet",
-       "url": "https://247wallst.com/investing/etf/2026/11/24/your-300000-in-xlc-holds-130206-in-just-meta-and-alphabet/",
-       "source": "24/7 Wall St.",
-       "time": "2026-11-25T01:04:06Z",
+       "title": "Netflix vs. Apple: Which Streaming Stock Has an Edge Right Now?",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/netflix-vs-apple-streaming-stock-142100099.html",
+       "source": "Zacks",
+       "time": "2026-11-26T14:21:00Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [],
        "symbols": [
-        "GOOGL",
-        "META",
+        "AAPL",
+        "NFLX"
+       ]
+      },
+      {
+       "title": "Netflix Stock and Higher Content Spend: Can Margins Hold Firm in 2027?",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/netflix-stock-higher-content-spend-141100397.html",
+       "source": "Zacks",
+       "time": "2026-11-26T14:11:00Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
         "NFLX"
        ]
       }
@@ -6916,13 +6879,12 @@
     {
      "symbol": "BZ=F",
      "name": "น้ำมัน Brent",
-     "price": 90.99,
-     "change": -0.41,
-     "pct": -0.45,
+     "price": 92.2,
+     "change": -2.41,
+     "pct": -2.55,
      "unit": "%",
-     "date": "2026-11-25",
+     "date": "2026-11-26",
      "series": [
-      94.07,
       100.69,
       96.78,
       88.36,
@@ -7011,17 +6973,18 @@
       92.57,
       89.37,
       91.4,
-      90.99
+      94.61,
+      92.2
      ],
-     "rsi": 37.8,
-     "sma50": 102.38,
-     "sma200": 94.93,
+     "rsi": 41.3,
+     "sma50": 102.2,
+     "sma200": 95.06,
      "high52": 118.35,
      "low52": 58.92,
-     "pos52": 54.0,
-     "ret1m": -20.1,
-     "ret3m": 1.44,
-     "ret1y": 45.63,
+     "pos52": 56.0,
+     "ret1m": -20.05,
+     "ret3m": 3.24,
+     "ret1y": 46.05,
      "signals": [
       {
        "name": "แนวโน้มระยะกลาง",
@@ -7040,7 +7003,7 @@
       },
       {
        "name": "RSI",
-       "text": "RSI 38 อยู่ในช่วงปกติ",
+       "text": "RSI 41 อยู่ในช่วงปกติ",
        "score": 0
       }
      ],
@@ -7050,51 +7013,50 @@
       "status": "near",
       "list": [
        {
-        "low": 87.32,
-        "high": 90.25,
+        "low": 87.22,
+        "high": 90.35,
         "labels": [
          "Fib 61.8%",
          "แนวรับเดิม"
         ],
         "strength": 2,
-        "dist_pct": 0.8
+        "dist_pct": 2.0
        },
        {
-        "low": 84.38,
-        "high": 86.58,
+        "low": 84.28,
+        "high": 86.68,
         "labels": [
          "แนวรับเดิม"
         ],
         "strength": 1,
-        "dist_pct": 4.8
+        "dist_pct": 6.0
        },
        {
-        "low": 77.03,
-        "high": 79.23,
+        "low": 76.93,
+        "high": 79.33,
         "labels": [
          "แนวรับเดิม"
         ],
         "strength": 1,
-        "dist_pct": 12.9
+        "dist_pct": 14.0
        }
       ],
-      "atr": 3.66,
+      "atr": 4.01,
       "bars": 252,
-      "break": 83.66,
+      "break": 83.21,
       "target": 118.0,
-      "rr": 5.7
+      "rr": 5.2
      }
     },
     {
      "symbol": "CL=F",
      "name": "น้ำมัน WTI",
-     "price": 84.28,
-     "change": 2.23,
-     "pct": 2.72,
+     "price": 85.68,
+     "change": 2.0,
+     "pct": 2.39,
      "unit": "%",
-     "date": "2026-11-25",
+     "date": "2026-11-26",
      "series": [
-      86.83,
       92.19,
       89.31,
       82.61,
@@ -7183,17 +7145,18 @@
       83.98,
       80.17,
       82.05,
-      84.28
+      83.68,
+      85.68
      ],
-     "rsi": 41.4,
-     "sma50": 92.89,
-     "sma200": 88.57,
+     "rsi": 44.4,
+     "sma50": 92.55,
+     "sma200": 88.67,
      "high52": 112.95,
      "low52": 55.27,
-     "pos52": 50.0,
-     "ret1m": -15.64,
-     "ret3m": 0.9,
-     "ret1y": 45.44,
+     "pos52": 53.0,
+     "ret1m": -16.64,
+     "ret3m": 2.73,
+     "ret1y": 46.09,
      "signals": [
       {
        "name": "แนวโน้มระยะกลาง",
@@ -7212,49 +7175,49 @@
       },
       {
        "name": "RSI",
-       "text": "RSI 41 อยู่ในช่วงปกติ",
+       "text": "RSI 44 อยู่ในช่วงปกติ",
        "score": 0
       }
      ],
      "score": -3,
      "label": "ขาลง",
      "zones": {
-      "status": "in",
+      "status": "near",
       "list": [
        {
-        "low": 82.61,
-        "high": 84.9,
+        "low": 82.59,
+        "high": 84.92,
         "labels": [
          "Fib 61.8%",
          "แนวรับเดิม"
         ],
         "strength": 2,
-        "dist_pct": -0.7
+        "dist_pct": 0.9
        },
        {
-        "low": 78.6,
-        "high": 80.64,
+        "low": 78.58,
+        "high": 80.66,
         "labels": [
          "แนวรับเดิม"
         ],
         "strength": 1,
-        "dist_pct": 4.3
+        "dist_pct": 5.9
        },
        {
-        "low": 73.22,
-        "high": 75.26,
+        "low": 73.2,
+        "high": 75.28,
         "labels": [
          "แนวรับเดิม"
         ],
         "strength": 1,
-        "dist_pct": 10.7
+        "dist_pct": 12.1
        }
       ],
-      "atr": 3.4,
+      "atr": 3.47,
       "bars": 252,
-      "break": 79.21,
+      "break": 79.12,
       "target": 110.48,
-      "rr": 5.2
+      "rr": 5.8
      }
     },
     {
@@ -7432,13 +7395,12 @@
     {
      "symbol": "^VIX",
      "name": "VIX ดัชนีความกลัว",
-     "price": 28.29,
-     "change": 1.93,
-     "pct": 7.32,
+     "price": 26.8,
+     "change": -1.49,
+     "pct": -5.27,
      "unit": "pt",
-     "date": "2026-11-25",
+     "date": "2026-11-26",
      "series": [
-      18.7,
       18.58,
       18.67,
       18.21,
@@ -7527,17 +7489,18 @@
       35.89,
       26.62,
       26.36,
-      28.29
+      28.29,
+      26.8
      ],
-     "rsi": 57.8,
-     "sma50": 19.02,
-     "sma200": 18.78,
+     "rsi": 55.4,
+     "sma50": 19.25,
+     "sma200": 18.82,
      "high52": 35.89,
      "low52": 13.47,
-     "pos52": 66.0,
-     "ret1m": 61.47,
-     "ret3m": 96.05,
-     "ret1y": 52.42,
+     "pos52": 59.0,
+     "ret1m": 58.49,
+     "ret3m": 79.62,
+     "ret1y": 55.9,
      "signals": [
       {
        "name": "แนวโน้มระยะกลาง",
@@ -7556,32 +7519,31 @@
       },
       {
        "name": "RSI",
-       "text": "RSI 58 อยู่ในช่วงปกติ",
+       "text": "RSI 55 อยู่ในช่วงปกติ",
        "score": 0
       }
      ],
      "score": 3,
      "label": "ขาขึ้น",
      "zones": {
-      "status": "in",
+      "status": "far",
       "list": [
        {
-        "low": 21.2,
-        "high": 28.84,
+        "low": 21.74,
+        "high": 25.68,
         "labels": [
-         "Fib 50%",
          "Fib 61.8%",
          "SMA20"
         ],
-        "strength": 3,
-        "dist_pct": -1.9
+        "strength": 2,
+        "dist_pct": 4.2
        }
       ],
-      "atr": 6.4,
+      "atr": 6.19,
       "bars": 254,
-      "break": 14.8,
+      "break": 15.55,
       "target": 40.03,
-      "rr": 0.9
+      "rr": 2.0
      }
     }
    ]
@@ -7593,13 +7555,12 @@
     {
      "symbol": "GC=F",
      "name": "ทองคำ (ฟิวเจอร์ส USD/ออนซ์)",
-     "price": 3602.6,
-     "change": 40.7,
-     "pct": 1.14,
+     "price": 3656.6,
+     "change": 120.8,
+     "pct": 3.42,
      "unit": "%",
-     "date": "2026-11-25",
+     "date": "2026-11-26",
      "series": [
-      4151.9,
       4050.2,
       4070.8,
       4077.0,
@@ -7688,17 +7649,18 @@
       3515.4,
       3651.4,
       3561.9,
-      3602.6
+      3535.8,
+      3656.6
      ],
-     "rsi": 33.1,
-     "sma50": 4065.74,
-     "sma200": 4423.31,
+     "rsi": 38.1,
+     "sma50": 4049.54,
+     "sma200": 4415.77,
      "high52": 5318.4,
      "low52": 3515.4,
-     "pos52": 5.0,
-     "ret1m": -11.58,
-     "ret3m": -22.76,
-     "ret1y": -12.98,
+     "pos52": 8.0,
+     "ret1m": -9.75,
+     "ret3m": -19.28,
+     "ret1y": -12.21,
      "signals": [
       {
        "name": "แนวโน้มระยะกลาง",
@@ -7717,7 +7679,7 @@
       },
       {
        "name": "RSI",
-       "text": "RSI 33 อยู่ในช่วงปกติ",
+       "text": "RSI 38 อยู่ในช่วงปกติ",
        "score": 0
       }
      ],
@@ -7726,7 +7688,7 @@
      "zones": {
       "status": "none",
       "list": [],
-      "atr": 112.11,
+      "atr": 122.01,
       "bars": 252
      }
     },
@@ -8206,24 +8168,10 @@
      },
      "news": [
       {
-       "title": "Tariffs are back as Anthropic sinks further below its IPO price",
-       "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html",
-       "source": "Yahoo Finance Video",
-       "time": "2026-11-25T16:05:24Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [
-        "ภาษีและการค้า"
-       ],
-       "symbols": [
-        "INTC"
-       ]
-      },
-      {
-       "title": "Tech Stocks Stall Into Thanksgiving: Will the AI Rebound Return?",
-       "url": "https://beincrypto.com/tech-stocks-stall-thanksgiving-nvidia-rebound/",
-       "source": "BeInCrypto",
-       "time": "2026-11-26T01:19:53Z",
+       "title": "Intel’s (INTC) AI Opportunity Is Growing, But There’s One Big Problem Holding It Back",
+       "url": "https://finance.yahoo.com/technology/ai/articles/intel-intc-ai-opportunity-growing-031416634.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-27T03:14:16Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
@@ -8234,12 +8182,38 @@
        ]
       },
       {
-       "title": "The $2 trillion chip rally is unraveling — here's what history says comes next",
-       "url": "https://finance.yahoo.com/markets/article/the-2-trillion-chip-rally-is-getting-wiped-out--heres-what-history-says-comes-next-145306996.html",
-       "source": "Yahoo Finance",
-       "time": "2026-11-25T14:53:06Z",
+       "title": "Intel (INTC) Faces Lawsuit And AI Selloff As Fair Value Debate Gets Harder",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/intel-intc-faces-lawsuit-ai-220908878.html",
+       "source": "Simply Wall St.",
+       "time": "2026-11-26T22:09:08Z",
        "category": "หุ้นรายตัว",
-       "sent": 1,
+       "sent": -1,
+       "topics": [
+        "AI"
+       ],
+       "symbols": [
+        "INTC"
+       ]
+      },
+      {
+       "title": "Steve Cohen’s 5 Biggest Stock Bets for 2027",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/steve-cohen-5-biggest-stock-220614898.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-26T22:06:14Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "INTC"
+       ]
+      },
+      {
+       "title": "5 Most Oversold Semiconductor Stocks to Buy for 2027",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/5-most-oversold-semiconductor-stocks-194738573.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-26T19:47:38Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
        "topics": [
         "ชิป"
        ],
@@ -8248,35 +8222,23 @@
        ]
       },
       {
-       "title": "What Sent Qualcomm Stock Higher?",
-       "url": "https://www.trefis.com/stock/qcom/articles/628621/what-sent-qualcomm-stock-higher/2026-11-25",
-       "source": "Trefis",
-       "time": "2026-11-25T20:23:30Z",
+       "title": "Nvidia Cut Its Intel Stake and Bought More SpaceX. Cathie Wood Is Buying Too. Why SPCX Stock Faces a Big Test on December 8.",
+       "url": "https://www.barchart.com/story/news/9022928/nvidia-cut-its-intel-stake-and-bought-more-spacex-cathie-wood-is-buying-too-why-spcx-stock-faces-a-big-test-on-december-8",
+       "source": "Barchart",
+       "time": "2026-11-26T19:30:03Z",
        "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "INTC",
-        "QCOM"
-       ]
-      },
-      {
-       "title": "Why Did Nvidia Stock Jump So Much?",
-       "url": "https://www.trefis.com/stock/nvda/articles/628615/why-did-nvidia-stock-jump-so-much/2026-11-25",
-       "source": "Trefis",
-       "time": "2026-11-25T19:07:03Z",
-       "category": "หุ้นรายตัว",
-       "sent": 1,
+       "sent": -1,
        "topics": [
         "ชิป"
        ],
        "symbols": [
         "INTC",
-        "NVDA"
+        "NVDA",
+        "SPCX"
        ]
       }
      ],
-     "news_score": 1
+     "news_score": -2
     },
     {
      "symbol": "QCOM",
@@ -8628,6 +8590,20 @@
      },
      "news": [
       {
+       "title": "What Is Qualcomm (QCOM) Worth Watching In Automotive AI Right Now?",
+       "url": "https://finance.yahoo.com/technology/ai/articles/qualcomm-qcom-worth-watching-automotive-171007378.html",
+       "source": "Simply Wall St.",
+       "time": "2026-11-26T17:10:07Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [
+        "AI"
+       ],
+       "symbols": [
+        "QCOM"
+       ]
+      },
+      {
        "title": "Qualcomm vs. Sandisk: Which Technology Stock Is a Better Buy for 2027?",
        "url": "https://www.fool.com/coverage/better-buy/2026/11/25/qualcomm-vs-sandisk-which-technology-stock-is-a-better-buy-for-2027/",
        "source": "Motley Fool",
@@ -8678,18 +8654,6 @@
        ],
        "symbols": [
         "NVDA",
-        "QCOM"
-       ]
-      },
-      {
-       "title": "Mobileye faces new competition as cars get smarter",
-       "url": "https://www.axios.com/2026/11/25/mobileye-faces-new-competition-as-cars-get-smarter#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI",
-       "source": "Axios",
-       "time": "2026-11-25T17:00:11Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
         "QCOM"
        ]
       }
@@ -8835,8 +8799,8 @@
       "atr": 29.57,
       "bars": 251
      },
-     "pe": 25.65,
-     "fpe": 12.68,
+     "pe": 24.66,
+     "fpe": 12.56,
      "mcap": 246951641088,
      "target": 556.06,
      "targetLow": 358.0,
@@ -8907,7 +8871,7 @@
        {
         "group": "value",
         "name": "P/E คาดการณ์",
-        "value": "12.7",
+        "value": "12.6",
         "text": "ไม่แพง",
         "score": 1
        },
@@ -9015,42 +8979,16 @@
        "nm": 27.8,
        "roe": 43.0,
        "de": 0.2502,
-       "fpe": 12.68,
+       "fpe": 12.56,
        "ps": 7.17
       }
      },
      "news": [
       {
-       "title": "Applied Materials (AMAT) Supplies Almost Every Fab. Is That Enough?",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-amat-supplies-almost-005322656.html",
+       "title": "5 Most Oversold Semiconductor Stocks to Buy for 2027",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/5-most-oversold-semiconductor-stocks-194738573.html",
        "source": "Insider Monkey",
-       "time": "2026-11-26T00:53:22Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "AMAT"
-       ]
-      },
-      {
-       "title": "Applied Materials (AMAT) Falls In Chip Selloff, Is It 44% Undervalued?",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-amat-falls-chip-003412379.html",
-       "source": "Simply Wall St.",
-       "time": "2026-11-26T00:34:12Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [
-        "ชิป"
-       ],
-       "symbols": [
-        "AMAT"
-       ]
-      },
-      {
-       "title": "Why My Analysis Points to Nearly 40% Semiconductor Equipment Growth in 2026",
-       "url": "https://247wallst.com/investing/2026/11/25/why-my-analysis-points-to-nearly-40-semiconductor-equipment-growth-in-2026/",
-       "source": "24/7 Wall St.",
-       "time": "2026-11-25T23:42:34Z",
+       "time": "2026-11-26T19:47:38Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
@@ -9061,10 +8999,10 @@
        ]
       },
       {
-       "title": "Is Applied Materials Stock Just Falling With Its Group?",
-       "url": "https://www.trefis.com/stock/amat/articles/628997/is-applied-materials-stock-just-falling-with-its-group/2026-11-25",
-       "source": "Trefis",
-       "time": "2026-11-25T21:58:59Z",
+       "title": "Applied Materials Stocks Fall 3.89% as UBS Trims Target and China Curbs Loom",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-stocks-fall-3-183452125.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T18:34:52Z",
        "category": "หุ้นรายตัว",
        "sent": -1,
        "topics": [],
@@ -9073,21 +9011,49 @@
        ]
       },
       {
-       "title": "Billionaire Brad Gerstner’s Altimeter Opened a $680 Million Tesla Stake and Exited Qualcomm and Applied Materials",
-       "url": "https://247wallst.com/investing/2026/11/25/billionaire-brad-gerstners-altimeter-opened-a-680-million-tesla-stake-and-exited-qualcomm-and-applied-materials/",
-       "source": "24/7 Wall St.",
-       "time": "2026-11-25T20:22:01Z",
+       "title": "Advanced Packaging Drives Lam Research's Growth: Can It Gain More Share?",
+       "url": "https://finance.yahoo.com/technology/articles/advanced-packaging-drives-lam-researchs-123600696.html",
+       "source": "Zacks",
+       "time": "2026-11-26T12:36:00Z",
        "category": "หุ้นรายตัว",
-       "sent": 0,
+       "sent": 1,
        "topics": [],
        "symbols": [
         "AMAT",
-        "QCOM",
-        "TSLA"
+        "LRCX"
+       ]
+      },
+      {
+       "title": "Michael Burry Turns Bullish, Exits Nasdaq Shorts but Eyes Nvidia at $200",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-turns-bullish-exits-113036657.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T11:30:36Z",
+       "category": "หุ้นรายตัว",
+       "sent": 1,
+       "topics": [
+        "ชิป"
+       ],
+       "symbols": [
+        "AMAT",
+        "NVDA"
+       ]
+      },
+      {
+       "title": "“Another Record Year”: Applied Materials CEO Bets on 2027 as Chip Stocks Slide",
+       "url": "https://www.tikr.com/blog/another-record-year-applied-materials-ceo-bets-on-2027-as-chip-stocks-slide?ref=yahoofinance&tlnk=yf-261126-r2g3rcm8",
+       "source": "TIKR",
+       "time": "2026-11-26T09:59:54Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [
+        "ชิป"
+       ],
+       "symbols": [
+        "AMAT"
        ]
       }
      ],
-     "news_score": -2
+     "news_score": 1
     },
     {
      "symbol": "LRCX",
@@ -9427,24 +9393,26 @@
      },
      "news": [
       {
-       "title": "Memory Makers Are Spending Again. Will Lam Research (LRCX) Cash In?",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/memory-makers-spending-again-lam-004813338.html",
+       "title": "Is Lam Research Corporation (LRCX) Oversold as Strong  AI Demand Supports Recovery?",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/lam-research-corporation-lrcx-oversold-194754377.html",
        "source": "Insider Monkey",
-       "time": "2026-11-26T00:48:13Z",
+       "time": "2026-11-26T19:47:54Z",
        "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
+       "sent": 1,
+       "topics": [
+        "AI"
+       ],
        "symbols": [
         "LRCX"
        ]
       },
       {
-       "title": "Why My Analysis Points to Nearly 40% Semiconductor Equipment Growth in 2026",
-       "url": "https://247wallst.com/investing/2026/11/25/why-my-analysis-points-to-nearly-40-semiconductor-equipment-growth-in-2026/",
-       "source": "24/7 Wall St.",
-       "time": "2026-11-25T23:42:34Z",
+       "title": "Lam Research Stocks Fall 5.68% as China Exposure Weighs on Chip Toolmakers",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/lam-research-stocks-fall-5-183545721.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T18:35:45Z",
        "category": "หุ้นรายตัว",
-       "sent": 0,
+       "sent": -1,
        "topics": [
         "ชิป"
        ],
@@ -9453,50 +9421,47 @@
        ]
       },
       {
-       "title": "Anthropic, Nvidia, Micron, HP Inc., Dell, Deere, and More Stocks That Explain Today’s Market",
-       "url": "https://www.barrons.com/articles/stock-movers-07929503?siteid=yhoof2&yptr=yahoo",
-       "source": "Barrons.com",
-       "time": "2026-11-25T21:41:00Z",
+       "title": "Applied Materials Stocks Fall 3.89% as UBS Trims Target and China Curbs Loom",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-stocks-fall-3-183452125.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T18:34:52Z",
+       "category": "หุ้นรายตัว",
+       "sent": -1,
+       "topics": [],
+       "symbols": [
+        "AMAT",
+        "LRCX"
+       ]
+      },
+      {
+       "title": "Advanced Packaging Drives Lam Research's Growth: Can It Gain More Share?",
+       "url": "https://finance.yahoo.com/technology/articles/advanced-packaging-drives-lam-researchs-123600696.html",
+       "source": "Zacks",
+       "time": "2026-11-26T12:36:00Z",
+       "category": "หุ้นรายตัว",
+       "sent": 1,
+       "topics": [],
+       "symbols": [
+        "LRCX"
+       ]
+      },
+      {
+       "title": "“Another Record Year”: Applied Materials CEO Bets on 2027 as Chip Stocks Slide",
+       "url": "https://www.tikr.com/blog/another-record-year-applied-materials-ceo-bets-on-2027-as-chip-stocks-slide?ref=yahoofinance&tlnk=yf-261126-r2g3rcm8",
+       "source": "TIKR",
+       "time": "2026-11-26T09:59:54Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
         "ชิป"
        ],
        "symbols": [
-        "LRCX",
-        "MU",
-        "NVDA"
-       ]
-      },
-      {
-       "title": "Update: US Equity Indexes Mixed, Treasury Yields Drop as Investors Rotate Out of Chipmakers While Assessing Trade Tariffs",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-mixed-treasury-213222387.html",
-       "source": "MT Newswires",
-       "time": "2026-11-25T21:32:22Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [
-        "เฟดและดอกเบี้ย",
-        "ภาษีและการค้า"
-       ],
-       "symbols": [
-        "LRCX"
-       ]
-      },
-      {
-       "title": "Lam Research (LRCX) Stock Dropped, So What Is Driving Attention Now?",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/lam-research-lrcx-stock-dropped-211100299.html",
-       "source": "Simply Wall St.",
-       "time": "2026-11-25T21:11:00Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [],
-       "symbols": [
+        "AMAT",
         "LRCX"
        ]
       }
      ],
-     "news_score": -2
+     "news_score": 0
     },
     {
      "symbol": "KLAC",
@@ -9836,6 +9801,32 @@
      },
      "news": [
       {
+       "title": "Here’s Why KLA Corporation (KLAC) is a Beaten-Down Semiconductor Stock With Strong Growth Prospects",
+       "url": "https://finance.yahoo.com/technology/articles/why-kla-corporation-klac-beaten-194907138.html",
+       "source": "Insider Monkey",
+       "time": "2026-11-26T19:49:07Z",
+       "category": "หุ้นรายตัว",
+       "sent": 1,
+       "topics": [
+        "ชิป"
+       ],
+       "symbols": [
+        "KLAC"
+       ]
+      },
+      {
+       "title": "How Much Of KLA Stock's Rise Did The Business Earn?",
+       "url": "https://www.trefis.com/stock/klac/articles/629205/how-much-of-kla-stock-s-rise-did-the-business-earn/2026-11-26",
+       "source": "Trefis",
+       "time": "2026-11-26T15:15:26Z",
+       "category": "หุ้นรายตัว",
+       "sent": 1,
+       "topics": [],
+       "symbols": [
+        "KLAC"
+       ]
+      },
+      {
        "title": "Why My Analysis Points to Nearly 40% Semiconductor Equipment Growth in 2026",
        "url": "https://247wallst.com/investing/2026/11/25/why-my-analysis-points-to-nearly-40-semiconductor-equipment-growth-in-2026/",
        "source": "24/7 Wall St.",
@@ -9876,36 +9867,9 @@
        "symbols": [
         "KLAC"
        ]
-      },
-      {
-       "title": "KLA Stocks Fall 6.72% as Equipment Selloff Spreads to Process Control",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/kla-stocks-fall-6-72-172459747.html",
-       "source": "GuruFocus.com",
-       "time": "2026-11-25T17:24:59Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [],
-       "symbols": [
-        "KLAC"
-       ]
-      },
-      {
-       "title": "ASML Sinks 6% in Chip Rout as Dutch Lawmaker Warns MATCH Act Is “Disastrous for ASML”",
-       "url": "https://www.tikr.com/blog/asml-sinks-6-in-chip-rout-as-dutch-lawmaker-warns-match-act-is-disastrous-for-asml?ref=yahoofinance&tlnk=yf-261125-c48vq838",
-       "source": "TIKR",
-       "time": "2026-11-25T17:11:16Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [
-        "ชิป"
-       ],
-       "symbols": [
-        "ASML",
-        "KLAC"
-       ]
       }
      ],
-     "news_score": -3
+     "news_score": 1
     },
     {
      "symbol": "SMCI",
@@ -10125,7 +10089,7 @@
        {
         "group": "value",
         "name": "PEG",
-        "value": "0.05",
+        "value": "0.06",
         "text": "ไม่แพงเทียบการเติบโต",
         "score": 1
        },
@@ -10232,10 +10196,10 @@
      },
      "news": [
       {
-       "title": "The Other Nvidia Romance With an Executive at a Company Linked to China",
-       "url": "https://www.wsj.com/finance/stocks/nvidia-china-executive-affair-jay-puri-cenly-chen-a42d733b?siteid=yhoof2&yptr=yahoo",
-       "source": "The Wall Street Journal",
-       "time": "2026-11-26T02:00:00Z",
+       "title": "Nvidia halts server shipments to 4 countries just weeks after Jensen Huang’s affair with alleged spy was exposed",
+       "url": "https://nypost.com/2026/11/26/business/nvidia-halts-server-shipments-to-4-southeast-asian-countries-report/",
+       "source": "NY Post",
+       "time": "2026-11-26T20:30:14Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
@@ -10247,14 +10211,13 @@
        ]
       },
       {
-       "title": "Explainer-How China got access to Nvidia's AI chips despite rules to stop them",
-       "url": "https://finance.yahoo.com/news/explainer-china-got-access-nvidias-193901126.html",
-       "source": "Reuters",
-       "time": "2026-11-25T19:39:01Z",
+       "title": "Nvidia hits pause on chip shipments to Southeast Asia",
+       "url": "https://finance.yahoo.com/technology/articles/nvidia-hits-pause-chip-shipments-200354308.html",
+       "source": "TechCrunch",
+       "time": "2026-11-26T20:03:54Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
-        "AI",
         "ชิป"
        ],
        "symbols": [
@@ -10263,40 +10226,46 @@
        ]
       },
       {
-       "title": "How the Trump administration determined Jensen Huang is not a national security threat",
-       "url": "https://finance.yahoo.com/news/us-justice-department-did-not-173024901.html",
-       "source": "Reuters",
-       "time": "2026-11-25T19:22:19Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "SMCI"
-       ]
-      },
-      {
-       "title": "Super Micro Computer (SMCI) Stock Looks Reasonable After A Sharp Pullback",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/super-micro-computer-smci-stock-181236134.html",
+       "title": "Super Micro Computer (SMCI) Faces Southeast Asia AI Server Disruption After Export Halt",
+       "url": "https://finance.yahoo.com/technology/ai/articles/super-micro-computer-smci-faces-181532913.html",
        "source": "Simply Wall St.",
-       "time": "2026-11-25T18:12:36Z",
+       "time": "2026-11-26T18:15:32Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
-       "topics": [],
+       "topics": [
+        "AI"
+       ],
        "symbols": [
         "SMCI"
        ]
       },
       {
-       "title": "Zacks.com featured highlights include NVIDIA, Arrow Electronics, Super Micro Computer, BP and Ingram Micro",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-com-featured-highlights-nvidia-162000475.html",
-       "source": "Zacks",
-       "time": "2026-11-25T16:20:00Z",
+       "title": "Big News For Nvidia Stock Fans",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/big-news-nvidia-stock-fans-181400521.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T18:14:00Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
         "ชิป"
        ],
        "symbols": [
+        "NVDA",
+        "SMCI"
+       ]
+      },
+      {
+       "title": "Nvidia Tells Partners to Pause Shipments to Southeast Asia",
+       "url": "https://www.wsj.com/tech/nvidia-tells-partners-to-pause-shipments-to-southeast-asia-5b791cb0?siteid=yhoof2&yptr=yahoo",
+       "source": "The Wall Street Journal",
+       "time": "2026-11-26T17:06:00Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [
+        "ชิป"
+       ],
+       "symbols": [
+        "NVDA",
         "SMCI"
        ]
       }
@@ -10443,9 +10412,9 @@
       "bars": 247
      },
      "pe": 4.71,
-     "fpe": 2.05,
+     "fpe": 2.06,
      "mcap": 83791355904,
-     "target": 243.36,
+     "target": 243.38,
      "targetLow": 85.0,
      "targetHigh": 375.0,
      "nAnalysts": 24,
@@ -10514,7 +10483,7 @@
        {
         "group": "value",
         "name": "P/E คาดการณ์",
-        "value": "2.0",
+        "value": "2.1",
         "text": "ไม่แพง",
         "score": 1
        },
@@ -10615,67 +10584,30 @@
        "nm": 73.4,
        "roe": 141.0,
        "de": 0.0111,
-       "fpe": 2.05,
+       "fpe": 2.06,
        "ps": 2.89
       }
      },
      "news": [
       {
-       "title": "Nvidia, AMD, and Micron stocks trim steep losses amid jittery AI trade",
-       "url": "https://finance.yahoo.com/markets/article/nvidia-amd-micron-stocks-sink-as-investors-flee-ai-trade-134518921.html",
-       "source": "Yahoo Finance",
-       "time": "2026-11-25T13:45:18Z",
+       "title": "Sandisk’s 8-for-1 Split Is Done. Here’s What Investors Should Do Next.",
+       "url": "https://www.fool.com/investing/2026/11/26/sandisks-8-for-1-split-is-done-heres-what-investors-should-do-next/",
+       "source": "Motley Fool",
+       "time": "2026-11-26T21:20:02Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
-       "topics": [
-        "AI",
-        "ชิป"
-       ],
+       "topics": [],
        "symbols": [
-        "AMD",
-        "MU",
-        "NVDA",
         "SNDK"
        ]
       },
       {
-       "title": "Is Micron Cheap Only If Its Record Margin Lasts?",
-       "url": "https://www.trefis.com/stock/mu/articles/628939/is-micron-cheap-only-if-its-record-margin-lasts/2026-11-25",
-       "source": "Trefis",
-       "time": "2026-11-25T23:43:07Z",
+       "title": "Sandisk Trades at Under 3x Earnings After an 8-for-1 Split and a 70% Crash. Why SNDK Stock Isn’t Doomed Despite NAND Price Warnings.",
+       "url": "https://www.barchart.com/story/news/9022920/sandisk-trades-at-under-3x-earnings-after-an-8-for-1-split-and-a-70-crash-why-sndk-stock-isnt-doomed-despite-nand-price-warnings",
+       "source": "Barchart",
+       "time": "2026-11-26T19:30:03Z",
        "category": "หุ้นรายตัว",
-       "sent": 1,
-       "topics": [
-        "ชิป"
-       ],
-       "symbols": [
-        "MU",
-        "SNDK"
-       ]
-      },
-      {
-       "title": "Anthropic, Nvidia, Micron, HP Inc., Dell, Deere, and More Stocks That Explain Today’s Market",
-       "url": "https://www.barrons.com/articles/stock-movers-07929503?siteid=yhoof2&yptr=yahoo",
-       "source": "Barrons.com",
-       "time": "2026-11-25T21:41:00Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [
-        "ชิป"
-       ],
-       "symbols": [
-        "MU",
-        "NVDA",
-        "SNDK"
-       ]
-      },
-      {
-       "title": "The Biggest Earnings Winners Grind Sandisk And Dell Into The Dust",
-       "url": "https://www.investors.com/news/large-cap-stocks-biggest-earnings-winners-q3/?src=A00220&yptr=yahoo",
-       "source": "Investor's Business Daily",
-       "time": "2026-11-25T21:27:31Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
+       "sent": -1,
        "topics": [
         "ผลประกอบการ"
        ],
@@ -10684,20 +10616,49 @@
        ]
       },
       {
-       "title": "Qualcomm vs. Sandisk: Which Technology Stock Is a Better Buy for 2027?",
-       "url": "https://www.fool.com/coverage/better-buy/2026/11/25/qualcomm-vs-sandisk-which-technology-stock-is-a-better-buy-for-2027/",
-       "source": "Motley Fool",
-       "time": "2026-11-25T21:20:02Z",
+       "title": "This AI Investing Prodigy Lost 65% in a Single Quarter and Is Still Up 88.5% in 2026. Here’s the Lesson for Investors.",
+       "url": "https://247wallst.com/investing/2026/11/26/this-ai-investing-prodigy-lost-65-in-a-single-quarter-and-is-still-up-88-5-in-2026-heres-the-lesson-for-investors/",
+       "source": "24/7 Wall St.",
+       "time": "2026-11-26T16:55:13Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
+       "topics": [
+        "AI"
+       ],
+       "symbols": [
+        "SNDK"
+       ]
+      },
+      {
+       "title": "Seagate Shares Tumble 46% in 6 months: Buy, Sell or Hold STX Now?",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/seagate-shares-tumble-46-6-115500291.html",
+       "source": "Zacks",
+       "time": "2026-11-26T11:55:00Z",
+       "category": "หุ้นรายตัว",
+       "sent": -1,
        "topics": [],
        "symbols": [
-        "QCOM",
+        "SNDK"
+       ]
+      },
+      {
+       "title": "Micron and Sandisk Are Two of the Cheapest AI Chip Stocks to Own",
+       "url": "https://finance.yahoo.com/technology/ai/articles/micron-sandisk-two-cheapest-ai-112351523.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T11:23:51Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [
+        "AI",
+        "ชิป"
+       ],
+       "symbols": [
+        "MU",
         "SNDK"
        ]
       }
      ],
-     "news_score": 1
+     "news_score": -2
     },
     {
      "symbol": "CRWV",
@@ -11015,71 +10976,73 @@
      },
      "news": [
       {
-       "title": "Jensen Huang's return, neocloud risk, and a holiday retail rally",
-       "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-and-a-holiday-retail-rally-222042649.html",
-       "source": "Yahoo Finance Video",
-       "time": "2026-11-25T21:00:00Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "CRWV"
-       ]
-      },
-      {
-       "title": "Applied Digital Dropped 14% in a Week Despite a $5.4 Billion Lease. Lucid Still Sees 227% Upside",
-       "url": "https://www.tikr.com/blog/applied-digital-dropped-14-in-a-week-despite-a-5-4-billion-lease-lucid-still-sees-227-upside?ref=yahoofinance&tlnk=yf-261125-mhcw2483",
-       "source": "TIKR",
-       "time": "2026-11-25T23:37:44Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [],
-       "symbols": [
-        "CRWV"
-       ]
-      },
-      {
-       "title": "CoreWeave Stock Could Soar 125%, According to One Wall Street Analyst, Even After a Price Target Cut. Is It a Buy?",
-       "url": "https://www.fool.com/investing/2026/11/25/coreweave-stock-could-soar-130-according-to-one-wall-street-analyst-even-after-a-price-target-cut-is-it-a-buy/",
-       "source": "Motley Fool",
-       "time": "2026-11-25T22:45:09Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "CRWV"
-       ]
-      },
-      {
-       "title": "Stocks to Watch Recap: Nvidia, Anthropic, Dell",
-       "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-25-2026/card/stocks-to-watch-nvidia-anthropic-dell-wt2HkwvR171Ilamwyc6E?siteid=yhoof2&yptr=yahoo",
-       "source": "The Wall Street Journal",
-       "time": "2026-11-25T21:47:17Z",
+       "title": "3 AI Infrastructure Stocks Retail Investors Are Watching As Compute Spending Shifts",
+       "url": "https://finance.yahoo.com/technology/ai/articles/3-ai-infrastructure-stocks-retail-201110278.html",
+       "source": "Simply Wall St.",
+       "time": "2026-11-26T20:11:10Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [
-        "ชิป"
+        "AI"
        ],
        "symbols": [
-        "CRWV",
-        "NVDA"
+        "CRWV"
        ]
       },
       {
-       "title": "CoreWeave’s Bankers Reportedly Ready $4.5B GPU-Backed Loan Tied To Meta Deal",
-       "url": "https://stocktwits.com/news-articles/markets/equity/core-weave-s-bankers-reportedly-ready-4-5-b-gpu-backed-loan-tied-to-meta-deal/cNbHrsCR9mw",
-       "source": "Stocktwits",
-       "time": "2026-11-25T21:02:16Z",
+       "title": "Alphabet Stocks Slip 2.13% as Credit Swaps Hit Record Amid $9.1 Billion Cash Burn",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-stocks-slip-2-13-182601811.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T18:26:01Z",
+       "category": "หุ้นรายตัว",
+       "sent": 1,
+       "topics": [],
+       "symbols": [
+        "CRWV",
+        "GOOGL"
+       ]
+      },
+      {
+       "title": "Wells Fargo Doubles Down on CoreWeave Stock Amid Selloff",
+       "url": "https://finance.yahoo.com/technology/ai/articles/wells-fargo-doubles-down-coreweave-173806688.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T17:38:06Z",
        "category": "หุ้นรายตัว",
        "sent": -1,
        "topics": [],
+       "symbols": [
+        "CRWV"
+       ]
+      },
+      {
+       "title": "Applied Digital Just Tumbled 33% in a Month. Can APLD Stock Get Back to $20 in 2027?",
+       "url": "https://247wallst.com/investing/2026/11/26/applied-digital-just-tumbled-33-in-a-month-can-apld-stock-get-back-to-20-in-2027/",
+       "source": "24/7 Wall St.",
+       "time": "2026-11-26T17:08:08Z",
+       "category": "หุ้นรายตัว",
+       "sent": -1,
+       "topics": [],
+       "symbols": [
+        "CRWV"
+       ]
+      },
+      {
+       "title": "CoreWeave Seeks $4.5 Billion Meta-Backed Loan as Bond Yields Hit 18%",
+       "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-seeks-4-5-billion-163142061.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T16:31:42Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [
+        "เฟดและดอกเบี้ย"
+       ],
        "symbols": [
         "CRWV",
         "META"
        ]
       }
      ],
-     "news_score": -2
+     "news_score": -1
     },
     {
      "symbol": "NBIS",
@@ -11391,14 +11354,56 @@
      },
      "news": [
       {
-       "title": "Jensen Huang's return, neocloud risk, and a holiday retail rally",
-       "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-and-a-holiday-retail-rally-222042649.html",
-       "source": "Yahoo Finance Video",
-       "time": "2026-11-25T21:00:00Z",
+       "title": "Nebius (NBIS) Stock Could Be Undervalued As AI Sector Optimism Returns",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/nebius-nbis-stock-could-undervalued-200849495.html",
+       "source": "Simply Wall St.",
+       "time": "2026-11-26T20:08:49Z",
+       "category": "หุ้นรายตัว",
+       "sent": 1,
+       "topics": [
+        "AI"
+       ],
+       "symbols": [
+        "NBIS"
+       ]
+      },
+      {
+       "title": "This AI Investing Prodigy Lost 65% in a Single Quarter and Is Still Up 88.5% in 2026. Here’s the Lesson for Investors.",
+       "url": "https://247wallst.com/investing/2026/11/26/this-ai-investing-prodigy-lost-65-in-a-single-quarter-and-is-still-up-88-5-in-2026-heres-the-lesson-for-investors/",
+       "source": "24/7 Wall St.",
+       "time": "2026-11-26T16:55:13Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
+       "topics": [
+        "AI"
+       ],
+       "symbols": [
+        "NBIS"
+       ]
+      },
+      {
+       "title": "CoreWeave Has the Backlog Lead, Nebius Has the Leverage Edge: Who Wins the Next $100B?",
+       "url": "https://247wallst.com/investing/2026/11/26/coreweave-has-the-backlog-lead-nebius-has-the-leverage-edge-who-wins-the-next-100b/",
+       "source": "24/7 Wall St.",
+       "time": "2026-11-26T15:45:23Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [],
        "symbols": [
+        "CRWV",
+        "NBIS"
+       ]
+      },
+      {
+       "title": "Evercore Cut Its CoreWeave Target to $80 From $100. It Still Sees 88% Upside",
+       "url": "https://www.tikr.com/blog/evercore-cut-its-coreweave-target-to-80-from-100-it-still-sees-88-upside?ref=yahoofinance&tlnk=yf-261126-v28p9qrq",
+       "source": "TIKR",
+       "time": "2026-11-26T11:35:23Z",
+       "category": "หุ้นรายตัว",
+       "sent": -1,
+       "topics": [],
+       "symbols": [
+        "CRWV",
         "NBIS"
        ]
       },
@@ -11416,48 +11421,9 @@
         "NBIS",
         "NVDA"
        ]
-      },
-      {
-       "title": "Nebius Group Climbed 22% as Tech Stocks Rebounded. Don’t Get Caught Rushing In.",
-       "url": "https://www.barchart.com/story/news/9008512/nebius-group-climbed-22-as-tech-stocks-rebounded-dont-get-caught-rushing-in",
-       "source": "Barchart",
-       "time": "2026-11-25T18:48:21Z",
-       "category": "หุ้นรายตัว",
-       "sent": 1,
-       "topics": [],
-       "symbols": [
-        "NBIS"
-       ]
-      },
-      {
-       "title": "Freedom Capital Markets’ $314 Target Says Nebius’s Selloff Went Too Far",
-       "url": "https://www.tikr.com/blog/freedom-capital-markets-314-target-says-nebiuss-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261125-28wv344f",
-       "source": "TIKR",
-       "time": "2026-11-25T17:02:20Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [],
-       "symbols": [
-        "NBIS"
-       ]
-      },
-      {
-       "title": "Nebius Plunges 12%, Oracle Sinks 8% as AI Cloud Selloff Deepens; IBM Rises 2%: Is IBM a Safer AI Play?",
-       "url": "https://247wallst.com/investing/2026/11/25/nebius-plunges-12-oracle-sinks-8-as-ai-cloud-selloff-deepens-ibm-rises-2-is-ibm-a-safer-ai-play/",
-       "source": "24/7 Wall St.",
-       "time": "2026-11-25T16:56:01Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [
-        "AI"
-       ],
-       "symbols": [
-        "NBIS",
-        "ORCL"
-       ]
       }
      ],
-     "news_score": -1
+     "news_score": 0
     },
     {
      "symbol": "ORCL",
@@ -11598,7 +11564,7 @@
       "atr": 8.32,
       "bars": 251
      },
-     "pe": 17.17,
+     "pe": 16.28,
      "fpe": 9.39,
      "mcap": 323867508736,
      "target": 236.18,
@@ -11784,78 +11750,68 @@
      },
      "news": [
       {
-       "title": "Is Oracle the First AI Casualty as It Sheds 70% of Its Value?",
-       "url": "https://beincrypto.com/oracle-stock-falls-70-ai-debt/",
-       "source": "BeInCrypto",
-       "time": "2026-11-26T02:15:00Z",
+       "title": "Wondering Why Oracle Fell? Here's What The Bears Saw",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/wondering-why-oracle-fell-heres-012625677.html",
+       "source": "Simply Wall St.",
+       "time": "2026-11-27T01:26:25Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
-       "topics": [
-        "AI"
-       ],
+       "topics": [],
        "symbols": [
         "ORCL"
        ]
       },
       {
-       "title": "Tech Stocks Stall Into Thanksgiving: Will the AI Rebound Return?",
-       "url": "https://beincrypto.com/tech-stocks-stall-thanksgiving-nvidia-rebound/",
-       "source": "BeInCrypto",
-       "time": "2026-11-26T01:19:53Z",
+       "title": "‘Room to Spare,’ Says Investor About Oracle Stock",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/room-spare-says-investor-oracle-215243159.html",
+       "source": "TipRanks",
+       "time": "2026-11-26T21:52:43Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
-       "topics": [
-        "AI"
-       ],
+       "topics": [],
        "symbols": [
         "ORCL"
        ]
       },
       {
-       "title": "Wall Street Can’t Seem to Find Its Footing in the Chaos of the New AI Trade",
-       "url": "https://www.wsj.com/finance/stocks/wall-street-cant-seem-to-find-its-footing-in-the-chaos-of-the-new-ai-trade-b64564e0?siteid=yhoof2&yptr=yahoo",
-       "source": "The Wall Street Journal",
-       "time": "2026-11-25T21:48:00Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [
-        "AI"
-       ],
-       "symbols": [
-        "ORCL"
-       ]
-      },
-      {
-       "title": "Stocks to Watch Recap: Nvidia, Anthropic, Dell",
-       "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-25-2026/card/stocks-to-watch-nvidia-anthropic-dell-wt2HkwvR171Ilamwyc6E?siteid=yhoof2&yptr=yahoo",
-       "source": "The Wall Street Journal",
-       "time": "2026-11-25T21:47:17Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [
-        "ชิป"
-       ],
-       "symbols": [
-        "NVDA",
-        "ORCL"
-       ]
-      },
-      {
-       "title": "Oracle Bonds Yield a Towering 9% on Debt and Data-Center Concerns. Are They a Buy?",
-       "url": "https://www.barrons.com/articles/oracle-bonds-yield-stock-ai-data-center-496f7d6b?siteid=yhoof2&yptr=yahoo",
-       "source": "Barrons.com",
-       "time": "2026-11-25T21:46:00Z",
+       "title": "Fleeing Stocks at 63, She Parks $700,000 of Her 401(k) in a Corporate Bond Fund for Safety. As Banks Dump Data Center Loans, a 5% Slide in Her “Safe” Fund Would Cost Her $35,000",
+       "url": "https://247wallst.com/personal-finance/2026/11/26/fleeing-stocks-at-63-she-parks-700000-of-her-401k-in-a-corporate-bond-fund-for-safety-as-banks-dump-data-center-loans-a-5-slide-in-her-safe-fund-would-cost-her-35000/",
+       "source": "24/7 Wall St.",
+       "time": "2026-11-26T21:36:32Z",
        "category": "หุ้นรายตัว",
        "sent": -1,
-       "topics": [
-        "เฟดและดอกเบี้ย"
-       ],
+       "topics": [],
+       "symbols": [
+        "ORCL"
+       ]
+      },
+      {
+       "title": "Alphabet Stocks Slip 2.13% as Credit Swaps Hit Record Amid $9.1 Billion Cash Burn",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-stocks-slip-2-13-182601811.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T18:26:01Z",
+       "category": "หุ้นรายตัว",
+       "sent": 1,
+       "topics": [],
+       "symbols": [
+        "GOOGL",
+        "ORCL"
+       ]
+      },
+      {
+       "title": "Oracle Stocks Sink 5.13% to 52-Week Low as Default Swaps Hit Record",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-stocks-sink-5-13-171842760.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T17:18:42Z",
+       "category": "หุ้นรายตัว",
+       "sent": 1,
+       "topics": [],
        "symbols": [
         "ORCL"
        ]
       }
      ],
-     "news_score": -1
+     "news_score": 1
     },
     {
      "symbol": "PLTR",
@@ -12198,10 +12154,22 @@
      },
      "news": [
       {
-       "title": "Are You Overpaying For Palantir Stock Versus Its Rivals?",
-       "url": "https://www.trefis.com/stock/pltr/articles/628772/are-you-overpaying-for-palantir-stock-versus-its-rivals/2026-11-25",
-       "source": "Trefis",
-       "time": "2026-11-25T23:31:04Z",
+       "title": "Palantir Stocks Rise 1.5% After Peter Thiel Discloses a $122 Million Share Purchase",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-stocks-rise-1-5-183642789.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T18:36:42Z",
+       "category": "หุ้นรายตัว",
+       "sent": 1,
+       "topics": [],
+       "symbols": [
+        "PLTR"
+       ]
+      },
+      {
+       "title": "Palantir Closed 212 Deals Worth at Least $1 Million. Here’s What That Means for Its Growth",
+       "url": "https://247wallst.com/investing/2026/11/26/palantir-closed-212-deals-worth-at-least-1-million-heres-what-that-means-for-its-growth/",
+       "source": "24/7 Wall St.",
+       "time": "2026-11-26T16:03:27Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [],
@@ -12210,10 +12178,10 @@
        ]
       },
       {
-       "title": "'Big Short' Investor Michael Burry Just Closed His Bet Against the Nasdaq. Here's What Investors Should Do Now",
-       "url": "https://www.fool.com/investing/2026/11/25/big-short-investor-michael-burry-just-closed-his-bet-against-the-nasdaq-here-s-what-investors-should-do-now/",
-       "source": "Motley Fool",
-       "time": "2026-11-25T23:20:28Z",
+       "title": "Michael Burry exits Nasdaq-100 short",
+       "url": "https://www.proactiveinvestors.com/companies/news/1102534/michael-burry-exits-nasdaq-100-short-1102534.html",
+       "source": "Proactive",
+       "time": "2026-11-26T14:47:00Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [],
@@ -12222,43 +12190,34 @@
        ]
       },
       {
-       "title": "Goldman Sachs bets on Palantir's 'mega customers' after NYC demo",
-       "url": "https://www.thestreet.com/investing/palantir-mega-customers-goldman-sachs",
-       "source": "TheStreet",
-       "time": "2026-11-25T20:13:00Z",
+       "title": "Michael Burry Turns Bullish, Exits Nasdaq Shorts but Eyes Nvidia at $200",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-turns-bullish-exits-113036657.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T11:30:36Z",
        "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
+       "sent": 1,
+       "topics": [
+        "ชิป"
+       ],
        "symbols": [
+        "NVDA",
         "PLTR"
        ]
       },
       {
-       "title": "Michael Burry Bets on Stock Market Recovery After Thanksgiving",
-       "url": "https://beincrypto.com/michael-burry-stock-market-recovery-thanksgiving-crash/",
-       "source": "BeInCrypto",
-       "time": "2026-11-25T20:07:35Z",
+       "title": "Michael Burry flips mostly long as tech stocks slide",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-flips-mostly-long-112229765.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T11:22:29Z",
        "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "PLTR"
-       ]
-      },
-      {
-       "title": "Peter Thiel Buys $122M of PLTR After Years Of Selling — And He Could Buy Millions More Shares",
-       "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63645021/peter-thiel-palantir-stock-purchase?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral",
-       "source": "Benzinga Prediction Markets",
-       "time": "2026-11-25T18:18:42Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
+       "sent": -1,
        "topics": [],
        "symbols": [
         "PLTR"
        ]
       }
      ],
-     "news_score": 0
+     "news_score": 1
     },
     {
      "symbol": "CRM",
@@ -12424,9 +12383,9 @@
       "rr": 3.7
      },
      "pe": 18.04,
-     "fpe": 12.32,
+     "fpe": 12.3,
      "mcap": 162303836160,
-     "target": 284.44,
+     "target": 282.37,
      "targetLow": 165.0,
      "targetHigh": 475.0,
      "nAnalysts": 53,
@@ -12516,7 +12475,7 @@
        {
         "group": "analyst",
         "name": "ส่วนต่างถึงราคาเป้าหมายเฉลี่ย",
-        "value": "+44.2%",
+        "value": "+43.2%",
         "text": "เป้าหมายสูงกว่าราคาพอสมควร",
         "score": 1
        },
@@ -12603,32 +12562,55 @@
        "nm": 31.1,
        "roe": 19.0,
        "de": 1.1042,
-       "fpe": 12.32,
+       "fpe": 12.3,
        "ps": 3.69
       }
      },
      "news": [
       {
-       "title": "Salesforce Stock (CRM) Looks Mispriced After the AI Sell-Off",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/salesforce-stock-crm-looks-mispriced-205300259.html",
-       "source": "TipRanks",
-       "time": "2026-11-25T20:53:00Z",
+       "title": "Salesforce wants to get paid per answer, not per worker",
+       "url": "https://www.thestreet.com/investing/salesforce-crm-ai-pricing-shift-bank-of-america-bofa",
+       "source": "TheStreet",
+       "time": "2026-11-26T19:47:00Z",
        "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [
-        "AI"
-       ],
+       "sent": 0,
+       "topics": [],
        "symbols": [
         "CRM"
        ]
       },
       {
-       "title": "Salesforce earnings to put Bank of America’s growth outlook to the test",
-       "url": "https://www.proactiveinvestors.com/companies/news/1102461/salesforce-earnings-to-put-bank-of-america-s-growth-outlook-to-the-test-1102461.html",
-       "source": "Proactive",
-       "time": "2026-11-25T18:59:00Z",
+       "title": "Walmart, Amazon Face Surprising Shopping Shift",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-amazon-face-surprising-shopping-160813140.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T16:08:13Z",
        "category": "หุ้นรายตัว",
-       "sent": -1,
+       "sent": 0,
+       "topics": [],
+       "symbols": [
+        "AMZN",
+        "CRM"
+       ]
+      },
+      {
+       "title": "BR Stock Rises 27.3% in Six Months: Here's What You Should Know",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/br-stock-rises-27-3-134400705.html",
+       "source": "Zacks",
+       "time": "2026-11-26T13:44:00Z",
+       "category": "หุ้นรายตัว",
+       "sent": 1,
+       "topics": [],
+       "symbols": [
+        "CRM"
+       ]
+      },
+      {
+       "title": "Wall Street's Insights Into Key Metrics Ahead of Salesforce (CRM) Q3 Earnings",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/wall-streets-insights-key-metrics-131502693.html",
+       "source": "Zacks",
+       "time": "2026-11-26T13:15:02Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
        "topics": [
         "ผลประกอบการ"
        ],
@@ -12637,44 +12619,19 @@
        ]
       },
       {
-       "title": "Satya Nadella Says “the Floor of Cyber Attacks Has Fallen.” Microsoft Just Declared Code Red After a 24-Hour Outage",
-       "url": "https://www.tikr.com/blog/satya-nadella-says-the-floor-of-cyber-attacks-has-fallen-microsoft-just-declared-code-red-after-a-24-hour-outage?ref=yahoofinance&tlnk=yf-261125-gxp284g5",
-       "source": "TIKR",
-       "time": "2026-11-25T18:03:36Z",
+       "title": "Genpact Stock Rises 20% in Three Months: Here's What You Should Know",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/genpact-stock-rises-20-three-130800729.html",
+       "source": "Zacks",
+       "time": "2026-11-26T13:08:00Z",
        "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [],
-       "symbols": [
-        "CRM",
-        "MSFT"
-       ]
-      },
-      {
-       "title": "BlackLine (BL) Stock Is Up 7.1% Today Without Company News",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/blackline-bl-stock-7-1-173017885.html",
-       "source": "GuruFocus.com",
-       "time": "2026-11-25T17:30:17Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "CRM"
-       ]
-      },
-      {
-       "title": "EverCommerce (EVCM) Stock Is Up 9.9% Today Without Company News",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/evercommerce-evcm-stock-9-9-161532735.html",
-       "source": "GuruFocus.com",
-       "time": "2026-11-25T16:15:32Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
+       "sent": 1,
        "topics": [],
        "symbols": [
         "CRM"
        ]
       }
      ],
-     "news_score": -3
+     "news_score": 2
     },
     {
      "symbol": "UBER",
@@ -13014,17 +12971,39 @@
      },
      "news": [
       {
-       "title": "Nvidia is cheap on paper, so why won't the market buy it?",
-       "url": "https://finance.yahoo.com/video/nvidia-is-cheap-on-paper-so-why-wont-the-market-buy-it-192215326.html",
-       "source": "Yahoo Finance Video",
-       "time": "2026-11-25T19:22:15Z",
+       "title": "Uber’s Driverless Lucid Tests Begin. Lucid’s Robotaxi Order Now Tops Two Years of Deliveries",
+       "url": "https://www.tikr.com/blog/ubers-driverless-lucid-tests-begin-lucids-robotaxi-order-now-tops-two-years-of-deliveries?ref=yahoofinance&tlnk=yf-261126-xq9pc8w2",
+       "source": "TIKR",
+       "time": "2026-11-26T15:21:15Z",
+       "category": "หุ้นรายตัว",
+       "sent": 1,
+       "topics": [],
+       "symbols": [
+        "UBER"
+       ]
+      },
+      {
+       "title": "Lucid Sinks 13% in a Week as the Tech Selloff Hits EV Stocks. Seaport Sets a $1 Target",
+       "url": "https://www.tikr.com/blog/lucid-sinks-13-in-a-week-as-the-tech-selloff-hits-ev-stocks-seaport-sets-a-1-target?ref=yahoofinance&tlnk=yf-261126-44rpr8gm",
+       "source": "TIKR",
+       "time": "2026-11-26T15:05:24Z",
+       "category": "หุ้นรายตัว",
+       "sent": -1,
+       "topics": [],
+       "symbols": [
+        "UBER"
+       ]
+      },
+      {
+       "title": "Anthropic Broke Its $83 IPO Price. What Did Facebook Do Next?",
+       "url": "https://www.trefis.com/stock/ant/articles/629153/anthropic-broke-its-83-ipo-price-what-did-facebook-do-next/2026-11-26",
+       "source": "Trefis",
+       "time": "2026-11-26T11:38:21Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
-       "topics": [
-        "ชิป"
-       ],
+       "topics": [],
        "symbols": [
-        "NVDA",
+        "META",
         "UBER"
        ]
       },
@@ -13053,33 +13032,9 @@
         "GOOGL",
         "UBER"
        ]
-      },
-      {
-       "title": "Lucid Group (LCID) Starts Driverless Robotaxi Testing, Is It A Bargain?",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/lucid-group-lcid-starts-driverless-201513106.html",
-       "source": "Simply Wall St.",
-       "time": "2026-11-25T20:15:13Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "UBER"
-       ]
-      },
-      {
-       "title": "Anthony Scaramucci Told Uber’s Founders to ‘Get The Hell Out of My Office’ Before Passing On $500,000 Investment: ‘I Totally Missed It’",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/anthony-scaramucci-told-uber-founders-190006039.html",
-       "source": "Benzinga",
-       "time": "2026-11-25T19:00:06Z",
-       "category": "หุ้นรายตัว",
-       "sent": -1,
-       "topics": [],
-       "symbols": [
-        "UBER"
-       ]
       }
      ],
-     "news_score": -1
+     "news_score": 0
     },
     {
      "symbol": "HOOD",
@@ -13399,10 +13354,10 @@
      },
      "news": [
       {
-       "title": "Robinhood (HOOD)’s Expansion into Wealth Management Could Bear Fruit in 2027",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/robinhood-hood-expansion-wealth-management-231704736.html",
-       "source": "TipRanks",
-       "time": "2026-11-25T23:17:04Z",
+       "title": "Cathie Wood Buys $87.8 Million in Anthropic  Shares This Week",
+       "url": "https://finance.yahoo.com/technology/ai/articles/cathie-wood-buys-87-8-174136348.html",
+       "source": "GuruFocus.com",
+       "time": "2026-11-26T17:41:36Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
        "topics": [],
@@ -13411,51 +13366,50 @@
        ]
       },
       {
-       "title": "What Changed In Robinhood Stock's Story?",
-       "url": "https://www.trefis.com/stock/hood/articles/628925/what-changed-in-robinhood-stock-s-story/2026-11-25",
-       "source": "Trefis",
-       "time": "2026-11-25T17:45:44Z",
-       "category": "หุ้นรายตัว",
-       "sent": 0,
-       "topics": [],
-       "symbols": [
-        "HOOD"
-       ]
-      },
-      {
-       "title": "Bitcoin Falls Toward 2-Year Low. Rising Inflation and Higher Interest Rates Are Its Threats.",
-       "url": "https://www.barrons.com/articles/bitcoin-prices-inflation-interest-rates-c64dd624?siteid=yhoof2&yptr=yahoo",
-       "source": "Barrons.com",
-       "time": "2026-11-25T17:44:00Z",
+       "title": "Robinhood Stock Has Been Cut in Half Since December. Is It Time to Buy the Dip?",
+       "url": "https://247wallst.com/investing/2026/11/26/robinhood-stock-has-been-cut-in-half-since-december-is-it-time-to-buy-the-dip/",
+       "source": "24/7 Wall St.",
+       "time": "2026-11-26T17:12:19Z",
        "category": "หุ้นรายตัว",
        "sent": -1,
+       "topics": [],
+       "symbols": [
+        "HOOD"
+       ]
+      },
+      {
+       "title": "5 Stocks Poised to Benefit as Prediction Markets Gain Traction",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/5-stocks-poised-benefit-prediction-164800920.html",
+       "source": "Zacks",
+       "time": "2026-11-26T16:48:00Z",
+       "category": "หุ้นรายตัว",
+       "sent": 1,
+       "topics": [],
+       "symbols": [
+        "HOOD"
+       ]
+      },
+      {
+       "title": "Why Is Robinhood Markets (HOOD) Down 28.1% Since Last Earnings Report?",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/why-robinhood-markets-hood-down-153012574.html",
+       "source": "Zacks",
+       "time": "2026-11-26T15:30:12Z",
+       "category": "หุ้นรายตัว",
+       "sent": 0,
        "topics": [
-        "เฟดและดอกเบี้ย",
-        "เงินเฟ้อ"
+        "ผลประกอบการ"
        ],
        "symbols": [
         "HOOD"
        ]
       },
       {
-       "title": "Robinhood Is Down 56% From Its High. Wall Street Still Sees $126",
-       "url": "https://www.tikr.com/blog/robinhood-is-down-56-from-its-high-wall-street-still-sees-126?ref=yahoofinance&tlnk=yf-261125-jg5prpv5",
-       "source": "TIKR",
-       "time": "2026-11-25T16:51:27Z",
+       "title": "Robinhood (HOOD)’s Expansion into Wealth Management Could Bear Fruit in 2027",
+       "url": "https://finance.yahoo.com/markets/stocks/articles/robinhood-hood-expansion-wealth-management-231704736.html",
+       "source": "TipRanks",
+       "time": "2026-11-25T23:17:04Z",
        "category": "หุ้นรายตัว",
        "sent": 0,
-       "topics": [],
-       "symbols": [
-        "HOOD"
-       ]
-      },
-      {
-       "title": "Wedbush starts Robinhood, Coinbase at Outperform in fintech coverage launch",
-       "url": "https://finance.yahoo.com/markets/stocks/articles/wedbush-starts-robinhood-coinbase-outperform-163557118.html",
-       "source": "Investing.com",
-       "time": "2026-11-25T16:35:57Z",
-       "category": "หุ้นรายตัว",
-       "sent": 1,
        "topics": [],
        "symbols": [
         "HOOD"
@@ -13469,10 +13423,36 @@
  ],
  "news": [
   {
-   "title": "Michael Burry Says He’s Shorting The Market’s ‘Generals’ As Apple Flashes A Warning Last Seen In 2002",
-   "url": "https://stocktwits.com/news-articles/markets/equity/michael-burry-shorting-market-generals-apple-warning-last-seen-in-2002/cNbx7IxR9Ze",
-   "source": "Stocktwits",
-   "time": "2026-11-26T03:44:40Z",
+   "title": "5 Best Quantum Computing Stocks To Buy for 2027",
+   "url": "https://finance.yahoo.com/technology/articles/5-best-quantum-computing-stocks-032149616.html",
+   "source": "Insider Monkey",
+   "time": "2026-11-27T03:21:49Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [],
+   "symbols": [
+    "MSFT"
+   ]
+  },
+  {
+   "title": "Apple (AAPL) Has Found a New AI Opportunity That Has Little to Do With the iPhone",
+   "url": "https://finance.yahoo.com/technology/ai/articles/apple-aapl-found-ai-opportunity-031905510.html",
+   "source": "Insider Monkey",
+   "time": "2026-11-27T03:19:05Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [
+    "AI"
+   ],
+   "symbols": [
+    "AAPL"
+   ]
+  },
+  {
+   "title": "Target cut its Apple Black Friday discount in half",
+   "url": "https://www.thestreet.com/retail/target-cut-its-apple-black-friday-discount-in-half",
+   "source": "TheStreet",
+   "time": "2026-11-27T03:17:00Z",
    "category": "หุ้นรายตัว",
    "sent": -1,
    "topics": [],
@@ -13481,22 +13461,144 @@
    ]
   },
   {
-   "title": "Dow Jones Futures Rise; Market Goes On Wild Ride As Nasdaq Slashes Losses",
+   "title": "Broadcom (AVGO) Could Be the Biggest Winner From the Shift to Custom AI Chips",
+   "url": "https://finance.yahoo.com/technology/ai/articles/broadcom-avgo-could-biggest-winner-031533044.html",
+   "source": "Insider Monkey",
+   "time": "2026-11-27T03:15:33Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [
+    "AI",
+    "ชิป"
+   ],
+   "symbols": [
+    "AVGO"
+   ]
+  },
+  {
+   "title": "Micron (MU) Has Secured $32 Billion in Customer Commitments. Here’s Why That Matters",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/micron-mu-secured-32-billion-031249719.html",
+   "source": "Insider Monkey",
+   "time": "2026-11-27T03:12:49Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [
+    "ชิป"
+   ],
+   "symbols": [
+    "MU"
+   ]
+  },
+  {
+   "title": "TSMC (TSM) Is Building a Semiconductor Moat That Rivals May Struggle to Cross",
+   "url": "https://finance.yahoo.com/technology/articles/tsmc-tsm-building-semiconductor-moat-031114980.html",
+   "source": "Insider Monkey",
+   "time": "2026-11-27T03:11:14Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [
+    "ชิป"
+   ],
+   "symbols": [
+    "TSM"
+   ]
+  },
+  {
+   "title": "5 Best Tech Stocks to Buy for 2027 According to Hedge Funds",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/5-best-tech-stocks-buy-030856400.html",
+   "source": "Insider Monkey",
+   "time": "2026-11-27T03:08:56Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [],
+   "symbols": [
+    "MSFT"
+   ]
+  },
+  {
+   "title": "Eric Trump-Backed Robot Startup’s Employees Lose Health Insurance After Weeks Without Pay as Company Scrambles for $150 Million Lifeline: Report",
+   "url": "https://finance.yahoo.com/healthcare/articles/eric-trump-backed-robot-startup-023005325.html",
+   "source": "Benzinga",
+   "time": "2026-11-27T02:30:05Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [],
+   "symbols": [
+    "AMD"
+   ]
+  },
+  {
+   "title": "Stocks Are Plunging Right Now. Here's What History Says Investors Should Do.",
+   "url": "https://www.fool.com/investing/2026/11/26/stocks-are-plunging-right-now-heres-what-history-s/",
+   "source": "Motley Fool",
+   "time": "2026-11-27T02:20:00Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "Asian Markets Mostly Higher as Sentiment Stabilizes",
+   "url": "https://www.wsj.com/finance/asian-markets-mostly-higher-as-sentiment-stabilizes-8f998c4d?siteid=yhoof2&yptr=yahoo",
+   "source": "The Wall Street Journal",
+   "time": "2026-11-27T02:13:00Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "China industrial profits growth surges to a 5-month high of 20.1% in October",
+   "url": "https://www.cnbc.com/2026/11/27/china-industrial-profits-october.html",
+   "source": "CNBC",
+   "time": "2026-11-27T02:04:09Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 1,
+   "topics": [
+    "ผลประกอบการ"
+   ],
+   "symbols": []
+  },
+  {
+   "title": "Shares find footing after bruising month, dollar set for third monthly gain",
+   "url": "https://finance.yahoo.com/markets/articles/shares-footing-bruising-month-dollar-020059656.html",
+   "source": "Reuters",
+   "time": "2026-11-27T02:00:59Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 1,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
    "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-market-wild-ride-nasdaq-nvidia-slash-losses-anthropic-higher/?src=A00220&yptr=yahoo",
    "source": "Investor's Business Daily",
-   "time": "2026-11-26T03:39:36Z",
+   "time": "2026-11-27T01:34:35Z",
    "category": "หุ้นรายตัว",
    "sent": 1,
    "topics": [],
    "symbols": [
-    "AAPL"
+    "MU"
    ]
   },
   {
-   "title": "Cathie Wood Buys More SpaceX Amid Tesla Merger Talks — Ron Baron Says SpaceX Could Make $50B A Year From One Data Center",
-   "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-buys-spacex-tesla-merger-talks-ron-baron-spacex-50b-one-data-center/cNbxeDKR9Z4",
-   "source": "Stocktwits",
-   "time": "2026-11-26T03:32:35Z",
+   "title": "‘How Can TSLA Compete With Waymo?’ Gary Black Questions Tesla’s Robotaxi Strategy, Predicts Waymo Will Lead in Miles and Trips",
+   "url": "https://finance.yahoo.com/technology/articles/tsla-compete-waymo-gary-black-013007370.html",
+   "source": "Benzinga",
+   "time": "2026-11-27T01:30:07Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [],
+   "symbols": [
+    "GOOGL",
+    "TSLA"
+   ]
+  },
+  {
+   "title": "What Could Tesla (TSLA) Merger Talks Mean For Its Stock?",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/could-tesla-tsla-merger-talks-013007632.html",
+   "source": "Simply Wall St.",
+   "time": "2026-11-27T01:30:07Z",
    "category": "หุ้นรายตัว",
    "sent": 0,
    "topics": [],
@@ -13506,12 +13608,12 @@
    ]
   },
   {
-   "title": "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
-   "url": "https://www.cnbc.com/2026/11/26/nvidia-market-governance-risk.html",
-   "source": "CNBC Tech",
-   "time": "2026-11-26T03:19:44Z",
-   "category": "เทคโนโลยี",
-   "sent": -1,
+   "title": "I hate that Jensen Huang is back at Nvidia, but I love what it’s done for my 401(k). Am I a hypocrite?",
+   "url": "https://www.marketwatch.com/story/i-hate-that-jensen-huang-is-back-at-nvidia-but-i-love-what-its-done-for-my-401-k-am-i-a-hypocrite-f63c0303?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "time": "2026-11-27T01:15:00Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
    "topics": [
     "ชิป"
    ],
@@ -13520,171 +13622,40 @@
    ]
   },
   {
-   "title": "Stocks rally in Asia, unrocked by US tariffs",
-   "url": "https://finance.yahoo.com/markets/world-indices/articles/asia-shares-bounce-ai-tariffs-013452194.html",
-   "source": "Reuters",
-   "time": "2026-11-26T03:17:28Z",
+   "title": "I’ve been married for 58 years. It’s ‘our’ money, not ‘his’ and ‘hers.’ Why do so many couples keep their finances separate?",
+   "url": "https://www.marketwatch.com/story/ive-been-married-for-58-years-its-our-money-not-his-and-hers-why-dont-others-feel-the-same-c5745889?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "time": "2026-11-27T01:00:00Z",
    "category": "ตลาดและเศรษฐกิจ",
    "sent": 0,
-   "topics": [
-    "ภาษีและการค้า"
-   ],
-   "symbols": []
-  },
-  {
-   "title": "Dow, S&P 500, Nasdaq Futures Edge Higher As Tech Rebounds After Selloff: DIS, VRTX, DE, CHTR In Focus",
-   "url": "https://stocktwits.com/news-articles/markets/equity/dow-s-and-p-500-nasdaq-futures-edge-higher-as-tech-rebounds-after-selloff-dis-vrtx-de-chtr-in-focus/cNbxeL0R9ZE",
-   "source": "Stocktwits",
-   "time": "2026-11-26T03:14:36Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": -1,
    "topics": [],
    "symbols": []
   },
   {
-   "title": "‘Your booth is waiting’: Denny’s welcomes Jensen Huang back as Nvidia CEO",
-   "url": "https://www.cnbc.com/2026/11/26/dennys-jensen-huang-nvidia.html",
-   "source": "CNBC Tech",
-   "time": "2026-11-26T03:13:43Z",
-   "category": "เทคโนโลยี",
+   "title": "I spend £200 a month on fancy meals by myself - would you dine solo?",
+   "url": "https://www.bbc.co.uk/news/articles/cw8dv11dp2yeo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC Business",
+   "time": "2026-11-27T00:54:45Z",
+   "category": "ตลาดและเศรษฐกิจ",
    "sent": 0,
-   "topics": [
-    "ชิป"
-   ],
-   "symbols": [
-    "NVDA"
-   ]
+   "topics": [],
+   "symbols": []
   },
   {
-   "title": "Asian tech stocks jump as bargain buyers boost battered AI trade",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/asian-tech-stocks-jump-bargain-030316035.html",
+   "title": "U.S. stock futures rise sharply; Nasdaq up 1.7% in holiday-thinned trade",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/u-stock-futures-rise-holiday-003122658.html",
    "source": "Investing.com",
-   "time": "2026-11-26T03:03:16Z",
-   "category": "หุ้นรายตัว",
-   "sent": 1,
-   "topics": [
-    "AI"
-   ],
-   "symbols": [
-    "TSM"
-   ]
-  },
-  {
-   "title": "US announces new tariffs on host of countries including China",
-   "url": "https://www.bbc.co.uk/news/articles/c893r9ke5p97o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC Business",
-   "time": "2026-11-26T03:01:40Z",
+   "time": "2026-11-27T00:31:22Z",
    "category": "ตลาดและเศรษฐกิจ",
-   "sent": -1,
-   "topics": [
-    "ภาษีและการค้า"
-   ],
-   "symbols": []
-  },
-  {
-   "title": "SpaceX gets approval for 1 million data center satellites",
-   "url": "https://finance.yahoo.com/technology/ai/articles/spacex-gets-approval-1-million-023847485.html",
-   "source": "LA Times",
-   "time": "2026-11-26T02:38:47Z",
-   "category": "หุ้นรายตัว",
-   "sent": 0,
-   "topics": [],
-   "symbols": [
-    "GOOGL",
-    "SPCX"
-   ]
-  },
-  {
-   "title": "SpaceX wins FCC approval to deploy 1 million orbital data center satellites",
-   "url": "https://www.cnbc.com/2026/11/25/spacex-fcc-satellite-approval.html",
-   "source": "CNBC Tech",
-   "time": "2026-11-26T02:35:39Z",
-   "category": "เทคโนโลยี",
-   "sent": 0,
-   "topics": [],
-   "symbols": [
-    "SPCX"
-   ]
-  },
-  {
-   "title": "UK government set to publish new treaties agreed with EU",
-   "url": "https://www.bbc.co.uk/news/articles/c98r7p65edvgo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC Business",
-   "time": "2026-11-26T02:13:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "Why Retail Investors Are Watching AMD and AI Infrastructure Stocks After SpaceX Satellite News",
-   "url": "https://finance.yahoo.com/technology/ai/articles/why-retail-investors-watching-amd-021215050.html",
-   "source": "Simply Wall St.",
-   "time": "2026-11-26T02:12:15Z",
-   "category": "หุ้นรายตัว",
-   "sent": 0,
-   "topics": [
-    "AI",
-    "ชิป"
-   ],
-   "symbols": [
-    "AMD",
-    "AVGO",
-    "SPCX"
-   ]
-  },
-  {
-   "title": "South Korea's Kospi leads gains as tech rebound lifts Asia markets",
-   "url": "https://www.cnbc.com/2026/11/26/stock-markets-today-.html",
-   "source": "CNBC Tech",
-   "time": "2026-11-26T01:45:52Z",
-   "category": "เทคโนโลยี",
    "sent": 1,
    "topics": [],
    "symbols": []
   },
   {
-   "title": "Goldman Sachs lays out three signals stock investors should watch",
-   "url": "https://www.thestreet.com/investing/stocks/goldman-sachs-lays-out-three-signals-stock-investors-should-watch",
-   "source": "TheStreet",
-   "time": "2026-11-26T01:37:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "Where the market may be mispricing risk most: AI boom, volatility, high-yield bonds",
-   "url": "https://www.cnbc.com/2026/11/26/mispricing-risk-fund-managers-ai-volatility.html",
-   "source": "CNBC Tech",
-   "time": "2026-11-26T01:34:58Z",
-   "category": "เทคโนโลยี",
-   "sent": -1,
-   "topics": [
-    "AI",
-    "เฟดและดอกเบี้ย"
-   ],
-   "symbols": []
-  },
-  {
-   "title": "Tech Stocks Stall Into Thanksgiving: Will the AI Rebound Return?",
-   "url": "https://beincrypto.com/tech-stocks-stall-thanksgiving-nvidia-rebound/",
-   "source": "BeInCrypto",
-   "time": "2026-11-26T01:19:53Z",
-   "category": "หุ้นรายตัว",
-   "sent": 0,
-   "topics": [
-    "AI"
-   ],
-   "symbols": [
-    "AMD"
-   ]
-  },
-  {
-   "title": "We are living in perilous times if Nvidia’s Jensen Huang dictates your 401(k) balance",
+   "title": "We are living in perilous times if Nvidia CEO Jensen Huang dictates your 401(k) balance",
    "url": "https://www.marketwatch.com/story/we-are-living-in-perilous-times-if-nvidias-jensen-huang-dictates-your-401-k-balance-e0942d1e?mod=mw_rss_topstories",
    "source": "MarketWatch",
-   "time": "2026-11-26T01:15:00Z",
+   "time": "2026-11-27T00:31:00Z",
    "category": "ตลาดและเศรษฐกิจ",
    "sent": 0,
    "topics": [
@@ -13695,10 +13666,203 @@
    ]
   },
   {
-   "title": "Broadcom Stock Hasn't Traded This Low Since July 2025. I Think It's a Buy.",
-   "url": "https://www.fool.com/investing/2026/11/25/broadcom-stock-hasn-t-traded-this-low-since-july-2025-i-think-it-s-a-buy/",
+   "title": "Mexico wants a say in where SpaceX flies — says harmful rocket debris keeps washing up on its shores",
+   "url": "https://finance.yahoo.com/economy/policy/articles/mexico-wants-where-spacex-flies-003000153.html",
+   "source": "Moneywise",
+   "time": "2026-11-27T00:30:00Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [],
+   "symbols": [
+    "SPCX"
+   ]
+  },
+  {
+   "title": "These 2 AI Chip Stocks Are Down 36% to 39% From Their Highs. Here’s What History Says Happens Next.",
+   "url": "https://www.fool.com/investing/2026/11/26/these-2-ai-chip-stocks-are-down-36-to-39-from-their-highs-here-s-what-history-says-happens-next/",
    "source": "Motley Fool",
-   "time": "2026-11-26T01:03:02Z",
+   "time": "2026-11-27T00:20:02Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [
+    "AI",
+    "ชิป"
+   ],
+   "symbols": [
+    "AVGO"
+   ]
+  },
+  {
+   "title": "Weeks Before His Wife Needs a Nursing Home, He Buys a $75,000 SUV Online. Medicaid Ignores One Car Whatever It Costs, Taking $75,000 Off the Savings It Expects Them to Spend Down",
+   "url": "https://247wallst.com/personal-finance/2026/11/26/weeks-before-his-wife-needs-a-nursing-home-he-buys-a-75000-suv-online-medicaid-ignores-one-car-whatever-it-costs-taking-75000-off-the-savings-it-expects-them-to-spend-down/",
+   "source": "24/7 Wall St.",
+   "time": "2026-11-27T00:04:07Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [],
+   "symbols": [
+    "AMZN"
+   ]
+  },
+  {
+   "title": "Why is there a shortage of 'wizard' elevator mechanics?",
+   "url": "https://www.bbc.co.uk/news/articles/c52e8k19y94mo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC Business",
+   "time": "2026-11-27T00:02:19Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "Musk says he will donate another SpaceX share to American kids annually",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/musk-says-donate-another-spacex-000147660.html",
+   "source": "Investing.com",
+   "time": "2026-11-27T00:01:47Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [],
+   "symbols": [
+    "SPCX"
+   ]
+  },
+  {
+   "title": "Morgan Stanley trims tech exposure amid tensions, flags S’pore, other Asian defensive winners",
+   "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNbkFUTUJSYXZFRUllcFRNdDRyVkFTSFlxOHZUYTFhYThFS3BlLS0ybHMtQTIzSnNROUhPdHROTVlOelJtdnYyNkdhczk4YlNLbnRmaU9hVjBtTkhON2UwMzBNaE9aZVN6cnlyN3lIelg4Z2FoX1ZGVHdxRlpveF9DS2U2aERrdmI5VFNWYmdqYnFQSnJhVG5EODJISW5fWmhxRVRETEl4QmdCTTVueDYwRmRkTkk1cjFDamN2RkxKR3phNHhqcFprRGZEbVB6RjVta085ZzBnbWlJLVg3bG56MjdVOVJOQWRFTElKanZiMHhnNll4ME93VE9tS3Q?oc=5",
+   "source": "The Business Times",
+   "time": "2026-11-27T00:00:00Z",
+   "category": "ธนาคารและนักวิเคราะห์",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "UK to pay 'participation' fee to deliver EU deals",
+   "url": "https://www.bbc.co.uk/news/articles/ck2057x387ego?at_medium=RSS&at_campaign=rss",
+   "source": "BBC Business",
+   "time": "2026-11-26T23:17:12Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "Not Nvidia. Not Micron. If I Could Buy and Hold Only 1 Artificial Intelligence (AI) Semiconductor Stock Through 2030, This Would Be It.",
+   "url": "https://www.fool.com/investing/2026/11/26/not-nvidia-not-micron-if-i-could-buy-and-hold-only-1-artificial-intelligence-ai-semiconductor-stock-through-2030-this-would-be-it/",
+   "source": "Motley Fool",
+   "time": "2026-11-26T23:14:44Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [
+    "AI",
+    "ชิป"
+   ],
+   "symbols": [
+    "MU",
+    "NVDA"
+   ]
+  },
+  {
+   "title": "Asia made a big AI bet on Nvidia. What happens now?",
+   "url": "https://www.bbc.co.uk/news/articles/cqevr4lnd1nxo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC Business",
+   "time": "2026-11-26T23:08:12Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [
+    "AI",
+    "ชิป"
+   ],
+   "symbols": [
+    "NVDA"
+   ]
+  },
+  {
+   "title": "Prediction: These 3 Consumer Stocks Will Beat the S&P 500 Over the Next 10 Years",
+   "url": "https://www.fool.com/investing/2026/11/26/prediction-these-3-consumer-stocks-will-beat-the-sp-500-over-the-next-10-years/",
+   "source": "Motley Fool",
+   "time": "2026-11-26T22:50:02Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 1,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "Should You Buy Tesla Stock Before December?",
+   "url": "https://www.fool.com/investing/2026/11/26/should-you-buy-tesla-stock-before-december/",
+   "source": "Motley Fool",
+   "time": "2026-11-26T22:35:02Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [],
+   "symbols": [
+    "TSLA"
+   ]
+  },
+  {
+   "title": "Tech Stock Sell-Off: Down 13%, Is Microsoft a Buy Now?",
+   "url": "https://www.fool.com/investing/2026/11/26/tech-stock-sell-off-down-13-is-microsoft-a-buy-now/",
+   "source": "Motley Fool",
+   "time": "2026-11-26T22:20:02Z",
+   "category": "หุ้นรายตัว",
+   "sent": -1,
+   "topics": [],
+   "symbols": [
+    "MSFT"
+   ]
+  },
+  {
+   "title": "‘I’ve been a stay-at-home mom’: I’m 50 and have a chronic illness. My husband lost his job. Should he raid his 401(k)?",
+   "url": "https://www.marketwatch.com/story/ive-been-a-stay-at-home-mom-im-50-and-have-a-chronic-illness-my-husband-lost-his-job-should-he-raid-his-401-k-63e59123?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "time": "2026-11-26T22:00:00Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "I’m terrified of a market crash. Should I put $400,000 of my $1 million retirement savings into an annuity?",
+   "url": "https://www.marketwatch.com/story/were-in-our-50s-and-terrified-of-a-market-crash-should-we-put-400-000-of-our-1-million-retirement-savings-into-an-annuity-1943f240?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "time": "2026-11-26T21:45:00Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": -1,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "Jensen Huang’s Return Doesn’t Make Nvidia Stock (NVDA) a Buy",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-return-doesn-t-212200380.html",
+   "source": "TipRanks",
+   "time": "2026-11-26T21:22:00Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [
+    "ชิป"
+   ],
+   "symbols": [
+    "META",
+    "NVDA"
+   ]
+  },
+  {
+   "title": "Faisal Islam: Why Trump's new tariffs are less of a threat",
+   "url": "https://www.bbc.co.uk/news/articles/c6r7g4e3yep1o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC Business",
+   "time": "2026-11-26T19:55:58Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": -1,
+   "topics": [
+    "ภาษีและการค้า"
+   ],
+   "symbols": []
+  },
+  {
+   "title": "5 Most Oversold Semiconductor Stocks to Buy for 2027",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/5-most-oversold-semiconductor-stocks-194738573.html",
+   "source": "Insider Monkey",
+   "time": "2026-11-26T19:47:38Z",
    "category": "หุ้นรายตัว",
    "sent": 0,
    "topics": [
@@ -13709,150 +13873,45 @@
    ]
   },
   {
-   "title": "Apple Stock Defies AI Selloff: Is It the Market's Safe Haven?",
-   "url": "https://beincrypto.com/apple-stock-ai-selloff-safe-haven/",
-   "source": "BeInCrypto",
-   "time": "2026-11-26T01:00:00Z",
+   "title": "Apple Enters the AI Agent Race as It Takes on OpenAI, Anthropic, and Meta. What That Means for AAPL Stock.",
+   "url": "https://www.barchart.com/story/news/9022924/apple-enters-the-ai-agent-race-as-it-takes-on-openai-anthropic-and-meta-what-that-means-for-aapl-stock",
+   "source": "Barchart",
+   "time": "2026-11-26T19:30:03Z",
    "category": "หุ้นรายตัว",
-   "sent": -1,
+   "sent": 0,
    "topics": [
     "AI"
    ],
    "symbols": [
     "AAPL",
-    "GOOGL"
+    "META"
    ]
   },
   {
-   "title": "Review & Preview: A Thanksgiving Reprieve",
-   "url": "https://www.barrons.com/articles/stocks-today-anthropic-gains-before-thanksgiving-f76f9d89?siteid=yhoof2&yptr=yahoo",
-   "source": "Barrons.com",
-   "time": "2026-11-26T00:55:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "ASML (ASML) Can’t Meet Demand. Is That a Strength or Risk?",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/asml-asml-t-meet-demand-004924571.html",
-   "source": "Insider Monkey",
-   "time": "2026-11-26T00:49:24Z",
-   "category": "หุ้นรายตัว",
-   "sent": -1,
-   "topics": [
-    "ชิป"
-   ],
-   "symbols": [
-    "ASML"
-   ]
-  },
-  {
-   "title": "5 Best Strong Buy Growth Stocks to Buy for 2027",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/5-best-strong-buy-growth-004610627.html",
-   "source": "Insider Monkey",
-   "time": "2026-11-26T00:46:10Z",
-   "category": "หุ้นรายตัว",
-   "sent": 1,
-   "topics": [],
-   "symbols": [
-    "GOOGL"
-   ]
-  },
-  {
-   "title": "Why this stock-market selloff is probably going to get worse before it gets better",
-   "url": "https://www.marketwatch.com/story/why-this-stock-market-selloff-is-probably-going-to-get-worse-before-it-gets-better-fce63a89?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "time": "2026-11-26T00:33:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": -1,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "Vertex Pharmaceuticals Has Turned $10,000 Into $61,660 Over 10 Years. Here's What Could Come Next",
-   "url": "https://www.fool.com/investing/2026/11/25/vertex-pharmaceuticals-has-turned-10000-into-x-ove/",
-   "source": "Motley Fool",
-   "time": "2026-11-26T00:32:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "SpaceX, Musk pledge to donate a share each to active Trump Accounts",
-   "url": "https://www.cnbc.com/2026/11/25/spacex-musk-trump-account-stock.html",
-   "source": "CNBC Tech",
-   "time": "2026-11-26T00:27:52Z",
-   "category": "เทคโนโลยี",
-   "sent": 0,
-   "topics": [],
-   "symbols": [
-    "SPCX"
-   ]
-  },
-  {
-   "title": "US approves SpaceX plan to send a million data satellites to space",
-   "url": "https://www.bbc.co.uk/news/articles/cwp836l8n1jgo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC Business",
-   "time": "2026-11-26T00:07:51Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": [
-    "SPCX"
-   ]
-  },
-  {
-   "title": "Guitar wars - the transatlantic battle over the Stratocaster",
-   "url": "https://www.bbc.co.uk/news/articles/cqd01l9x8k48o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC Business",
-   "time": "2026-11-26T00:01:37Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "Why My Analysis Points to Nearly 40% Semiconductor Equipment Growth in 2026",
-   "url": "https://247wallst.com/investing/2026/11/25/why-my-analysis-points-to-nearly-40-semiconductor-equipment-growth-in-2026/",
-   "source": "24/7 Wall St.",
-   "time": "2026-11-25T23:42:34Z",
+   "title": "Taiwan Semiconductor Stocks Slip 1.96% as Taiwan's Market Sinks 4.8% in Chip Rout",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-stocks-slip-1-190319001.html",
+   "source": "GuruFocus.com",
+   "time": "2026-11-26T19:03:19Z",
    "category": "หุ้นรายตัว",
    "sent": 0,
    "topics": [
     "ชิป"
    ],
    "symbols": [
-    "ASML"
+    "TSM"
    ]
   },
   {
-   "title": "Why Wall Street Whipsawed Wednesday: AI Fears, Rate Hike Bets and Tariffs",
-   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTmgtb1RTWEhoM2lmY3lKQ2ZaRG5tbEtvcWRzVi1KaHNpRGNZZ3RyaWppTVlJZGM3UUtGZGRVQlRHRmt3NGN6MTVVVk16bWVIUXNOaUhfVlFpUWRqUUd0Q3dLVGJtYnNJYWU1LVJMdWlaTjllR2l0N3lXMmVSd3I3V09Oc1hIQUtLWmpidWxsWjJUaXF2bERsZVZ5NUdTZlZocXdGbVZIRkM1UQ?oc=5",
-   "source": "Around Prague",
-   "time": "2026-11-25T23:41:29Z",
-   "category": "ธนาคารและนักวิเคราะห์",
-   "sent": -1,
-   "topics": [
-    "AI",
-    "เฟดและดอกเบี้ย",
-    "ภาษีและการค้า"
-   ],
-   "symbols": []
-  },
-  {
-   "title": "Altimeter’s Brad Gerstner Says Nvidia Was Priced for “Negative Growth for 2028 and 2029.” Wall Street Expects 29%",
-   "url": "https://www.tikr.com/blog/altimeters-brad-gerstner-says-nvidia-was-priced-for-negative-growth-for-2028-and-2029-wall-street-expects-29?ref=yahoofinance&tlnk=yf-261125-3qj6vf95",
-   "source": "TIKR",
-   "time": "2026-11-25T23:39:02Z",
+   "title": "3 Top Stocks to Buy Before 2027 as Quantum Enters AI Data Centers",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/3-top-stocks-buy-2027-190000024.html",
+   "source": "Zacks",
+   "time": "2026-11-26T19:00:00Z",
    "category": "หุ้นรายตัว",
    "sent": 0,
    "topics": [
-    "ชิป"
+    "AI"
    ],
    "symbols": [
-    "NVDA",
     "TSM"
    ]
   },
@@ -13860,284 +13919,172 @@
    "title": "A 66-year-old nurse is facing down retirement with just $500 saved. Who’s to blame?",
    "url": "https://www.marketwatch.com/story/a-66-year-old-nurse-faces-retirement-with-just-500-saved-whos-to-blame-4249a0fd?mod=mw_rss_topstories",
    "source": "MarketWatch",
-   "time": "2026-11-25T23:30:00Z",
+   "time": "2026-11-26T19:00:00Z",
    "category": "ตลาดและเศรษฐกิจ",
    "sent": 0,
    "topics": [],
    "symbols": []
+  },
+  {
+   "title": "KHC, PINS, AMD: 3 Bets I’d Consider Waging From Thanksgiving Eve’s Top 25 Unusually Active Options",
+   "url": "https://www.barchart.com/story/news/9022595/khc-pins-amd-3-bets-id-consider-waging-from-thanksgiving-eves-top-25-unusually-active-options",
+   "source": "Barchart",
+   "time": "2026-11-26T18:30:04Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [
+    "ชิป"
+   ],
+   "symbols": [
+    "AMD"
+   ]
+  },
+  {
+   "title": "Here's What Would Prove Me Wrong About Netflix Stock",
+   "url": "https://www.fool.com/investing/2026/11/26/here-s-what-would-prove-me-wrong-about-netflix-stock/",
+   "source": "Motley Fool",
+   "time": "2026-11-26T18:01:02Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [],
+   "symbols": [
+    "NFLX"
+   ]
+  },
+  {
+   "title": "Semiconductor chips are the new oil. Here's why",
+   "url": "https://www.cnbc.com/2026/11/26/semiconductor-chips-are-the-new-oil-heres-why.html",
+   "source": "CNBC",
+   "time": "2026-11-26T17:52:15Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [
+    "ชิป",
+    "น้ำมัน"
+   ],
+   "symbols": []
+  },
+  {
+   "title": "NFL's Thanksgiving Boom Raises Stakes for Disney, Netflix",
+   "url": "https://finance.yahoo.com/media-advertising/articles/nfls-thanksgiving-boom-raises-stakes-174228885.html",
+   "source": "GuruFocus.com",
+   "time": "2026-11-26T17:42:28Z",
+   "category": "หุ้นรายตัว",
+   "sent": 1,
+   "topics": [],
+   "symbols": [
+    "NFLX"
+   ]
+  },
+  {
+   "title": "Nvidia chip buyers told to rule out Chinese renters to purchase GPUs, sources say",
+   "url": "https://www.cnbc.com/2026/11/26/neoclouds-nvidia-china-ai.html",
+   "source": "CNBC Tech",
+   "time": "2026-11-26T17:04:54Z",
+   "category": "เทคโนโลยี",
+   "sent": 0,
+   "topics": [
+    "ชิป"
+   ],
+   "symbols": [
+    "NVDA"
+   ]
+  },
+  {
+   "title": "Netflix Stock Is Down 36% in 2026. Can Its Disney Partnership Make It a Buy Again?",
+   "url": "https://247wallst.com/investing/2026/11/26/netflix-stock-is-down-36-in-2026-can-its-disney-partnership-make-it-a-buy-again/",
+   "source": "24/7 Wall St.",
+   "time": "2026-11-26T16:38:57Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [],
+   "symbols": [
+    "NFLX"
+   ]
   },
   {
    "title": "I’m in my 70s and buying a new BMW X1. Should I put my only son on the title?",
    "url": "https://www.marketwatch.com/story/im-in-my-70s-and-buying-a-new-bmw-x1-should-i-put-my-only-son-on-the-title-25731040?mod=mw_rss_topstories",
    "source": "MarketWatch",
-   "time": "2026-11-25T23:30:00Z",
+   "time": "2026-11-26T16:00:00Z",
    "category": "ตลาดและเศรษฐกิจ",
    "sent": 0,
    "topics": [],
    "symbols": []
   },
   {
-   "title": "I’ve been married for 58 years. It’s ‘our’ money, not ‘his’ and ‘hers.’ Why do so many couples keep their finances separate?",
-   "url": "https://www.marketwatch.com/story/ive-been-married-for-58-years-its-our-money-not-his-and-hers-why-dont-others-feel-the-same-c5745889?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "time": "2026-11-25T23:00:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "I hate that Jensen Huang is back at Nvidia, but I love what it’s done for my 401(k). Am I a hypocrite?",
-   "url": "https://www.marketwatch.com/story/i-hate-that-jensen-huang-is-back-at-nvidia-but-i-love-what-its-done-for-my-401-k-am-i-a-hypocrite-f63c0303?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "time": "2026-11-25T22:45:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [
-    "ชิป"
-   ],
-   "symbols": [
-    "NVDA"
-   ]
-  },
-  {
-   "title": "Oracle, CoreWeave and other tech stocks bounce back after selloff",
-   "url": "https://www.marketwatch.com/story/oracles-stock-sinks-toward-a-3-year-low-as-the-ai-trade-continues-to-unravel-d4698d77?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "time": "2026-11-25T22:16:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": -1,
-   "topics": [],
-   "symbols": [
-    "CRWV",
-    "ORCL"
-   ]
-  },
-  {
-   "title": "Nvidia’s stock has given back a big chunk of Monday’s rally as dip buyers cash in",
-   "url": "https://www.marketwatch.com/story/nvidias-stock-is-giving-back-more-than-half-of-mondays-rally-as-dip-buyers-cash-in-ee4fa52c?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "time": "2026-11-25T22:11:00Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 1,
-   "topics": [
-    "ชิป"
-   ],
-   "symbols": [
-    "NVDA"
-   ]
-  },
-  {
-   "title": "Nvidia's billion-dollar board bet: Who's protected as lawsuits mount?",
-   "url": "https://www.cnbc.com/2026/11/25/nvidias-billion-dollar-board-bet-whos-protected-as-lawsuits-mount.html",
-   "source": "CNBC",
-   "time": "2026-11-25T22:04:58Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": -1,
-   "topics": [
-    "ชิป"
-   ],
-   "symbols": [
-    "NVDA"
-   ]
-  },
-  {
-   "title": "Liesman: Why Greenspan could bet on productivity — and Warsh needs to hike",
-   "url": "https://www.cnbc.com/2026/11/25/kevin-warsh-greenspan-fed-rates-ai-inflation.html",
-   "source": "CNBC",
-   "time": "2026-11-25T21:56:43Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "US stocks fall further as fears over AI intensify",
-   "url": "https://www.bbc.co.uk/news/articles/cq0md8g14zryo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC Business",
-   "time": "2026-11-25T21:43:18Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": -1,
-   "topics": [
-    "AI"
-   ],
-   "symbols": []
-  },
-  {
-   "title": "Poundland collapses putting 11,000 jobs at risk",
-   "url": "https://www.bbc.co.uk/news/articles/cm3vgdn037z4o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC Business",
-   "time": "2026-11-25T21:31:10Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": -1,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "Jensen Huang reclaims throne at Nvidia: Here's the bottom line for investors",
-   "url": "https://finance.yahoo.com/video/jensen-huang-reclaims-throne-at-nvidia-heres-the-bottom-line-for-investors-212803135.html",
-   "source": "Yahoo Finance Video",
-   "time": "2026-11-25T21:28:03Z",
-   "category": "หุ้นรายตัว",
-   "sent": 0,
-   "topics": [
-    "ชิป"
-   ],
-   "symbols": [
-    "NVDA"
-   ]
-  },
-  {
-   "title": "Is the market experiencing a 'dead cat' bounce?",
-   "url": "https://finance.yahoo.com/video/is-the-market-experiencing-a-dead-cat-bounce-212704552.html",
-   "source": "Yahoo Finance Video",
-   "time": "2026-11-25T21:27:04Z",
+   "title": "Netherlands will ask Washington not to enforce MATCH Act, minister says",
+   "url": "https://uk.news.yahoo.com/dutch-minister-says-us-chip-113207674.html",
+   "source": "Reuters",
+   "time": "2026-11-26T15:43:12Z",
    "category": "หุ้นรายตัว",
    "sent": 0,
    "topics": [],
-   "symbols": [
-    "AAPL"
-   ]
-  },
-  {
-   "title": "Gold Holds Decline as US Tariff Plans Reinforce Rate-Hike Bets",
-   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORkQxbTNiWEs3QmZBV1ZoVV9Nb1kyM1dUSmRYT2RWYkQ0eTV6cktjakV3OXRjalVYSkJ2Q2FBdFhUbHl6V3VBTHFzbGJFU1RacTRrUGxFWHU2Y0R3OXZKXzlaQUVPc3Z3TjJ1MkRnVGNwMlpHYzhwbVkwRTFLbVc0ZTkxa3ExQU1iYTcxU3Q4czZTVVhDRE9iYTFCak1aZ3BnQ1ZGbldMSGdaQ2szYXNQX1FJTQ?oc=5",
-   "source": "Bloomberg",
-   "time": "2026-11-25T21:25:11Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": -1,
-   "topics": [
-    "ภาษีและการค้า",
-    "ทองคำ"
-   ],
-   "symbols": []
-  },
-  {
-   "title": "Vance says he was assured Jensen Huang was not under DOJ investigation",
-   "url": "https://www.cnbc.com/2026/11/25/vance-jensen-huang-nvidia-doj-investigation.html",
-   "source": "CNBC Tech",
-   "time": "2026-11-25T21:00:08Z",
-   "category": "เทคโนโลยี",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "Jensen Huang's return, neocloud risk, and a holiday retail rally",
-   "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-and-a-holiday-retail-rally-222042649.html",
-   "source": "Yahoo Finance Video",
-   "time": "2026-11-25T21:00:00Z",
-   "category": "หุ้นรายตัว",
-   "sent": 0,
-   "topics": [],
-   "symbols": [
-    "NVDA"
-   ]
-  },
-  {
-   "title": "SpaceX, Elon Musk to give one share each to active Trump Accounts",
-   "url": "https://finance.yahoo.com/markets/article/spacex-elon-musk-to-give-one-share-each-to-active-trump-accounts-205719872.html",
-   "source": "Yahoo Finance",
-   "time": "2026-11-25T20:57:19Z",
-   "category": "หุ้นรายตัว",
-   "sent": 0,
-   "topics": [],
-   "symbols": [
-    "SPCX"
-   ]
-  },
-  {
-   "title": "Chips and iPhones Are Safe From New Tariffs. Here’s What Isn’t.",
-   "url": "https://www.barrons.com/articles/apple-micron-tariffs-tech-stocks-trump-58a58e8d?siteid=yhoof2&yptr=yahoo",
-   "source": "Barrons.com",
-   "time": "2026-11-25T20:47:00Z",
-   "category": "หุ้นรายตัว",
-   "sent": -1,
-   "topics": [
-    "ชิป",
-    "ภาษีและการค้า"
-   ],
    "symbols": [
     "ASML"
    ]
   },
   {
-   "title": "Gold (XAU/AED) Price Forecast in UAE: 2026, 2027 and Next 5 Years Predictions (AED per troy ounce and per gram)",
-   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQR2J0QWIwQ080MWpCSDRfWGx6TVVEdFVNWXhUbXIzMTJUX0E0cFJkWXpSZnFUSkpGQkZOVVpIbGJCTmxaY2ZoRUVNMW5HWTVRX29NbEhpWHZfR21heUgybzd5V0phT0xYWGdqZkpzMjMtUDV2N0ljbU0tM3VjLWtOc0t6clRweFdkeExPUThIZw?oc=5",
-   "source": "LiteFinance",
-   "time": "2026-11-25T20:17:50Z",
+   "title": "Spain’s Pablo Hernández de Cos set to lead European Central Bank",
+   "url": "https://www.cnbc.com/2026/11/26/pablo-hernandez-de-cos-ecb-president.html",
+   "source": "CNBC",
+   "time": "2026-11-26T15:28:26Z",
    "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [
-    "ทองคำ"
-   ],
+   "sent": -1,
+   "topics": [],
    "symbols": []
   },
   {
-   "title": "Applied Materials Falls 6% Despite UBS's $575 Target as China Chip Curbs Hit Equipment Stocks; Lam Research Drops 7%, KLA Edges Lower",
-   "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPdGpLOUYxV29JMndaUTJzTFlranZsdHl0bkJ2YUcxSW5aNWE2SGE2OS1KVm1TVEJ1NVN5Qm4yZkg2S1pqZlpHVGhjODJpdTJlMnJzZkpMYlkwNDhHcFJDbHl6aDJ1VURhcVFlcGVZUHZyakJ3S0ZBbC1leER3cnA3VVVBcE9ObEJMMXpxQlNIVDJWcjg4Q0owWC1tNkhTTjNPZjcyYVFFNkRJWTEzN2FHdTZFWVMtOS01N0N0NDJ6WTBzdlJXVy1IcHBpOWtJdjFIeG1ZWl96ZXV4MDFma2I4dmpKdzZRVTUxWlZRNHhISTM3R3hCa3k5eTBGZWxkTUY1?oc=5",
-   "source": "24/7 Wall St.",
-   "time": "2026-11-25T20:09:00Z",
-   "category": "ธนาคารและนักวิเคราะห์",
+   "title": "NuScale Just Dropped 17% in a Week to a New 52-Week Low. Is It Time to Sell, or Load Up?",
+   "url": "https://www.tikr.com/blog/nuscale-just-dropped-17-in-a-week-to-a-new-52-week-low-is-it-time-to-sell-or-load-up?ref=yahoofinance&tlnk=yf-261126-g32xg4gv",
+   "source": "TIKR",
+   "time": "2026-11-26T15:21:11Z",
+   "category": "หุ้นรายตัว",
    "sent": -1,
-   "topics": [
-    "ชิป"
-   ],
+   "topics": [],
    "symbols": [
-    "AMAT",
-    "KLAC",
-    "LRCX"
+    "OKLO"
    ]
   },
   {
-   "title": "JPMorgan Calls 2027 AI Supercycle as Michael Burry Flips Bullish",
-   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxORWNhNnp5UjlJMHctOVVMT1JkV3NINW4tV1B0U2VOWUpvaDQ5cWhOVTREWjVRYzBIVW12Yl9pWU13T0NKeVUxYXVidVpseVVlNlhyQmVyRzNiTTljTnpnYW1qYV9FOVE5a1VVa3ZJZGxrVUtjNVhTTlhWNTFPNkNOd1k1TUNjLVJzblVjczh1UTF5eW5sZ1MzbFRoRkpHRzNzU3pnOEMwT2pxVUhnMWhMZUJ6ckRfc2Z5Y3lFalQ2SFhndw?oc=5",
-   "source": "TradingView",
-   "time": "2026-11-25T20:02:04Z",
-   "category": "ธนาคารและนักวิเคราะห์",
+   "title": "My husband secretly sends his ex-wife $1,500 a month after she lost her job. We have $2.4 million saved. Has he lied by omission?",
+   "url": "https://www.marketwatch.com/story/my-husband-secretly-sends-his-ex-wife-1-500-a-month-after-she-lost-her-job-we-have-2-4-million-saved-has-he-lied-by-omission-ede1972a?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "time": "2026-11-26T15:13:00Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "NuScale Power (SMR) Draws Fresh Investor Focus As AI Power Demand Lifts SMR Appeal",
+   "url": "https://finance.yahoo.com/energy/articles/nuscale-power-smr-draws-fresh-141122724.html",
+   "source": "Simply Wall St.",
+   "time": "2026-11-26T14:11:22Z",
+   "category": "หุ้นรายตัว",
+   "sent": 0,
+   "topics": [
+    "AI"
+   ],
+   "symbols": [
+    "OKLO"
+   ]
+  },
+  {
+   "title": "Millions of people to see average monthly mortgage payments rise by £100",
+   "url": "https://www.bbc.co.uk/news/articles/cwg5r02zel9qo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC Business",
+   "time": "2026-11-26T14:00:20Z",
+   "category": "ตลาดและเศรษฐกิจ",
    "sent": 1,
-   "topics": [
-    "AI"
-   ],
-   "symbols": []
-  },
-  {
-   "title": "Agencies announce dollar thresholds for applicability of truth in lending and consumer leasing rules for consumer credit and lease transactions",
-   "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261125b.htm",
-   "source": "Federal Reserve",
-   "time": "2026-11-25T20:00:00Z",
-   "category": "ธนาคารกลาง",
-   "sent": 0,
    "topics": [],
    "symbols": []
   },
   {
-   "title": "Agencies announce dollar thresholds for smaller loan exemption from appraisal requirements for higher-priced mortgage loans",
-   "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261125a.htm",
-   "source": "Federal Reserve",
-   "time": "2026-11-25T20:00:00Z",
-   "category": "ธนาคารกลาง",
-   "sent": 0,
-   "topics": [],
-   "symbols": []
-  },
-  {
-   "title": "Goldman Sachs Warns AI Stocks Haven't Bottomed: US Household Equity Exposure Now Exceeds Dot-com Bubble Era",
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE96bW9TZHFQdGlNY2NXUUlHdG1VTXI0N1hqanZYQk41ZVNBUUtMMlExYVZ1c3FCR3otWEVhUzdaSThTSDYta0tTOFQ4Sm5YQkZ1R2poM3ZCM1NxVHpIcFJQeW5HRENfYTBKMlFMWUxxRm9HLU5Yd1E?oc=5",
-   "source": "BigGo Finance",
-   "time": "2026-11-25T19:25:00Z",
-   "category": "ธนาคารและนักวิเคราะห์",
-   "sent": -1,
-   "topics": [
-    "AI"
-   ],
-   "symbols": []
-  },
-  {
-   "title": "Nvidia is cheap on paper, so why won't the market buy it?",
-   "url": "https://finance.yahoo.com/video/nvidia-is-cheap-on-paper-so-why-wont-the-market-buy-it-192215326.html",
+   "title": "Will Jensen Huang's second act as Nvidia CEO be different?",
+   "url": "https://finance.yahoo.com/video/jensen-huangs-second-act-nvidia-140000599.html",
    "source": "Yahoo Finance Video",
-   "time": "2026-11-25T19:22:15Z",
+   "time": "2026-11-26T14:00:00Z",
    "category": "หุ้นรายตัว",
    "sent": 0,
    "topics": [
@@ -14148,46 +14095,34 @@
    ]
   },
   {
-   "title": "Saudi national in OpenAI bugging case is out on bond after DOJ tries to block release",
-   "url": "https://www.cnbc.com/2026/11/25/openai-bugging-aflozan-bond-release-saudi.html",
-   "source": "CNBC Tech",
-   "time": "2026-11-25T19:11:53Z",
-   "category": "เทคโนโลยี",
+   "title": "Simon Jack: Is Poundland's US owner to blame for its collapse?",
+   "url": "https://www.bbc.co.uk/news/articles/c62klzxvyzyqo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC Business",
+   "time": "2026-11-26T13:40:46Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": 0,
+   "topics": [],
+   "symbols": []
+  },
+  {
+   "title": "Goldman Sachs hired an engineering partner from Microsoft's AI team",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPalkyMWo3Z0Rjc1JqY3lWSUhPUjEyd2x0Q3JaN1RFUlMzR3h2R0ZZbS1KbzhvSVc2Q1NuQ3NHNWVKMHJDUmRlSWNzeDVTakstd29nQ0hxWWRrSExZRlc4VHh5TWZodFBDa1FENGdkUFp4dDM2MkNVMk5XOU5iSWxNREtWclhJUzlYdjJ5LW5NaWNEOVprbzFpNTBVeUN0TnNpa2ZvYVNueWFkQQ?oc=5",
+   "source": "eFinancialCareers",
+   "time": "2026-11-26T13:27:29Z",
+   "category": "ธนาคารและนักวิเคราะห์",
    "sent": 0,
    "topics": [
     "AI"
    ],
-   "symbols": []
-  },
-  {
-   "title": "Gold, Silver Extend Losses As Investors Reassess Rate Outlook",
-   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNY01MUjhCYnkxc0k2Q3VGZ2N2dmViODRyV01TNGhrUTBvQmRlTmpzbFF6ZkJwNElSRUVyYTJpay1yWU9KSGFGbmdsWWd1RGV2eC04SWpfOUV0VEo1WnV0OVVNZ3Vnam1PNnczM1lYY0VsZE5LaEtxVTJmOXcxTGE0UjFGX1U5empzcHMyQi1GMnlWRHlqOTRKc3UwZ09VTkphMWtQSlB2NA?oc=5",
-   "source": "Forbes Middle East",
-   "time": "2026-11-25T18:57:56Z",
-   "category": "ตลาดและเศรษฐกิจ",
-   "sent": 0,
-   "topics": [
-    "ทองคำ"
-   ],
-   "symbols": []
-  },
-  {
-   "title": "SpaceX stock pares losses following FCC approval for data centers in space",
-   "url": "https://finance.yahoo.com/technology/article/spacex-stock-pares-losses-following-fcc-approval-for-data-centers-in-space-183757039.html",
-   "source": "Yahoo Finance",
-   "time": "2026-11-25T18:37:57Z",
-   "category": "หุ้นรายตัว",
-   "sent": 0,
-   "topics": [],
    "symbols": [
-    "SPCX"
+    "MSFT"
    ]
   },
   {
-   "title": "Prediction: Oklo Stock Could Have a Huge Year as Nuclear Energy Demand Accelerates",
-   "url": "https://247wallst.com/investing/2026/11/25/prediction-oklo-stock-could-have-a-huge-year-as-nuclear-energy-demand-accelerates/",
-   "source": "24/7 Wall St.",
-   "time": "2026-11-25T18:33:22Z",
+   "title": "Energy Fuels vs. Centrus Energy: Which Uranium Stock Has The Edge Now?",
+   "url": "https://finance.yahoo.com/energy/articles/energy-fuels-vs-centrus-energy-131600993.html",
+   "source": "Zacks",
+   "time": "2026-11-26T13:16:00Z",
    "category": "หุ้นรายตัว",
    "sent": 0,
    "topics": [],
@@ -14196,24 +14131,36 @@
    ]
   },
   {
-   "title": "Netflix Has 2 Growth Engines That Could Drive Its Stock Higher in 2027",
-   "url": "https://247wallst.com/investing/2026/11/25/netflix-has-2-growth-engines-that-could-drive-its-stock-higher-in-2027/",
-   "source": "24/7 Wall St.",
-   "time": "2026-11-25T18:04:06Z",
+   "title": "Jensen Huang 'absolutely could be fired again,' legal expert says",
+   "url": "https://finance.yahoo.com/video/jensen-huang-absolutely-could-fired-130000374.html",
+   "source": "Yahoo Finance Video",
+   "time": "2026-11-26T13:00:00Z",
    "category": "หุ้นรายตัว",
    "sent": 0,
    "topics": [],
    "symbols": [
-    "NFLX"
+    "NVDA"
    ]
+  },
+  {
+   "title": "U.S. tariff-hike threats pile pressure on partners to sign trade deals",
+   "url": "https://www.cnbc.com/2026/11/26/us-tariffs-hike-trade-agreement.html",
+   "source": "CNBC",
+   "time": "2026-11-26T12:46:55Z",
+   "category": "ตลาดและเศรษฐกิจ",
+   "sent": -1,
+   "topics": [
+    "ภาษีและการค้า"
+   ],
+   "symbols": []
   }
  ],
  "analysis": {
   "method": "keywords",
   "counts": {
-   "pos": 6,
-   "neu": 37,
-   "neg": 17
+   "pos": 7,
+   "neu": 46,
+   "neg": 7
   },
   "topics": [
    {
@@ -14222,370 +14169,374 @@
    },
    {
     "name": "AI",
-    "count": 10
+    "count": 9
    },
    {
     "name": "ภาษีและการค้า",
-    "count": 5
-   },
-   {
-    "name": "ทองคำ",
-    "count": 3
-   },
-   {
-    "name": "เฟดและดอกเบี้ย",
     "count": 2
+   },
+   {
+    "name": "ผลประกอบการ",
+    "count": 1
+   },
+   {
+    "name": "น้ำมัน",
+    "count": 1
    }
   ],
   "by_symbol": {
-   "NVDA": -1,
+   "NVDA": 0,
+   "MSFT": -1,
    "AAPL": -1,
    "GOOGL": 0,
+   "META": 0,
    "AVGO": 0,
    "AMD": 0,
-   "TSM": 1,
-   "ASML": -2,
-   "OKLO": 0,
+   "TSM": 0,
+   "MU": 1,
+   "AMZN": 0,
+   "ASML": 0,
+   "OKLO": -1,
    "SPCX": 0,
    "TSLA": 0,
-   "NFLX": 0
+   "NFLX": 1
   }
  },
  "macro": {
   "context": {
    "brent": {
-    "price": 90.99,
-    "chg1m": -20.1
+    "price": 92.2,
+    "chg1m": -20.0
    },
    "gold": {
-    "price": 3603.5,
-    "chg1m": -11.6
+    "price": 3656.9,
+    "chg1m": -9.7
    },
    "y10": {
     "level": 4.85,
-    "chg1m_bp": -14.0
+    "chg1m_bp": -20.0
    }
   },
   "sens": [
    {
     "symbol": "NVDA",
     "name": "Nvidia",
-    "b_oil": -0.148,
+    "b_oil": -0.152,
     "t_oil": -2.4,
-    "b_y": 0.068,
+    "b_y": 0.069,
     "t_y": 1.4,
-    "r2": 0.023,
-    "n": 250
+    "r2": 0.025,
+    "n": 251
    },
    {
     "symbol": "MSFT",
     "name": "Microsoft",
-    "b_oil": -0.117,
+    "b_oil": -0.118,
     "t_oil": -2.9,
     "b_y": 0.059,
     "t_y": 1.8,
-    "r2": 0.035,
-    "n": 250
+    "r2": 0.036,
+    "n": 251
    },
    {
     "symbol": "AAPL",
     "name": "Apple",
-    "b_oil": -0.082,
+    "b_oil": -0.081,
     "t_oil": -2.8,
     "b_y": -0.025,
-    "t_y": -1.0,
+    "t_y": -1.1,
     "r2": 0.049,
-    "n": 250
+    "n": 251
    },
    {
     "symbol": "GOOGL",
     "name": "Alphabet",
-    "b_oil": -0.166,
+    "b_oil": -0.168,
     "t_oil": -4.3,
-    "b_y": 0.002,
-    "t_y": 0.1,
-    "r2": 0.078,
-    "n": 250
+    "b_y": 0.001,
+    "t_y": 0.0,
+    "r2": 0.08,
+    "n": 251
    },
    {
     "symbol": "META",
     "name": "Meta",
-    "b_oil": -0.189,
-    "t_oil": -3.8,
-    "b_y": 0.014,
+    "b_oil": -0.182,
+    "t_oil": -3.7,
+    "b_y": 0.011,
     "t_y": 0.3,
-    "r2": 0.059,
-    "n": 250
+    "r2": 0.056,
+    "n": 251
    },
    {
     "symbol": "AVGO",
     "name": "Broadcom",
-    "b_oil": -0.151,
+    "b_oil": -0.149,
     "t_oil": -2.6,
-    "b_y": 0.076,
+    "b_y": 0.075,
     "t_y": 1.6,
     "r2": 0.028,
-    "n": 250
+    "n": 251
    },
    {
     "symbol": "AMD",
     "name": "AMD",
-    "b_oil": -0.301,
+    "b_oil": -0.3,
     "t_oil": -3.4,
-    "b_y": 0.11,
+    "b_y": 0.109,
     "t_y": 1.5,
     "r2": 0.044,
-    "n": 250
+    "n": 251
    },
    {
     "symbol": "TSM",
     "name": "TSMC",
     "b_oil": -0.242,
-    "t_oil": -4.5,
-    "b_y": 0.084,
+    "t_oil": -4.6,
+    "b_y": 0.083,
     "t_y": 2.0,
-    "r2": 0.077,
-    "n": 250
+    "r2": 0.078,
+    "n": 251
    },
    {
     "symbol": "MU",
     "name": "Micron",
-    "b_oil": -0.289,
+    "b_oil": -0.292,
     "t_oil": -2.8,
-    "b_y": 0.14,
+    "b_y": 0.139,
     "t_y": 1.7,
-    "r2": 0.032,
-    "n": 250
+    "r2": 0.033,
+    "n": 251
    },
    {
     "symbol": "AMZN",
     "name": "Amazon",
-    "b_oil": -0.187,
-    "t_oil": -4.7,
+    "b_oil": -0.19,
+    "t_oil": -4.8,
     "b_y": 0.052,
     "t_y": 1.6,
-    "r2": 0.081,
-    "n": 250
+    "r2": 0.084,
+    "n": 251
    },
    {
     "symbol": "ASML",
     "name": "ASML",
-    "b_oil": -0.244,
+    "b_oil": -0.245,
     "t_oil": -4.2,
-    "b_y": 0.043,
+    "b_y": 0.042,
     "t_y": 0.9,
-    "r2": 0.067,
-    "n": 250
+    "r2": 0.069,
+    "n": 251
    },
    {
     "symbol": "OKLO",
     "name": "Oklo",
-    "b_oil": -0.192,
+    "b_oil": -0.189,
     "t_oil": -1.7,
-    "b_y": -0.168,
+    "b_y": -0.169,
     "t_y": -1.9,
     "r2": 0.041,
-    "n": 250
+    "n": 251
    },
    {
     "symbol": "SPCX",
     "name": "SpaceX",
-    "b_oil": -0.463,
-    "t_oil": -3.1,
-    "b_y": 0.157,
-    "t_y": 1.6,
-    "r2": 0.082,
-    "n": 115
+    "b_oil": -0.446,
+    "t_oil": -3.0,
+    "b_y": 0.15,
+    "t_y": 1.5,
+    "r2": 0.078,
+    "n": 116
    },
    {
     "symbol": "TELO",
     "name": "Telomir (TELO)",
-    "b_oil": -0.036,
-    "t_oil": -0.4,
-    "b_y": -0.051,
-    "t_y": -0.8,
+    "b_oil": -0.045,
+    "t_oil": -0.5,
+    "b_y": -0.049,
+    "t_y": -0.7,
     "r2": 0.005,
-    "n": 250
+    "n": 251
    },
    {
     "symbol": "TSLA",
     "name": "Tesla",
-    "b_oil": -0.232,
+    "b_oil": -0.231,
     "t_oil": -4.2,
-    "b_y": 0.033,
+    "b_y": 0.031,
     "t_y": 0.7,
-    "r2": 0.07,
-    "n": 250
+    "r2": 0.071,
+    "n": 251
    },
    {
     "symbol": "NFLX",
     "name": "Netflix",
-    "b_oil": 0.036,
-    "t_oil": 0.8,
+    "b_oil": 0.037,
+    "t_oil": 0.9,
     "b_y": -0.071,
     "t_y": -2.1,
     "r2": 0.017,
-    "n": 250
+    "n": 251
    },
    {
     "symbol": "INTC",
     "name": "Intel",
-    "b_oil": -0.3,
+    "b_oil": -0.298,
     "t_oil": -2.9,
-    "b_y": 0.088,
-    "t_y": 1.1,
+    "b_y": 0.086,
+    "t_y": 1.0,
     "r2": 0.033,
-    "n": 250
+    "n": 251
    },
    {
     "symbol": "QCOM",
     "name": "Qualcomm",
-    "b_oil": -0.128,
-    "t_oil": -1.9,
-    "b_y": -0.026,
+    "b_oil": -0.124,
+    "t_oil": -1.8,
+    "b_y": -0.028,
     "t_y": -0.5,
-    "r2": 0.021,
-    "n": 250
+    "r2": 0.02,
+    "n": 251
    },
    {
     "symbol": "AMAT",
     "name": "Applied Materials",
-    "b_oil": -0.29,
-    "t_oil": -3.7,
-    "b_y": 0.123,
+    "b_oil": -0.292,
+    "t_oil": -3.8,
+    "b_y": 0.122,
     "t_y": 2.0,
-    "r2": 0.054,
-    "n": 250
+    "r2": 0.055,
+    "n": 251
    },
    {
     "symbol": "LRCX",
     "name": "Lam Research",
-    "b_oil": -0.356,
+    "b_oil": -0.36,
     "t_oil": -4.3,
-    "b_y": 0.118,
+    "b_y": 0.117,
     "t_y": 1.8,
-    "r2": 0.069,
-    "n": 250
+    "r2": 0.071,
+    "n": 251
    },
    {
     "symbol": "KLAC",
     "name": "KLA",
-    "b_oil": -0.229,
+    "b_oil": -0.226,
     "t_oil": -2.9,
-    "b_y": 0.055,
-    "t_y": 0.9,
-    "r2": 0.033,
-    "n": 250
+    "b_y": 0.053,
+    "t_y": 0.8,
+    "r2": 0.032,
+    "n": 251
    },
    {
     "symbol": "SMCI",
     "name": "Super Micro Computer",
-    "b_oil": -0.236,
-    "t_oil": -2.1,
-    "b_y": -0.062,
+    "b_oil": -0.23,
+    "t_oil": -2.0,
+    "b_y": -0.065,
     "t_y": -0.7,
-    "r2": 0.027,
-    "n": 250
+    "r2": 0.026,
+    "n": 251
    },
    {
     "symbol": "SNDK",
     "name": "SanDisk",
-    "b_oil": -0.279,
+    "b_oil": -0.275,
     "t_oil": -2.1,
-    "b_y": 0.139,
+    "b_y": 0.137,
     "t_y": 1.3,
-    "r2": 0.019,
-    "n": 250
+    "r2": 0.018,
+    "n": 251
    },
    {
     "symbol": "CRWV",
     "name": "CoreWeave",
-    "b_oil": -0.269,
-    "t_oil": -2.2,
-    "b_y": 0.186,
+    "b_oil": -0.265,
+    "t_oil": -2.1,
+    "b_y": 0.184,
     "t_y": 1.9,
-    "r2": 0.024,
-    "n": 250
+    "r2": 0.023,
+    "n": 251
    },
    {
     "symbol": "NBIS",
     "name": "Nebius",
     "b_oil": -0.256,
     "t_oil": -1.8,
-    "b_y": 0.206,
-    "t_y": 1.9,
+    "b_y": 0.205,
+    "t_y": 1.8,
     "r2": 0.02,
-    "n": 250
+    "n": 251
    },
    {
     "symbol": "ORCL",
     "name": "Oracle",
-    "b_oil": -0.11,
-    "t_oil": -1.5,
-    "b_y": 0.026,
-    "t_y": 0.4,
-    "r2": 0.009,
-    "n": 250
+    "b_oil": -0.116,
+    "t_oil": -1.6,
+    "b_y": 0.028,
+    "t_y": 0.5,
+    "r2": 0.01,
+    "n": 251
    },
    {
     "symbol": "PLTR",
     "name": "Palantir",
-    "b_oil": -0.088,
+    "b_oil": -0.085,
     "t_oil": -1.2,
-    "b_y": 0.003,
+    "b_y": 0.002,
     "t_y": 0.0,
     "r2": 0.006,
-    "n": 250
+    "n": 251
    },
    {
     "symbol": "CRM",
     "name": "Salesforce",
-    "b_oil": 0.039,
+    "b_oil": 0.041,
     "t_oil": 0.7,
-    "b_y": -0.037,
+    "b_y": -0.038,
     "t_y": -0.8,
     "r2": 0.003,
-    "n": 250
+    "n": 251
    },
    {
     "symbol": "UBER",
     "name": "Uber",
-    "b_oil": -0.095,
-    "t_oil": -2.3,
-    "b_y": -0.065,
+    "b_oil": -0.091,
+    "t_oil": -2.2,
+    "b_y": -0.067,
     "t_y": -2.0,
-    "r2": 0.057,
-    "n": 250
+    "r2": 0.055,
+    "n": 251
    },
    {
     "symbol": "HOOD",
     "name": "Robinhood",
-    "b_oil": -0.198,
+    "b_oil": -0.197,
     "t_oil": -2.4,
-    "b_y": -0.054,
+    "b_y": -0.056,
     "t_y": -0.8,
     "r2": 0.035,
-    "n": 250
+    "n": 251
    },
    {
     "symbol": "^IXIC",
     "name": "Nasdaq",
-    "b_oil": -0.13,
+    "b_oil": -0.129,
     "t_oil": -5.4,
-    "b_y": 0.014,
+    "b_y": 0.013,
     "t_y": 0.7,
     "r2": 0.111,
-    "n": 250
+    "n": 251
    },
    {
     "symbol": "^SOX",
     "name": "เซมิคอนดักเตอร์ (SOX)",
-    "b_oil": -0.223,
+    "b_oil": -0.222,
     "t_oil": -3.6,
-    "b_y": 0.076,
-    "t_y": 1.6,
+    "b_y": 0.075,
+    "t_y": 1.5,
     "r2": 0.051,
-    "n": 250
+    "n": 251
    }
   ]
  },
@@ -14644,14 +14595,14 @@
    },
    {
     "name": "VIX (ความชะล่าใจ)",
-    "value": "28.3",
+    "value": "26.8",
     "level": 0,
     "rule": "ตึงตัวเมื่อ ≤ 17 ร้อนแรงเมื่อ ≤ 14",
     "note": "VIX ต่ำมากแปลว่านักลงทุนกังวลน้อย"
    },
    {
     "name": "พาดหัวที่พูดถึงฟองสบู่/ความร้อนแรง",
-    "value": "2 ข่าว",
+    "value": "0 ข่าว",
     "level": 0,
     "rule": "ตึงตัวเมื่อ ≥ 3 ร้อนแรงเมื่อ ≥ 8",
     "note": "นับจากคำเช่น bubble, froth, overvalued, capex ในพาดหัวล่าสุด"
@@ -14669,22 +14620,7 @@
    "ASML",
    "MU"
   ],
-  "headlines": [
-   {
-    "title": "Asian tech stocks jump as bargain buyers boost battered AI trade",
-    "title_th": null,
-    "url": "https://finance.yahoo.com/markets/stocks/articles/asian-tech-stocks-jump-bargain-030316035.html",
-    "source": "Investing.com",
-    "time": "2026-11-26T03:03:16Z"
-   },
-   {
-    "title": "Goldman Sachs Warns AI Stocks Haven't Bottomed: US Household Equity Exposure Now Exceeds Dot-com Bubble Era",
-    "title_th": null,
-    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE96bW9TZHFQdGlNY2NXUUlHdG1VTXI0N1hqanZYQk41ZVNBUUtMMlExYVZ1c3FCR3otWEVhUzdaSThTSDYta0tTOFQ4Sm5YQkZ1R2poM3ZCM1NxVHpIcFJQeW5HRENfYTBKMlFMWUxxRm9HLU5Yd1E?oc=5",
-    "source": "BigGo Finance",
-    "time": "2026-11-25T19:25:00Z"
-   }
-  ]
+  "headlines": []
  },
  "hist": {
   "dates": [
@@ -15839,7 +15775,7 @@
     634.19,
     645.4,
     611.64,
-    581.25,
+    581.24,
     571.93,
     573.45,
     581.93,
@@ -15916,7 +15852,7 @@
     741.47,
     727.32,
     699.57,
-    722.4,
+    722.39,
     704.42,
     706.61,
     665.53,
